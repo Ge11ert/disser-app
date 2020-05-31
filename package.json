@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Делаем как можем, а потом понимаем, что не смогли.",
   "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "echo \"Error: no linter specified\" && exit 1",
+    "start": "npm run build && electron ./build/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
