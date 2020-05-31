@@ -47,6 +47,7 @@ Session.vim
 # -- Public --
 /public
 /public-sandbox
+/build
 
 
 # -- Tests --
@@ -62,3 +63,7 @@ Session.vim
 # -- Linters --
 .eslintcache
 .stylelintcache
+
+# -- TypeScript --
+
+tsconfig.tsbuildinfo
