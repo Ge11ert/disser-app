@@ -1,0 +1,19 @@
+{
+  "name": "disser-app",
+  "version": "1.0.0",
+  "description": "Делаем как можем, а потом понимаем, что не смогли.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ge11ert/disser-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ge11ert/disser-app/issues"
+  },
+  "homepage": "https://github.com/Ge11ert/disser-app#readme"
+}
