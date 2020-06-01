@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World!</title>
+  <title>Disser-Huisser</title>
 </head>
 <body>
-<h1>Hello World!</h1>
-We are using Node.js <span id="node-version"></span>,
-Chromium <span id="chrome-version"></span>,
-and Electron <span id="electron-version"></span>.
+  <div class="form-container">
+    <form class="form">
+      <input type="text" class="form__field" placeholder="Введите что-нибудь">
+      <button type="submit" class="form__button">Сделать магию</button>
+    </form>
+  </div>
 
+  <div class="result-container">
+    <p class="result"></p>
+  </div>
 <!-- You can also require other files to run in this process -->
 <script src="./build/renderer.js"></script>
 </body>

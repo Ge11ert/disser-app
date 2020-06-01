@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain, IpcMainEvent } from 'electron';
 import electronReload from 'electron-reload';
 import isDev from 'electron-is-dev';
 import path from 'path';
@@ -25,6 +25,7 @@ function createWindow() {
     width: 800,
     show: false,
     webPreferences: {
+      contextIsolation: true,
       preload: path.join(__dirname, 'preload.js'),
     }
   });
@@ -50,3 +51,8 @@ app.on('window-all-closed', () => {
 });
 
 app.on('ready', createWindow);
+
+ipcMain.on('formSubmit', (event: IpcMainEvent, arg) => {
+  console.log(arg);
+  event.sender.send('formResponse', `Hello, ${arg}`);
+});
