@@ -7,23 +7,38 @@
     "watch": "tsc -w",
     "lint": "echo \"Error: no linter specified\" && exit 1",
     "start": "npm run build && electron ./build/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "electron-builder"
   },
+  "main": "./build/main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ge11ert/disser-app.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Artyom Abramyants <gellert94@mail.ru>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Ge11ert/disser-app/issues"
   },
   "homepage": "https://github.com/Ge11ert/disser-app#readme",
   "dependencies": {
-    "electron": "9.0.0",
     "electron-is-dev": "1.2.0",
     "electron-reload": "1.5.0",
     "typescript": "3.9.3"
+  },
+  "devDependencies": {
+    "electron": "9.0.2",
+    "electron-builder": "22.7.0"
+  },
+  "build": {
+    "files": [
+      "build/**/*",
+      "package.json"
+    ],
+    "linux": {
+      "target": ["AppImage", "deb"]
+    },
+    "extends": null
   }
 }
