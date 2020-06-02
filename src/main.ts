@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, IpcMainEvent } from 'electron';
+import { app, BrowserWindow, ipcMain, dialog, IpcMainEvent, OpenDialogReturnValue } from 'electron';
 import electronReload from 'electron-reload';
 import isDev from 'electron-is-dev';
 import path from 'path';
@@ -21,8 +21,8 @@ if (isDev) {
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    height: 600,
-    width: 800,
+    height: 900,
+    width: 1200,
     show: false,
     webPreferences: {
       contextIsolation: true,
@@ -55,4 +55,22 @@ app.on('ready', createWindow);
 ipcMain.on('formSubmit', (event: IpcMainEvent, arg) => {
   console.log(arg);
   event.sender.send('formResponse', `Hello, ${arg}`);
+});
+
+ipcMain.on('showOpenDialog', (event: IpcMainEvent,) => {
+  if (mainWindow) {
+    dialog.showOpenDialog(mainWindow, {
+      title: 'Open a file',
+      defaultPath: app.getPath('home'),
+      properties: [
+        'openFile',
+      ],
+    }).then((result: OpenDialogReturnValue) => {
+      console.log(result.canceled);
+      console.log(result.filePaths);
+      if (!result.canceled) {
+        event.sender.send('fileSelected', result.filePaths[0]);
+      }
+    });
+  }
 });
