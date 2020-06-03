@@ -3,17 +3,47 @@
   "version": "1.0.0",
   "description": "Делаем как можем, а потом понимаем, что не смогли.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "echo \"Error: no linter specified\" && exit 1",
+    "start": "npm run build && electron ./build/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "electron-builder",
+    "dist-linux": "electron-builder --linux AppImage",
+    "dist-win": "electron-builder --windows portable"
   },
+  "main": "./build/main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ge11ert/disser-app.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Artyom Abramyants <gellert94@mail.ru>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Ge11ert/disser-app/issues"
   },
-  "homepage": "https://github.com/Ge11ert/disser-app#readme"
+  "homepage": "https://github.com/Ge11ert/disser-app#readme",
+  "dependencies": {
+    "electron-is-dev": "1.2.0",
+    "electron-reload": "1.5.0",
+    "typescript": "3.9.3"
+  },
+  "devDependencies": {
+    "electron": "9.0.2",
+    "electron-builder": "22.7.0"
+  },
+  "build": {
+    "files": [
+      "build/**/*",
+      "package.json"
+    ],
+    "linux": {
+      "target": "AppImage"
+    },
+    "win": {
+      "target": "portable"
+    },
+    "extends": null
+  }
 }
