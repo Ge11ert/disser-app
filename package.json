@@ -8,7 +8,9 @@
     "lint": "echo \"Error: no linter specified\" && exit 1",
     "start": "npm run build && electron ./build/main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "dist-linux": "electron-builder --linux AppImage",
+    "dist-win": "electron-builder --windows portable"
   },
   "main": "./build/main.js",
   "repository": {
@@ -37,7 +39,10 @@
       "package.json"
     ],
     "linux": {
-      "target": ["AppImage", "deb"]
+      "target": "AppImage"
+    },
+    "win": {
+      "target": "portable"
     },
     "extends": null
   }
