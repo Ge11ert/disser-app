@@ -1,13 +1,17 @@
 import { app, BrowserWindow, ipcMain, dialog, IpcMainEvent, OpenDialogReturnValue } from 'electron';
-import electronReload from 'electron-reload';
 import isDev from 'electron-is-dev';
 import path from 'path';
+import AirConditionsParser from './parsers/air-conditions-parser';
+import XlsReader from './readers/xls-reader';
 
 const htmlFile = path.join(__dirname, '../index.html');
 let mainWindow: Electron.BrowserWindow | null;
 
 if (isDev) {
-  electronReload(__dirname);
+  require('electron-reload')([
+    __dirname,
+    path.join(__dirname, './parsers')
+  ]);
 
   // Получение пути файловой системы, где находится приложение
   console.log(app.getAppPath());
@@ -69,7 +73,11 @@ ipcMain.on('showOpenDialog', (event: IpcMainEvent,) => {
       console.log(result.canceled);
       console.log(result.filePaths);
       if (!result.canceled) {
-        event.sender.send('fileSelected', result.filePaths[0]);
+        const reader = new XlsReader();
+        const parser = new AirConditionsParser(result.filePaths[0], reader);
+        parser.parse().then((airConditions) => {
+          event.sender.send('fileSelected', airConditions);
+        });
       }
     });
   }
