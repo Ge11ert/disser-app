@@ -31,7 +31,8 @@
   },
   "devDependencies": {
     "electron": "9.0.2",
-    "electron-builder": "22.7.0"
+    "electron-builder": "22.7.0",
+    "ts-node": "8.10.2"
   },
   "build": {
     "files": [
