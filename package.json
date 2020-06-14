@@ -4,9 +4,10 @@
   "description": "Делаем как можем, а потом понимаем, что не смогли.",
   "scripts": {
     "build": "tsc",
+    "postbuild": "cp src/electron/index.html build/electron/index.html",
     "watch": "tsc -w",
     "lint": "echo \"Error: no linter specified\" && exit 1",
-    "start": "npm run build && electron ./build/main.js",
+    "start": "npm run build && electron ./build/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dist": "electron-builder",
     "dist-linux": "electron-builder --linux AppImage",
