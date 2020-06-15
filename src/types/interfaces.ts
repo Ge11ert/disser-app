@@ -6,3 +6,5 @@ type readResult<T> = {
 export interface Reader<T> {
   read(path: string): Promise<readResult<T>>
 }
+
+export interface ElectronWindowAPI {}

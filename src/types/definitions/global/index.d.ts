@@ -1,5 +1,7 @@
+import { ElectronWindowAPI } from '../../interfaces';
+
 export declare global {
   interface Window {
-    electron: any;
+    electron: ElectronWindowAPI;
   }
 }
