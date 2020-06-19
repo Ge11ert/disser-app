@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "Делаем как можем, а потом понимаем, что не смогли.",
   "scripts": {
+    "prebuild": "rm -rf build",
     "build": "tsc",
     "postbuild": "cp src/electron/index.html build/electron/index.html",
     "watch": "tsc -w",
     "lint": "echo \"Error: no linter specified\" && exit 1",
     "start": "npm run build && electron ./build/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretest": "npm run build",
+    "test": "jest",
     "dist": "electron-builder",
     "dist-linux": "electron-builder --linux AppImage",
     "dist-win": "electron-builder --windows portable"
@@ -28,12 +30,16 @@
   "dependencies": {
     "electron-is-dev": "1.2.0",
     "electron-reload": "1.5.0",
+    "heap": "0.2.6",
     "read-excel-file": "4.0.6",
     "typescript": "3.9.3"
   },
   "devDependencies": {
+    "@types/jest": "26.0.0",
     "electron": "9.0.2",
     "electron-builder": "22.7.0",
+    "jest": "26.0.1",
+    "ts-jest": "26.1.0",
     "ts-node": "8.10.2"
   },
   "build": {
@@ -48,5 +54,10 @@
       "target": "portable"
     },
     "extends": null
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": ["tests/pathfinding"]
   }
 }
