@@ -1,9 +1,9 @@
 import Heap from 'heap';
-import {backtrace} from '../core/util';
+import { backtrace } from '../core/util';
 import Grid from '../core/grid';
 import heuristic, {Heuristic} from '../core/heuristic';
 import DiagonalMovement from '../core/diagonal-movement';
-import FinderNode from './finder-node';
+import GridNode from "../core/node";
 
 type finderOptions = Partial<{
   allowDiagonal: boolean,
@@ -30,18 +30,6 @@ export default class AStarFinder {
     this.weight = opt.weight || 1;
     this.diagonalMovement = opt.diagonalMovement || fallbackDiagonalMovement(opt);
 
-    if (!this.diagonalMovement) {
-      if (!this.allowDiagonal) {
-        this.diagonalMovement = DiagonalMovement.NEVER;
-      } else {
-        if (this.dontCrossCorners) {
-          this.diagonalMovement = DiagonalMovement.ONLY_WHEN_NO_OBSTACLES;
-        } else {
-          this.diagonalMovement = DiagonalMovement.IF_AT_MOST_ONE_OBSTACLE;
-        }
-      }
-    }
-
     // When diagonal movement is allowed the manhattan heuristic is not
     //admissible. It should be octile instead
     if (this.diagonalMovement === DiagonalMovement.NEVER) {
@@ -52,16 +40,14 @@ export default class AStarFinder {
   }
 
   findPath(startX: number, startY: number, endX: number, endY: number, grid: Grid): number[][] {
-    const openList = new Heap((nodeA: FinderNode, nodeB: FinderNode) => {
+    const openList = new Heap((nodeA: GridNode, nodeB: GridNode) => {
       return nodeA.f - nodeB.f;
     });
-    const startGridNode = grid.getNodeAt(startX, startY);
-    const endGridNode = grid.getNodeAt(endX, endY);
-    const startNode = FinderNode.createFromGridNode(startGridNode);
-    const endNode = FinderNode.createFromGridNode(endGridNode);
+    const startNode = grid.getNodeAt(startX, startY);
+    const endNode = grid.getNodeAt(endX, endY);
     const { heuristic, diagonalMovement, weight } = this;
     const { abs, SQRT2 } = Math;
-    let currentNode: FinderNode;
+    let currentNode: GridNode;
 
     // set the `g` and `f` value of the start node to be 0
     startNode.g = 0;
@@ -86,7 +72,7 @@ export default class AStarFinder {
       const neighbors = grid.getNeighbors(currentNode, diagonalMovement);
 
       for (let i = 0; i < neighbors.length; i++) {
-        const neighbor = FinderNode.createFromGridNode(neighbors[i]);
+        const neighbor = neighbors[i];
 
         if (neighbor.closed) {
           continue;
