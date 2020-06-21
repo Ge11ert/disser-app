@@ -1,4 +1,4 @@
-type readResult<T> = {
+export type readResult<T> = {
   status: string,
   result: T,
 };
