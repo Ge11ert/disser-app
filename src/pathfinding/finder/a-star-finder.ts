@@ -78,15 +78,16 @@ export default class AStarFinder {
           continue;
         }
 
-        const { x, y } = neighbor;
         // TODO: custom weight for cell-to-cell transfer
-        const ng = currentNode.g + ((x - currentNode.x === 0 || y - currentNode.y === 0) ? 1 : SQRT2);
+        const fromCurrentToNeighbor = currentNode.distanceTo(neighbor);
+        const fromNeighborToEnd = neighbor.distanceTo(endNode);
+        const ng = currentNode.g + fromCurrentToNeighbor.distance;
 
         // check if the neighbor has not been inspected yet, or
         // can be reached with smaller cost from the current node
         if (!neighbor.opened || ng < neighbor.g) {
           neighbor.g = ng;
-          neighbor.h = neighbor.h || weight * heuristic(abs(x - endX), abs(y - endY));
+          neighbor.h = neighbor.h || weight * heuristic(fromNeighborToEnd.dx, fromNeighborToEnd.dy);
           neighbor.f = neighbor.g + neighbor.h;
           neighbor.parent = currentNode;
 
