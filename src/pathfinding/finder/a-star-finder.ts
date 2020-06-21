@@ -31,11 +31,11 @@ export default class AStarFinder {
     this.diagonalMovement = opt.diagonalMovement || fallbackDiagonalMovement(opt);
 
     // When diagonal movement is allowed the manhattan heuristic is not
-    //admissible. It should be octile instead
+    //admissible. It should be diagonal instead
     if (this.diagonalMovement === DiagonalMovement.NEVER) {
       this.heuristic = opt.heuristic || heuristic.manhattan;
     } else {
-      this.heuristic = opt.heuristic || heuristic.octile;
+      this.heuristic = opt.heuristic || heuristic.diagonal;
     }
   }
 
