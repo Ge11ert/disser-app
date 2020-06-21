@@ -1,7 +1,7 @@
 // All of the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.
 import { contextBridge, ipcRenderer } from 'electron';
-import { LOAD_AIR_CONDITIONS, RENDER_AIR_CONDITIONS } from '../ipc-events/event-names';
+import { LOAD_AIR_CONDITIONS, RENDER_AIR_CONDITIONS, START_FINDER } from '../ipc-events/event-names';
 import { ElectronWindowAPI } from '../../types/interfaces';
 
 const electronToWindowAPI: ElectronWindowAPI = {
@@ -16,6 +16,9 @@ const electronToWindowAPI: ElectronWindowAPI = {
         resultElement.innerHTML = `<table>${rowsHtml}</table>`;
       }
     });
+  },
+  findPath: () => {
+    ipcRenderer.send(START_FINDER);
   },
 };
 

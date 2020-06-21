@@ -16,10 +16,13 @@ export interface Reader<T> {
 export interface ElectronWindowAPI {
   loadAirConditions: () => void;
   listenToAirConditionsLoaded: () => void;
+  findPath: () => void;
 }
 
 export interface DisserAppAPI {
   startElectronApp: () => void;
 
   applyAirConditions: (airConditionsArray: AirConditions) => void;
+
+  startFinder: () => void;
 }
