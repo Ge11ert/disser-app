@@ -1,3 +1,9 @@
+type AirConditionsWind = number;
+type AirConditionsWall = 'x' | 'X';
+
+export type AirConditionsCell = AirConditionsWind | AirConditionsWall;
+export type AirConditions = AirConditionsCell[][];
+
 export type readResult<T> = {
   status: string,
   result: T,
@@ -14,6 +20,5 @@ export interface ElectronWindowAPI {
 export interface DisserAppAPI {
   startElectronApp: () => void;
 
-  // TODO: использовать нормальный тип для airConditionsArray
-  applyAirConditions: (airConditionsArray: any[][]) => void;
+  applyAirConditions: (airConditionsArray: AirConditions) => void;
 }
