@@ -1,5 +1,5 @@
 import { App, ipcMain, IpcMainEvent, dialog, OpenDialogReturnValue, BrowserWindow } from 'electron';
-import { LOAD_AIR_CONDITIONS } from './event-names';
+import { LOAD_AIR_CONDITIONS, RENDER_AIR_CONDITIONS } from './event-names';
 import AirConditionsParser from '../../utils/parsers/air-conditions-parser';
 import XlsReader from '../../utils/readers/xls-reader';
 import { DisserAppAPI } from '../../types/interfaces';
@@ -18,6 +18,7 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
         const parser = new AirConditionsParser(result.filePaths[0], reader);
         parser.parse().then(result => {
           disserApp.applyAirConditions(result);
+          event.sender.send(RENDER_AIR_CONDITIONS, result);
         });
       }
     });

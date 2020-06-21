@@ -15,6 +15,7 @@ export interface Reader<T> {
 
 export interface ElectronWindowAPI {
   loadAirConditions: () => void;
+  listenToAirConditionsLoaded: () => void;
 }
 
 export interface DisserAppAPI {

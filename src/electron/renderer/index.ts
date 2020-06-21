@@ -5,3 +5,5 @@ if (openFileButton) {
     window.electron.loadAirConditions();
   });
 }
+
+window.electron.listenToAirConditionsLoaded();
