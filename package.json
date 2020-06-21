@@ -8,7 +8,7 @@
     "postbuild": "cp src/electron/index.html build/electron/index.html",
     "watch": "tsc -w",
     "lint": "echo \"Error: no linter specified\" && exit 1",
-    "start": "npm run build && electron ./build/app.js",
+    "start": "npm run build && electron ./build/index.js",
     "pretest": "npm run build",
     "test": "jest",
     "dist": "electron-builder",

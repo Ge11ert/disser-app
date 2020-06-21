@@ -1,0 +1,1 @@
+export const LOAD_AIR_CONDITIONS = 'LOAD_AIR_CONDITIONS' as const;

@@ -1,4 +1,14 @@
 import startElectronApp from './electron/server';
-import appSettings from './app.settings';
+import { DisserAppAPI } from './types/interfaces';
 
-startElectronApp(appSettings.electron);
+export default class DisserApp implements DisserAppAPI {
+  constructor(public settings: { electron: Record<string, any> }) {}
+
+  startElectronApp() {
+    startElectronApp(this.settings.electron, this);
+  }
+
+  applyAirConditions(airConditions: any[][]) {
+    console.log(airConditions);
+  }
+}

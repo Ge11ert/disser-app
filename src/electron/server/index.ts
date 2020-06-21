@@ -5,6 +5,7 @@ import isDev from 'electron-is-dev';
 import path from 'path';
 import MainWindow from './main-window';
 import bindIpcEvents from '../ipc-events';
+import { DisserAppAPI } from '../../types/interfaces';
 
 const htmlFile = path.resolve(__dirname, '../index.html');
 const preloadScript = path.resolve(__dirname, '../context-bridge/index.js');
@@ -13,7 +14,7 @@ if (isDev) {
   require('electron-reload')(path.resolve(__dirname, '..'));
 }
 
-export default function main(windowOptions: Record<string, any> = {}) {
+export default function main(windowOptions: Record<string, any> = {}, disserApp: DisserAppAPI) {
   const mainWindow = new MainWindow({
     ...windowOptions,
     isDev,
@@ -27,6 +28,6 @@ export default function main(windowOptions: Record<string, any> = {}) {
 
   app.on('ready', () => {
     mainWindow.create();
-    bindIpcEvents(app, mainWindow.getBrowserWindow());
+    bindIpcEvents(app, disserApp, mainWindow.getBrowserWindow());
   });
 }
