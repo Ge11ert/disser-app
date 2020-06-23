@@ -1,0 +1,4 @@
+export const LOAD_AIR_CONDITIONS = 'LOAD_AIR_CONDITIONS' as const;
+export const RENDER_AIR_CONDITIONS = 'RENDER_AIR_CONDITIONS' as const;
+export const START_FINDER = 'START_FINDER' as const;
+export const SHOW_MAIN_APP_DATA = 'SHOW_MAIN_APP_DATA';

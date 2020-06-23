@@ -36,6 +36,13 @@ const heuristicCollection = {
     return (dx < dy) ? F * dx + dy : F * dy + dx;
   },
 
+  // http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html#diagonal-distance
+  diagonal: function(dx: number, dy: number) {
+    const D = 1;
+    const D2 = Math.SQRT2;
+    return (dx > dy) ? D * (dx - dy) + D2 * dy : D * (dy - dx) + D2 * dx;
+  },
+
   /**
    * Chebyshev distance.
    * @param {number} dx - Difference in x.

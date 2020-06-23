@@ -12,11 +12,11 @@ export enum StatusCode {
 const permittedExtensions = ['.xlsx', '.xls'];
 
 export default class XlsReader {
-  read(pathToFile: string): Promise<{ status: StatusCode, result?: ParsedResult }> {
+  read(pathToFile: string): Promise<{ status: StatusCode, result: ParsedResult }> {
     const validationResult = this.validate(pathToFile);
 
     if (validationResult !== StatusCode.OK) {
-      return Promise.reject({ status: validationResult });
+      return Promise.reject({ status: validationResult, result: [] });
     }
 
     return readXlsxFile(pathToFile)
@@ -24,11 +24,11 @@ export default class XlsReader {
       .catch(error => {
         switch (error.code) {
           case 'ENOENT':
-            return { status: StatusCode.NOT_FOUND };
+            return { status: StatusCode.NOT_FOUND, result: [] };
           case 'EISDIR':
-            return { status: StatusCode.NOT_EXCEL };
+            return { status: StatusCode.NOT_EXCEL, result: [] };
           default:
-            return { status: StatusCode.INTERNAL_ERROR };
+            return { status: StatusCode.INTERNAL_ERROR, result: [] };
         }
       });
   }

@@ -93,6 +93,14 @@ export default class Grid {
     this.nodes[y][x].walkable = walkable;
   }
 
+  setCellSize(cellSize: { x: number, y: number }) {
+    for (let i = 0; i < this.height; i++) {
+      for (let j = 0; j < this.width; j++) {
+        this.nodes[i][j].setSize(cellSize);
+      }
+    }
+  }
+
   /**
    * Get the neighbors of the given node.
    *

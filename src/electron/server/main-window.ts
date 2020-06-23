@@ -25,6 +25,10 @@ class MainWindow {
     this.windowOptions = {
       ...defaultOptions,
       ...options,
+      webPreferences: {
+        ...defaultOptions.webPreferences,
+        preload: options.preload,
+      }
     };
   }
 
@@ -46,6 +50,13 @@ class MainWindow {
     this.window.on('closed', () => {
       this.window = null;
     });
+  }
+
+  getBrowserWindow(): BrowserWindow {
+    if (!this.window) {
+      this.create();
+    }
+    return this.window!;
   }
 }
 

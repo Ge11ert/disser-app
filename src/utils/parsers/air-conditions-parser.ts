@@ -1,26 +1,21 @@
-// TODO: сделать модель для ячейки поля и самого поля
-import { Reader } from '../../types/interfaces';
-
-type Cell = number|string;
-type Row = Cell[];
-type Rows = Row[];
+import { Reader, readResult, AirConditions } from '../../types/interfaces';
 
 export default class AirConditionsParser {
   constructor(
-    public pathToFile: string,
-    public reader: Reader<Rows>
+    private pathToFile: string,
+    private reader: Reader<AirConditions>
   ) {}
 
-  async parse(): Promise<Rows> {
-    return this.reader.read(this.pathToFile).then(res => {
+  async parse(): Promise<AirConditions> {
+    return this.reader.read(this.pathToFile).then((res: readResult<AirConditions>) => {
       return res.result;
-    }).catch(error => {
+    }).catch((error: readResult<[]>) => {
       console.log(`
         Error during air conditions parsing,
-          code: ${error.code}
+          code: ${error.status}
           path: ${this.pathToFile}
       `);
-      return [];
+      return error.result;
     })
   }
 }
