@@ -14,3 +14,4 @@ if (startFinderButton) {
 }
 
 window.electron.listenToAirConditionsLoaded();
+window.electron.listenToMainAppData();

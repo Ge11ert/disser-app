@@ -16,6 +16,7 @@ export interface Reader<T> {
 export interface ElectronWindowAPI {
   loadAirConditions: () => void;
   listenToAirConditionsLoaded: () => void;
+  listenToMainAppData: () => void;
   findPath: () => void;
 }
 

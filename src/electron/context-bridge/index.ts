@@ -1,7 +1,7 @@
 // All of the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.
 import { contextBridge, ipcRenderer } from 'electron';
-import { LOAD_AIR_CONDITIONS, RENDER_AIR_CONDITIONS, START_FINDER } from '../ipc-events/event-names';
+import { LOAD_AIR_CONDITIONS, RENDER_AIR_CONDITIONS, START_FINDER, SHOW_MAIN_APP_DATA } from '../ipc-events/event-names';
 import { ElectronWindowAPI } from '../../types/interfaces';
 
 const electronToWindowAPI: ElectronWindowAPI = {
@@ -14,6 +14,18 @@ const electronToWindowAPI: ElectronWindowAPI = {
       if (resultElement) {
         const rowsHtml = renderRows(arg);
         resultElement.innerHTML = `<table>${rowsHtml}</table>`;
+      }
+    });
+  },
+  listenToMainAppData: () => {
+    ipcRenderer.on(SHOW_MAIN_APP_DATA, (event, args: any) => {
+      const container = document.querySelector('.main-app-data-container');
+      try {
+        if (container) {
+          container.textContent = JSON.stringify(args);
+        }
+      } catch (e) {
+        console.log(`Error during main app data parsing, ${e.message}`);
       }
     });
   },

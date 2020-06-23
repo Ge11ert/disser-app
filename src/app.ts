@@ -35,7 +35,8 @@ export default class DisserApp implements DisserAppAPI {
     });
     // TODO: вводить стартовую и конечную точки
     const path = finder.findPath(0, 0, 4, 7, this.finderGrid);
-    console.log(path);
+    const result = `Из точки: [0,0].  В точку: [4, 7].  Найденный маршрут: ${JSON.stringify(path)}`;
+    this.electronApp.sendToWindow(result);
   }
 }
 
