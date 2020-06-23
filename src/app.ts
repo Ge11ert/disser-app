@@ -2,6 +2,7 @@ import startElectronApp from './electron/server';
 import Grid from './pathfinding/core/grid';
 import AStartFinder from './pathfinding/finder/a-star-finder';
 import { DisserAppAPI, AirConditions } from './types/interfaces';
+import { cell } from './constants/grid';
 
 export default class DisserApp implements DisserAppAPI {
   private airConditions: AirConditions = [];
@@ -19,6 +20,7 @@ export default class DisserApp implements DisserAppAPI {
     this.airConditions = airConditions;
     this.finderMatrix = matrixForFinderGrid;
     this.finderGrid = new Grid(matrixForFinderGrid);
+    this.finderGrid.setCellSize({ x: cell.H_SIZE, y: cell.V_SIZE });
   }
 
   startFinder(): void|never {
