@@ -1,18 +1,21 @@
-import startElectronApp from './electron/server';
+import ElectronApp from './electron/server';
 import Grid from './pathfinding/core/grid';
 import AStartFinder from './pathfinding/finder/a-star-finder';
 import { DisserAppAPI, AirConditions } from './types/interfaces';
 import { cell } from './constants/grid';
 
 export default class DisserApp implements DisserAppAPI {
+  private electronApp: ElectronApp;
   private airConditions: AirConditions = [];
   private finderMatrix: number[][] = [];
   private finderGrid: Grid|null = null;
 
-  constructor(public settings: { electron: Record<string, any> }) {}
+  constructor(public settings: { electron: Record<string, any> }) {
+    this.electronApp = new ElectronApp(settings.electron, this);
+  }
 
   startElectronApp() {
-    startElectronApp(this.settings.electron, this);
+    this.electronApp.start();
   }
 
   applyAirConditions(airConditions: AirConditions) {
