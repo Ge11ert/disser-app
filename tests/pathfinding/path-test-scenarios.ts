@@ -17,7 +17,7 @@ const scenarios: scenario[] = [
     endY: 1,
     matrix: [[0, 0],
             [1, 0]],
-    expectedLength: 3,
+    expectedLength: 2,
   },
   {
     id: 'medium-1',
@@ -31,7 +31,7 @@ const scenarios: scenario[] = [
             [0, 1, 0, 0, 0],
             [1, 0, 1, 1, 0],
             [0, 0, 1, 0, 0]],
-    expectedLength: 9,
+    expectedLength: 7,
   },
   {
     id: 'medium-2',
@@ -45,7 +45,7 @@ const scenarios: scenario[] = [
             [0, 0, 1, 0, 0],
             [1, 0, 1, 1, 0],
             [0, 0, 0, 0, 0]],
-    expectedLength: 10,
+    expectedLength: 6,
   },
   {
     id: 'large',
@@ -73,7 +73,7 @@ const scenarios: scenario[] = [
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]],
-    expectedLength: 31,
+    expectedLength: 16,
   },
 ];
 

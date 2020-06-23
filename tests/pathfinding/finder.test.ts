@@ -1,4 +1,5 @@
 import Grid from '../../src/pathfinding/core/grid';
+import DiagonalMovement from '../../src/pathfinding/core/diagonal-movement';
 import AStarFinder from '../../src/pathfinding/finder/a-star-finder';
 import scenarios from './path-test-scenarios';
 
@@ -66,7 +67,7 @@ function testPaths(...tests: testPathOpts[]) {
 testPaths(
   {
     name: 'AStar with cell size',
-    finder: new AStarFinder(),
+    finder: new AStarFinder({ diagonalMovement: DiagonalMovement.IF_AT_MOST_ONE_OBSTACLE }),
     cellSize: { x: 3, y: 10 },
     optimal: true,
   }
