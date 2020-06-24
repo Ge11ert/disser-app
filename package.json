@@ -5,15 +5,18 @@
   "scripts": {
     "prebuild": "rm -rf build",
     "build": "tsc",
-    "postbuild": "cp src/electron/index.html build/electron/index.html",
     "watch": "tsc -w",
     "lint": "echo \"Error: no linter specified\" && exit 1",
-    "start": "npm run build && electron ./build/index.js",
+    "start": "ELECTRON_IS_DEV=true npm run build && electron ./build/index.js",
     "pretest": "npm run build",
     "test": "jest",
     "dist": "electron-builder",
     "dist-linux": "electron-builder --linux AppImage",
-    "dist-win": "electron-builder --windows portable"
+    "dist-win": "electron-builder --windows portable",
+    "dev:electron": "NODE_ENV=development webpack --config config/webpack.electron.config.js --mode development",
+    "dev:react": "NODE_ENV=development webpack-dev-server --config config/webpack.react.config.js --mode development",
+    "build:electron": "NODE_ENV=production webpack --config config/webpack.electron.config.js --mode production",
+    "build:react": "NODE_ENV=production webpack --config config/webpack.react.config.js --mode production"
   },
   "main": "./build/main.js",
   "repository": {
@@ -31,16 +34,32 @@
     "electron-is-dev": "1.2.0",
     "electron-reload": "1.5.0",
     "heap": "0.2.6",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
     "read-excel-file": "4.0.6",
     "typescript": "3.9.3"
   },
   "devDependencies": {
+    "@babel/core": "7.10.3",
+    "@babel/plugin-proposal-class-properties": "7.10.1",
+    "@babel/plugin-proposal-object-rest-spread": "7.10.3",
+    "@babel/plugin-transform-react-constant-elements": "7.10.1",
+    "@babel/preset-env": "7.10.3",
+    "@babel/preset-react": "7.10.1",
+    "@babel/preset-typescript": "7.10.1",
     "@types/jest": "26.0.0",
+    "@types/react": "16.9.39",
+    "@types/react-dom": "16.9.8",
+    "babel-loader": "8.1.0",
     "electron": "9.0.2",
     "electron-builder": "22.7.0",
+    "html-webpack-plugin": "4.3.0",
     "jest": "26.0.1",
     "ts-jest": "26.1.0",
-    "ts-node": "8.10.2"
+    "ts-node": "8.10.2",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
   },
   "build": {
     "files": [
@@ -58,6 +77,8 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "roots": ["tests/pathfinding"]
+    "roots": [
+      "tests/pathfinding"
+    ]
   }
 }
