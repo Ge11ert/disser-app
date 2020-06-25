@@ -1,8 +1,23 @@
 type AirConditionsWind = number;
 type AirConditionsWall = 'x' | 'X';
 
+export type FlightProfileHeaderRow = string[];
+export type FlightProfileDataRow = (number|string)[];
+type SpeedM = number;
+type SpeedOfSound = number;
+type Altitude = number;
+type Fuel = number;
+type SpeedV = number;
+type Distance = number;
+type Time = number;
+
 export type AirConditionsCell = AirConditionsWind | AirConditionsWall;
 export type AirConditions = AirConditionsCell[][];
+
+export type FlightProfile = (FlightProfileHeaderRow|FlightProfileDataRow)[];
+
+export type CruiseProfile = [SpeedM, SpeedOfSound, Altitude, Fuel, SpeedV][];
+export type ClimbProfile = [SpeedM, SpeedOfSound, Altitude, Fuel, Fuel, Distance, Distance, SpeedV, Time][];
 
 export type readResult<T> = {
   status: string,

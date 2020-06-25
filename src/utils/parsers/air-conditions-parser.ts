@@ -16,6 +16,6 @@ export default class AirConditionsParser {
           path: ${this.pathToFile}
       `);
       return error.result;
-    })
+    });
   }
 }
