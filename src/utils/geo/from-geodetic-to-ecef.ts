@@ -1,3 +1,5 @@
+import { fromDegreesToRad } from '../converters';
+
 type GeoModel = {
   semiMajorAxis: number,
   firstEccentricitySquared: number,
@@ -18,8 +20,4 @@ export default function (latitude: number, longitude: number, altitude: number, 
   const Y = (N + altitude) * cosB * sinL;
   const Z = (N + altitude - e2 * N) * sinB;
   return [X, Y, Z];
-}
-
-function fromDegreesToRad(value: number): number {
-  return value * Math.PI / 180;
 }

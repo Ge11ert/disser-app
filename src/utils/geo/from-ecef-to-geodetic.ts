@@ -1,3 +1,5 @@
+import { fromRadToDegrees } from '../converters';
+
 type GeoModel = {
   semiMajorAxis: number,
   firstEccentricitySquared: number,
@@ -56,8 +58,4 @@ export default function (x: number, y: number, z: number, geoModel: GeoModel): [
   const L = Math.atan(y / x);
 
   return [fromRadToDegrees(L), fromRadToDegrees(B), H];
-}
-
-function fromRadToDegrees(value: number): number {
-  return value * 180 / Math.PI;
 }
