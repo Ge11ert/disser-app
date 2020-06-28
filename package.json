@@ -58,6 +58,6 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "roots": ["tests/pathfinding"]
+    "roots": ["tests/pathfinding", "tests/geo"]
   }
 }
