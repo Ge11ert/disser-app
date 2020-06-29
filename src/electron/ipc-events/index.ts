@@ -1,5 +1,10 @@
 import { App, ipcMain, IpcMainEvent, dialog, OpenDialogReturnValue, BrowserWindow } from 'electron';
-import { LOAD_AIR_CONDITIONS, RENDER_AIR_CONDITIONS, START_FINDER } from './event-names';
+import {
+  APPLY_INITIAL_CONDITIONS,
+  LOAD_AIR_CONDITIONS,
+  RENDER_AIR_CONDITIONS,
+  START_FINDER,
+} from './event-names';
 import AirConditionsParser from '../../utils/parsers/air-conditions-parser';
 import XlsReader from '../../utils/readers/xls-reader';
 import { DisserAppAPI } from '../../types/interfaces';
@@ -23,11 +28,16 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
       }
     });
   });
+
   ipcMain.on(START_FINDER, () => {
     try {
       disserApp.startFinder();
     } catch (e) {
       console.log(e);
     }
+  });
+
+  ipcMain.on(APPLY_INITIAL_CONDITIONS, (event, conditions) => {
+    disserApp.applyInitialGeoConditions(conditions);
   });
 }

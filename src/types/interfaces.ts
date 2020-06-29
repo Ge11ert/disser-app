@@ -33,12 +33,15 @@ export interface ElectronWindowAPI {
   listenToAirConditionsLoaded: () => void;
   listenToMainAppData: () => void;
   findPath: () => void;
+  applyInitialConditions: (conditions: Record<string, string>) => void;
 }
 
 export interface DisserAppAPI {
   startElectronApp: () => void;
 
   applyAirConditions: (airConditionsArray: AirConditions) => void;
+
+  applyInitialGeoConditions: (geoConditions: Record<string, string>) => void;
 
   startFinder: () => void;
 }
