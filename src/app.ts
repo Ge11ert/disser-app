@@ -11,6 +11,7 @@ export default class DisserApp implements DisserAppAPI {
   private airConditions: AirConditions = [];
   private finderMatrix: number[][] = [];
   private finderGrid: Grid|null = null;
+  private gridType: 'coords'|'airConditions' = 'airConditions';
 
   private readonly geo: Geo;
 
@@ -29,6 +30,7 @@ export default class DisserApp implements DisserAppAPI {
     this.finderMatrix = matrixForFinderGrid;
     this.finderGrid = new Grid(matrixForFinderGrid);
     this.finderGrid.setCellSize({ x: cell.H_SIZE, y: cell.V_SIZE });
+    this.gridType = 'airConditions';
   }
 
   applyInitialGeoConditions(geoConditions: Record<string, string>) {
@@ -49,7 +51,14 @@ export default class DisserApp implements DisserAppAPI {
       allowDiagonal: true,
     });
     const path = finder.findPath(0, 0, this.finderGrid.width -1, this.finderGrid.height - 1, this.finderGrid);
-    const result = `Из точки: [0,0].  В точку: [${this.finderGrid.width - 1}, ${this.finderGrid.height - 1}].  Найденный маршрут: ${JSON.stringify(path)}`;
+    const messageParts = [
+      `Используется сетка из ${this.gridType === 'coords' ? 'координат' : 'условий маршрута'}.`,
+      'Из точки: [0,0].',
+      `В точку: [${this.finderGrid.width - 1}, ${this.finderGrid.height - 1}].`,
+      'Найденный маршрут',
+      JSON.stringify(path),
+    ];
+    const result = messageParts.join('<br/>');
     this.electronApp.sendToWindow(result);
   }
 
@@ -64,6 +73,7 @@ export default class DisserApp implements DisserAppAPI {
 
     this.finderGrid = new Grid(maxCellsX, maxCellsY);
     this.finderGrid.setCellSize({ x: cell.H_SIZE, y: cell.V_SIZE });
+    this.gridType = 'coords';
   }
 }
 

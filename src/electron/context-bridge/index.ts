@@ -28,7 +28,7 @@ const electronToWindowAPI: ElectronWindowAPI = {
       const container = document.querySelector('.main-app-data-container');
       try {
         if (container) {
-          container.textContent = JSON.stringify(args);
+          container.innerHTML = JSON.stringify(args);
         }
       } catch (e) {
         console.log(`Error during main app data parsing, ${e.message}`);
