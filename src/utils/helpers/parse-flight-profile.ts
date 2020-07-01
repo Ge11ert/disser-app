@@ -15,7 +15,7 @@ const reader = new XlsReader();
 filesToParse.forEach((file) => {
   const pathToFile = path.join(sourceDir, file.name);
   const targetFile = path.join(targetDir, file.name.replace('xlsx', 'json'));
-  const parser = new FlightProfileParser(pathToFile, reader);
+  const parser = new FlightProfileParser(pathToFile, reader, file.type);
 
   parser.parse<typeof file.type>().then((result) => {
     fs.writeFile(targetFile, JSON.stringify(result, null, 2), { encoding: 'utf-8' }, (err) => {

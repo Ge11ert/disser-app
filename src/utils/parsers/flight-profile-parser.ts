@@ -9,10 +9,31 @@ import type {
 type TypeName = 'cruise' | 'climb';
 type ProfileType<T> = T extends 'climb' ? ClimbProfile : CruiseProfile;
 
+const cruiseProfileNames: Record<number, string> = {
+  0: 'speedM',
+  1: 'speedOfSound',
+  2: 'altitude',
+  3: 'fuel',
+  4: 'speedV'
+};
+
+const climbProfileNames: Record<number, string> = {
+  0: 'speedM',
+  1: 'speedOfSound',
+  2: 'altitude',
+  3: 'fuelFrom0',
+  4: 'fuelFromPrev',
+  5: 'distanceFrom0',
+  6: 'distanceFromPrev',
+  7: 'speedV',
+  8: 'time',
+}
+
 export default class FlightProfileParser {
   constructor(
     private pathToFile: string,
-    private reader: Reader<FlightProfile>
+    private reader: Reader<FlightProfile>,
+    private profileType: TypeName,
   ) {}
 
   async parse<T extends TypeName>(): Promise<ProfileType<T>> {
@@ -23,7 +44,14 @@ export default class FlightProfileParser {
       const formattedData = dataWithoutHeaders.map(row => (
         row.map(item => (typeof item === 'number' ? item : parseFloat(item)))
       ));
-      return formattedData as ProfileType<T>;
+      const profileData = formattedData.map((row) => {
+        return row.reduce<Record<string, number>>((acc, item, index) => {
+          const name = this.profileType === 'climb' ? climbProfileNames[index] : cruiseProfileNames[index];
+          acc[name] = item;
+          return acc;
+        }, {});
+      });
+      return (profileData as ProfileType<T>);
     });
   }
 }
