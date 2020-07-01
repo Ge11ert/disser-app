@@ -3,9 +3,9 @@ import { backtrace } from '../core/util';
 import Grid from '../core/grid';
 import heuristic, {Heuristic} from '../core/heuristic';
 import DiagonalMovement from '../core/diagonal-movement';
-import GridNode from "../core/node";
+import GridNode from '../core/node';
 
-type finderOptions = Partial<{
+export type finderOptions = Partial<{
   allowDiagonal: boolean,
   dontCrossCorners: boolean,
   diagonalMovement: DiagonalMovement,

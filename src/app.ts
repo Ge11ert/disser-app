@@ -1,10 +1,13 @@
 import ElectronApp from './electron/server';
 import Grid from './pathfinding/core/grid';
 import AStartFinder from './pathfinding/finder/a-star-finder';
+import CruisePathFinder from './pathfinding/finder/cruise-path-finder';
 import Geo from './geo';
 import { cell } from './constants/grid';
 
-import type { DisserAppAPI, AirConditions } from './types/interfaces';
+import type { DisserAppAPI, AirConditions, CruiseProfile } from './types/interfaces';
+
+const cruiseProfile: CruiseProfile = require('./assets/cruise_profile.json');
 
 export default class DisserApp implements DisserAppAPI {
   private electronApp: ElectronApp;
@@ -47,19 +50,20 @@ export default class DisserApp implements DisserAppAPI {
     if (this.finderGrid === null) {
       throw new Error('No pathfinding grid specified');
     }
-    const finder = new AStartFinder({
-      allowDiagonal: true,
-    });
-    const path = finder.findPath(0, 0, this.finderGrid.width -1, this.finderGrid.height - 1, this.finderGrid);
-    const messageParts = [
-      `Используется сетка из ${this.gridType === 'coords' ? 'координат' : 'условий маршрута'}.`,
-      'Из точки: [0,0].',
-      `В точку: [${this.finderGrid.width - 1}, ${this.finderGrid.height - 1}].`,
-      'Найденный маршрут',
-      JSON.stringify(path),
-    ];
-    const result = messageParts.join('<br/>');
-    this.electronApp.sendToWindow(result);
+
+    const finder = new CruisePathFinder(
+      { allowDiagonal: true },
+      {
+        profile: cruiseProfile,
+        airConditions: this.airConditions,
+        speedM: 0.74,
+        speedV: 0,
+        altitude: this.geo.startAltInFeet,
+      }
+    );
+    const path = finder.findPath(0, 0, this.finderGrid.width - 1, this.finderGrid.height - 1, this.finderGrid);
+
+    this.sendResults(path);
   }
 
   createGridFromGeoCoords(): void {
@@ -74,6 +78,22 @@ export default class DisserApp implements DisserAppAPI {
     this.finderGrid = new Grid(maxCellsX, maxCellsY);
     this.finderGrid.setCellSize({ x: cell.H_SIZE, y: cell.V_SIZE });
     this.gridType = 'coords';
+  }
+
+  sendResults(path: ReturnType<AStartFinder['findPath']>): void {
+    if (this.finderGrid === null) {
+      throw new Error('No pathfinding grid specified');
+    }
+
+    const messageParts = [
+      `Используется сетка из ${this.gridType === 'coords' ? 'координат' : 'условий маршрута'}.`,
+      'Из точки: [0,0].',
+      `В точку: [${this.finderGrid.width - 1}, ${this.finderGrid.height - 1}].`,
+      'Найденный маршрут',
+      JSON.stringify(path),
+    ];
+    const result = messageParts.join('<br/>');
+    this.electronApp.sendToWindow(result);
   }
 }
 
