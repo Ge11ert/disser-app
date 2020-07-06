@@ -28,6 +28,10 @@ export default class DisserApp implements DisserAppAPI {
   }
 
   applyAirConditions(airConditions: AirConditions) {
+    if (!Array.isArray(airConditions) || airConditions.length === 0) {
+      throw new Error('Air conditions matrix is empty');
+    }
+
     const matrixForFinderGrid = convertAirConditionsToWalkableMatrix(airConditions);
     this.airConditions = airConditions;
     this.finderMatrix = matrixForFinderGrid;

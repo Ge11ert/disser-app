@@ -43,8 +43,6 @@ export default class CruisePathFinder extends AStarFinder {
   getNeighborG(currentNode: GridNode, neighborNode: GridNode): number {
     const { distance: distanceToNeighbour } = currentNode.distanceTo(neighborNode); // miles
 
-    // return distanceToNeighbour;
-
     // переводим дистанцию в метры
     const distanceInMeters = fromMilesToMeters(distanceToNeighbour);
 

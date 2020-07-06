@@ -22,6 +22,7 @@ export default class XlsReader {
     return readXlsxFile(pathToFile)
       .then((rows: ParsedResult) => ({ status: StatusCode.OK, result: rows }))
       .catch(error => {
+        console.log(error);
         switch (error.code) {
           case 'ENOENT':
             return { status: StatusCode.NOT_FOUND, result: [] };
