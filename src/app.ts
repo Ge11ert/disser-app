@@ -68,6 +68,7 @@ export default class DisserApp implements DisserAppAPI {
     const path = finder.findPath(0, 0, this.finderGrid.width - 1, this.finderGrid.height - 1, this.finderGrid);
 
     this.sendResults(path);
+    this.finalize();
   }
 
   createGridFromGeoCoords(): void {
@@ -98,6 +99,11 @@ export default class DisserApp implements DisserAppAPI {
     ];
     const result = messageParts.join('<br/>');
     this.electronApp.sendToWindow(result);
+  }
+
+  finalize(): void {
+    this.finderMatrix = [];
+    this.finderGrid = null;
   }
 }
 
