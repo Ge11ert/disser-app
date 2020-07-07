@@ -33,6 +33,6 @@ export default class GridNode {
       return { dx, dy, distance: Math.max(dx, dy) };
     }
 
-    return { dx, dy, distance: Math.sqrt(dx * dx + dy * dy) };
+    return { dx, dy, distance: Math.hypot(dx, dy) };
   }
 }

@@ -32,13 +32,17 @@ export default class Geo {
 
   public distanceInMeters = {
     x: 0,
-    y: 0
+    y: 0,
+    diagonal: 0,
   };
 
   public distanceInMiles = {
     x: 0,
     y: 0,
+    diagonal: 0,
   };
+
+  public pathAngle = 0;
 
   private coordsLoaded = false;
 
@@ -71,12 +75,16 @@ export default class Geo {
     this.distanceInMeters = {
       x: distanceInMetersX,
       y: distanceInMetersY,
+      diagonal: Math.hypot(distanceInMetersX, distanceInMetersY),
     };
 
     this.distanceInMiles = {
       x: distanceInMilesX,
       y: distanceInMilesY,
+      diagonal: Math.hypot(distanceInMilesX, distanceInMilesY),
     };
+
+    this.findPathAngle();
   }
 
   convertStartAndFinalToECEF() {
@@ -95,6 +103,14 @@ export default class Geo {
       y: finalY,
       z: finalZ,
     };
+  }
+
+  findPathAngle() {
+    if (this.distanceInMeters.x === 0 || this.distanceInMeters.diagonal === 0) {
+      return;
+    }
+
+    this.pathAngle = Math.acos(this.distanceInMeters.x / this.distanceInMeters.diagonal); // radians
   }
 
   isCoordsLoaded(): boolean {
