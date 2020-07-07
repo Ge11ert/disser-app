@@ -5,7 +5,9 @@
   "scripts": {
     "prebuild": "rm -rf build",
     "build": "tsc",
-    "postbuild": "cp src/electron/index.html build/electron/index.html",
+    "postbuild": "npm run cp-index && npm run cp-assets",
+    "cp-index": "cp src/electron/index.html build/electron/index.html",
+    "cp-assets": "mkdir build/assets && cp src/assets/* build/assets",
     "watch": "tsc -w",
     "lint": "echo \"Error: no linter specified\" && exit 1",
     "start": "npm run build && electron --inspect=5858 ./build/index.js",

@@ -38,6 +38,10 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
   });
 
   ipcMain.on(APPLY_INITIAL_CONDITIONS, (event, conditions) => {
-    disserApp.applyInitialGeoConditions(conditions);
+    try {
+      disserApp.applyInitialGeoConditions(conditions);
+    } catch (e) {
+      console.log(e);
+    }
   });
 }

@@ -18,7 +18,7 @@ const electronToWindowAPI: ElectronWindowAPI = {
     ipcRenderer.on(RENDER_AIR_CONDITIONS, (event, arg: any[][]) => {
       const resultElement = document.querySelector('.file-selector__result');
       if (resultElement) {
-        const rowsHtml = renderRows(arg);
+        const rowsHtml = renderAirConditions(arg);
         resultElement.innerHTML = `<table>${rowsHtml}</table>`;
       }
     });
@@ -28,7 +28,14 @@ const electronToWindowAPI: ElectronWindowAPI = {
       const container = document.querySelector('.main-app-data-container');
       try {
         if (container) {
-          container.innerHTML = JSON.stringify(args);
+          const { gridType, finderGrid } = args;
+          const rowsHtml = renderFinderGrid(finderGrid);
+          const resultHTML = `
+          Используется сетка из ${gridType === 'coords' ? 'координат' : 'условий маршрута'}.
+          <br/>
+          <table>${rowsHtml}</table>
+          `;
+          container.innerHTML = resultHTML;
         }
       } catch (e) {
         console.log(`Error during main app data parsing, ${e.message}`);
@@ -45,12 +52,20 @@ const electronToWindowAPI: ElectronWindowAPI = {
 
 contextBridge.exposeInMainWorld('electron', electronToWindowAPI);
 
-function renderRows(rows: any[][]): string {
-  return rows.map(row => `<tr>${renderRow(row)}</tr>`).join('');
+function renderAirConditions(rows: any[][]) {
+  return renderRows(rows, getCellLabel);
 }
 
-function renderRow(row: any[]): string {
-  return row.map(cell => `<td width="100px">${getCellLabel(cell)}</td>`).join('');
+function renderFinderGrid(rows: any[][]) {
+  return renderRows(rows, getFinderGridCellLabel);
+}
+
+function renderRows(rows: any[][], cellRenderer: Function): string {
+  return rows.map(row => `<tr>${renderRow(row, cellRenderer)}</tr>`).join('');
+}
+
+function renderRow(row: any[], cellRenderer: Function): string {
+  return row.map(cell => `<td width="100px">${cellRenderer(cell)}</td>`).join('');
 }
 
 function getCellLabel(cell: number|string): string {
@@ -65,4 +80,12 @@ function getCellLabel(cell: number|string): string {
   } else {
     return '\u2612';
   }
+}
+
+function getFinderGridCellLabel(cell: { x: number, y: number, g: number, h: number, f: number, walkable: boolean, inPath: boolean }) {
+  if (!cell.walkable) {
+    return `<span style="color: red;">xxx<br/>xxx<br/>xxx</span>`;
+  }
+  const style = cell.inPath ? 'color: green; font-weight: 700;' : '';
+  return `<span style="${style}">g: ${cell.g.toPrecision(3)}<br/>h: ${cell.h.toPrecision(3)}<br/>f: ${cell.f.toPrecision(3)}</span>`;
 }

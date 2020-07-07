@@ -3,9 +3,9 @@ import { backtrace } from '../core/util';
 import Grid from '../core/grid';
 import heuristic, {Heuristic} from '../core/heuristic';
 import DiagonalMovement from '../core/diagonal-movement';
-import GridNode from "../core/node";
+import GridNode from '../core/node';
 
-type finderOptions = Partial<{
+export type finderOptions = Partial<{
   allowDiagonal: boolean,
   dontCrossCorners: boolean,
   diagonalMovement: DiagonalMovement,
@@ -45,8 +45,7 @@ export default class AStarFinder {
     });
     const startNode = grid.getNodeAt(startX, startY);
     const endNode = grid.getNodeAt(endX, endY);
-    const { heuristic, diagonalMovement, weight } = this;
-    const { abs, SQRT2 } = Math;
+    const { diagonalMovement } = this;
     let currentNode: GridNode;
 
     // set the `g` and `f` value of the start node to be 0
@@ -78,16 +77,13 @@ export default class AStarFinder {
           continue;
         }
 
-        // TODO: custom weight for cell-to-cell transfer
-        const fromCurrentToNeighbor = currentNode.distanceTo(neighbor);
-        const fromNeighborToEnd = neighbor.distanceTo(endNode);
-        const ng = currentNode.g + fromCurrentToNeighbor.distance;
+        const ng = currentNode.g + this.getNeighborG(currentNode, neighbor);
 
         // check if the neighbor has not been inspected yet, or
         // can be reached with smaller cost from the current node
         if (!neighbor.opened || ng < neighbor.g) {
           neighbor.g = ng;
-          neighbor.h = neighbor.h || weight * heuristic(fromNeighborToEnd.dx, fromNeighborToEnd.dy);
+          neighbor.h = neighbor.h || this.getNeighborH(neighbor, endNode);
           neighbor.f = neighbor.g + neighbor.h;
           neighbor.parent = currentNode;
 
@@ -106,6 +102,16 @@ export default class AStarFinder {
 
     // fail to find the path
     return [];
+  }
+
+  getNeighborG(currentNode: GridNode, neighborNode: GridNode): number {
+    const fromCurrentToNeighbor = currentNode.distanceTo(neighborNode);
+    return fromCurrentToNeighbor.distance;
+  }
+
+  getNeighborH(neighborNode: GridNode, endNode: GridNode): number {
+    const fromNeighborToEnd = neighborNode.distanceTo(endNode);
+    return this.heuristic(fromNeighborToEnd.dx, fromNeighborToEnd.dy);
   }
 }
 
