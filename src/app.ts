@@ -90,14 +90,20 @@ export default class DisserApp implements DisserAppAPI {
       throw new Error('No pathfinding grid specified');
     }
 
-    const messageParts = [
-      `Используется сетка из ${this.gridType === 'coords' ? 'координат' : 'условий маршрута'}.`,
-      'Из точки: [0,0].',
-      `В точку: [${this.finderGrid.width - 1}, ${this.finderGrid.height - 1}].`,
-      'Найденный маршрут',
-      JSON.stringify(path),
-    ];
-    const result = messageParts.join('<br/>');
+    const finderArray = this.finderGrid.toString();
+    const finderArrayWithPath = finderArray.map(row => row.map(cell => ({
+      ...cell,
+      inPath: path.some(c => (c[0] === cell.x && c[1] === cell.y))
+    })));
+
+    const result = {
+      gridType: this.gridType,
+      startPoint: [0, 0],
+      endPoint: [this.finderGrid.width - 1, this.finderGrid.height - 1],
+      path,
+      finderGrid: finderArrayWithPath,
+
+    };
     this.electronApp.sendToWindow(result);
   }
 

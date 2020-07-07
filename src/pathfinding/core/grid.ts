@@ -196,4 +196,15 @@ export default class Grid {
 
     return neighbors;
   }
+
+  toString() {
+    return this.nodes.map(nodeRow => nodeRow.map(node => ({
+      x: node.x,
+      y: node.y,
+      g: node.g,
+      h: node.h,
+      f: node.f,
+      walkable: node.walkable,
+    })));
+  }
 }
