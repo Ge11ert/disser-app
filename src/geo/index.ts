@@ -1,4 +1,5 @@
 import { WGS84Params } from '../constants/geo';
+import { cell } from '../constants/grid';
 import fromGeodeticToECEF from '../utils/geo/from-geodetic-to-ecef';
 import { fromFeetToMeters, fromMetersToMiles } from '../utils/converters';
 
@@ -40,6 +41,11 @@ export default class Geo {
     x: 0,
     y: 0,
     diagonal: 0,
+  };
+
+  public distanceInGridCells = {
+    x: 0,
+    y: 0
   };
 
   public pathAngle = 0;
@@ -85,6 +91,19 @@ export default class Geo {
     };
 
     this.findPathAngle();
+  }
+
+  findDistanceInGridCells() {
+    const { distanceInMiles } = this;
+
+    const roundedX = Math.round(distanceInMiles.x);
+    const roundedY = Math.round(distanceInMiles.y);
+
+    const maxCellsX = Math.ceil(roundedX / cell.H_SIZE);
+    const maxCellsY = Math.ceil(roundedY / cell.V_SIZE);
+
+    this.distanceInGridCells.x = maxCellsX;
+    this.distanceInGridCells.y = maxCellsY;
   }
 
   convertStartAndFinalToECEF() {
