@@ -22,7 +22,10 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
         const reader = new XlsReader();
         const parser = new AirConditionsParser(result.filePaths[0], reader);
         parser.parse().then(result => {
-          disserApp.applyAirConditions(result);
+          const possibleAlts = disserApp.getAltitudeList();
+          possibleAlts.forEach(alt => {
+            disserApp.registerAirConditionsForAltitude(result, alt);
+          });
           event.sender.send(RENDER_AIR_CONDITIONS, result);
         });
       }
