@@ -27,6 +27,9 @@ export default class DisserApp implements DisserAppAPI {
   private readonly geo: Geo = new Geo();
 
   private airConditionsPerAlt: Record<number, AirConditions> = {};
+  private airConditionsGridSize = { width: 0, height: 0 };
+  private initialEntryPoint = { x: 0, y: 0};
+  private initialExitPoint = { x: 0, y: 0};
   private readonly possibleAltitudeList: number[] = [];
   private readonly possibleMachList: number[] = [];
 
@@ -55,6 +58,21 @@ export default class DisserApp implements DisserAppAPI {
       throw new Error(`Air conditions matrix for altitude ${altitude} is empty`);
     }
 
+    if (this.airConditionsGridSize.width === 0 && this.airConditionsGridSize.height === 0) {
+      this.airConditionsGridSize.height = conditions.length;
+      this.airConditionsGridSize.width = conditions[0].length;
+
+      this.createInitialEntryPoint();
+      this.createInitialExitPoint();
+    }
+
+    if (
+      conditions.length !== this.airConditionsGridSize.height
+      || conditions[0].length !== this.airConditionsGridSize.width
+    ) {
+      throw new Error(`Air condition matrix for altitude ${altitude} has different size, which is no-op`);
+    }
+
     this.airConditionsPerAlt[altitude] = conditions;
   }
 
@@ -66,11 +84,18 @@ export default class DisserApp implements DisserAppAPI {
     this.geo.applyStartAndFinalCoords(geoConditions);
     this.geo.findDistanceBetweenStartAndEndPoints();
     this.geo.findDistanceInGridCells();
+
+    this.createInitialEntryPoint();
+    this.createInitialExitPoint();
   }
 
   startFinder() {
     if (!this.geo.isCoordsLoaded()) {
       throw new Error('No coords for start and dest points');
+    }
+
+    if (Object.keys(this.airConditionsPerAlt).length === 0) {
+      throw new Error('No air conditions loaded at all, please provide one');
     }
 
     // TODO: loop through all speeds
@@ -116,8 +141,8 @@ export default class DisserApp implements DisserAppAPI {
       }
     );
     const path = finder.findPath(
-      0, 0,
-      finderGrid.width - 1, finderGrid.height - 1,
+      this.initialEntryPoint.x, this.initialEntryPoint.y,
+      this.initialExitPoint.x, this.initialExitPoint.y,
       finderGrid,
     );
     const finderArray = finderGrid.toString();
@@ -142,6 +167,26 @@ export default class DisserApp implements DisserAppAPI {
       finderGrid: finderArrayWithPath,
     };
     this.electronApp.sendToWindow(result);
+  }
+
+  createInitialEntryPoint(): void {
+    this.initialEntryPoint.x = 0;
+    this.initialEntryPoint.y = Math.ceil(this.airConditionsGridSize.height / 2) - 1;
+  }
+
+  createInitialExitPoint(): void {
+    if (this.geo.distanceInGridCells.x === 0) {
+      return;
+    }
+
+    const { x: initialX, y: initialY } = this.initialEntryPoint;
+    const possibleExitX = initialX + this.geo.distanceInGridCells.x - 1;
+    const possibleExitY = initialY + this.geo.distanceInGridCells.y - 1;
+
+    const exitX = Math.max(Math.min(possibleExitX, (this.airConditionsGridSize.width - 1)), 0);
+    const exitY = Math.max(Math.min(possibleExitY, (this.airConditionsGridSize.height - 1)), 0);
+
+    this.initialExitPoint = { x: exitX, y: exitY };
   }
 };
 
