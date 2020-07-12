@@ -39,19 +39,26 @@ export interface Reader<T> {
 }
 
 export interface ElectronWindowAPI {
-  loadAirConditions: () => void;
-  listenToAirConditionsLoaded: () => void;
-  listenToMainAppData: () => void;
-  findPath: () => void;
-  applyInitialConditions: (conditions: Record<string, string>) => void;
+  loadAirConditions(): void;
+  listenToAirConditionsLoaded(): void;
+  listenToMainAppData(): void;
+  findPath(): void;
+  applyInitialConditions(conditions: Record<string, string>): void;
 }
 
 export interface DisserAppAPI {
-  startElectronApp: () => void;
+  startElectronApp(): void;
 
-  applyAirConditions: (airConditionsArray: AirConditions) => void;
+  applyInitialGeoConditions(geoConditions: Record<string, string>): void;
 
-  applyInitialGeoConditions: (geoConditions: Record<string, string>) => void;
+  startFinder(): void;
 
-  startFinder: () => void;
+  getAltitudeList(): number[];
+
+  registerAirConditionsForAltitude(conditions: AirConditions, alt: number): void;
 }
+
+type RunInfo = { distanceInMiles: number, fuelBurnInKgs: number, timeInHours: number };
+export type AltitudeRun = [number, { ascent: RunInfo, cruise: RunInfo, descent: RunInfo }];
+export type SpeedRun = Map<number, AltitudeRun[]>;
+export type TotalRun = SpeedRun[];

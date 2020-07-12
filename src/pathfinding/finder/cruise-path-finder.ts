@@ -75,6 +75,11 @@ export default class CruisePathFinder extends AStarFinder {
     // считаем FlightCost по затраченному топливу и времени
     const flightCostToNeighbour = this.getFlightCost(actualFuelBurn, flightTimeInHours);
 
+    neighborNode.distanceFromNeighbourInMiles = distanceToNeighbour;
+    neighborNode.fuelBurnFromNeighbourInKgs = actualFuelBurn;
+    neighborNode.timeFromNeighbourInHours = flightTimeInHours;
+    neighborNode.flightCostFromNeighbour = flightCostToNeighbour;
+
     return flightCostToNeighbour;
   }
 
@@ -104,6 +109,32 @@ export default class CruisePathFinder extends AStarFinder {
     const flightCostToEnd = this.getFlightCost(actualFuelBurn, flightTimeInHours);
 
     return flightCostToEnd;
+  }
+
+  findPathWithSummary(...args: any[]): { path: number[][], summary: Record<string, number>} {
+    // TODO: fix ts-ignore
+    // @ts-ignore
+    const path = super.findPath(...args);
+
+    let totalDistance = 0;
+    let totalFuelBurn = 0;
+    let totalTime = 0;
+
+    path.forEach(cell => {
+      const [x, y, distance, fuel, time] = cell;
+      totalDistance += distance;
+      totalFuelBurn += fuel;
+      totalTime += time;
+    });
+
+    return {
+      path,
+      summary: {
+        totalDistance,
+        totalFuelBurn,
+        totalTime,
+      },
+    };
   }
 
   /**
