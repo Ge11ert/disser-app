@@ -4,7 +4,15 @@ import CruisePathFinder from './pathfinding/finder/cruise-path-finder';
 import Geo from './geo';
 import { cell } from './constants/grid';
 
-import type { DisserAppAPI, AirConditions, CruiseProfile, ClimbProfile } from './types/interfaces';
+import type {
+  DisserAppAPI,
+  AirConditions,
+  CruiseProfile,
+  ClimbProfile,
+  AltitudeRun,
+  SpeedRun,
+  TotalRun,
+} from './types/interfaces';
 
 const cruiseProfile: CruiseProfile = require('./assets/cruise_profile.json');
 const climbProfile: ClimbProfile = require('./assets/climb_profile.json');
@@ -32,6 +40,8 @@ export default class DisserApp implements DisserAppAPI {
   private initialExitPoint = { x: 0, y: 0};
   private readonly possibleAltitudeList: number[] = [];
   private readonly possibleMachList: number[] = [];
+
+  private totalRun: TotalRun = [];
 
   private static createAltitudeList(env: DisserAppSettings['environment']) {
     const { minH, maxH, altitudeIncrement } = env;
@@ -110,14 +120,14 @@ export default class DisserApp implements DisserAppAPI {
 
     for (let i = 0; i < operatingAlt.length; i++) {
       const alt = operatingAlt[i];
-      const exitNow = this.performAltitudeCycleStep(speedValue, alt, i, climbProfileForCurrentSpeed);
+      const [exitNow, altitudeRunSummary] = this.performAltitudeCycleStep(speedValue, alt, i, climbProfileForCurrentSpeed);
       if (exitNow) {
         return;
       }
     }
   }
 
-  performAltitudeCycleStep(speedM: number, altitude: number, altIndex: number, climbProfile: ClimbProfile): boolean {
+  performAltitudeCycleStep(speedM: number, altitude: number, altIndex: number, climbProfile: ClimbProfile): [boolean, AltitudeRun?] {
     const airConditions = this.airConditionsPerAlt[altitude];
     if (airConditions === undefined) {
       throw new Error(`No air conditions added for altitude ${altitude}`);
@@ -157,7 +167,7 @@ export default class DisserApp implements DisserAppAPI {
     }
 
     if (altIndex > 1) {
-      return true;
+      return [true];
     }
 
     let finderGrid: Grid|null = new Grid(convertAirConditionsToWalkableMatrix(airConditions));
@@ -173,12 +183,32 @@ export default class DisserApp implements DisserAppAPI {
         speedV: 0, // TODO: не передавать
       }
     );
-    const path = finder.findPath(
+    const {path, summary } = finder.findPathWithSummary(
       entryPoint.x, entryPoint.y,
       exitPoint.x, exitPoint.y,
       finderGrid,
     );
     const finderArray = finderGrid.toString();
+    const altitudeRun: AltitudeRun = [
+      altitude,
+      {
+        ascent: {
+          distanceInMiles: ascentSpecifications.distanceInMiles,
+          fuelBurnInKgs: ascentSpecifications.fuelBurnInKgs,
+          timeInHours: ascentSpecifications.timeInSeconds / 3600,
+        },
+        descent: {
+          distanceInMiles: descentSpecifications.distanceInMiles,
+          fuelBurnInKgs: descentSpecifications.fuelBurnInKgs,
+          timeInHours: descentSpecifications.timeInSeconds / 3600,
+        },
+        cruise: {
+          distanceInMiles: summary.totalDistance,
+          fuelBurnInKgs: summary.totalFuelBurn,
+          timeInHours: summary.totalTime,
+        }
+      }
+    ];
 
     finderGrid = null;
     finder = null;
@@ -186,7 +216,7 @@ export default class DisserApp implements DisserAppAPI {
     // TODO: temp for debugging
     this.sendResults(path, finderArray);
 
-    return false;
+    return [false, altitudeRun];
   }
 
   sendResults(path: ReturnType<CruisePathFinder['findPath']>, finderArray: ReturnType<Grid['toString']>) {

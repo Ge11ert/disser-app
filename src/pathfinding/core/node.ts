@@ -10,6 +10,13 @@ export default class GridNode {
   opened: boolean = false;
   closed: boolean = false;
 
+  /// ПЛОХО!
+
+  distanceFromNeighbourInMiles: number = 0;
+  fuelBurnFromNeighbourInKgs: number = 0;
+  timeFromNeighbourInHours: number = 0;
+  flightCostFromNeighbour: number = 0; // CI = 0
+
   private defaultSize = { x: 1, y: 1};
 
   constructor(
