@@ -106,24 +106,57 @@ export default class DisserApp implements DisserAppAPI {
 
   performSpeedCycleStep(speedValue: number) {
     const operatingAlt = this.possibleAltitudeList.filter(alt => (alt >= this.geo.startAltInFeet));
+    const climbProfileForCurrentSpeed = getClimbProfileRowsBySpeed(speedValue);
 
     for (let i = 0; i < operatingAlt.length; i++) {
       const alt = operatingAlt[i];
-      const exitNow = this.performAltitudeCycleStep(speedValue, alt, i);
+      const exitNow = this.performAltitudeCycleStep(speedValue, alt, i, climbProfileForCurrentSpeed);
       if (exitNow) {
         return;
       }
     }
   }
 
-  performAltitudeCycleStep(speedM: number, altitude: number, altIndex: number): boolean {
+  performAltitudeCycleStep(speedM: number, altitude: number, altIndex: number, climbProfile: ClimbProfile): boolean {
     const airConditions = this.airConditionsPerAlt[altitude];
     if (airConditions === undefined) {
       throw new Error(`No air conditions added for altitude ${altitude}`);
     }
 
+    let entryPoint = this.initialEntryPoint;
+    let exitPoint = this.initialExitPoint;
+
+    let ascentSpecifications = {
+      distanceInMiles: 0,
+      timeInSeconds: 0,
+      fuelBurnInKgs: 0,
+    };
+    let descentSpecifications = {
+      distanceInMiles: 0,
+      timeInSeconds: 0,
+      fuelBurnInKgs: 0,
+    };
+
+    let climbOffsetXInMiles = 0;
+    let climbOffsetYInMiles = 0;
+    let climbOffsetXInCells = 0;
+    let climbOffsetYInCells = 0;
+
     if (altIndex > 0) {
-      // TODO: возвращать true, если altIndex > 0 (набор) И altIndex-1 имеет запретный участок на дистанции набора
+      // // TODO: возвращать true, если altIndex > 0 (набор) И altIndex-1 имеет запретный участок на дистанции набора
+      ascentSpecifications = extractAscentSpecifications(speedM, altitude, airConditions, climbProfile, entryPoint);
+      climbOffsetXInMiles = Math.cos(this.geo.pathAngle) * ascentSpecifications.distanceInMiles;
+      climbOffsetYInMiles = Math.sin(this.geo.pathAngle) * ascentSpecifications.distanceInMiles;
+      climbOffsetXInCells = Math.ceil(climbOffsetXInMiles / cell.H_SIZE);
+      climbOffsetYInCells = Math.ceil(climbOffsetYInMiles / cell.V_SIZE);
+
+      entryPoint = {
+        x: this.initialEntryPoint.x + climbOffsetXInCells,
+        y: this.initialEntryPoint.y + climbOffsetYInCells,
+      };
+    }
+
+    if (altIndex > 1) {
       return true;
     }
 
@@ -141,8 +174,8 @@ export default class DisserApp implements DisserAppAPI {
       }
     );
     const path = finder.findPath(
-      this.initialEntryPoint.x, this.initialEntryPoint.y,
-      this.initialExitPoint.x, this.initialExitPoint.y,
+      entryPoint.x, entryPoint.y,
+      exitPoint.x, exitPoint.y,
       finderGrid,
     );
     const finderArray = finderGrid.toString();
@@ -209,4 +242,31 @@ function createMinMaxList(min: number, max: number, increment: number) {
   }
 
   return list;
+}
+
+function extractAscentSpecifications(
+  speedM: number,
+  altitude: number,
+  airConditions: AirConditions,
+  climbProfileForCurrentSpeed: ClimbProfile,
+  currentPoint: { x: number, y: number },
+): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number} {
+  // TODO: сейчас не учитывается ветер
+  const windAtPoint = airConditions[currentPoint.y][currentPoint.x] as number;
+
+  const climbRowForAltitude = climbProfileForCurrentSpeed.find(row => (row.altitude === altitude));
+
+  if (!climbRowForAltitude) {
+    throw new Error(`No climb profile for Mach ${speedM} and altitude ${altitude}`);
+  }
+
+  return {
+    distanceInMiles: climbRowForAltitude.distanceFromPrev,
+    timeInSeconds: climbRowForAltitude.time,
+    fuelBurnInKgs: climbRowForAltitude.fuelFromPrev,
+  };
+}
+
+function getClimbProfileRowsBySpeed(speedM: number): ClimbProfile {
+  return climbProfile.filter(row => (row.speedM === speedM));
 }
