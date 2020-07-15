@@ -9,7 +9,8 @@ import type {
   AirConditions,
   CruiseProfile,
   ClimbProfile,
-  AltitudeRun,
+  SingleAltitudeRun,
+  SingleSpeedRun,
   SpeedRun,
   TotalRun,
 } from './types/interfaces';
@@ -38,6 +39,9 @@ export default class DisserApp implements DisserAppAPI {
   private airConditionsGridSize = { width: 0, height: 0 };
   private initialEntryPoint = { x: 0, y: 0};
   private initialExitPoint = { x: 0, y: 0};
+  private lastUsedEntryPoint = { x: 0, y: 0};
+  private lastUsedExitPoint = { x: 0, y: 0};
+  private usedPathAngle = 0;
   private readonly possibleAltitudeList: number[] = [];
   private readonly possibleMachList: number[] = [];
 
@@ -108,33 +112,45 @@ export default class DisserApp implements DisserAppAPI {
       throw new Error('No air conditions loaded at all, please provide one');
     }
 
+    const speedRun: SpeedRun = new Map();
+
     // TODO: loop through all speeds
     [this.possibleMachList[3]].forEach(speedM => {
-      this.performSpeedCycleStep(speedM);
+      const speedRunSummary = this.performSpeedCycleStep(speedM);
+      speedRun.set(speedM, speedRunSummary);
     });
   }
 
-  performSpeedCycleStep(speedValue: number) {
+  performSpeedCycleStep(speedValue: number): SingleSpeedRun {
     const operatingAlt = this.possibleAltitudeList.filter(alt => (alt >= this.geo.startAltInFeet));
     const climbProfileForCurrentSpeed = getClimbProfileRowsBySpeed(speedValue);
+    this.lastUsedEntryPoint = {...this.initialEntryPoint};
+    this.lastUsedExitPoint = {...this.initialExitPoint};
+
+    const singleSpeedRun: SingleSpeedRun = new Map<number, SingleAltitudeRun>();
 
     for (let i = 0; i < operatingAlt.length; i++) {
       const alt = operatingAlt[i];
       const [exitNow, altitudeRunSummary] = this.performAltitudeCycleStep(speedValue, alt, i, climbProfileForCurrentSpeed);
+      if (altitudeRunSummary) {
+        singleSpeedRun.set(alt, altitudeRunSummary);
+      }
       if (exitNow) {
-        return;
+        return singleSpeedRun;
       }
     }
+
+    return singleSpeedRun;
   }
 
-  performAltitudeCycleStep(speedM: number, altitude: number, altIndex: number, climbProfile: ClimbProfile): [boolean, AltitudeRun?] {
+  performAltitudeCycleStep(speedM: number, altitude: number, altIndex: number, climbProfile: ClimbProfile): [boolean, SingleAltitudeRun?] {
     const airConditions = this.airConditionsPerAlt[altitude];
     if (airConditions === undefined) {
       throw new Error(`No air conditions added for altitude ${altitude}`);
     }
 
-    let entryPoint = this.initialEntryPoint;
-    let exitPoint = this.initialExitPoint;
+    let entryPoint = this.lastUsedEntryPoint;
+    let exitPoint = this.lastUsedExitPoint;
 
     let ascentSpecifications = {
       distanceInMiles: 0,
@@ -152,22 +168,62 @@ export default class DisserApp implements DisserAppAPI {
     let climbOffsetXInCells = 0;
     let climbOffsetYInCells = 0;
 
+    let descentOffsetXInMiles = 0;
+    let descentOffsetYInMiles = 0;
+    let descentOffsetXInCells = 0;
+    let descentOffsetYInCells = 0;
+
+    // TODO: разрулить ситуацию, когда небольшой "пролёт" дальше ячейки записывается как пролёт двух ячеек
+    // пример: пролетел 3.7 → записали как пролёт 3.5 + 3.5 = 7
+
     if (altIndex > 0) {
       // // TODO: возвращать true, если altIndex > 0 (набор) И altIndex-1 имеет запретный участок на дистанции набора
       ascentSpecifications = extractAscentSpecifications(speedM, altitude, airConditions, climbProfile, entryPoint);
-      climbOffsetXInMiles = Math.cos(this.geo.pathAngle) * ascentSpecifications.distanceInMiles;
-      climbOffsetYInMiles = Math.sin(this.geo.pathAngle) * ascentSpecifications.distanceInMiles;
+      climbOffsetXInMiles = Math.cos(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
+      climbOffsetYInMiles = Math.sin(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
       climbOffsetXInCells = Math.ceil(climbOffsetXInMiles / cell.H_SIZE);
       climbOffsetYInCells = Math.ceil(climbOffsetYInMiles / cell.V_SIZE);
 
       entryPoint = {
-        x: this.initialEntryPoint.x + climbOffsetXInCells,
-        y: this.initialEntryPoint.y + climbOffsetYInCells,
+        x: this.lastUsedEntryPoint.x + climbOffsetXInCells,
+        y: this.lastUsedEntryPoint.y + climbOffsetYInCells,
+      };
+
+      // TODO: получать значения из файла, когда будет файл
+      descentSpecifications = extractDescentSpecifications();
+      descentOffsetXInMiles = Math.cos(this.usedPathAngle) * descentSpecifications.distanceInMiles;
+      descentOffsetYInMiles = Math.sin(this.usedPathAngle) * descentSpecifications.distanceInMiles;
+      descentOffsetXInCells = Math.ceil(descentOffsetXInMiles / cell.H_SIZE);
+      descentOffsetYInCells = Math.ceil(descentOffsetYInMiles / cell.V_SIZE);
+
+      exitPoint = {
+        x: this.lastUsedExitPoint.x - descentOffsetXInCells,
+        y: this.lastUsedExitPoint.y - descentOffsetYInCells,
       };
     }
 
-    if (altIndex > 1) {
-      return [true];
+    if (entryPoint.x >= exitPoint.x || entryPoint.y >= exitPoint.y) {
+      // TODO: так долго взлетали, что попали сразу на выход, и на крейсере лететь некуда
+      return [
+        true,
+        {
+          ascent: {
+            distanceInMiles: ascentSpecifications.distanceInMiles,
+            fuelBurnInKgs: ascentSpecifications.fuelBurnInKgs,
+            timeInHours: ascentSpecifications.timeInSeconds / 3600,
+          },
+          descent: {
+            distanceInMiles: descentSpecifications.distanceInMiles,
+            fuelBurnInKgs: descentSpecifications.fuelBurnInKgs,
+            timeInHours: descentSpecifications.timeInSeconds / 3600,
+          },
+          cruise: {
+            distanceInMiles: 0,
+            fuelBurnInKgs: 0,
+            timeInHours: 0,
+          }
+        },
+      ]
     }
 
     let finderGrid: Grid|null = new Grid(convertAirConditionsToWalkableMatrix(airConditions));
@@ -183,33 +239,32 @@ export default class DisserApp implements DisserAppAPI {
         speedV: 0, // TODO: не передавать
       }
     );
-    const {path, summary } = finder.findPathWithSummary(
+    const { path, summary } = finder.findPathWithSummary(
       entryPoint.x, entryPoint.y,
       exitPoint.x, exitPoint.y,
       finderGrid,
     );
     const finderArray = finderGrid.toString();
-    const altitudeRun: AltitudeRun = [
-      altitude,
-      {
-        ascent: {
-          distanceInMiles: ascentSpecifications.distanceInMiles,
-          fuelBurnInKgs: ascentSpecifications.fuelBurnInKgs,
-          timeInHours: ascentSpecifications.timeInSeconds / 3600,
-        },
-        descent: {
-          distanceInMiles: descentSpecifications.distanceInMiles,
-          fuelBurnInKgs: descentSpecifications.fuelBurnInKgs,
-          timeInHours: descentSpecifications.timeInSeconds / 3600,
-        },
-        cruise: {
-          distanceInMiles: summary.totalDistance,
-          fuelBurnInKgs: summary.totalFuelBurn,
-          timeInHours: summary.totalTime,
-        }
+    const altitudeRun: SingleAltitudeRun = {
+      ascent: {
+        distanceInMiles: ascentSpecifications.distanceInMiles,
+        fuelBurnInKgs: ascentSpecifications.fuelBurnInKgs,
+        timeInHours: ascentSpecifications.timeInSeconds / 3600,
+      },
+      descent: {
+        distanceInMiles: descentSpecifications.distanceInMiles,
+        fuelBurnInKgs: descentSpecifications.fuelBurnInKgs,
+        timeInHours: descentSpecifications.timeInSeconds / 3600,
+      },
+      cruise: {
+        distanceInMiles: summary.totalDistance,
+        fuelBurnInKgs: summary.totalFuelBurn,
+        timeInHours: summary.totalTime,
       }
-    ];
+    };
 
+    this.lastUsedEntryPoint = entryPoint;
+    this.lastUsedExitPoint = exitPoint;
     finderGrid = null;
     finder = null;
 
@@ -250,6 +305,14 @@ export default class DisserApp implements DisserAppAPI {
     const exitY = Math.max(Math.min(possibleExitY, (this.airConditionsGridSize.height - 1)), 0);
 
     this.initialExitPoint = { x: exitX, y: exitY };
+
+    const xDistance = Math.abs(this.initialExitPoint.x - this.initialEntryPoint.x);
+    const yDistance = Math.abs(this.initialExitPoint.y - this.initialEntryPoint.y);
+    const diagonal = Math.hypot(xDistance, yDistance);
+
+    // TODO: этот расчёт путевого угла нужен из-за того, что тестовый airConditions меньше области по gps-координатам
+    const pathAngle = Math.acos(xDistance / diagonal);
+    this.usedPathAngle = pathAngle;
   }
 };
 
@@ -280,7 +343,7 @@ function extractAscentSpecifications(
   airConditions: AirConditions,
   climbProfileForCurrentSpeed: ClimbProfile,
   currentPoint: { x: number, y: number },
-): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number} {
+): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
   // TODO: сейчас не учитывается ветер
   const windAtPoint = airConditions[currentPoint.y][currentPoint.x] as number;
 
@@ -294,6 +357,14 @@ function extractAscentSpecifications(
     distanceInMiles: climbRowForAltitude.distanceFromPrev,
     timeInSeconds: climbRowForAltitude.time,
     fuelBurnInKgs: climbRowForAltitude.fuelFromPrev,
+  };
+}
+
+function extractDescentSpecifications(): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
+  return {
+    distanceInMiles: 0,
+    timeInSeconds: 0,
+    fuelBurnInKgs: 0,
   };
 }
 
