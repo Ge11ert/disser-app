@@ -17,7 +17,7 @@ export type CruiseProfile = {
   speedV: number,
 }[];
 
-export type ClimbProfile = {
+export type ClimbDescentProfile = {
   speedM: number,
   speedOfSound: number,
   altitude: number,

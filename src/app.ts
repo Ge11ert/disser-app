@@ -8,7 +8,7 @@ import type {
   DisserAppAPI,
   AirConditions,
   CruiseProfile,
-  ClimbProfile,
+  ClimbDescentProfile,
   SingleAltitudeRun,
   SingleSpeedRun,
   SpeedRun,
@@ -16,7 +16,7 @@ import type {
 } from './types/interfaces';
 
 const cruiseProfile: CruiseProfile = require('./assets/cruise_profile.json');
-const climbProfile: ClimbProfile = require('./assets/climb_profile.json');
+const climbProfile: ClimbDescentProfile = require('./assets/climb_profile.json');
 
 interface DisserAppSettings {
   electron: Record<string, any>;
@@ -143,7 +143,7 @@ export default class DisserApp implements DisserAppAPI {
     return singleSpeedRun;
   }
 
-  performAltitudeCycleStep(speedM: number, altitude: number, altIndex: number, climbProfile: ClimbProfile): [boolean, SingleAltitudeRun?] {
+  performAltitudeCycleStep(speedM: number, altitude: number, altIndex: number, climbProfile: ClimbDescentProfile): [boolean, SingleAltitudeRun?] {
     const airConditions = this.airConditionsPerAlt[altitude];
     if (airConditions === undefined) {
       throw new Error(`No air conditions added for altitude ${altitude}`);
@@ -341,7 +341,7 @@ function extractAscentSpecifications(
   speedM: number,
   altitude: number,
   airConditions: AirConditions,
-  climbProfileForCurrentSpeed: ClimbProfile,
+  climbProfileForCurrentSpeed: ClimbDescentProfile,
   currentPoint: { x: number, y: number },
 ): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
   // TODO: сейчас не учитывается ветер
@@ -368,6 +368,6 @@ function extractDescentSpecifications(): { distanceInMiles: number, timeInSecond
   };
 }
 
-function getClimbProfileRowsBySpeed(speedM: number): ClimbProfile {
+function getClimbProfileRowsBySpeed(speedM: number): ClimbDescentProfile {
   return climbProfile.filter(row => (row.speedM === speedM));
 }
