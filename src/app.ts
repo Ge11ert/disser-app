@@ -135,12 +135,19 @@ export default class DisserApp implements DisserAppAPI {
     const singleSpeedRun: SingleSpeedRun = new Map<number, SingleAltitudeRun>();
 
     for (let i = 0; i < operatingAlt.length; i++) {
-      const alt = operatingAlt[i];
-      const [exitNow, altitudeRunSummary] = this.performAltitudeCycleStep(speedValue, alt, i, climbProfileForCurrentSpeed, descentProfileForCurrentSpeed);
+      const currentAlt = operatingAlt[i];
+      const prevAlt = i > 0 ? operatingAlt[i - 1] : null;
+      const [canContinue, altitudeRunSummary] = this.performAltitudeCycleStep(
+        speedValue,
+        currentAlt,
+        prevAlt,
+        climbProfileForCurrentSpeed,
+        descentProfileForCurrentSpeed,
+      );
       if (altitudeRunSummary) {
-        singleSpeedRun.set(alt, altitudeRunSummary);
+        singleSpeedRun.set(currentAlt, altitudeRunSummary);
       }
-      if (exitNow) {
+      if (!canContinue) {
         return singleSpeedRun;
       }
     }
@@ -151,7 +158,7 @@ export default class DisserApp implements DisserAppAPI {
   performAltitudeCycleStep(
     speedM: number,
     altitude: number,
-    altIndex: number,
+    prevAltitude: number|null,
     climbProfile: ClimbDescentProfile,
     descentProfile: ClimbDescentProfile,
   ): [boolean, SingleAltitudeRun?] {
@@ -184,7 +191,7 @@ export default class DisserApp implements DisserAppAPI {
     let descentOffsetXInCells = 0;
     let descentOffsetYInCells = 0;
 
-    if (altIndex > 0) {
+    if (prevAltitude !== null) {
       // // TODO: возвращать true, если altIndex > 0 (набор) И altIndex-1 имеет запретный участок на дистанции набора
       ascentSpecifications = extractAscentSpecifications(speedM, altitude, airConditions, climbProfile, entryPoint);
       climbOffsetXInMiles = Math.cos(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
@@ -192,15 +199,27 @@ export default class DisserApp implements DisserAppAPI {
       climbOffsetXInCells = fromMilesToGridUnits(climbOffsetXInMiles, cell.H_SIZE, 0.52);
       climbOffsetYInCells = fromMilesToGridUnits(climbOffsetYInMiles, cell.V_SIZE, 0.52);
 
-      entryPoint = {
+      const nextEntryPoint = {
         x: this.lastUsedEntryPoint.x + climbOffsetXInCells,
         y: this.lastUsedEntryPoint.y + climbOffsetYInCells,
       };
 
+      const forbiddenAreasDuringClimb = checkPrevAltitudeForbiddenAreas(
+        entryPoint,
+        nextEntryPoint,
+        this.airConditionsPerAlt[prevAltitude],
+      );
+
+      if (forbiddenAreasDuringClimb) {
+        return [false];
+      }
+
+      entryPoint = nextEntryPoint;
+
       // TODO: возвращать true, если altIndex > 0 (снижение) И altIndex-1 имеет запретный участок на дистанции снижения
       descentSpecifications = extractDescentSpecifications(
         speedM,
-        altitude - this.settings.environment.altitudeIncrement,
+        prevAltitude,
         airConditions,
         descentProfile,
         exitPoint,
@@ -210,16 +229,28 @@ export default class DisserApp implements DisserAppAPI {
       descentOffsetXInCells = fromMilesToGridUnits(descentOffsetXInMiles, cell.H_SIZE, 0.52);
       descentOffsetYInCells = fromMilesToGridUnits(descentOffsetYInMiles, cell.V_SIZE, 0.52);
 
-      exitPoint = {
+      const nextExitPoint = {
         x: this.lastUsedExitPoint.x - descentOffsetXInCells,
         y: this.lastUsedExitPoint.y - descentOffsetYInCells,
       };
+
+      const forbiddenAreasDuringDescent = checkPrevAltitudeForbiddenAreas(
+        nextExitPoint,
+        exitPoint,
+        this.airConditionsPerAlt[prevAltitude],
+      );
+
+      if (forbiddenAreasDuringDescent) {
+        return [false];
+      }
+
+      exitPoint = nextExitPoint;
     }
 
     if (entryPoint.x >= exitPoint.x || entryPoint.y >= exitPoint.y) {
-      // TODO: так долго взлетали, что попали сразу на выход, и на крейсере лететь некуда
+      // так долго взлетали, что попали сразу на выход, и на крейсере лететь некуда
       return [
-        true,
+        false,
         {
           ascent: {
             distanceInMiles: ascentSpecifications.distanceInMiles,
@@ -287,7 +318,7 @@ export default class DisserApp implements DisserAppAPI {
     // TODO: temp for debugging
     this.sendResults(path, finderArray);
 
-    return [false, altitudeRun];
+    return [true, altitudeRun];
   }
 
   sendResults(path: ReturnType<CruisePathFinder['findPath']>, finderArray: ReturnType<Grid['toString']>) {
@@ -384,7 +415,7 @@ function extractDescentSpecifications(
   currentPoint: { x: number, y: number },
 ): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
   // TODO: сейчас не учитывается ветер
-  // TODO: при снижении с 36000 на 34000, брать ветер от 36000
+  // TODO: при снижении с 36000 на 34000, брать ветер от 36000 ?
   const windAtPoint = airConditions[currentPoint.y][currentPoint.x] as number;
 
   const descentRowForAltitude = descentProfileForCurrentSpeed.find(row => (row.altitude === altitude));
@@ -406,4 +437,24 @@ function getClimbProfileRowsBySpeed(speedM: number): ClimbDescentProfile {
 
 function getDescentProfileRowsBySpeed(speedM: number): ClimbDescentProfile {
   return descentProfileJSON.filter(row => (row.speedM === speedM));
+}
+
+function checkPrevAltitudeForbiddenAreas(
+  startPoint: { x: number, y: number },
+  endPoint: { x: number, y: number },
+  currentAirConditions: AirConditions,
+): boolean {
+  let hasForbiddenCell = false;
+
+  for (let y = startPoint.y; y < endPoint.y; y++) {
+    for (let x = startPoint.x; x < endPoint.x; x++) {
+      const conditionAtPoint = currentAirConditions[y][x];
+      if (typeof conditionAtPoint === 'string' && conditionAtPoint.toLowerCase() === 'x') {
+        hasForbiddenCell = true;
+        return true;
+      }
+    }
+  }
+
+  return false;
 }
