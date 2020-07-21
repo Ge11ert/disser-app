@@ -192,7 +192,6 @@ export default class DisserApp implements DisserAppAPI {
     let descentOffsetYInCells = 0;
 
     if (prevAltitude !== null) {
-      // // TODO: возвращать true, если altIndex > 0 (набор) И altIndex-1 имеет запретный участок на дистанции набора
       ascentSpecifications = extractAscentSpecifications(speedM, altitude, airConditions, climbProfile, entryPoint);
       climbOffsetXInMiles = Math.cos(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
       climbOffsetYInMiles = Math.sin(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
@@ -216,11 +215,10 @@ export default class DisserApp implements DisserAppAPI {
 
       entryPoint = nextEntryPoint;
 
-      // TODO: возвращать true, если altIndex > 0 (снижение) И altIndex-1 имеет запретный участок на дистанции снижения
       descentSpecifications = extractDescentSpecifications(
         speedM,
         prevAltitude,
-        airConditions,
+        this.airConditionsPerAlt[prevAltitude],
         descentProfile,
         exitPoint,
       );
@@ -237,7 +235,7 @@ export default class DisserApp implements DisserAppAPI {
       const forbiddenAreasDuringDescent = checkPrevAltitudeForbiddenAreas(
         nextExitPoint,
         exitPoint,
-        this.airConditionsPerAlt[prevAltitude],
+        this.airConditionsPerAlt[altitude],
       );
 
       if (forbiddenAreasDuringDescent) {
@@ -391,7 +389,6 @@ function extractAscentSpecifications(
   climbProfileForCurrentSpeed: ClimbDescentProfile,
   currentPoint: { x: number, y: number },
 ): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
-  // TODO: сейчас не учитывается ветер
   const windAtPoint = airConditions[currentPoint.y][currentPoint.x] as number;
 
   const climbRowForAltitude = climbProfileForCurrentSpeed.find(row => (row.altitude === altitude));
@@ -400,10 +397,24 @@ function extractAscentSpecifications(
     throw new Error(`No climb profile for Mach ${speedM} and altitude ${altitude}`);
   }
 
+  const speedV = climbRowForAltitude.speedV;
+  const groundSpeed = speedV + windAtPoint;
+  const speedOfSound = climbRowForAltitude.speedOfSound;
+  const gsMach = groundSpeed / speedOfSound;
+  const recalculatedMach = Number(gsMach.toPrecision(2));
+
+  const climbProfileForRecalculatedMach = getClimbProfileRowsBySpeed(recalculatedMach);
+  const finalClimbRow = climbProfileForRecalculatedMach.find(row => (row.altitude === altitude));
+
+  if (!finalClimbRow) {
+    // TODO: что если с учётом ветра М будет больше MAX_M или меньше MIN_M ?
+    throw new Error(`No climb profile for Mach ${recalculatedMach} and altitude ${altitude}`);
+  }
+
   return {
-    distanceInMiles: climbRowForAltitude.distanceFromPrev,
-    timeInSeconds: climbRowForAltitude.time,
-    fuelBurnInKgs: climbRowForAltitude.fuelFromPrev,
+    distanceInMiles: finalClimbRow.distanceFromPrev,
+    timeInSeconds: finalClimbRow.time,
+    fuelBurnInKgs: finalClimbRow.fuelFromPrev,
   };
 }
 
@@ -414,8 +425,6 @@ function extractDescentSpecifications(
   descentProfileForCurrentSpeed: ClimbDescentProfile,
   currentPoint: { x: number, y: number },
 ): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
-  // TODO: сейчас не учитывается ветер
-  // TODO: при снижении с 36000 на 34000, брать ветер от 36000 ?
   const windAtPoint = airConditions[currentPoint.y][currentPoint.x] as number;
 
   const descentRowForAltitude = descentProfileForCurrentSpeed.find(row => (row.altitude === altitude));
@@ -424,10 +433,24 @@ function extractDescentSpecifications(
     throw new Error(`No descent profile for Mach ${speedM} and altitude ${altitude}`);
   }
 
+  const speedV = descentRowForAltitude.speedV;
+  const groundSpeed = speedV + windAtPoint;
+  const speedOfSound = descentRowForAltitude.speedOfSound;
+  const gsMach = groundSpeed / speedOfSound;
+  const recalculatedMach = Number(gsMach.toPrecision(2));
+
+  const descentProfileForRecalculatedMach = getDescentProfileRowsBySpeed(recalculatedMach);
+  const finalDescentRow = descentProfileForRecalculatedMach.find(row => (row.altitude === altitude));
+
+  if (!finalDescentRow) {
+    // TODO: что если с учётом ветра М будет больше MAX_M или меньше MIN_M ?
+    throw new Error(`No descent profile for Mach ${recalculatedMach} and altitude ${altitude}`);
+  }
+
   return {
-    distanceInMiles: descentRowForAltitude.distanceFromPrev,
-    timeInSeconds: descentRowForAltitude.time,
-    fuelBurnInKgs: descentRowForAltitude.fuelFromPrev,
+    distanceInMiles: finalDescentRow.distanceFromPrev,
+    timeInSeconds: finalDescentRow.time,
+    fuelBurnInKgs: finalDescentRow.fuelFromPrev,
   };
 }
 
