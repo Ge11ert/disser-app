@@ -2,12 +2,12 @@ import type {
   Reader,
   FlightProfile,
   CruiseProfile,
-  ClimbProfile,
+  ClimbDescentProfile,
   FlightProfileDataRow,
 } from '../../types/interfaces';
 
 type TypeName = 'cruise' | 'climb';
-type ProfileType<T> = T extends 'climb' ? ClimbProfile : CruiseProfile;
+type ProfileType<T> = T extends 'climb' ? ClimbDescentProfile : CruiseProfile;
 
 const cruiseProfileNames: Record<number, string> = {
   0: 'speedM',

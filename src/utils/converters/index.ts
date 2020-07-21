@@ -29,3 +29,11 @@ export function fromFeetToMeters(valueInFeet: number): number {
 export function fromMetersToFeet(valueInMeters: number): number {
   return valueInMeters * 3.28084;
 }
+
+export function fromMilesToGridUnits(valueInMiles: number, cellSize: number, breakpoint: number): number {
+  const rawValue = valueInMiles / cellSize;
+  const integerPart = Math.trunc(rawValue);
+  const fractionPart = rawValue - integerPart;
+
+  return fractionPart > breakpoint ? (integerPart + 1) : integerPart;
+}

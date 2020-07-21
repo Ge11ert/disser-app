@@ -17,7 +17,7 @@ export type CruiseProfile = {
   speedV: number,
 }[];
 
-export type ClimbProfile = {
+export type ClimbDescentProfile = {
   speedM: number,
   speedOfSound: number,
   altitude: number,
@@ -59,6 +59,9 @@ export interface DisserAppAPI {
 }
 
 type RunInfo = { distanceInMiles: number, fuelBurnInKgs: number, timeInHours: number };
-export type AltitudeRun = [number, { ascent: RunInfo, cruise: RunInfo, descent: RunInfo }];
-export type SpeedRun = Map<number, AltitudeRun[]>;
+type PathInfo = { path: number[][] };
+type RunInfoWithPath = RunInfo & PathInfo;
+export type SingleAltitudeRun = { ascent: RunInfo, cruise: RunInfoWithPath, descent: RunInfo };
+export type SingleSpeedRun = Map<number, SingleAltitudeRun>; // данные по всем высотам для указанной скорости
+export type SpeedRun = Map<number, SingleSpeedRun>; // набор по всем скоростям
 export type TotalRun = SpeedRun[];

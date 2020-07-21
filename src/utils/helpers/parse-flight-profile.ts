@@ -7,6 +7,7 @@ const sourceDir = path.resolve(__dirname, '../../assets');
 const targetDir = sourceDir;
 const filesToParse: {name: string, type: 'climb'|'cruise'}[] = [
   { name: 'climb_profile.xlsx', type: 'climb' },
+  { name: 'descent_profile.xlsx', type: 'climb' },
   { name: 'cruise_profile.xlsx', type: 'cruise' },
 ];
 

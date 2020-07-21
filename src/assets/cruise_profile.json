@@ -1,507 +1,1011 @@
 [
   {
-    "speedM": 0.5,
-    "speedOfSound": 621,
-    "altitude": 17000,
-    "fuel": 1446.916,
-    "speedV": 310.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 619,
-    "altitude": 18000,
-    "fuel": 1403.229,
-    "speedV": 309.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 616,
-    "altitude": 19000,
-    "fuel": 1362.196,
-    "speedV": 308
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 614,
-    "altitude": 20000,
-    "fuel": 1325.619,
-    "speedV": 307
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 611,
-    "altitude": 21000,
-    "fuel": 1295.412,
-    "speedV": 305.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 609,
-    "altitude": 22000,
-    "fuel": 1268.12,
-    "speedV": 304.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 607,
-    "altitude": 23000,
-    "fuel": 1243.464,
-    "speedV": 303.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 604,
-    "altitude": 24000,
-    "fuel": 1221.021,
-    "speedV": 302
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 602,
-    "altitude": 25000,
-    "fuel": 1200.738,
-    "speedV": 301
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 599,
-    "altitude": 26000,
-    "fuel": 1182.656,
-    "speedV": 299.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 597,
-    "altitude": 27000,
-    "fuel": 1166.12,
-    "speedV": 298.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 594,
-    "altitude": 28000,
-    "fuel": 1152.49,
-    "speedV": 297
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 591,
-    "altitude": 29000,
-    "fuel": 1142.961,
-    "speedV": 295.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 589,
-    "altitude": 30000,
-    "fuel": 1135.772,
-    "speedV": 294.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 586,
-    "altitude": 31000,
-    "fuel": 1130.372,
-    "speedV": 293
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 584,
-    "altitude": 32000,
-    "fuel": 1129.113,
-    "speedV": 292
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 581,
-    "altitude": 33000,
-    "fuel": 1130.65,
-    "speedV": 290.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 579,
-    "altitude": 34000,
-    "fuel": 1136.113,
-    "speedV": 289.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 576,
-    "altitude": 35000,
-    "fuel": 1147.528,
-    "speedV": 288
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 573,
-    "altitude": 36000,
-    "fuel": 1165.938,
-    "speedV": 286.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 573,
-    "altitude": 37000,
-    "fuel": 1186.446,
-    "speedV": 286.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 573,
-    "altitude": 38000,
-    "fuel": 1211.189,
-    "speedV": 286.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 573,
-    "altitude": 39000,
-    "fuel": 0,
-    "speedV": 286.5
-  },
-  {
-    "speedM": 0.5,
-    "speedOfSound": 573,
-    "altitude": 40000,
-    "fuel": 0,
-    "speedV": 286.5
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 621,
-    "altitude": 17000,
-    "fuel": 1986.329,
-    "speedV": 385.02
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 619,
-    "altitude": 18000,
-    "fuel": 1914.223,
-    "speedV": 383.78
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 616,
-    "altitude": 19000,
-    "fuel": 1846.65,
-    "speedV": 381.92
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 614,
-    "altitude": 20000,
-    "fuel": 1783.76,
-    "speedV": 380.68
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 611,
-    "altitude": 21000,
-    "fuel": 1724.826,
-    "speedV": 378.82
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 609,
-    "altitude": 22000,
-    "fuel": 1666.952,
-    "speedV": 377.58
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 607,
-    "altitude": 23000,
-    "fuel": 1610.193,
-    "speedV": 376.34
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 604,
-    "altitude": 24000,
-    "fuel": 1554.954,
-    "speedV": 374.48
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 602,
-    "altitude": 25000,
-    "fuel": 1502.684,
-    "speedV": 373.24
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 599,
-    "altitude": 26000,
-    "fuel": 1453.886,
-    "speedV": 371.38
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 597,
-    "altitude": 27000,
-    "fuel": 1407.642,
-    "speedV": 370.14
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 594,
-    "altitude": 28000,
-    "fuel": 1364.853,
-    "speedV": 368.28
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 591,
-    "altitude": 29000,
-    "fuel": 1326.415,
-    "speedV": 366.42
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 589,
-    "altitude": 30000,
-    "fuel": 1294.77,
-    "speedV": 365.18
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 586,
-    "altitude": 31000,
-    "fuel": 1268.573,
-    "speedV": 363.32
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 584,
-    "altitude": 32000,
-    "fuel": 1242.964,
-    "speedV": 362.08
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 581,
-    "altitude": 33000,
-    "fuel": 1218.409,
-    "speedV": 360.22
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 579,
-    "altitude": 34000,
-    "fuel": 1195.896,
-    "speedV": 358.98
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 576,
-    "altitude": 35000,
-    "fuel": 1178.081,
-    "speedV": 357.12
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 573,
-    "altitude": 36000,
-    "fuel": 1164.523,
-    "speedV": 355.26
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 573,
-    "altitude": 37000,
-    "fuel": 1154.766,
-    "speedV": 355.26
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 573,
-    "altitude": 38000,
-    "fuel": 1149.43,
-    "speedV": 355.26
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 573,
-    "altitude": 39000,
-    "fuel": 1151.564,
-    "speedV": 355.26
-  },
-  {
-    "speedM": 0.62,
-    "speedOfSound": 573,
-    "altitude": 40000,
-    "fuel": 1158.216,
-    "speedV": 355.26
-  },
-  {
     "speedM": 0.68,
     "speedOfSound": 621,
     "altitude": 17000,
-    "fuel": 2310.764,
+    "fuel": 2388.48,
     "speedV": 422.28
   },
   {
     "speedM": 0.68,
     "speedOfSound": 619,
     "altitude": 18000,
-    "fuel": 2227.986,
+    "fuel": 2310.472,
     "speedV": 420.92
   },
   {
     "speedM": 0.68,
     "speedOfSound": 616,
     "altitude": 19000,
-    "fuel": 2147.02,
+    "fuel": 2234.392,
     "speedV": 418.88
   },
   {
     "speedM": 0.68,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuel": 2069.018,
+    "fuel": 2161.397,
     "speedV": 417.52
   },
   {
     "speedM": 0.68,
     "speedOfSound": 611,
     "altitude": 21000,
-    "fuel": 1995.266,
+    "fuel": 2092.949,
     "speedV": 415.48
   },
   {
     "speedM": 0.68,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuel": 1923.463,
+    "fuel": 2027.12,
     "speedV": 414.12
   },
   {
     "speedM": 0.68,
     "speedOfSound": 607,
     "altitude": 23000,
-    "fuel": 1853.669,
+    "fuel": 1964.37,
     "speedV": 412.76
   },
   {
     "speedM": 0.68,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuel": 1785.933,
+    "fuel": 1905.213,
     "speedV": 410.72
   },
   {
     "speedM": 0.68,
     "speedOfSound": 602,
     "altitude": 25000,
-    "fuel": 1721.447,
+    "fuel": 1851.79,
     "speedV": 409.36
   },
   {
     "speedM": 0.68,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuel": 1660.186,
+    "fuel": 1805.005,
     "speedV": 407.32
   },
   {
     "speedM": 0.68,
     "speedOfSound": 597,
     "altitude": 27000,
-    "fuel": 1600.173,
+    "fuel": 1762.625,
     "speedV": 405.96
   },
   {
     "speedM": 0.68,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuel": 1547.092,
+    "fuel": 1723.401,
     "speedV": 403.92
   },
   {
     "speedM": 0.68,
     "speedOfSound": 591,
     "altitude": 29000,
-    "fuel": 1496.04,
+    "fuel": 1685.293,
     "speedV": 401.88
   },
   {
     "speedM": 0.68,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuel": 1447.572,
+    "fuel": 1649.261,
     "speedV": 400.52
   },
   {
     "speedM": 0.68,
     "speedOfSound": 586,
     "altitude": 31000,
-    "fuel": 1404.084,
+    "fuel": 1617.267,
     "speedV": 398.48
   },
   {
     "speedM": 0.68,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuel": 1364.267,
+    "fuel": 1588.64,
     "speedV": 397.12
   },
   {
     "speedM": 0.68,
     "speedOfSound": 581,
     "altitude": 33000,
-    "fuel": 1328.427,
+    "fuel": 1563.734,
     "speedV": 395.08
   },
   {
     "speedM": 0.68,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuel": 1295.85,
+    "fuel": 1542.653,
     "speedV": 393.72
   },
   {
     "speedM": 0.68,
     "speedOfSound": 576,
     "altitude": 35000,
-    "fuel": 1269.112,
+    "fuel": 1531.812,
     "speedV": 391.68
   },
   {
     "speedM": 0.68,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuel": 1246.444,
+    "fuel": 1534.248,
     "speedV": 389.64
   },
   {
     "speedM": 0.68,
     "speedOfSound": 573,
     "altitude": 37000,
-    "fuel": 1226.416,
+    "fuel": 1543.371,
     "speedV": 389.64
   },
   {
     "speedM": 0.68,
     "speedOfSound": 573,
     "altitude": 38000,
-    "fuel": 1212.019,
+    "fuel": 1556.061,
     "speedV": 389.64
   },
   {
     "speedM": 0.68,
     "speedOfSound": 573,
     "altitude": 39000,
-    "fuel": 1200.97,
+    "fuel": 1592.496,
     "speedV": 389.64
   },
   {
     "speedM": 0.68,
     "speedOfSound": 573,
     "altitude": 40000,
-    "fuel": 1193.511,
+    "fuel": 1651.862,
     "speedV": 389.64
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 621,
+    "altitude": 17000,
+    "fuel": 2433.48,
+    "speedV": 428.49
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuel": 2355.472,
+    "speedV": 427.11
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 616,
+    "altitude": 19000,
+    "fuel": 2279.392,
+    "speedV": 425.04
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuel": 2216.52371875,
+    "speedV": 423.66
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 611,
+    "altitude": 21000,
+    "fuel": 2145.61296875,
+    "speedV": 421.59
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuel": 2077.34584375,
+    "speedV": 420.21
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 607,
+    "altitude": 23000,
+    "fuel": 2012.10584375,
+    "speedV": 418.83
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuel": 1950.32196875,
+    "speedV": 416.76
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 602,
+    "altitude": 25000,
+    "fuel": 1893.99559375,
+    "speedV": 415.38
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuel": 1843.92834375,
+    "speedV": 413.31
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 597,
+    "altitude": 27000,
+    "fuel": 1797.98215625,
+    "speedV": 411.93
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuel": 1755.5669375,
+    "speedV": 409.86
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 591,
+    "altitude": 29000,
+    "fuel": 1714.7454375,
+    "speedV": 407.79
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuel": 1676.4579375,
+    "speedV": 406.41
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 586,
+    "altitude": 31000,
+    "fuel": 1642.434,
+    "speedV": 404.34
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuel": 1611.83271875,
+    "speedV": 402.96
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 581,
+    "altitude": 33000,
+    "fuel": 1584.67925,
+    "speedV": 400.89
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuel": 1561.106125,
+    "speedV": 399.51
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 576,
+    "altitude": 35000,
+    "fuel": 1547.63809375,
+    "speedV": 397.44
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuel": 1546.7714375,
+    "speedV": 395.37
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 573,
+    "altitude": 37000,
+    "fuel": 1552.5854375,
+    "speedV": 395.37
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuel": 1562.0549375,
+    "speedV": 395.37
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 573,
+    "altitude": 39000,
+    "fuel": 1592.77384375,
+    "speedV": 395.37
+  },
+  {
+    "speedM": 0.69,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuel": 1647.160125,
+    "speedV": 395.37
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 621,
+    "altitude": 17000,
+    "fuel": 0,
+    "speedV": 434.7
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuel": 2395.472,
+    "speedV": 433.3
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 616,
+    "altitude": 19000,
+    "fuel": 2319.392,
+    "speedV": 431.2
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuel": 2271.6504375,
+    "speedV": 429.8
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 611,
+    "altitude": 21000,
+    "fuel": 2198.2769375,
+    "speedV": 427.7
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuel": 2127.5716875,
+    "speedV": 426.3
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 607,
+    "altitude": 23000,
+    "fuel": 2059.8416875,
+    "speedV": 424.9
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuel": 1995.4309375,
+    "speedV": 422.8
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 602,
+    "altitude": 25000,
+    "fuel": 1936.2011875,
+    "speedV": 421.4
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuel": 1882.8516875,
+    "speedV": 419.3
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 597,
+    "altitude": 27000,
+    "fuel": 1833.3393125,
+    "speedV": 417.9
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuel": 1787.732875,
+    "speedV": 415.8
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 591,
+    "altitude": 29000,
+    "fuel": 1744.197875,
+    "speedV": 413.7
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuel": 1703.654875,
+    "speedV": 412.3
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 586,
+    "altitude": 31000,
+    "fuel": 1667.601,
+    "speedV": 410.2
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuel": 1635.0254375,
+    "speedV": 408.8
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 581,
+    "altitude": 33000,
+    "fuel": 1605.6245,
+    "speedV": 406.7
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuel": 1579.55925,
+    "speedV": 405.3
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 576,
+    "altitude": 35000,
+    "fuel": 1563.4641875,
+    "speedV": 403.2
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuel": 1559.294875,
+    "speedV": 401.1
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 573,
+    "altitude": 37000,
+    "fuel": 1561.799875,
+    "speedV": 401.1
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuel": 1568.048875,
+    "speedV": 401.1
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 573,
+    "altitude": 39000,
+    "fuel": 1593.0516875,
+    "speedV": 401.1
+  },
+  {
+    "speedM": 0.7,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuel": 1642.45825,
+    "speedV": 401.1
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 621,
+    "altitude": 17000,
+    "fuel": 0,
+    "speedV": 440.91
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuel": 0,
+    "speedV": 439.49
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 616,
+    "altitude": 19000,
+    "fuel": 2408.2175,
+    "speedV": 437.36
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuel": 2327.2415,
+    "speedV": 435.94
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 611,
+    "altitude": 21000,
+    "fuel": 2251.329,
+    "speedV": 433.81
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuel": 2178.1135,
+    "speedV": 432.39
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 607,
+    "altitude": 23000,
+    "fuel": 2107.8105,
+    "speedV": 430.97
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuel": 2040.6645,
+    "speedV": 428.84
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 602,
+    "altitude": 25000,
+    "fuel": 1978.3775,
+    "speedV": 427.42
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuel": 1921.543,
+    "speedV": 425.29
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 597,
+    "altitude": 27000,
+    "fuel": 1868.252,
+    "speedV": 423.87
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuel": 1819.6725,
+    "speedV": 421.74
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 591,
+    "altitude": 29000,
+    "fuel": 1773.849,
+    "speedV": 419.61
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuel": 1731.1325,
+    "speedV": 418.19
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 586,
+    "altitude": 31000,
+    "fuel": 1693.152,
+    "speedV": 416.06
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuel": 1658.4035,
+    "speedV": 414.64
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 581,
+    "altitude": 33000,
+    "fuel": 1626.21,
+    "speedV": 412.51
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuel": 1597.2345,
+    "speedV": 411.09
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 576,
+    "altitude": 35000,
+    "fuel": 1578.585,
+    "speedV": 408.96
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuel": 1571.1885,
+    "speedV": 406.83
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 573,
+    "altitude": 37000,
+    "fuel": 1570.203,
+    "speedV": 406.83
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuel": 1573,
+    "speedV": 406.83
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 573,
+    "altitude": 39000,
+    "fuel": 1591.686,
+    "speedV": 406.83
+  },
+  {
+    "speedM": 0.71,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuel": 1636.271,
+    "speedV": 406.83
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 621,
+    "altitude": 17000,
+    "fuel": 0,
+    "speedV": 447.12
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuel": 0,
+    "speedV": 445.68
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 616,
+    "altitude": 19000,
+    "fuel": 2458.2175,
+    "speedV": 443.52
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuel": 2381.903875,
+    "speedV": 442.08
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 611,
+    "altitude": 21000,
+    "fuel": 2303.604875,
+    "speedV": 439.92
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuel": 2228.023375,
+    "speedV": 438.48
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 607,
+    "altitude": 23000,
+    "fuel": 2155.313375,
+    "speedV": 437.04
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuel": 2085.648875,
+    "speedV": 434.88
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 602,
+    "altitude": 25000,
+    "fuel": 2020.612375,
+    "speedV": 433.44
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuel": 1960.698375,
+    "speedV": 431.28
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 597,
+    "altitude": 27000,
+    "fuel": 1904.053625,
+    "speedV": 429.84
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuel": 1852.06475,
+    "speedV": 427.68
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 591,
+    "altitude": 29000,
+    "fuel": 1803.10275,
+    "speedV": 425.52
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuel": 1758.04875,
+    "speedV": 424.08
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 586,
+    "altitude": 31000,
+    "fuel": 1717.935,
+    "speedV": 421.92
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuel": 1681.410875,
+    "speedV": 420.48
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 581,
+    "altitude": 33000,
+    "fuel": 1647.515,
+    "speedV": 418.32
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuel": 1616.4655,
+    "speedV": 416.88
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 576,
+    "altitude": 35000,
+    "fuel": 1595.116375,
+    "speedV": 414.72
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuel": 1584.34175,
+    "speedV": 412.56
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 573,
+    "altitude": 37000,
+    "fuel": 1580.22875,
+    "speedV": 412.56
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuel": 1580.03675,
+    "speedV": 412.56
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 573,
+    "altitude": 39000,
+    "fuel": 1593.607375,
+    "speedV": 412.56
+  },
+  {
+    "speedM": 0.72,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuel": 1633.0545,
+    "speedV": 412.56
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 621,
+    "altitude": 17000,
+    "fuel": 0,
+    "speedV": 453.33
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuel": 0,
+    "speedV": 451.87
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 616,
+    "altitude": 19000,
+    "fuel": 2508.2175,
+    "speedV": 449.68
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuel": 2436.56625,
+    "speedV": 448.22
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 611,
+    "altitude": 21000,
+    "fuel": 2355.88075,
+    "speedV": 446.03
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuel": 2277.93325,
+    "speedV": 444.57
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 607,
+    "altitude": 23000,
+    "fuel": 2202.81625,
+    "speedV": 443.11
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuel": 2130.63325,
+    "speedV": 440.92
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 602,
+    "altitude": 25000,
+    "fuel": 2062.84725,
+    "speedV": 439.46
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuel": 1999.85375,
+    "speedV": 437.27
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 597,
+    "altitude": 27000,
+    "fuel": 1939.85525,
+    "speedV": 435.81
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuel": 1884.457,
+    "speedV": 433.62
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 591,
+    "altitude": 29000,
+    "fuel": 1832.3565,
+    "speedV": 431.43
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuel": 1784.965,
+    "speedV": 429.97
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 586,
+    "altitude": 31000,
+    "fuel": 1742.718,
+    "speedV": 427.78
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuel": 1704.41825,
+    "speedV": 426.32
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 581,
+    "altitude": 33000,
+    "fuel": 1668.82,
+    "speedV": 424.13
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuel": 1635.6965,
+    "speedV": 422.67
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 576,
+    "altitude": 35000,
+    "fuel": 1611.64775,
+    "speedV": 420.48
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuel": 1597.495,
+    "speedV": 418.29
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 573,
+    "altitude": 37000,
+    "fuel": 1590.2545,
+    "speedV": 418.29
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuel": 1587.0735,
+    "speedV": 418.29
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 573,
+    "altitude": 39000,
+    "fuel": 1595.52875,
+    "speedV": 418.29
+  },
+  {
+    "speedM": 0.73,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuel": 1629.838,
+    "speedV": 418.29
   },
   {
     "speedM": 0.74,
@@ -521,155 +1025,323 @@
     "speedM": 0.74,
     "speedOfSound": 616,
     "altitude": 19000,
-    "fuel": 2489.976,
+    "fuel": 2582.043,
     "speedV": 455.84
   },
   {
     "speedM": 0.74,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuel": 2395.423,
+    "fuel": 2493.086,
     "speedV": 454.36
   },
   {
     "speedM": 0.74,
     "speedOfSound": 611,
     "altitude": 21000,
-    "fuel": 2306.407,
+    "fuel": 2409.709,
     "speedV": 452.14
   },
   {
     "speedM": 0.74,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuel": 2220.198,
+    "fuel": 2329.107,
     "speedV": 450.66
   },
   {
     "speedM": 0.74,
     "speedOfSound": 607,
     "altitude": 23000,
-    "fuel": 2136.803,
+    "fuel": 2251.251,
     "speedV": 449.18
   },
   {
     "speedM": 0.74,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuel": 2056.215,
+    "fuel": 2176.116,
     "speedV": 446.96
   },
   {
     "speedM": 0.74,
     "speedOfSound": 602,
     "altitude": 25000,
-    "fuel": 1984.088,
+    "fuel": 2104.965,
     "speedV": 445.48
   },
   {
     "speedM": 0.74,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuel": 1917.41,
+    "fuel": 2038.081,
     "speedV": 443.26
   },
   {
     "speedM": 0.74,
     "speedOfSound": 597,
     "altitude": 27000,
-    "fuel": 1851.096,
+    "fuel": 1973.879,
     "speedV": 441.78
   },
   {
     "speedM": 0.74,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuel": 1785.278,
+    "fuel": 1915.944,
     "speedV": 439.56
   },
   {
     "speedM": 0.74,
     "speedOfSound": 591,
     "altitude": 29000,
-    "fuel": 1720.062,
+    "fuel": 1862.405,
     "speedV": 437.34
   },
   {
     "speedM": 0.74,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuel": 1657.967,
+    "fuel": 1813.004,
     "speedV": 435.86
   },
   {
     "speedM": 0.74,
     "speedOfSound": 586,
     "altitude": 31000,
-    "fuel": 1600.547,
+    "fuel": 1769.037,
     "speedV": 433.64
   },
   {
     "speedM": 0.74,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuel": 1545.715,
+    "fuel": 1728.167,
     "speedV": 432.16
   },
   {
     "speedM": 0.74,
     "speedOfSound": 581,
     "altitude": 33000,
-    "fuel": 1493.746,
+    "fuel": 1688.686,
     "speedV": 429.94
   },
   {
     "speedM": 0.74,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuel": 1444.958,
+    "fuel": 1651.816,
     "speedV": 428.46
   },
   {
     "speedM": 0.74,
     "speedOfSound": 576,
     "altitude": 35000,
-    "fuel": 1405.091,
+    "fuel": 1625.358,
     "speedV": 426.24
   },
   {
     "speedM": 0.74,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuel": 1373.059,
+    "fuel": 1608.129,
     "speedV": 424.02
   },
   {
     "speedM": 0.74,
     "speedOfSound": 573,
     "altitude": 37000,
-    "fuel": 1346.213,
+    "fuel": 1597.035,
     "speedV": 424.02
   },
   {
     "speedM": 0.74,
     "speedOfSound": 573,
     "altitude": 38000,
-    "fuel": 1321.585,
+    "fuel": 1589.939,
     "speedV": 424.02
   },
   {
     "speedM": 0.74,
     "speedOfSound": 573,
     "altitude": 39000,
-    "fuel": 1297.278,
+    "fuel": 1590.876,
     "speedV": 424.02
   },
   {
     "speedM": 0.74,
     "speedOfSound": 573,
     "altitude": 40000,
-    "fuel": 1277.55,
+    "fuel": 1620.68,
     "speedV": 424.02
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 621,
+    "altitude": 17000,
+    "fuel": 0,
+    "speedV": 465.75
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuel": 0,
+    "speedV": 464.25
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 616,
+    "altitude": 19000,
+    "fuel": 0,
+    "speedV": 462
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuel": 2545.891,
+    "speedV": 460.5
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 611,
+    "altitude": 21000,
+    "fuel": 2460.4325,
+    "speedV": 458.25
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuel": 2377.753,
+    "speedV": 456.75
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 607,
+    "altitude": 23000,
+    "fuel": 2297.822,
+    "speedV": 455.25
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuel": 2220.602,
+    "speedV": 453
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 602,
+    "altitude": 25000,
+    "fuel": 2147.317,
+    "speedV": 451.5
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuel": 2078.1645,
+    "speedV": 449.25
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 597,
+    "altitude": 27000,
+    "fuel": 2011.4585,
+    "speedV": 447.75
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuel": 1949.2415,
+    "speedV": 445.5
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 591,
+    "altitude": 29000,
+    "fuel": 1890.864,
+    "speedV": 443.25
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuel": 1838.7975,
+    "speedV": 441.75
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 586,
+    "altitude": 31000,
+    "fuel": 1792.284,
+    "speedV": 439.5
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuel": 1750.433,
+    "speedV": 438
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 581,
+    "altitude": 33000,
+    "fuel": 1711.43,
+    "speedV": 435.75
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuel": 1674.1585,
+    "speedV": 434.25
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 576,
+    "altitude": 35000,
+    "fuel": 1644.7105,
+    "speedV": 432
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuel": 1623.8015,
+    "speedV": 429.75
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 573,
+    "altitude": 37000,
+    "fuel": 1610.306,
+    "speedV": 429.75
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuel": 1601.147,
+    "speedV": 429.75
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 573,
+    "altitude": 39000,
+    "fuel": 1599.3715,
+    "speedV": 429.75
+  },
+  {
+    "speedM": 0.75,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuel": 1623.405,
+    "speedV": 429.75
   },
   {
     "speedM": 0.76,
@@ -696,148 +1368,316 @@
     "speedM": 0.76,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuel": 2507.511,
+    "fuel": 2598.696,
     "speedV": 466.64
   },
   {
     "speedM": 0.76,
     "speedOfSound": 611,
     "altitude": 21000,
-    "fuel": 2414.438,
+    "fuel": 2511.156,
     "speedV": 464.36
   },
   {
     "speedM": 0.76,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuel": 2324.252,
+    "fuel": 2426.399,
     "speedV": 462.84
   },
   {
     "speedM": 0.76,
     "speedOfSound": 607,
     "altitude": 23000,
-    "fuel": 2236.937,
+    "fuel": 2344.393,
     "speedV": 461.32
   },
   {
     "speedM": 0.76,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuel": 2152.491,
+    "fuel": 2265.088,
     "speedV": 459.04
   },
   {
     "speedM": 0.76,
     "speedOfSound": 602,
     "altitude": 25000,
-    "fuel": 2071.818,
+    "fuel": 2189.669,
     "speedV": 457.52
   },
   {
     "speedM": 0.76,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuel": 1994.687,
+    "fuel": 2118.248,
     "speedV": 455.24
   },
   {
     "speedM": 0.76,
     "speedOfSound": 597,
     "altitude": 27000,
-    "fuel": 1926.368,
+    "fuel": 2049.038,
     "speedV": 453.72
   },
   {
     "speedM": 0.76,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuel": 1858.673,
+    "fuel": 1982.539,
     "speedV": 451.44
   },
   {
     "speedM": 0.76,
     "speedOfSound": 591,
     "altitude": 29000,
-    "fuel": 1791.27,
+    "fuel": 1919.323,
     "speedV": 449.16
   },
   {
     "speedM": 0.76,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuel": 1726.285,
+    "fuel": 1864.591,
     "speedV": 447.64
   },
   {
     "speedM": 0.76,
     "speedOfSound": 586,
     "altitude": 31000,
-    "fuel": 1665.334,
+    "fuel": 1815.531,
     "speedV": 445.36
   },
   {
     "speedM": 0.76,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuel": 1606.64,
+    "fuel": 1772.699,
     "speedV": 443.84
   },
   {
     "speedM": 0.76,
     "speedOfSound": 581,
     "altitude": 33000,
-    "fuel": 1550.463,
+    "fuel": 1734.174,
     "speedV": 441.56
   },
   {
     "speedM": 0.76,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuel": 1497.174,
+    "fuel": 1696.501,
     "speedV": 440.04
   },
   {
     "speedM": 0.76,
     "speedOfSound": 576,
     "altitude": 35000,
-    "fuel": 1452.337,
+    "fuel": 1664.063,
     "speedV": 437.76
   },
   {
     "speedM": 0.76,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuel": 1415.008,
+    "fuel": 1639.474,
     "speedV": 435.48
   },
   {
     "speedM": 0.76,
     "speedOfSound": 573,
     "altitude": 37000,
-    "fuel": 1383.249,
+    "fuel": 1623.577,
     "speedV": 435.48
   },
   {
     "speedM": 0.76,
     "speedOfSound": 573,
     "altitude": 38000,
-    "fuel": 1355.291,
+    "fuel": 1612.355,
     "speedV": 435.48
   },
   {
     "speedM": 0.76,
     "speedOfSound": 573,
     "altitude": 39000,
-    "fuel": 1329.217,
+    "fuel": 1607.867,
     "speedV": 435.48
   },
   {
     "speedM": 0.76,
     "speedOfSound": 573,
     "altitude": 40000,
-    "fuel": 1308.922,
+    "fuel": 1626.13,
     "speedV": 435.48
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 621,
+    "altitude": 17000,
+    "fuel": 0,
+    "speedV": 478.17
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuel": 0,
+    "speedV": 476.63
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 616,
+    "altitude": 19000,
+    "fuel": 0,
+    "speedV": 474.32
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuel": 0,
+    "speedV": 472.78
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 611,
+    "altitude": 21000,
+    "fuel": 2572.6315,
+    "speedV": 470.47
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuel": 2485.541,
+    "speedV": 468.93
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 607,
+    "altitude": 23000,
+    "fuel": 2401.2755,
+    "speedV": 467.39
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuel": 2319.795,
+    "speedV": 465.08
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 602,
+    "altitude": 25000,
+    "fuel": 2242.4035,
+    "speedV": 463.54
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuel": 2169.143,
+    "speedV": 461.23
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 597,
+    "altitude": 27000,
+    "fuel": 2097.868,
+    "speedV": 459.69
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuel": 2029.0285,
+    "speedV": 457.38
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 591,
+    "altitude": 29000,
+    "fuel": 1963.156,
+    "speedV": 455.07
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuel": 1904.355,
+    "speedV": 453.53
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 586,
+    "altitude": 31000,
+    "fuel": 1852.0135,
+    "speedV": 451.22
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuel": 1805.498,
+    "speedV": 449.68
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 581,
+    "altitude": 33000,
+    "fuel": 1764.0515,
+    "speedV": 447.37
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuel": 1725.038,
+    "speedV": 445.83
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 576,
+    "altitude": 35000,
+    "fuel": 1691.458,
+    "speedV": 443.52
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuel": 1663.757,
+    "speedV": 441.21
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 573,
+    "altitude": 37000,
+    "fuel": 1643.6895,
+    "speedV": 441.21
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuel": 1629.6715,
+    "speedV": 441.21
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 573,
+    "altitude": 39000,
+    "fuel": 1624.4655,
+    "speedV": 441.21
+  },
+  {
+    "speedM": 0.77,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuel": 1637.1455,
+    "speedV": 441.21
   },
   {
     "speedM": 0.78,
@@ -871,140 +1711,140 @@
     "speedM": 0.78,
     "speedOfSound": 611,
     "altitude": 21000,
-    "fuel": 2545.394,
+    "fuel": 2634.107,
     "speedV": 476.58
   },
   {
     "speedM": 0.78,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuel": 2450.23,
+    "fuel": 2544.683,
     "speedV": 475.02
   },
   {
     "speedM": 0.78,
     "speedOfSound": 607,
     "altitude": 23000,
-    "fuel": 2358.058,
+    "fuel": 2458.158,
     "speedV": 473.46
   },
   {
     "speedM": 0.78,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuel": 2268.869,
+    "fuel": 2374.502,
     "speedV": 471.12
   },
   {
     "speedM": 0.78,
     "speedOfSound": 602,
     "altitude": 25000,
-    "fuel": 2183.765,
+    "fuel": 2295.138,
     "speedV": 469.56
   },
   {
     "speedM": 0.78,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuel": 2102.546,
+    "fuel": 2220.038,
     "speedV": 467.22
   },
   {
     "speedM": 0.78,
     "speedOfSound": 597,
     "altitude": 27000,
-    "fuel": 2023.185,
+    "fuel": 2146.698,
     "speedV": 465.66
   },
   {
     "speedM": 0.78,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuel": 1946.018,
+    "fuel": 2075.518,
     "speedV": 463.32
   },
   {
     "speedM": 0.78,
     "speedOfSound": 591,
     "altitude": 29000,
-    "fuel": 1876.794,
+    "fuel": 2006.989,
     "speedV": 460.98
   },
   {
     "speedM": 0.78,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuel": 1809.114,
+    "fuel": 1944.119,
     "speedV": 459.42
   },
   {
     "speedM": 0.78,
     "speedOfSound": 586,
     "altitude": 31000,
-    "fuel": 1744.778,
+    "fuel": 1888.496,
     "speedV": 457.08
   },
   {
     "speedM": 0.78,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuel": 1682.744,
+    "fuel": 1838.297,
     "speedV": 455.52
   },
   {
     "speedM": 0.78,
     "speedOfSound": 581,
     "altitude": 33000,
-    "fuel": 1622.986,
+    "fuel": 1793.929,
     "speedV": 453.18
   },
   {
     "speedM": 0.78,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuel": 1565.732,
+    "fuel": 1753.575,
     "speedV": 451.62
   },
   {
     "speedM": 0.78,
     "speedOfSound": 576,
     "altitude": 35000,
-    "fuel": 1516.134,
+    "fuel": 1718.853,
     "speedV": 449.28
   },
   {
     "speedM": 0.78,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuel": 1473.299,
+    "fuel": 1688.04,
     "speedV": 446.94
   },
   {
     "speedM": 0.78,
     "speedOfSound": 573,
     "altitude": 37000,
-    "fuel": 1435.744,
+    "fuel": 1663.802,
     "speedV": 446.94
   },
   {
     "speedM": 0.78,
     "speedOfSound": 573,
     "altitude": 38000,
-    "fuel": 1401.734,
+    "fuel": 1646.988,
     "speedV": 446.94
   },
   {
     "speedM": 0.78,
     "speedOfSound": 573,
     "altitude": 39000,
-    "fuel": 1371.015,
+    "fuel": 1641.064,
     "speedV": 446.94
   },
   {
     "speedM": 0.78,
     "speedOfSound": 573,
     "altitude": 40000,
-    "fuel": 1350.638,
+    "fuel": 1648.161,
     "speedV": 446.94
   },
   {
@@ -1046,134 +1886,302 @@
     "speedM": 0.79,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuel": 2539.788,
+    "fuel": 2630.15,
     "speedV": 481.11
   },
   {
     "speedM": 0.79,
     "speedOfSound": 607,
     "altitude": 23000,
-    "fuel": 2444.083,
+    "fuel": 2540.916,
     "speedV": 479.53
   },
   {
     "speedM": 0.79,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuel": 2351.493,
+    "fuel": 2454.744,
     "speedV": 477.16
   },
   {
     "speedM": 0.79,
     "speedOfSound": 602,
     "altitude": 25000,
-    "fuel": 2263.342,
+    "fuel": 2373.321,
     "speedV": 475.58
   },
   {
     "speedM": 0.79,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuel": 2179.496,
+    "fuel": 2296.719,
     "speedV": 473.21
   },
   {
     "speedM": 0.79,
     "speedOfSound": 597,
     "altitude": 27000,
-    "fuel": 2097.596,
+    "fuel": 2221.915,
     "speedV": 471.63
   },
   {
     "speedM": 0.79,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuel": 2017.663,
+    "fuel": 2149.072,
     "speedV": 469.26
   },
   {
     "speedM": 0.79,
     "speedOfSound": 591,
     "altitude": 29000,
-    "fuel": 1939.695,
+    "fuel": 2078.492,
     "speedV": 466.89
   },
   {
     "speedM": 0.79,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuel": 1868.712,
+    "fuel": 2012.632,
     "speedV": 465.31
   },
   {
     "speedM": 0.79,
     "speedOfSound": 586,
     "altitude": 31000,
-    "fuel": 1802.616,
+    "fuel": 1952.834,
     "speedV": 462.94
   },
   {
     "speedM": 0.79,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuel": 1738.961,
+    "fuel": 1897.384,
     "speedV": 461.36
   },
   {
     "speedM": 0.79,
     "speedOfSound": 581,
     "altitude": 33000,
-    "fuel": 1677.697,
+    "fuel": 1846.716,
     "speedV": 458.99
   },
   {
     "speedM": 0.79,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuel": 1618.857,
+    "fuel": 1800.583,
     "speedV": 457.41
   },
   {
     "speedM": 0.79,
     "speedOfSound": 576,
     "altitude": 35000,
-    "fuel": 1567.052,
+    "fuel": 1761.969,
     "speedV": 455.04
   },
   {
     "speedM": 0.79,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuel": 1521.303,
+    "fuel": 1728.13,
     "speedV": 452.67
   },
   {
     "speedM": 0.79,
     "speedOfSound": 573,
     "altitude": 37000,
-    "fuel": 1480.35,
+    "fuel": 1699.6,
     "speedV": 452.67
   },
   {
     "speedM": 0.79,
     "speedOfSound": 573,
     "altitude": 38000,
-    "fuel": 1442.199,
+    "fuel": 1677.632,
     "speedV": 452.67
   },
   {
     "speedM": 0.79,
     "speedOfSound": 573,
     "altitude": 39000,
-    "fuel": 1408.635,
+    "fuel": 1671.651,
     "speedV": 452.67
   },
   {
     "speedM": 0.79,
     "speedOfSound": 573,
     "altitude": 40000,
-    "fuel": 1386.785,
+    "fuel": 1674.607,
     "speedV": 452.67
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 621,
+    "altitude": 17000,
+    "fuel": 0,
+    "speedV": 496.8
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuel": 0,
+    "speedV": 495.2
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 616,
+    "altitude": 19000,
+    "fuel": 0,
+    "speedV": 492.8
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuel": 0,
+    "speedV": 491.2
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 611,
+    "altitude": 21000,
+    "fuel": 0,
+    "speedV": 488.8
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuel": 0,
+    "speedV": 487.2
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 607,
+    "altitude": 23000,
+    "fuel": 2647.1835,
+    "speedV": 485.6
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuel": 2555.1025,
+    "speedV": 483.2
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 602,
+    "altitude": 25000,
+    "fuel": 2467.824,
+    "speedV": 481.6
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuel": 2385.358,
+    "speedV": 479.2
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 597,
+    "altitude": 27000,
+    "fuel": 2305.433,
+    "speedV": 477.6
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuel": 2230.203,
+    "speedV": 475.2
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 591,
+    "altitude": 29000,
+    "fuel": 2157.2355,
+    "speedV": 472.8
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuel": 2088.436,
+    "speedV": 471.2
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 586,
+    "altitude": 31000,
+    "fuel": 2024.977,
+    "speedV": 468.8
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuel": 1965.424,
+    "speedV": 467.2
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 581,
+    "altitude": 33000,
+    "fuel": 1909.9875,
+    "speedV": 464.8
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuel": 1858.5375,
+    "speedV": 463.2
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 576,
+    "altitude": 35000,
+    "fuel": 1814.8945,
+    "speedV": 460.8
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuel": 1777.2515,
+    "speedV": 458.4
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 573,
+    "altitude": 37000,
+    "fuel": 1747.925,
+    "speedV": 458.4
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuel": 1726.046,
+    "speedV": 458.4
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 573,
+    "altitude": 39000,
+    "fuel": 1717.729,
+    "speedV": 458.4
+  },
+  {
+    "speedM": 0.8,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuel": 1723.5645,
+    "speedV": 458.4
   },
   {
     "speedM": 0.81,
@@ -1221,126 +2229,126 @@
     "speedM": 0.81,
     "speedOfSound": 607,
     "altitude": 23000,
-    "fuel": 2652.426,
+    "fuel": 2753.451,
     "speedV": 491.67
   },
   {
     "speedM": 0.81,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuel": 2547.922,
+    "fuel": 2655.461,
     "speedV": 489.24
   },
   {
     "speedM": 0.81,
     "speedOfSound": 602,
     "altitude": 25000,
-    "fuel": 2450.896,
+    "fuel": 2562.327,
     "speedV": 487.62
   },
   {
     "speedM": 0.81,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuel": 2361.043,
+    "fuel": 2473.997,
     "speedV": 485.19
   },
   {
     "speedM": 0.81,
     "speedOfSound": 597,
     "altitude": 27000,
-    "fuel": 2272.97,
+    "fuel": 2388.951,
     "speedV": 483.57
   },
   {
     "speedM": 0.81,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuel": 2186.779,
+    "fuel": 2311.334,
     "speedV": 481.14
   },
   {
     "speedM": 0.81,
     "speedOfSound": 591,
     "altitude": 29000,
-    "fuel": 2102.553,
+    "fuel": 2235.979,
     "speedV": 478.71
   },
   {
     "speedM": 0.81,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuel": 2022.401,
+    "fuel": 2164.24,
     "speedV": 477.09
   },
   {
     "speedM": 0.81,
     "speedOfSound": 586,
     "altitude": 31000,
-    "fuel": 1947.477,
+    "fuel": 2097.12,
     "speedV": 474.66
   },
   {
     "speedM": 0.81,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuel": 1875.804,
+    "fuel": 2033.464,
     "speedV": 473.04
   },
   {
     "speedM": 0.81,
     "speedOfSound": 581,
     "altitude": 33000,
-    "fuel": 1807.362,
+    "fuel": 1973.259,
     "speedV": 470.61
   },
   {
     "speedM": 0.81,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuel": 1742.131,
+    "fuel": 1916.492,
     "speedV": 468.99
   },
   {
     "speedM": 0.81,
     "speedOfSound": 576,
     "altitude": 35000,
-    "fuel": 1684.715,
+    "fuel": 1867.82,
     "speedV": 466.56
   },
   {
     "speedM": 0.81,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuel": 1633.903,
+    "fuel": 1826.373,
     "speedV": 464.13
   },
   {
     "speedM": 0.81,
     "speedOfSound": 573,
     "altitude": 37000,
-    "fuel": 1589.002,
+    "fuel": 1796.25,
     "speedV": 464.13
   },
   {
     "speedM": 0.81,
     "speedOfSound": 573,
     "altitude": 38000,
-    "fuel": 1547.136,
+    "fuel": 1774.46,
     "speedV": 464.13
   },
   {
     "speedM": 0.81,
     "speedOfSound": 573,
     "altitude": 39000,
-    "fuel": 1507.905,
+    "fuel": 1763.807,
     "speedV": 464.13
   },
   {
     "speedM": 0.81,
     "speedOfSound": 573,
     "altitude": 40000,
-    "fuel": 1475.893,
+    "fuel": 1772.522,
     "speedV": 464.13
   }
 ]
