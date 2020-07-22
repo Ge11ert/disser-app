@@ -24,9 +24,9 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
         parser.parse().then(result => {
           const possibleAlts = disserApp.getAltitudeList();
           possibleAlts.forEach(alt => {
-            disserApp.registerAirConditionsForAltitude(result, alt);
+            disserApp.registerAirConditionsForAltitude(result.get(alt), alt);
           });
-          event.sender.send(RENDER_AIR_CONDITIONS, result);
+          event.sender.send(RENDER_AIR_CONDITIONS, result.get(30000)); // TODO: временный костыль
         });
       }
     });
