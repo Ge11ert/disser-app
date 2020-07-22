@@ -116,11 +116,12 @@ export default class DisserApp implements DisserAppAPI {
 
     const speedRun: SpeedRun = new Map();
 
-    // TODO: loop through all speeds
-    [this.possibleMachList[3]].forEach(speedM => {
+    console.time('Speed cycle');
+    this.possibleMachList.forEach(speedM => {
       const speedRunSummary = this.performSpeedCycleStep(speedM);
       speedRun.set(speedM, speedRunSummary);
     });
+    console.timeEnd('Speed cycle');
   }
 
   performSpeedCycleStep(speedValue: number): SingleSpeedRun {
@@ -192,11 +193,16 @@ export default class DisserApp implements DisserAppAPI {
     let descentOffsetYInCells = 0;
 
     if (prevAltitude !== null) {
-      ascentSpecifications = extractAscentSpecifications(speedM, altitude, airConditions, climbProfile, entryPoint);
-      climbOffsetXInMiles = Math.cos(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
-      climbOffsetYInMiles = Math.sin(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
-      climbOffsetXInCells = fromMilesToGridUnits(climbOffsetXInMiles, cell.H_SIZE, 0.52);
-      climbOffsetYInCells = fromMilesToGridUnits(climbOffsetYInMiles, cell.V_SIZE, 0.52);
+      try {
+        ascentSpecifications = extractAscentSpecifications(speedM, altitude, airConditions, climbProfile, entryPoint);
+        climbOffsetXInMiles = Math.cos(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
+        climbOffsetYInMiles = Math.sin(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
+        climbOffsetXInCells = fromMilesToGridUnits(climbOffsetXInMiles, cell.H_SIZE, 0.52);
+        climbOffsetYInCells = fromMilesToGridUnits(climbOffsetYInMiles, cell.V_SIZE, 0.52);
+      } catch (e) {
+        // TODO: перехватываем ошибку, если с учётом ветра скорость вышла за диапазон, и абортим текущий шаг по высоте
+        return [false];
+      }
 
       const nextEntryPoint = {
         x: this.lastUsedEntryPoint.x + climbOffsetXInCells,
@@ -215,17 +221,22 @@ export default class DisserApp implements DisserAppAPI {
 
       entryPoint = nextEntryPoint;
 
-      descentSpecifications = extractDescentSpecifications(
-        speedM,
-        prevAltitude,
-        this.airConditionsPerAlt[prevAltitude],
-        descentProfile,
-        exitPoint,
-      );
-      descentOffsetXInMiles = Math.cos(this.usedPathAngle) * descentSpecifications.distanceInMiles;
-      descentOffsetYInMiles = Math.sin(this.usedPathAngle) * descentSpecifications.distanceInMiles;
-      descentOffsetXInCells = fromMilesToGridUnits(descentOffsetXInMiles, cell.H_SIZE, 0.52);
-      descentOffsetYInCells = fromMilesToGridUnits(descentOffsetYInMiles, cell.V_SIZE, 0.52);
+      try {
+        descentSpecifications = extractDescentSpecifications(
+          speedM,
+          prevAltitude,
+          this.airConditionsPerAlt[prevAltitude],
+          descentProfile,
+          exitPoint,
+        );
+        descentOffsetXInMiles = Math.cos(this.usedPathAngle) * descentSpecifications.distanceInMiles;
+        descentOffsetYInMiles = Math.sin(this.usedPathAngle) * descentSpecifications.distanceInMiles;
+        descentOffsetXInCells = fromMilesToGridUnits(descentOffsetXInMiles, cell.H_SIZE, 0.52);
+        descentOffsetYInCells = fromMilesToGridUnits(descentOffsetYInMiles, cell.V_SIZE, 0.52);
+      } catch (e) {
+        // TODO: перехватываем ошибку, если с учётом ветра скорость вышла за диапазон, и абортим текущий шаг по высоте
+        return [false];
+      }
 
       const nextExitPoint = {
         x: this.lastUsedExitPoint.x - descentOffsetXInCells,
@@ -313,8 +324,8 @@ export default class DisserApp implements DisserAppAPI {
     finderGrid = null;
     finder = null;
 
-    // TODO: temp for debugging
-    this.sendResults(path, finderArray);
+    // // TODO: temp for debugging
+    // this.sendResults(path, finderArray);
 
     return [true, altitudeRun];
   }
