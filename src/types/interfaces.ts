@@ -35,7 +35,8 @@ export type readResult<T> = {
 };
 
 export interface Reader<T> {
-  read(path: string): Promise<readResult<T>>
+  read(path: string, opts?: Record<string, any>): Promise<readResult<T>>;
+  getSheetsList(path: string): Promise<readResult<{ name: string }[]>>;
 }
 
 export interface ElectronWindowAPI {
@@ -55,7 +56,7 @@ export interface DisserAppAPI {
 
   getAltitudeList(): number[];
 
-  registerAirConditionsForAltitude(conditions: AirConditions, alt: number): void;
+  registerAirConditionsForAltitude(conditions: AirConditions|undefined, alt: number): void;
 }
 
 type RunInfo = { distanceInMiles: number, fuelBurnInKgs: number, timeInHours: number };

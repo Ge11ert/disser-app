@@ -18,8 +18,8 @@ const electronToWindowAPI: ElectronWindowAPI = {
     ipcRenderer.on(RENDER_AIR_CONDITIONS, (event, arg: any[][]) => {
       const resultElement = document.querySelector('.file-selector__result');
       if (resultElement) {
-        const rowsHtml = renderAirConditions(arg);
-        resultElement.innerHTML = `<table>${rowsHtml}</table>`;
+        // const rowsHtml = renderAirConditions(arg);
+        resultElement.innerHTML = 'Air conditions loaded';
       }
     });
   },

@@ -47,11 +47,15 @@ declare module 'read-excel-file/node' {
 
   function readXlsxFile(
     input: Stream | PathLike,
-    options?: SheetOptions
-  ): Promise<ParsedResult>;
+    options: SheetNamesOptions
+  ): Promise<{ name: string }[]>;
   function readXlsxFile(
     input: Stream | PathLike,
     options: SheetConvertOptions
+  ): Promise<ParsedResult>;
+  function readXlsxFile(
+    input: Stream | PathLike,
+    options?: SheetOptions
   ): Promise<ParsedResult>;
 
   export default readXlsxFile;
