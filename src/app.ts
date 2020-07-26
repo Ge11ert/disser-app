@@ -299,7 +299,6 @@ export default class DisserApp implements DisserAppAPI {
       exitPoint.x, exitPoint.y,
       finderGrid,
     );
-    const finderArray = finderGrid.toString();
     const altitudeRun: SingleAltitudeRun = {
       ascent: {
         distanceInMiles: ascentSpecifications.distanceInMiles,
@@ -400,7 +399,9 @@ function extractAscentSpecifications(
   climbProfileForCurrentSpeed: ClimbDescentProfile,
   currentPoint: { x: number, y: number },
 ): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
-  const windAtPoint = airConditions[currentPoint.y][currentPoint.x] as number;
+  // TODO: в текущем файле с ветром слишком большие значения, постоянно выходим за верхний предел по М.
+  // TODO: временно делю ветер на 2, чтобы было полегче
+  const windAtPoint = (airConditions[currentPoint.y][currentPoint.x] as number) / 2;
 
   const climbRowForAltitude = climbProfileForCurrentSpeed.find(row => (row.altitude === altitude));
 
@@ -436,7 +437,9 @@ function extractDescentSpecifications(
   descentProfileForCurrentSpeed: ClimbDescentProfile,
   currentPoint: { x: number, y: number },
 ): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
-  const windAtPoint = airConditions[currentPoint.y][currentPoint.x] as number;
+  // TODO: в текущем файле с ветром слишком большие значения, постоянно выходим за верхний предел по М.
+  // TODO: временно делю ветер на 2, чтобы было полегче
+  const windAtPoint = (airConditions[currentPoint.y][currentPoint.x] as number) / 2;
 
   const descentRowForAltitude = descentProfileForCurrentSpeed.find(row => (row.altitude === altitude));
 
