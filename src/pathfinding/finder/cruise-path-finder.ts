@@ -19,9 +19,9 @@ const CI = 0; // Cost Index
 export default class CruisePathFinder extends AStarFinder {
   private altSpecificProfile: CruiseProfile;
   private cruiseOptions: cruiseOptions;
-  private possibleMachSpeeds: number[];
 
   private readonly altSpecificSpeedOfSound: number; // knots
+  private readonly currentProfileRow: CruiseProfile[0];
 
   constructor(finderOptions: finderOptions, cruiseOptions: cruiseOptions) {
     super(finderOptions);
@@ -30,14 +30,16 @@ export default class CruisePathFinder extends AStarFinder {
     this.altSpecificProfile = cruiseOptions.profile.filter((profileRow) => (
       profileRow.altitude === cruiseOptions.altitude
     ));
-    this.possibleMachSpeeds = this.altSpecificProfile.reduce<number[]>((acc, profileRow) => {
-      acc.push(profileRow.speedM);
-      return acc;
-    }, []);
 
     const currentProfileRow = this.getProfileRowBySpeedM(cruiseOptions.speedM);
-    this.cruiseOptions.speedV = currentProfileRow ? currentProfileRow.speedV : this.altSpecificProfile[0].speedV;
+
+    if (!currentProfileRow) {
+      throw new Error(`No cruise profile for altitude ${cruiseOptions.altitude} and speed ${cruiseOptions.speedM}`);
+    }
+
+    this.cruiseOptions.speedV = currentProfileRow.speedV;
     this.altSpecificSpeedOfSound = this.altSpecificProfile[0].speedOfSound;
+    this.currentProfileRow = currentProfileRow;
   }
 
   getNeighborG(currentNode: GridNode, neighborNode: GridNode): number {
@@ -51,25 +53,12 @@ export default class CruisePathFinder extends AStarFinder {
     const groundSpeed = this.getGroundSpeedV(speedV, neighborNode); // knots;
     const groundSpeedInMetersPerSecond = fromKnotsToMetersPerSecond(groundSpeed);
 
-    // получаем Мах для ground speed из скорости звука на текущей высоте
-    const gsMach = groundSpeed / this.altSpecificSpeedOfSound;
-    const roundedMach = Number(gsMach.toPrecision(2));
-    const recalculatedMach = getClosest(this.possibleMachSpeeds, roundedMach);
-
     // получаем время пролёта полученной дистанции в секундах и часах
     const flightTimeInSeconds = distanceInMeters / groundSpeedInMetersPerSecond; // seconds
     const flightTimeInHours = flightTimeInSeconds / 3600;
 
-    // находим строку в профиле для нового значения M (с учётом ветра)
-    const profileRowByRecalculatedM = this.getProfileRowBySpeedM(recalculatedMach);
-
-    if (!profileRowByRecalculatedM) {
-      // что-то пошло не так и такой строки в профиле не найдено, abort mission
-      return Number.MAX_SAFE_INTEGER;
-    }
-
     // считаем затраты топлива
-    const fuelBurnHourly = profileRowByRecalculatedM.fuel;
+    const fuelBurnHourly = this.currentProfileRow.fuel;
     const actualFuelBurn = fuelBurnHourly * flightTimeInHours; // kg
 
     // считаем FlightCost по затраченному топливу и времени
@@ -95,20 +84,11 @@ export default class CruisePathFinder extends AStarFinder {
     const flightTimeInSeconds = distanceToEndInMeters / speedInMetersPerSecond;
     const flightTimeInHours = flightTimeInSeconds / 3600;
 
-    const profileRowByM = this.getProfileRowBySpeedM(this.cruiseOptions.speedM);
-
-    if (!profileRowByM) {
-      // что-то пошло не так и такой строки в профиле не найдено, abort mission
-      return Number.MAX_SAFE_INTEGER;
-    }
-
-    const fuelBurnHourly = profileRowByM.fuel;
+    const fuelBurnHourly = this.currentProfileRow.fuel;
     const actualFuelBurn = fuelBurnHourly * flightTimeInHours; // kg
 
     // считаем FlightCost по затраченному топливу и времени
-    const flightCostToEnd = this.getFlightCost(actualFuelBurn, flightTimeInHours);
-
-    return flightCostToEnd;
+    return this.getFlightCost(actualFuelBurn, flightTimeInHours);
   }
 
   findPathWithSummary(...args: any[]): { path: number[][], summary: Record<string, number>} {
@@ -121,7 +101,7 @@ export default class CruisePathFinder extends AStarFinder {
     let totalTime = 0;
 
     path.forEach(cell => {
-      const [x, y, distance, fuel, time] = cell;
+      const [, , distance, fuel, time] = cell;
       totalDistance += distance;
       totalFuelBurn += fuel;
       totalTime += time;
@@ -149,18 +129,8 @@ export default class CruisePathFinder extends AStarFinder {
     return this.altSpecificProfile.find(row => (row.speedM === speedM));
   }
 
-  getProfileRowByAltitude(alt: number): CruiseProfile[0]|undefined {
-    return this.altSpecificProfile.find(row => (row.altitude === alt));
-  }
-
   getGroundSpeedV(speedV: number, point: GridNode): number {
     const windAtPoint = this.cruiseOptions.airConditions[point.y][point.x] as number; // knots
     return speedV + windAtPoint;
   }
-}
-
-function getClosest(array: number[], val: number): number {
-  return array.reduce((a, b) => {
-    return Math.abs(b - val) < Math.abs(a - val) ? b : a;
-  });
 }
