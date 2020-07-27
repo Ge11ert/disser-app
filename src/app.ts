@@ -396,14 +396,14 @@ function extractAscentSpecifications(
   speedM: number,
   altitude: number,
   airConditions: AirConditions,
-  climbProfileForCurrentSpeed: ClimbDescentProfile,
+  climbProfileForAirSpeed: ClimbDescentProfile,
   currentPoint: { x: number, y: number },
 ): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
   // TODO: в текущем файле с ветром слишком большие значения, постоянно выходим за верхний предел по М.
   // TODO: временно делю ветер на 2, чтобы было полегче
   const windAtPoint = (airConditions[currentPoint.y][currentPoint.x] as number) / 2;
 
-  const climbRowForAltitude = climbProfileForCurrentSpeed.find(row => (row.altitude === altitude));
+  const climbRowForAltitude = climbProfileForAirSpeed.find(row => (row.altitude === altitude));
 
   if (!climbRowForAltitude) {
     throw new Error(`No climb profile for Mach ${speedM} and altitude ${altitude}`);
@@ -415,18 +415,20 @@ function extractAscentSpecifications(
   const gsMach = groundSpeed / speedOfSound;
   const recalculatedMach = Number(gsMach.toPrecision(2));
 
-  const climbProfileForRecalculatedMach = getClimbProfileRowsBySpeed(recalculatedMach);
-  const finalClimbRow = climbProfileForRecalculatedMach.find(row => (row.altitude === altitude));
+  const climbProfileForGroundSpeed = getClimbProfileRowsBySpeed(recalculatedMach);
+  const finalClimbRow = climbProfileForGroundSpeed.find(row => (row.altitude === altitude));
 
   if (!finalClimbRow) {
     // TODO: что если с учётом ветра М будет больше MAX_M или меньше MIN_M ?
     throw new Error(`No climb profile for Mach ${recalculatedMach} and altitude ${altitude}`);
   }
 
+  // Особенность: наличие ветра не переводит двигатели в другой режим.
+  // Поэтому расход топлива берём от целевой скорости, а не от скорости с учётом ветра (он должен быть одинаковым)
   return {
     distanceInMiles: finalClimbRow.distanceFromPrev,
     timeInSeconds: finalClimbRow.time,
-    fuelBurnInKgs: finalClimbRow.fuelFromPrev,
+    fuelBurnInKgs: climbRowForAltitude.fuelFromPrev,
   };
 }
 
@@ -434,14 +436,14 @@ function extractDescentSpecifications(
   speedM: number,
   altitude: number,
   airConditions: AirConditions,
-  descentProfileForCurrentSpeed: ClimbDescentProfile,
+  descentProfileForAirSpeed: ClimbDescentProfile,
   currentPoint: { x: number, y: number },
 ): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
   // TODO: в текущем файле с ветром слишком большие значения, постоянно выходим за верхний предел по М.
   // TODO: временно делю ветер на 2, чтобы было полегче
   const windAtPoint = (airConditions[currentPoint.y][currentPoint.x] as number) / 2;
 
-  const descentRowForAltitude = descentProfileForCurrentSpeed.find(row => (row.altitude === altitude));
+  const descentRowForAltitude = descentProfileForAirSpeed.find(row => (row.altitude === altitude));
 
   if (!descentRowForAltitude) {
     throw new Error(`No descent profile for Mach ${speedM} and altitude ${altitude}`);
@@ -453,18 +455,20 @@ function extractDescentSpecifications(
   const gsMach = groundSpeed / speedOfSound;
   const recalculatedMach = Number(gsMach.toPrecision(2));
 
-  const descentProfileForRecalculatedMach = getDescentProfileRowsBySpeed(recalculatedMach);
-  const finalDescentRow = descentProfileForRecalculatedMach.find(row => (row.altitude === altitude));
+  const descentProfileForGroundSpeed = getDescentProfileRowsBySpeed(recalculatedMach);
+  const finalDescentRow = descentProfileForGroundSpeed.find(row => (row.altitude === altitude));
 
   if (!finalDescentRow) {
     // TODO: что если с учётом ветра М будет больше MAX_M или меньше MIN_M ?
     throw new Error(`No descent profile for Mach ${recalculatedMach} and altitude ${altitude}`);
   }
 
+  // Особенность: наличие ветра не переводит двигатели в другой режим.
+  // Поэтому расход топлива берём от целевой скорости, а не от скорости с учётом ветра (он должен быть одинаковым)
   return {
     distanceInMiles: finalDescentRow.distanceFromPrev,
     timeInSeconds: finalDescentRow.time,
-    fuelBurnInKgs: finalDescentRow.fuelFromPrev,
+    fuelBurnInKgs: descentRowForAltitude.fuelFromPrev,
   };
 }
 
