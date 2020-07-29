@@ -1,6 +1,7 @@
 import ElectronApp from './electron/server';
 import Grid from './pathfinding/core/grid';
 import CruisePathFinder from './pathfinding/finder/cruise-path-finder';
+import OptimalPathFinder from './pathfinding/finder/optimal-path-finder';
 import Geo from './geo';
 import { cell } from './constants/grid';
 import { fromMilesToGridUnits } from './utils/converters';
@@ -119,6 +120,9 @@ export default class DisserApp implements DisserAppAPI {
       totalRun.set(speedM, speedRunSummary);
     });
     console.timeEnd('Speed cycle');
+
+    const optimalPathFinder = new OptimalPathFinder(totalRun);
+    optimalPathFinder.findOptimalPaths();
   }
 
   performSpeedCycleStep(speedValue: number): SpeedRun {
