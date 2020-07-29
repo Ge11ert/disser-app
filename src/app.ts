@@ -399,9 +399,7 @@ function extractAscentSpecifications(
   climbProfileForAirSpeed: ClimbDescentProfile,
   currentPoint: { x: number, y: number },
 ): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
-  // TODO: в текущем файле с ветром слишком большие значения, постоянно выходим за верхний предел по М.
-  // TODO: временно делю ветер на 2, чтобы было полегче
-  const windAtPoint = (airConditions[currentPoint.y][currentPoint.x] as number) / 2;
+  const windAtPoint = airConditions[currentPoint.y][currentPoint.x] as number;
 
   const climbRowForAltitude = climbProfileForAirSpeed.find(row => (row.altitude === altitude));
 
@@ -439,9 +437,7 @@ function extractDescentSpecifications(
   descentProfileForAirSpeed: ClimbDescentProfile,
   currentPoint: { x: number, y: number },
 ): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
-  // TODO: в текущем файле с ветром слишком большие значения, постоянно выходим за верхний предел по М.
-  // TODO: временно делю ветер на 2, чтобы было полегче
-  const windAtPoint = (airConditions[currentPoint.y][currentPoint.x] as number) / 2;
+  const windAtPoint = airConditions[currentPoint.y][currentPoint.x] as number;
 
   const descentRowForAltitude = descentProfileForAirSpeed.find(row => (row.altitude === altitude));
 
