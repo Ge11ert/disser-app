@@ -10,8 +10,7 @@ import type {
   AirConditions,
   CruiseProfile,
   ClimbDescentProfile,
-  SingleAltitudeRun,
-  SingleSpeedRun,
+  AltitudeRun,
   SpeedRun,
   TotalRun,
 } from './types/interfaces';
@@ -46,8 +45,6 @@ export default class DisserApp implements DisserAppAPI {
   private usedPathAngle = 0;
   private readonly possibleAltitudeList: number[] = [];
   private readonly possibleMachList: number[] = [];
-
-  private totalRun: TotalRun = [];
 
   private static createAltitudeList(env: DisserAppSettings['environment']) {
     const { minH, maxH, altitudeIncrement } = env;
@@ -114,17 +111,17 @@ export default class DisserApp implements DisserAppAPI {
       throw new Error('No air conditions loaded at all, please provide one');
     }
 
-    const speedRun: SpeedRun = new Map();
+    const totalRun: TotalRun = new Map();
 
     console.time('Speed cycle');
     this.possibleMachList.forEach(speedM => {
       const speedRunSummary = this.performSpeedCycleStep(speedM);
-      speedRun.set(speedM, speedRunSummary);
+      totalRun.set(speedM, speedRunSummary);
     });
     console.timeEnd('Speed cycle');
   }
 
-  performSpeedCycleStep(speedValue: number): SingleSpeedRun {
+  performSpeedCycleStep(speedValue: number): SpeedRun {
     const operatingAlt = this.possibleAltitudeList.filter(alt => (alt >= this.geo.startAltInFeet));
     const climbProfileForCurrentSpeed = getClimbProfileRowsBySpeed(speedValue);
     const descentProfileForCurrentSpeed = getDescentProfileRowsBySpeed(speedValue);
@@ -133,7 +130,7 @@ export default class DisserApp implements DisserAppAPI {
     this.lastUsedExitPoint = {...this.initialExitPoint};
 
     // Структура, в которой хранится проход по всем высотам для текущей скорости в формате «высота : данные»
-    const singleSpeedRun: SingleSpeedRun = new Map<number, SingleAltitudeRun>();
+    const singleSpeedRun: SpeedRun = new Map<number, AltitudeRun>();
 
     for (let i = 0; i < operatingAlt.length; i++) {
       const currentAlt = operatingAlt[i];
@@ -162,7 +159,7 @@ export default class DisserApp implements DisserAppAPI {
     prevAltitude: number|null,
     climbProfile: ClimbDescentProfile,
     descentProfile: ClimbDescentProfile,
-  ): [boolean, SingleAltitudeRun?] {
+  ): [boolean, AltitudeRun?] {
     const airConditions = this.airConditionsPerAlt[altitude];
     if (airConditions === undefined) {
       throw new Error(`No air conditions added for altitude ${altitude}`);
@@ -299,7 +296,7 @@ export default class DisserApp implements DisserAppAPI {
       exitPoint.x, exitPoint.y,
       finderGrid,
     );
-    const altitudeRun: SingleAltitudeRun = {
+    const altitudeRun: AltitudeRun = {
       ascent: {
         distanceInMiles: ascentSpecifications.distanceInMiles,
         fuelBurnInKgs: ascentSpecifications.fuelBurnInKgs,

@@ -62,7 +62,6 @@ export interface DisserAppAPI {
 type RunInfo = { distanceInMiles: number, fuelBurnInKgs: number, timeInHours: number };
 type PathInfo = { path: number[][] };
 type RunInfoWithPath = RunInfo & PathInfo;
-export type SingleAltitudeRun = { ascent: RunInfo, cruise: RunInfoWithPath, descent: RunInfo };
-export type SingleSpeedRun = Map<number, SingleAltitudeRun>; // данные по всем высотам для указанной скорости
-export type SpeedRun = Map<number, SingleSpeedRun>; // набор по всем скоростям
-export type TotalRun = SpeedRun[];
+export type AltitudeRun = { ascent: RunInfo, cruise: RunInfoWithPath, descent: RunInfo };
+export type SpeedRun = Map<number, AltitudeRun>; // данные по всем высотам для указанной скорости
+export type TotalRun = Map<number, SpeedRun>; // набор по всем скоростям
