@@ -143,7 +143,9 @@ export default class DisserApp implements DisserAppAPI {
         descentProfileForCurrentSpeed,
       );
       if (altitudeRunSummary) {
-        singleSpeedRun.set(currentAlt, altitudeRunSummary);
+        const prevSummary = prevAlt ? singleSpeedRun.get(prevAlt) : undefined;
+        const currentAltitudeRunSummary: AltitudeRun = combineWithPrev(altitudeRunSummary, prevSummary);
+        singleSpeedRun.set(currentAlt, currentAltitudeRunSummary);
       }
       if (!canContinue) {
         return singleSpeedRun;
@@ -491,4 +493,24 @@ function checkPrevAltitudeForbiddenAreas(
   }
 
   return false;
+}
+
+function combineWithPrev(currentSummary: AltitudeRun, prevSummary: AltitudeRun|undefined): AltitudeRun {
+  if (!prevSummary) {
+    return currentSummary;
+  }
+
+  return {
+    cruise: currentSummary.cruise,
+    ascent: {
+      distanceInMiles: currentSummary.ascent.distanceInMiles + prevSummary.ascent.distanceInMiles,
+      fuelBurnInKgs: currentSummary.ascent.fuelBurnInKgs + prevSummary.ascent.fuelBurnInKgs,
+      timeInHours: currentSummary.ascent.timeInHours + prevSummary.ascent.timeInHours,
+    },
+    descent: {
+      distanceInMiles: currentSummary.descent.distanceInMiles + prevSummary.descent.distanceInMiles,
+      fuelBurnInKgs: currentSummary.descent.fuelBurnInKgs + prevSummary.descent.fuelBurnInKgs,
+      timeInHours: currentSummary.descent.timeInHours + prevSummary.descent.timeInHours,
+    },
+  };
 }
