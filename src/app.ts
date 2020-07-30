@@ -122,6 +122,8 @@ export default class DisserApp implements DisserAppAPI {
     console.timeEnd('Speed cycle');
 
     const optimalPathFinder = new OptimalPathFinder(totalRun);
+    // TODO: брать значение из интерфейса
+    optimalPathFinder.setCustomCostIndex(37);
     optimalPathFinder.findOptimalPaths();
   }
 

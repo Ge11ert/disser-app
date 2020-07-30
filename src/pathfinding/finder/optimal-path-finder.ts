@@ -19,19 +19,38 @@ const costFactor = {
     Cf: 1,
     CI: 99,
   },
-}
+  custom: {
+    Cf: 1,
+    CI: 50,
+  },
+};
 
 export default class OptimalPathFinder {
   fuelOptimalPath: OptimalPath|null = null;
   timeOptimalPath: OptimalPath|null = null;
+  combinedOptimalPath: OptimalPath|null = null;
+
+  costFactor = costFactor;
 
   constructor(private totalRun: TotalRun) {}
 
   findOptimalPaths(): void {
     let minimumFuelFlightCost = Number.MAX_SAFE_INTEGER;
     let minimumTimeFlightCost = Number.MAX_SAFE_INTEGER;
+    let minimumCombinedFlightCost = Number.MAX_SAFE_INTEGER;
     let fuelOptimalPath: OptimalPath|null = null;
     let timeOptimalPath: OptimalPath|null = null;
+    let combinedOptimalPath: OptimalPath|null = null;
+
+    const flightCostLog: {
+      fuel: [number, number, number][],
+      time: [number, number, number][],
+      combined: [number, number, number][],
+    } = {
+      fuel: [],
+      time: [],
+      combined: [],
+    };
 
     for (const [speed, speedSummary] of this.totalRun) {
       for (const [altitude, altSummary] of speedSummary) {
@@ -40,6 +59,11 @@ export default class OptimalPathFinder {
         const flightDistance = summarize(altSummary, 'distanceInMiles');
         const fuelFlightCost = getFlightCost(fuelConsumption, timeSpent, costFactor.fuel);
         const timeFlightCost = getFlightCost(fuelConsumption, timeSpent, costFactor.time);
+        const combinedFlightCost = getFlightCost(fuelConsumption, timeSpent, costFactor.custom);
+
+        flightCostLog.fuel.push([speed, altitude, fuelFlightCost]);
+        flightCostLog.time.push([speed, altitude, timeFlightCost]);
+        flightCostLog.combined.push([speed, altitude, combinedFlightCost]);
 
         if (fuelFlightCost < minimumFuelFlightCost) {
           minimumFuelFlightCost = fuelFlightCost;
@@ -66,11 +90,29 @@ export default class OptimalPathFinder {
             path: altSummary.cruise.path,
           }
         }
+
+        if (combinedFlightCost < minimumCombinedFlightCost) {
+          minimumCombinedFlightCost = combinedFlightCost;
+          combinedOptimalPath = {
+            flightCost: fuelFlightCost,
+            fuel: fuelConsumption,
+            time: timeSpent,
+            distance: flightDistance,
+            speed,
+            altitude,
+            path: altSummary.cruise.path,
+          }
+        }
       }
     }
 
     this.fuelOptimalPath = fuelOptimalPath;
     this.timeOptimalPath = timeOptimalPath;
+    this.combinedOptimalPath = combinedOptimalPath;
+  }
+
+  setCustomCostIndex(costIndex: number): void {
+    this.costFactor.custom.CI = costIndex;
   }
 }
 
