@@ -1,3 +1,6 @@
+import format from 'date-fns/format';
+import parseISO from 'date-fns/parseISO';
+import differenceInSeconds from 'date-fns/differenceInSeconds';
 import ElectronApp from './electron/server';
 import Grid from './pathfinding/core/grid';
 import CruisePathFinder from './pathfinding/finder/cruise-path-finder';
@@ -114,17 +117,12 @@ export default class DisserApp implements DisserAppAPI {
 
     const totalRun: TotalRun = new Map();
 
-    console.time('Speed cycle');
     this.possibleMachList.forEach(speedM => {
       const speedRunSummary = this.performSpeedCycleStep(speedM);
       totalRun.set(speedM, speedRunSummary);
     });
-    console.timeEnd('Speed cycle');
 
-    const optimalPathFinder = new OptimalPathFinder(totalRun);
-    // TODO: брать значение из интерфейса
-    optimalPathFinder.setCustomCostIndex(37);
-    optimalPathFinder.findOptimalPaths();
+    this.findOptimalPaths(totalRun);
   }
 
   performSpeedCycleStep(speedValue: number): SpeedRun {
@@ -373,6 +371,31 @@ export default class DisserApp implements DisserAppAPI {
     // TODO: этот расчёт путевого угла нужен из-за того, что тестовый airConditions меньше области по gps-координатам
     const pathAngle = Math.acos(xDistance / diagonal);
     this.usedPathAngle = pathAngle;
+  }
+
+  findOptimalPaths(totalRun: TotalRun): void {
+    const availableTime = this.getAvailableTime();
+
+    const optimalPathFinder = new OptimalPathFinder(totalRun, availableTime);
+    // TODO: брать значение из интерфейса
+    optimalPathFinder.setCustomCostIndex(37);
+    optimalPathFinder.findOptimalPaths();
+  }
+
+  getAvailableTime(): number {
+    // TODO: брать значения из интерфейса
+    const startTimeMock = '18:04:00';
+    const endTimeMock = '19:00:00';
+
+    const currentISODate = format(new Date(), 'yyyy-LL-dd');
+    const startISODate = `${currentISODate}T${startTimeMock}`;
+    const endISODate = `${currentISODate}T${endTimeMock}`;
+
+    const startDate = parseISO(startISODate);
+    const endDate = parseISO(endISODate);
+    const diffInSeconds = Math.abs(differenceInSeconds(startDate, endDate));
+    const diffInHours = diffInSeconds / 3600;
+    return diffInHours;
   }
 };
 
