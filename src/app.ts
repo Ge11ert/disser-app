@@ -392,7 +392,7 @@ export default class DisserApp implements DisserAppAPI {
   getAvailableTime(): number {
     // TODO: брать значения из интерфейса
     const startTimeMock = '18:04:00';
-    const endTimeMock = '19:00:00';
+    const endTimeMock = '19:15:00';
 
     const currentISODate = format(new Date(), 'yyyy-LL-dd');
     const startISODate = `${currentISODate}T${startTimeMock}`;

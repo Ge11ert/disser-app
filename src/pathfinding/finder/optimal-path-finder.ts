@@ -1,4 +1,6 @@
-import { TotalRun, AltitudeRun } from '../../types/interfaces';
+import { getCruiseProfileRowsByAltitude } from '../../flight-profiles';
+
+import type { TotalRun, AltitudeRun } from '../../types/interfaces';
 
 type OptimalPath = {
   flightCost: number,
@@ -8,6 +10,7 @@ type OptimalPath = {
   speed: number,
   altitude: number,
   path: number[][],
+  averageWind: number,
 }
 
 const costFactor = {
@@ -25,10 +28,15 @@ const costFactor = {
   },
 };
 
+// TODO: брать из приложения
+const minMach = 0.71;
+const maxMach = 0.81;
+
 export default class OptimalPathFinder {
   fuelOptimalPath: OptimalPath|null = null;
   timeOptimalPath: OptimalPath|null = null;
   combinedOptimalPath: OptimalPath|null = null;
+  rtaOptimalPath: OptimalPath|null = null;
 
   costFactor = costFactor;
 
@@ -75,6 +83,9 @@ export default class OptimalPathFinder {
             speed,
             altitude,
             path: altSummary.cruise.path,
+            averageWind: (
+              altSummary.ascent.averageWind + altSummary.cruise.averageWind + altSummary.descent.averageWind
+            ) / 3,
           };
         }
 
@@ -88,6 +99,9 @@ export default class OptimalPathFinder {
             speed,
             altitude,
             path: altSummary.cruise.path,
+            averageWind: (
+              altSummary.ascent.averageWind + altSummary.cruise.averageWind + altSummary.descent.averageWind
+            ) / 3,
           }
         }
 
@@ -101,6 +115,9 @@ export default class OptimalPathFinder {
             speed,
             altitude,
             path: altSummary.cruise.path,
+            averageWind: (
+              altSummary.ascent.averageWind + altSummary.cruise.averageWind + altSummary.descent.averageWind
+            ) / 3,
           }
         }
       }
@@ -109,6 +126,23 @@ export default class OptimalPathFinder {
     this.fuelOptimalPath = fuelOptimalPath;
     this.timeOptimalPath = timeOptimalPath;
     this.combinedOptimalPath = combinedOptimalPath;
+    this.rtaOptimalPath = fuelOptimalPath ? this.findRTAOptimalPath(fuelOptimalPath) : null;
+    console.log('finished');
+  }
+
+  findRTAOptimalPath(fuelOptimalPath: OptimalPath): OptimalPath|null {
+    const requiredGroundSpeed = fuelOptimalPath.distance / this.availableTimeInHours; // knots (nm per hour)
+    const requiredAirSpeed = requiredGroundSpeed + fuelOptimalPath.averageWind;
+
+    const profileRowsForAltitude = getCruiseProfileRowsByAltitude(fuelOptimalPath.altitude);
+    const speedOfSound = profileRowsForAltitude[0].speedOfSound;
+    const requiredMach = requiredAirSpeed / speedOfSound;
+
+    if (requiredMach >= minMach && requiredMach <= maxMach) {
+      return fuelOptimalPath;
+    }
+
+    return null;
   }
 
   setCustomCostIndex(costIndex: number): void {
