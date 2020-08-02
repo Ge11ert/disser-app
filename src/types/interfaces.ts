@@ -59,7 +59,7 @@ export interface DisserAppAPI {
   registerAirConditionsForAltitude(conditions: AirConditions|undefined, alt: number): void;
 }
 
-type RunInfo = { distanceInMiles: number, fuelBurnInKgs: number, timeInHours: number };
+type RunInfo = { distanceInMiles: number, fuelBurnInKgs: number, timeInHours: number, averageWind: number };
 type PathInfo = { path: number[][] };
 type RunInfoWithPath = RunInfo & PathInfo;
 export type AltitudeRun = { ascent: RunInfo, cruise: RunInfoWithPath, descent: RunInfo };

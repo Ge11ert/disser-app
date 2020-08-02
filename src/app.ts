@@ -167,6 +167,7 @@ export default class DisserApp implements DisserAppAPI {
     descentProfile: ClimbDescentProfile,
   ): [boolean, AltitudeRun?] {
     const airConditions = this.airConditionsPerAlt[altitude];
+    let prevAltAirConditions: AirConditions|null = null;
     if (airConditions === undefined) {
       throw new Error(`No air conditions added for altitude ${altitude}`);
     }
@@ -174,15 +175,17 @@ export default class DisserApp implements DisserAppAPI {
     let entryPoint = this.lastUsedEntryPoint;
     let exitPoint = this.lastUsedExitPoint;
 
-    let ascentSpecifications = {
+    let ascentSpecifications: AltitudeRun['ascent'] = {
       distanceInMiles: 0,
-      timeInSeconds: 0,
+      timeInHours: 0,
       fuelBurnInKgs: 0,
+      averageWind: 0,
     };
-    let descentSpecifications = {
+    let descentSpecifications: AltitudeRun['descent'] = {
       distanceInMiles: 0,
-      timeInSeconds: 0,
+      timeInHours: 0,
       fuelBurnInKgs: 0,
+      averageWind: 0,
     };
 
     let climbOffsetXInMiles = 0;
@@ -196,6 +199,7 @@ export default class DisserApp implements DisserAppAPI {
     let descentOffsetYInCells = 0;
 
     if (prevAltitude !== null) {
+      prevAltAirConditions = this.airConditionsPerAlt[prevAltitude];
       try {
         ascentSpecifications = extractAscentSpecifications(speedM, altitude, airConditions, climbProfile, entryPoint);
         climbOffsetXInMiles = Math.cos(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
@@ -215,20 +219,21 @@ export default class DisserApp implements DisserAppAPI {
       const forbiddenAreasDuringClimb = checkPrevAltitudeForbiddenAreas(
         entryPoint,
         nextEntryPoint,
-        this.airConditionsPerAlt[prevAltitude],
+        prevAltAirConditions,
       );
 
       if (forbiddenAreasDuringClimb) {
         return [false];
       }
 
+      ascentSpecifications.averageWind = (getWindAtPoint(entryPoint, prevAltAirConditions) + getWindAtPoint(nextEntryPoint, airConditions)) / 2;
       entryPoint = nextEntryPoint;
 
       try {
         descentSpecifications = extractDescentSpecifications(
           speedM,
           prevAltitude,
-          this.airConditionsPerAlt[prevAltitude],
+          prevAltAirConditions,
           descentProfile,
           exitPoint,
         );
@@ -249,13 +254,14 @@ export default class DisserApp implements DisserAppAPI {
       const forbiddenAreasDuringDescent = checkPrevAltitudeForbiddenAreas(
         nextExitPoint,
         exitPoint,
-        this.airConditionsPerAlt[altitude],
+        airConditions,
       );
 
       if (forbiddenAreasDuringDescent) {
         return [false];
       }
 
+      descentSpecifications.averageWind = (getWindAtPoint(exitPoint, prevAltAirConditions) + getWindAtPoint(nextExitPoint, airConditions)) / 2;
       exitPoint = nextExitPoint;
     }
 
@@ -267,18 +273,21 @@ export default class DisserApp implements DisserAppAPI {
           ascent: {
             distanceInMiles: ascentSpecifications.distanceInMiles,
             fuelBurnInKgs: ascentSpecifications.fuelBurnInKgs,
-            timeInHours: ascentSpecifications.timeInSeconds / 3600,
+            timeInHours: ascentSpecifications.timeInHours,
+            averageWind: ascentSpecifications.averageWind
           },
           descent: {
             distanceInMiles: descentSpecifications.distanceInMiles,
             fuelBurnInKgs: descentSpecifications.fuelBurnInKgs,
-            timeInHours: descentSpecifications.timeInSeconds / 3600,
+            timeInHours: descentSpecifications.timeInHours,
+            averageWind: descentSpecifications.averageWind
           },
           cruise: {
             path: [],
             distanceInMiles: 0,
             fuelBurnInKgs: 0,
             timeInHours: 0,
+            averageWind: 0,
           }
         },
       ]
@@ -306,18 +315,21 @@ export default class DisserApp implements DisserAppAPI {
       ascent: {
         distanceInMiles: ascentSpecifications.distanceInMiles,
         fuelBurnInKgs: ascentSpecifications.fuelBurnInKgs,
-        timeInHours: ascentSpecifications.timeInSeconds / 3600,
+        timeInHours: ascentSpecifications.timeInHours,
+        averageWind: ascentSpecifications.averageWind
       },
       descent: {
         distanceInMiles: descentSpecifications.distanceInMiles,
         fuelBurnInKgs: descentSpecifications.fuelBurnInKgs,
-        timeInHours: descentSpecifications.timeInSeconds / 3600,
+        timeInHours: descentSpecifications.timeInHours,
+        averageWind: descentSpecifications.averageWind
       },
       cruise: {
         path,
         distanceInMiles: summary.totalDistance,
         fuelBurnInKgs: summary.totalFuelBurn,
         timeInHours: summary.totalTime,
+        averageWind: summary.averageWind,
       }
     };
 
@@ -426,8 +438,8 @@ function extractAscentSpecifications(
   airConditions: AirConditions,
   climbProfileForAirSpeed: ClimbDescentProfile,
   currentPoint: { x: number, y: number },
-): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
-  const windAtPoint = airConditions[currentPoint.y][currentPoint.x] as number;
+): AltitudeRun['ascent'] {
+  const windAtPoint = getWindAtPoint(currentPoint, airConditions);
 
   const climbRowForAltitude = climbProfileForAirSpeed.find(row => (row.altitude === altitude));
 
@@ -453,8 +465,9 @@ function extractAscentSpecifications(
   // Поэтому расход топлива берём от целевой скорости, а не от скорости с учётом ветра (он должен быть одинаковым)
   return {
     distanceInMiles: finalClimbRow.distanceFromPrev,
-    timeInSeconds: finalClimbRow.time,
+    timeInHours: finalClimbRow.time / 3600,
     fuelBurnInKgs: climbRowForAltitude.fuelFromPrev,
+    averageWind: windAtPoint,
   };
 }
 
@@ -464,8 +477,8 @@ function extractDescentSpecifications(
   airConditions: AirConditions,
   descentProfileForAirSpeed: ClimbDescentProfile,
   currentPoint: { x: number, y: number },
-): { distanceInMiles: number, timeInSeconds: number, fuelBurnInKgs: number } {
-  const windAtPoint = airConditions[currentPoint.y][currentPoint.x] as number;
+): AltitudeRun['descent'] {
+  const windAtPoint = getWindAtPoint(currentPoint, airConditions);
 
   const descentRowForAltitude = descentProfileForAirSpeed.find(row => (row.altitude === altitude));
 
@@ -491,8 +504,9 @@ function extractDescentSpecifications(
   // Поэтому расход топлива берём от целевой скорости, а не от скорости с учётом ветра (он должен быть одинаковым)
   return {
     distanceInMiles: finalDescentRow.distanceFromPrev,
-    timeInSeconds: finalDescentRow.time,
+    timeInHours: finalDescentRow.time / 3600,
     fuelBurnInKgs: descentRowForAltitude.fuelFromPrev,
+    averageWind: windAtPoint,
   };
 }
 
@@ -535,11 +549,25 @@ function combineWithPrev(currentSummary: AltitudeRun, prevSummary: AltitudeRun|u
       distanceInMiles: currentSummary.ascent.distanceInMiles + prevSummary.ascent.distanceInMiles,
       fuelBurnInKgs: currentSummary.ascent.fuelBurnInKgs + prevSummary.ascent.fuelBurnInKgs,
       timeInHours: currentSummary.ascent.timeInHours + prevSummary.ascent.timeInHours,
+      averageWind: (
+        prevSummary.ascent.averageWind > 0
+          ? (currentSummary.ascent.averageWind + prevSummary.ascent.averageWind) / 2
+          : currentSummary.ascent.averageWind
+      ),
     },
     descent: {
       distanceInMiles: currentSummary.descent.distanceInMiles + prevSummary.descent.distanceInMiles,
       fuelBurnInKgs: currentSummary.descent.fuelBurnInKgs + prevSummary.descent.fuelBurnInKgs,
       timeInHours: currentSummary.descent.timeInHours + prevSummary.descent.timeInHours,
+      averageWind: (
+        prevSummary.descent.averageWind > 0
+          ? (currentSummary.descent.averageWind + prevSummary.descent.averageWind) / 2
+          : currentSummary.descent.averageWind
+      ),
     },
   };
+}
+
+function getWindAtPoint(point: { x: number, y: number }, airConditions: AirConditions): number {
+  return (airConditions[point.y][point.x] as number);
 }

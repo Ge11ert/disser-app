@@ -32,7 +32,7 @@ export default class OptimalPathFinder {
 
   costFactor = costFactor;
 
-  constructor(private totalRun: TotalRun) {}
+  constructor(private totalRun: TotalRun, private availableTimeInHours: number) {}
 
   findOptimalPaths(): void {
     let minimumFuelFlightCost = Number.MAX_SAFE_INTEGER;

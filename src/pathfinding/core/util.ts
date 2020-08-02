@@ -7,7 +7,7 @@ export function backtrace(node: GridNode): number[][] {
     node.distanceFromNeighbourInMiles,
     node.fuelBurnFromNeighbourInKgs,
     node.timeFromNeighbourInHours,
-    node.flightCostFromNeighbour,
+    node.windAtNode,
   ]];
   let currentNode = { ...node };
 
@@ -19,7 +19,7 @@ export function backtrace(node: GridNode): number[][] {
       currentNode.distanceFromNeighbourInMiles,
       currentNode.fuelBurnFromNeighbourInKgs,
       currentNode.timeFromNeighbourInHours,
-      currentNode.flightCostFromNeighbour,
+      currentNode.windAtNode,
     ]);
   }
 

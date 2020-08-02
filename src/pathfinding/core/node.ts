@@ -15,7 +15,7 @@ export default class GridNode {
   distanceFromNeighbourInMiles: number = 0;
   fuelBurnFromNeighbourInKgs: number = 0;
   timeFromNeighbourInHours: number = 0;
-  flightCostFromNeighbour: number = 0; // CI = 0
+  windAtNode = 0;
 
   private defaultSize = { x: 1, y: 1};
 
