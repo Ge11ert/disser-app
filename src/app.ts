@@ -8,20 +8,16 @@ import OptimalPathFinder from './pathfinding/finder/optimal-path-finder';
 import Geo from './geo';
 import { cell } from './constants/grid';
 import { fromMilesToGridUnits } from './utils/converters';
+import { getClimbProfileRowsBySpeed, getDescentProfileRowsBySpeed } from './flight-profiles';
 
 import type {
   DisserAppAPI,
   AirConditions,
-  CruiseProfile,
   ClimbDescentProfile,
   AltitudeRun,
   SpeedRun,
   TotalRun,
 } from './types/interfaces';
-
-const cruiseProfileJSON: CruiseProfile = require('./assets/cruise_profile.json');
-const climbProfileJSON: ClimbDescentProfile = require('./assets/climb_profile.json');
-const descentProfileJSON: ClimbDescentProfile = require('./assets/descent_profile.json');
 
 interface DisserAppSettings {
   electron: Record<string, any>;
@@ -299,7 +295,6 @@ export default class DisserApp implements DisserAppAPI {
     let finder: CruisePathFinder|null = new CruisePathFinder(
       { allowDiagonal: true },
       {
-        profile: cruiseProfileJSON,
         airConditions,
         altitude,
         speedM,
@@ -508,14 +503,6 @@ function extractDescentSpecifications(
     fuelBurnInKgs: descentRowForAltitude.fuelFromPrev,
     averageWind: windAtPoint,
   };
-}
-
-function getClimbProfileRowsBySpeed(speedM: number): ClimbDescentProfile {
-  return climbProfileJSON.filter(row => (row.speedM === speedM));
-}
-
-function getDescentProfileRowsBySpeed(speedM: number): ClimbDescentProfile {
-  return descentProfileJSON.filter(row => (row.speedM === speedM));
 }
 
 function checkPrevAltitudeForbiddenAreas(
