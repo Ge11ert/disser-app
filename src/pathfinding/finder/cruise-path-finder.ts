@@ -1,12 +1,12 @@
 import AStarFinder from './a-star-finder';
 import GridNode from '../core/node';
 import { fromMilesToMeters, fromKnotsToMetersPerSecond } from '../../utils/converters';
-import { CruiseProfile, AirConditions } from '../../types/interfaces';
+import { getCruiseProfileRowsByAltitude } from '../../flight-profiles';
 
+import type { CruiseProfile, AirConditions } from '../../types/interfaces';
 import type { finderOptions } from './a-star-finder';
 
 interface cruiseOptions {
-  profile: CruiseProfile,
   airConditions: AirConditions,
   speedM: number, // units
   speedV: number, // knots
@@ -27,9 +27,7 @@ export default class CruisePathFinder extends AStarFinder {
     super(finderOptions);
 
     this.cruiseOptions = cruiseOptions;
-    this.altSpecificProfile = cruiseOptions.profile.filter((profileRow) => (
-      profileRow.altitude === cruiseOptions.altitude
-    ));
+    this.altSpecificProfile = getCruiseProfileRowsByAltitude(cruiseOptions.altitude);
 
     const currentProfileRow = this.getProfileRowBySpeedM(cruiseOptions.speedM);
 
@@ -67,7 +65,9 @@ export default class CruisePathFinder extends AStarFinder {
     neighborNode.distanceFromNeighbourInMiles = distanceToNeighbour;
     neighborNode.fuelBurnFromNeighbourInKgs = actualFuelBurn;
     neighborNode.timeFromNeighbourInHours = flightTimeInHours;
-    neighborNode.flightCostFromNeighbour = flightCostToNeighbour;
+    neighborNode.windAtNode = this.getWind(neighborNode);
+
+    currentNode.windAtNode = this.getWind(currentNode);
 
     return flightCostToNeighbour;
   }
@@ -107,12 +107,17 @@ export default class CruisePathFinder extends AStarFinder {
       totalTime += time;
     });
 
+    const averageWind = path.reduce((acc, cell) => {
+      return (acc + cell[5]);
+    }, 0) / path.length;
+
     return {
       path,
       summary: {
         totalDistance,
         totalFuelBurn,
         totalTime,
+        averageWind,
       },
     };
   }
@@ -130,7 +135,11 @@ export default class CruisePathFinder extends AStarFinder {
   }
 
   getGroundSpeedV(speedV: number, point: GridNode): number {
-    const windAtPoint = this.cruiseOptions.airConditions[point.y][point.x] as number; // knots
+    const windAtPoint = this.getWind(point); // knots
     return speedV + windAtPoint;
+  }
+
+  getWind(point: GridNode): number {
+    return (this.cruiseOptions.airConditions[point.y][point.x] as number);
   }
 }

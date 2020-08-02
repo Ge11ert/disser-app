@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/Ge11ert/disser-app#readme",
   "dependencies": {
+    "date-fns": "2.15.0",
     "electron-is-dev": "1.2.0",
     "electron-reload": "1.5.0",
     "heap": "0.2.6",

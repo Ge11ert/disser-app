@@ -1,14 +1,2423 @@
 [
   {
+    "speedM": null,
+    "speedOfSound": null,
+    "altitude": null,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": null,
+    "speedV": null,
+    "time": null
+  },
+  {
+    "speedM": null,
+    "speedOfSound": null,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": null,
+    "speedV": null,
+    "time": null
+  },
+  {
+    "speedM": null,
+    "speedOfSound": null,
+    "altitude": 0,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": null,
+    "speedV": null,
+    "time": null
+  },
+  {
+    "speedM": 0.5,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 74.965,
+    "fuelFromPrev": 9.569999999999993,
+    "distanceFrom0": 42.25,
+    "distanceFromPrev": 5.756,
+    "speedV": 309.5,
+    "time": 66.95185783521809
+  },
+  {
+    "speedM": 0.5,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 84.535,
+    "fuelFromPrev": 9.677000000000007,
+    "distanceFrom0": 48.006,
+    "distanceFromPrev": 5.856000000000002,
+    "speedV": 307,
+    "time": 68.66970684039089
+  },
+  {
+    "speedM": 0.5,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 94.212,
+    "fuelFromPrev": 9.649999999999991,
+    "distanceFrom0": 53.862,
+    "distanceFromPrev": 5.875999999999998,
+    "speedV": 304.5,
+    "time": 69.46995073891622
+  },
+  {
+    "speedM": 0.5,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 103.862,
+    "fuelFromPrev": 9.551000000000002,
+    "distanceFrom0": 59.738,
+    "distanceFromPrev": 5.834999999999994,
+    "speedV": 302,
+    "time": 69.5562913907284
+  },
+  {
+    "speedM": 0.5,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 113.413,
+    "fuelFromPrev": 9.36,
+    "distanceFrom0": 65.573,
+    "distanceFromPrev": 5.721000000000004,
+    "speedV": 299.5,
+    "time": 68.76661101836397
+  },
+  {
+    "speedM": 0.5,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 122.773,
+    "fuelFromPrev": 9.040999999999997,
+    "distanceFrom0": 71.294,
+    "distanceFromPrev": 5.524000000000001,
+    "speedV": 297,
+    "time": 66.95757575757577
+  },
+  {
+    "speedM": 0.5,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 131.814,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 76.818,
+    "distanceFromPrev": 0,
+    "speedV": 294.5,
+    "time": 0
+  },
+  {
+    "speedM": 0.5,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 292,
+    "time": 0
+  },
+  {
+    "speedM": 0.5,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 289.5,
+    "time": 0
+  },
+  {
+    "speedM": 0.5,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 286.5,
+    "time": 0
+  },
+  {
+    "speedM": 0.5,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 286.5,
+    "time": 0
+  },
+  {
+    "speedM": 0.5,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 286.5,
+    "time": 0
+  },
+  {
+    "speedM": 0.51,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 70.33577693939209,
+    "fuelFromPrev": 9.237809089660644,
+    "distanceFrom0": 40.282934761047365,
+    "distanceFromPrev": 5.657238739013671,
+    "speedV": 315.69,
+    "time": 64.51284317035451
+  },
+  {
+    "speedM": 0.51,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 79.57358602905273,
+    "fuelFromPrev": 9.368558296203616,
+    "distanceFrom0": 45.940173500061036,
+    "distanceFromPrev": 5.776112541198728,
+    "speedV": 313.14,
+    "time": 66.404819404469
+  },
+  {
+    "speedM": 0.51,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 88.94214432525635,
+    "fuelFromPrev": 9.384878219604474,
+    "distanceFrom0": 51.716286041259764,
+    "distanceFromPrev": 5.823615653991702,
+    "speedV": 310.59000000000003,
+    "time": 67.50061609958506
+  },
+  {
+    "speedM": 0.51,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 98.32702254486082,
+    "fuelFromPrev": 9.336772415161136,
+    "distanceFrom0": 57.539901695251466,
+    "distanceFromPrev": 5.813472923278802,
+    "speedV": 308.04,
+    "time": 67.94086003052747
+  },
+  {
+    "speedM": 0.51,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 107.66379496002196,
+    "fuelFromPrev": 9.198354637145997,
+    "distanceFrom0": 63.35337461853027,
+    "distanceFromPrev": 5.732878196716314,
+    "speedV": 305.49,
+    "time": 67.55822288185777
+  },
+  {
+    "speedM": 0.51,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 116.86214959716796,
+    "fuelFromPrev": 8.930433601379406,
+    "distanceFrom0": 69.08625281524658,
+    "distanceFromPrev": 5.567937576293957,
+    "speedV": 302.94,
+    "time": 66.16681611757525
+  },
+  {
+    "speedM": 0.51,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 125.79258319854736,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 74.65419039154054,
+    "distanceFromPrev": 0,
+    "speedV": 300.39,
+    "time": 0
+  },
+  {
+    "speedM": 0.51,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 297.84000000000003,
+    "time": 0
+  },
+  {
+    "speedM": 0.51,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 295.29,
+    "time": 0
+  },
+  {
+    "speedM": 0.51,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 292.23,
+    "time": 0
+  },
+  {
+    "speedM": 0.51,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 292.23,
+    "time": 0
+  },
+  {
+    "speedM": 0.51,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 292.23,
+    "time": 0
+  },
+  {
+    "speedM": 0.52,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 65.70655387878418,
+    "fuelFromPrev": 8.905618179321294,
+    "distanceFrom0": 38.31586952209473,
+    "distanceFromPrev": 5.558477478027342,
+    "speedV": 321.88,
+    "time": 62.16763676183183
+  },
+  {
+    "speedM": 0.52,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 74.61217205810547,
+    "fuelFromPrev": 9.060116592407226,
+    "distanceFrom0": 43.87434700012207,
+    "distanceFromPrev": 5.696225082397461,
+    "speedV": 319.28000000000003,
+    "time": 64.22704302377493
+  },
+  {
+    "speedM": 0.52,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 83.6722886505127,
+    "fuelFromPrev": 9.11975643920897,
+    "distanceFrom0": 49.57057208251953,
+    "distanceFromPrev": 5.771231307983399,
+    "speedV": 316.68,
+    "time": 65.60702510022811
+  },
+  {
+    "speedM": 0.52,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 92.79204508972167,
+    "fuelFromPrev": 9.12254483032227,
+    "distanceFrom0": 55.34180339050293,
+    "distanceFromPrev": 5.79194584655761,
+    "speedV": 314.08,
+    "time": 66.3875606457189
+  },
+  {
+    "speedM": 0.52,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 101.91458992004394,
+    "fuelFromPrev": 9.036709274291994,
+    "distanceFrom0": 61.13374923706054,
+    "distanceFromPrev": 5.744756393432624,
+    "speedV": 311.48,
+    "time": 66.39631121214026
+  },
+  {
+    "speedM": 0.52,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 110.95129919433593,
+    "fuelFromPrev": 8.819867202758786,
+    "distanceFrom0": 66.87850563049317,
+    "distanceFromPrev": 5.611875152587899,
+    "speedV": 308.88,
+    "time": 65.40647030988227
+  },
+  {
+    "speedM": 0.52,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 119.77116639709472,
+    "fuelFromPrev": 9.228833602905283,
+    "distanceFrom0": 72.49038078308106,
+    "distanceFromPrev": 5.009619216918935,
+    "speedV": 306.28000000000003,
+    "time": 58.88281696783389
+  },
+  {
+    "speedM": 0.52,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 129,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 77.5,
+    "distanceFromPrev": 0,
+    "speedV": 303.68,
+    "time": 0
+  },
+  {
+    "speedM": 0.52,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 301.08,
+    "time": 0
+  },
+  {
+    "speedM": 0.52,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 297.96000000000004,
+    "time": 0
+  },
+  {
+    "speedM": 0.52,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 297.96000000000004,
+    "time": 0
+  },
+  {
+    "speedM": 0.52,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 297.96000000000004,
+    "time": 0
+  },
+  {
+    "speedM": 0.53,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 60.9375,
+    "fuelFromPrev": 8.564999999999998,
+    "distanceFrom0": 36.4015,
+    "distanceFromPrev": 5.463499999999996,
+    "speedV": 328.07,
+    "time": 59.95244917243267
+  },
+  {
+    "speedM": 0.53,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 69.5025,
+    "fuelFromPrev": 8.745000000000005,
+    "distanceFrom0": 41.864999999999995,
+    "distanceFromPrev": 5.622000000000007,
+    "speedV": 325.42,
+    "time": 62.19408764058762
+  },
+  {
+    "speedM": 0.53,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 78.2475,
+    "fuelFromPrev": 8.855499999999992,
+    "distanceFrom0": 47.487,
+    "distanceFromPrev": 5.7280000000000015,
+    "speedV": 322.77000000000004,
+    "time": 63.886978343712244
+  },
+  {
+    "speedM": 0.53,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 87.103,
+    "fuelFromPrev": 8.917000000000002,
+    "distanceFrom0": 53.215,
+    "distanceFromPrev": 5.783499999999989,
+    "speedV": 320.12,
+    "time": 65.03998500562277
+  },
+  {
+    "speedM": 0.53,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 96.02,
+    "fuelFromPrev": 8.89,
+    "distanceFrom0": 58.99849999999999,
+    "distanceFromPrev": 5.772500000000008,
+    "speedV": 317.47,
+    "time": 65.45815352631753
+  },
+  {
+    "speedM": 0.53,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 104.91,
+    "fuelFromPrev": 8.725999999999999,
+    "distanceFrom0": 64.771,
+    "distanceFromPrev": 5.671999999999997,
+    "speedV": 314.82,
+    "time": 64.85991995425954
+  },
+  {
+    "speedM": 0.53,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 113.636,
+    "fuelFromPrev": 9.364000000000004,
+    "distanceFrom0": 70.443,
+    "distanceFromPrev": 4.557000000000002,
+    "speedV": 312.17,
+    "time": 52.5521350546177
+  },
+  {
+    "speedM": 0.53,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 123,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 75,
+    "distanceFromPrev": 0,
+    "speedV": 309.52000000000004,
+    "time": 0
+  },
+  {
+    "speedM": 0.53,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 306.87,
+    "time": 0
+  },
+  {
+    "speedM": 0.53,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 303.69,
+    "time": 0
+  },
+  {
+    "speedM": 0.53,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 303.69,
+    "time": 0
+  },
+  {
+    "speedM": 0.53,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 303.69,
+    "time": 0
+  },
+  {
+    "speedM": 0.54,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 56.44810775756836,
+    "fuelFromPrev": 8.241236358642574,
+    "distanceFrom0": 34.38173904418945,
+    "distanceFromPrev": 5.360954956054684,
+    "speedV": 334.26000000000005,
+    "time": 57.737802434622324
+  },
+  {
+    "speedM": 0.54,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 64.68934411621093,
+    "fuelFromPrev": 8.44323318481446,
+    "distanceFrom0": 39.742694000244136,
+    "distanceFromPrev": 5.536450164794935,
+    "speedV": 331.56,
+    "time": 60.11346541579734
+  },
+  {
+    "speedM": 0.54,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 73.13257730102539,
+    "fuelFromPrev": 8.589512878417949,
+    "distanceFrom0": 45.27914416503907,
+    "distanceFromPrev": 5.666462615966793,
+    "speedV": 328.86,
+    "time": 62.030242101442724
+  },
+  {
+    "speedM": 0.54,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 81.72209017944334,
+    "fuelFromPrev": 8.69408966064455,
+    "distanceFrom0": 50.945606781005864,
+    "distanceFromPrev": 5.748891693115226,
+    "speedV": 326.16,
+    "time": 63.45355069663604
+  },
+  {
+    "speedM": 0.54,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 90.41617984008789,
+    "fuelFromPrev": 8.713418548583974,
+    "distanceFrom0": 56.69449847412109,
+    "distanceFromPrev": 5.768512786865237,
+    "speedV": 323.46000000000004,
+    "time": 64.20158916934042
+  },
+  {
+    "speedM": 0.54,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 99.12959838867187,
+    "fuelFromPrev": 8.598734405517575,
+    "distanceFrom0": 62.46301126098633,
+    "distanceFromPrev": 5.69975030517579,
+    "speedV": 320.76000000000005,
+    "time": 63.97026156201783
+  },
+  {
+    "speedM": 0.54,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 107.72833279418944,
+    "fuelFromPrev": 9.08266598510744,
+    "distanceFrom0": 68.16276156616212,
+    "distanceFromPrev": 4.858459686279289,
+    "speedV": 318.06,
+    "time": 54.99105474000328
+  },
+  {
+    "speedM": 0.54,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 116.81099877929688,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 73.0212212524414,
+    "distanceFromPrev": 0,
+    "speedV": 315.36,
+    "time": 0
+  },
+  {
+    "speedM": 0.54,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 312.66,
+    "time": 0
+  },
+  {
+    "speedM": 0.54,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 309.42,
+    "time": 0
+  },
+  {
+    "speedM": 0.54,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 309.42,
+    "time": 0
+  },
+  {
+    "speedM": 0.54,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 309.42,
+    "time": 0
+  },
+  {
+    "speedM": 0.55,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 51.95871551513672,
+    "fuelFromPrev": 7.917472717285158,
+    "distanceFrom0": 32.361978088378905,
+    "distanceFromPrev": 5.2584099121093715,
+    "speedV": 340.45000000000005,
+    "time": 55.60368830545964
+  },
+  {
+    "speedM": 0.55,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 59.876188232421875,
+    "fuelFromPrev": 8.141466369628908,
+    "distanceFrom0": 37.620388000488276,
+    "distanceFromPrev": 5.450900329589857,
+    "speedV": 337.70000000000005,
+    "time": 58.10850218099935
+  },
+  {
+    "speedM": 0.55,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 68.01765460205078,
+    "fuelFromPrev": 8.32352575683592,
+    "distanceFrom0": 43.07128833007813,
+    "distanceFromPrev": 5.604925231933585,
+    "speedV": 334.95000000000005,
+    "time": 60.24102354071026
+  },
+  {
+    "speedM": 0.55,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 76.3411803588867,
+    "fuelFromPrev": 8.471179321289071,
+    "distanceFrom0": 48.67621356201172,
+    "distanceFromPrev": 5.714283386230463,
+    "speedV": 332.20000000000005,
+    "time": 61.92480490797611
+  },
+  {
+    "speedM": 0.55,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 84.81235968017577,
+    "fuelFromPrev": 8.536837097167975,
+    "distanceFrom0": 54.39049694824218,
+    "distanceFromPrev": 5.764525573730474,
+    "speedV": 329.45000000000005,
+    "time": 62.99071806170801
+  },
+  {
+    "speedM": 0.55,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 93.34919677734375,
+    "fuelFromPrev": 8.471468811035152,
+    "distanceFrom0": 60.155022521972654,
+    "distanceFromPrev": 5.727500610351569,
+    "speedV": 326.70000000000005,
+    "time": 63.11295438403933
+  },
+  {
+    "speedM": 0.55,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 101.8206655883789,
+    "fuelFromPrev": 8.801331970214846,
+    "distanceFrom0": 65.88252313232422,
+    "distanceFromPrev": 5.159919372558591,
+    "speedV": 323.95000000000005,
+    "time": 57.34128643682952
+  },
+  {
+    "speedM": 0.55,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 110.62199755859375,
+    "fuelFromPrev": 7.378002441406252,
+    "distanceFrom0": 71.04244250488281,
+    "distanceFromPrev": 6.55755749511718,
+    "speedV": 321.20000000000005,
+    "time": 73.49690841351759
+  },
+  {
+    "speedM": 0.55,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 118,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 77.6,
+    "distanceFromPrev": 0,
+    "speedV": 318.45000000000005,
+    "time": 0
+  },
+  {
+    "speedM": 0.55,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 315.15000000000003,
+    "time": 0
+  },
+  {
+    "speedM": 0.55,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 315.15000000000003,
+    "time": 0
+  },
+  {
+    "speedM": 0.55,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 315.15000000000003,
+    "time": 0
+  },
+  {
+    "speedM": 0.56,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 46.91,
+    "fuelFromPrev": 7.560000000000002,
+    "distanceFrom0": 30.553,
+    "distanceFromPrev": 5.170999999999996,
+    "speedV": 346.64000000000004,
+    "time": 53.70297715208857
+  },
+  {
+    "speedM": 0.56,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 54.47,
+    "fuelFromPrev": 7.813000000000002,
+    "distanceFrom0": 35.724,
+    "distanceFromPrev": 5.388000000000005,
+    "speedV": 343.84000000000003,
+    "time": 56.412284783620336
+  },
+  {
+    "speedM": 0.56,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 62.283,
+    "fuelFromPrev": 8.060999999999993,
+    "distanceFrom0": 41.112,
+    "distanceFromPrev": 5.579999999999998,
+    "speedV": 341.04,
+    "time": 58.90218156228006
+  },
+  {
+    "speedM": 0.56,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 70.344,
+    "fuelFromPrev": 8.283000000000001,
+    "distanceFrom0": 46.692,
+    "distanceFromPrev": 5.731999999999999,
+    "speedV": 338.24,
+    "time": 61.00756859035004
+  },
+  {
+    "speedM": 0.56,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 78.627,
+    "fuelFromPrev": 8.420000000000002,
+    "distanceFrom0": 52.424,
+    "distanceFromPrev": 5.823999999999998,
+    "speedV": 335.44000000000005,
+    "time": 62.50417362270448
+  },
+  {
+    "speedM": 0.56,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 87.047,
+    "fuelFromPrev": 8.411000000000001,
+    "distanceFrom0": 58.248,
+    "distanceFromPrev": 5.82,
+    "speedV": 332.64000000000004,
+    "time": 62.98701298701299
+  },
+  {
+    "speedM": 0.56,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 95.458,
+    "fuelFromPrev": 8.394000000000005,
+    "distanceFrom0": 64.068,
+    "distanceFromPrev": 5.769999999999996,
+    "speedV": 329.84000000000003,
+    "time": 62.9759883579917
+  },
+  {
+    "speedM": 0.56,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 103.852,
+    "fuelFromPrev": 8.224999999999994,
+    "distanceFrom0": 69.838,
+    "distanceFromPrev": 5.609999999999999,
+    "speedV": 327.04,
+    "time": 61.753913894324846
+  },
+  {
+    "speedM": 0.56,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 112.077,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 75.448,
+    "distanceFromPrev": 0,
+    "speedV": 324.24,
+    "time": 0
+  },
+  {
+    "speedM": 0.56,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 320.88000000000005,
+    "time": 0
+  },
+  {
+    "speedM": 0.56,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 320.88000000000005,
+    "time": 0
+  },
+  {
+    "speedM": 0.56,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 320.88000000000005,
+    "time": 0
+  },
+  {
+    "speedM": 0.57,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 42.979931030273434,
+    "fuelFromPrev": 7.269945434570317,
+    "distanceFrom0": 28.32245617675781,
+    "distanceFromPrev": 5.053319824218747,
+    "speedV": 352.83,
+    "time": 51.56010363967771
+  },
+  {
+    "speedM": 0.57,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 50.24987646484375,
+    "fuelFromPrev": 7.537932739257812,
+    "distanceFrom0": 33.37577600097656,
+    "distanceFromPrev": 5.279800659179699,
+    "speedV": 349.97999999999996,
+    "time": 54.309624472961076
+  },
+  {
+    "speedM": 0.57,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 57.78780920410156,
+    "fuelFromPrev": 7.7915515136718625,
+    "distanceFrom0": 38.65557666015626,
+    "distanceFromPrev": 5.4818504638671754,
+    "speedV": 347.13,
+    "time": 56.85092521511201
+  },
+  {
+    "speedM": 0.57,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 65.57936071777343,
+    "fuelFromPrev": 8.02535864257814,
+    "distanceFrom0": 44.13742712402343,
+    "distanceFromPrev": 5.645066772460936,
+    "speedV": 344.28,
+    "time": 59.02823393998888
+  },
+  {
+    "speedM": 0.57,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 73.60471936035157,
+    "fuelFromPrev": 8.183674194335936,
+    "distanceFrom0": 49.78249389648437,
+    "distanceFromPrev": 5.756551147460939,
+    "speedV": 341.42999999999995,
+    "time": 60.69643596303601
+  },
+  {
+    "speedM": 0.57,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 81.7883935546875,
+    "fuelFromPrev": 8.216937622070304,
+    "distanceFrom0": 55.53904504394531,
+    "distanceFromPrev": 5.783001220703127,
+    "speedV": 338.58,
+    "time": 61.488582888922146
+  },
+  {
+    "speedM": 0.57,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 90.0053311767578,
+    "fuelFromPrev": 8.238663940429689,
+    "distanceFrom0": 61.322046264648435,
+    "distanceFromPrev": 5.762838745117193,
+    "speedV": 335.72999999999996,
+    "time": 61.79435702028981
+  },
+  {
+    "speedM": 0.57,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 98.2439951171875,
+    "fuelFromPrev": 8.117426391601569,
+    "distanceFrom0": 67.08488500976563,
+    "distanceFromPrev": 5.637208251953126,
+    "speedV": 332.88,
+    "time": 60.96476119632076
+  },
+  {
+    "speedM": 0.57,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 106.36142150878906,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 72.72209326171875,
+    "distanceFromPrev": 0,
+    "speedV": 330.03,
+    "time": 0
+  },
+  {
+    "speedM": 0.57,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 326.60999999999996,
+    "time": 0
+  },
+  {
+    "speedM": 0.57,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 326.60999999999996,
+    "time": 0
+  },
+  {
+    "speedM": 0.57,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 326.60999999999996,
+    "time": 0
+  },
+  {
+    "speedM": 0.58,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 39.04986206054687,
+    "fuelFromPrev": 6.979890869140625,
+    "distanceFrom0": 26.091912353515625,
+    "distanceFromPrev": 4.935639648437498,
+    "speedV": 359.02,
+    "time": 49.49112231734998
+  },
+  {
+    "speedM": 0.58,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 46.0297529296875,
+    "fuelFromPrev": 7.262865478515629,
+    "distanceFrom0": 31.027552001953122,
+    "distanceFromPrev": 5.171601318359382,
+    "speedV": 356.11999999999995,
+    "time": 52.279469690255475
+  },
+  {
+    "speedM": 0.58,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 53.292618408203126,
+    "fuelFromPrev": 7.522103027343746,
+    "distanceFrom0": 36.199153320312504,
+    "distanceFromPrev": 5.383700927734367,
+    "speedV": 353.21999999999997,
+    "time": 54.87040184543265
+  },
+  {
+    "speedM": 0.58,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 60.81472143554687,
+    "fuelFromPrev": 7.767717285156252,
+    "distanceFrom0": 41.58285424804687,
+    "distanceFromPrev": 5.558133544921873,
+    "speedV": 350.32,
+    "time": 57.11715220860568
+  },
+  {
+    "speedM": 0.58,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 68.58243872070312,
+    "fuelFromPrev": 7.947348388671884,
+    "distanceFrom0": 47.140987792968744,
+    "distanceFromPrev": 5.689102294921881,
+    "speedV": 347.41999999999996,
+    "time": 58.951034084735404
+  },
+  {
+    "speedM": 0.58,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 76.52978710937501,
+    "fuelFromPrev": 8.022875244140621,
+    "distanceFrom0": 52.830090087890625,
+    "distanceFromPrev": 5.746002441406247,
+    "speedV": 344.52,
+    "time": 60.041822794213665
+  },
+  {
+    "speedM": 0.58,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 84.55266235351563,
+    "fuelFromPrev": 8.083327880859372,
+    "distanceFrom0": 58.57609252929687,
+    "distanceFromPrev": 5.755677490234376,
+    "speedV": 341.62,
+    "time": 60.65347159078436
+  },
+  {
+    "speedM": 0.58,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 92.635990234375,
+    "fuelFromPrev": 8.00985278320313,
+    "distanceFrom0": 64.33177001953125,
+    "distanceFromPrev": 5.664416503906253,
+    "speedV": 338.71999999999997,
+    "time": 60.20282066031682
+  },
+  {
+    "speedM": 0.58,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 100.64584301757813,
+    "fuelFromPrev": 7.35415698242187,
+    "distanceFrom0": 69.9961865234375,
+    "distanceFromPrev": 6.503813476562499,
+    "speedV": 335.82,
+    "time": 69.7210663915937
+  },
+  {
+    "speedM": 0.58,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 108,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 76.5,
+    "distanceFromPrev": 0,
+    "speedV": 332.34,
+    "time": 0
+  },
+  {
+    "speedM": 0.58,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 332.34,
+    "time": 0
+  },
+  {
+    "speedM": 0.58,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 332.34,
+    "time": 0
+  },
+  {
+    "speedM": 0.59,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 34.815,
+    "fuelFromPrev": 6.680999999999997,
+    "distanceFrom0": 23.750500000000002,
+    "distanceFromPrev": 4.820499999999996,
+    "speedV": 365.21,
+    "time": 47.517318802880496
+  },
+  {
+    "speedM": 0.59,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 41.495999999999995,
+    "fuelFromPrev": 6.980500000000006,
+    "distanceFrom0": 28.570999999999998,
+    "distanceFromPrev": 5.065000000000005,
+    "speedV": 362.26,
+    "time": 50.33401424391326
+  },
+  {
+    "speedM": 0.59,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 48.4765,
+    "fuelFromPrev": 7.245499999999993,
+    "distanceFrom0": 33.636,
+    "distanceFromPrev": 5.287999999999997,
+    "speedV": 359.31,
+    "time": 52.981547966936596
+  },
+  {
+    "speedM": 0.59,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 55.721999999999994,
+    "fuelFromPrev": 7.504500000000007,
+    "distanceFrom0": 38.924,
+    "distanceFromPrev": 5.473999999999997,
+    "speedV": 356.35999999999996,
+    "time": 55.299135705466355
+  },
+  {
+    "speedM": 0.59,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 63.2265,
+    "fuelFromPrev": 7.708500000000001,
+    "distanceFrom0": 44.397999999999996,
+    "distanceFromPrev": 5.6270000000000024,
+    "speedV": 353.40999999999997,
+    "time": 57.3192609150845
+  },
+  {
+    "speedM": 0.59,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 70.935,
+    "fuelFromPrev": 7.833500000000001,
+    "distanceFrom0": 50.025,
+    "distanceFromPrev": 5.719000000000001,
+    "speedV": 350.46,
+    "time": 58.74678993323063
+  },
+  {
+    "speedM": 0.59,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 78.7685,
+    "fuelFromPrev": 7.936999999999998,
+    "distanceFrom0": 55.744,
+    "distanceFromPrev": 5.760999999999996,
+    "speedV": 347.51,
+    "time": 59.680584731374594
+  },
+  {
+    "speedM": 0.59,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 86.7055,
+    "fuelFromPrev": 7.914999999999992,
+    "distanceFrom0": 61.504999999999995,
+    "distanceFromPrev": 5.706000000000003,
+    "speedV": 344.56,
+    "time": 59.61690271650804
+  },
+  {
+    "speedM": 0.59,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 94.62049999999999,
+    "fuelFromPrev": 5.379500000000007,
+    "distanceFrom0": 67.211,
+    "distanceFromPrev": 6.7890000000000015,
+    "speedV": 341.60999999999996,
+    "time": 71.54474400632303
+  },
+  {
+    "speedM": 0.59,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 100,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 74,
+    "distanceFromPrev": 0,
+    "speedV": 338.07,
+    "time": 0
+  },
+  {
+    "speedM": 0.59,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 338.07,
+    "time": 0
+  },
+  {
+    "speedM": 0.59,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 338.07,
+    "time": 0
+  },
+  {
+    "speedM": 0.6,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 31.189724121093747,
+    "fuelFromPrev": 6.3997817382812485,
+    "distanceFrom0": 21.630824707031252,
+    "distanceFromPrev": 4.700279296874996,
+    "speedV": 371.4,
+    "time": 45.56005780492726
+  },
+  {
+    "speedM": 0.6,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 37.589505859374995,
+    "fuelFromPrev": 6.712730957031255,
+    "distanceFrom0": 26.331104003906248,
+    "distanceFromPrev": 4.955202636718752,
+    "speedV": 368.4,
+    "time": 48.422175603114844
+  },
+  {
+    "speedM": 0.6,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 44.30223681640625,
+    "fuelFromPrev": 6.9832060546875,
+    "distanceFrom0": 31.286306640625,
+    "distanceFromPrev": 5.1874018554687495,
+    "speedV": 365.4,
+    "time": 51.10740744304187
+  },
+  {
+    "speedM": 0.6,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 51.28544287109375,
+    "fuelFromPrev": 7.252434570312502,
+    "distanceFrom0": 36.47370849609375,
+    "distanceFromPrev": 5.384267089843746,
+    "speedV": 362.4,
+    "time": 53.486096918977616
+  },
+  {
+    "speedM": 0.6,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 58.53787744140625,
+    "fuelFromPrev": 7.474696777343752,
+    "distanceFrom0": 41.857975585937496,
+    "distanceFromPrev": 5.554204589843749,
+    "speedV": 359.4,
+    "time": 55.63477051596411
+  },
+  {
+    "speedM": 0.6,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 66.01257421875,
+    "fuelFromPrev": 7.634750488281256,
+    "distanceFrom0": 47.412180175781245,
+    "distanceFromPrev": 5.672004882812502,
+    "speedV": 356.4,
+    "time": 57.29297861426769
+  },
+  {
+    "speedM": 0.6,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 73.64732470703126,
+    "fuelFromPrev": 7.772655761718738,
+    "distanceFrom0": 53.08418505859375,
+    "distanceFromPrev": 5.741354980468749,
+    "speedV": 353.4,
+    "time": 58.485789274724105
+  },
+  {
+    "speedM": 0.6,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 81.41998046875,
+    "fuelFromPrev": 7.79470556640625,
+    "distanceFrom0": 58.825540039062496,
+    "distanceFromPrev": 5.718833007812499,
+    "speedV": 350.4,
+    "time": 58.75513364190924
+  },
+  {
+    "speedM": 0.6,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 89.21468603515625,
+    "fuelFromPrev": 5.92259814453125,
+    "distanceFrom0": 64.544373046875,
+    "distanceFromPrev": 6.530790039062509,
+    "speedV": 347.4,
+    "time": 67.67658071567368
+  },
+  {
+    "speedM": 0.6,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 95.1372841796875,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 71.0751630859375,
+    "distanceFromPrev": 0,
+    "speedV": 343.8,
+    "time": 0
+  },
+  {
+    "speedM": 0.6,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 343.8,
+    "time": 0
+  },
+  {
+    "speedM": 0.6,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 343.8,
+    "time": 0
+  },
+  {
+    "speedM": 0.61,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 27.5644482421875,
+    "fuelFromPrev": 6.118563476562496,
+    "distanceFrom0": 19.5111494140625,
+    "distanceFromPrev": 4.580058593749996,
+    "speedV": 377.59,
+    "time": 43.66696929871021
+  },
+  {
+    "speedM": 0.61,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 33.683011718749995,
+    "fuelFromPrev": 6.444961914062503,
+    "distanceFrom0": 24.091208007812497,
+    "distanceFromPrev": 4.845405273437503,
+    "speedV": 374.53999999999996,
+    "time": 46.57302019644101
+  },
+  {
+    "speedM": 0.61,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 40.1279736328125,
+    "fuelFromPrev": 6.720912109375,
+    "distanceFrom0": 28.93661328125,
+    "distanceFromPrev": 5.086803710937499,
+    "speedV": 371.49,
+    "time": 49.29471414943873
+  },
+  {
+    "speedM": 0.61,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 46.8488857421875,
+    "fuelFromPrev": 7.000369140625004,
+    "distanceFrom0": 34.0234169921875,
+    "distanceFromPrev": 5.294534179687496,
+    "speedV": 368.44,
+    "time": 51.73250202712785
+  },
+  {
+    "speedM": 0.61,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 53.8492548828125,
+    "fuelFromPrev": 7.240893554687496,
+    "distanceFrom0": 39.317951171874995,
+    "distanceFromPrev": 5.481409179687503,
+    "speedV": 365.39,
+    "time": 54.005509310257565
+  },
+  {
+    "speedM": 0.61,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 61.0901484375,
+    "fuelFromPrev": 7.436000976562504,
+    "distanceFrom0": 44.7993603515625,
+    "distanceFromPrev": 5.625009765625002,
+    "speedV": 362.34,
+    "time": 55.8868332401888
+  },
+  {
+    "speedM": 0.61,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 68.5261494140625,
+    "fuelFromPrev": 7.608311523437493,
+    "distanceFrom0": 50.4243701171875,
+    "distanceFromPrev": 5.7217099609374955,
+    "speedV": 359.29,
+    "time": 57.330167439603066
+  },
+  {
+    "speedM": 0.61,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 76.1344609375,
+    "fuelFromPrev": 7.674411132812509,
+    "distanceFrom0": 56.146080078124996,
+    "distanceFromPrev": 5.731666015625002,
+    "speedV": 356.24,
+    "time": 57.92161929106785
+  },
+  {
+    "speedM": 0.61,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 83.8088720703125,
+    "fuelFromPrev": 6.4656962890624925,
+    "distanceFrom0": 61.87774609375,
+    "distanceFromPrev": 6.27258007812501,
+    "speedV": 353.19,
+    "time": 63.93524245094718
+  },
+  {
+    "speedM": 0.61,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 90.274568359375,
+    "fuelFromPrev": 6.725431640625004,
+    "distanceFrom0": 68.15032617187501,
+    "distanceFromPrev": 5.849673828124992,
+    "speedV": 349.53,
+    "time": 60.24897943309579
+  },
+  {
+    "speedM": 0.61,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 97,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 74,
+    "distanceFromPrev": 0,
+    "speedV": 349.53,
+    "time": 0
+  },
+  {
+    "speedM": 0.61,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 349.53,
+    "time": 0
+  },
+  {
+    "speedM": 0.62,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 22.72,
+    "fuelFromPrev": 5.802,
+    "distanceFrom0": 16.948,
+    "distanceFromPrev": 4.469999999999999,
+    "speedV": 383.78,
+    "time": 41.9302725519829
+  },
+  {
+    "speedM": 0.62,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 28.522,
+    "fuelFromPrev": 6.148000000000003,
+    "distanceFrom0": 21.418,
+    "distanceFromPrev": 4.742000000000001,
+    "speedV": 380.68,
+    "time": 44.84396343385521
+  },
+  {
+    "speedM": 0.62,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 34.67,
+    "fuelFromPrev": 6.43,
+    "distanceFrom0": 26.16,
+    "distanceFromPrev": 4.995999999999999,
+    "speedV": 377.58,
+    "time": 47.633878913078014
+  },
+  {
+    "speedM": 0.62,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 41.1,
+    "fuelFromPrev": 6.725999999999999,
+    "distanceFrom0": 31.156,
+    "distanceFromPrev": 5.216000000000001,
+    "speedV": 374.48,
+    "time": 50.14313180944243
+  },
+  {
+    "speedM": 0.62,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 47.826,
+    "fuelFromPrev": 6.997,
+    "distanceFrom0": 36.372,
+    "distanceFromPrev": 5.43,
+    "speedV": 371.38,
+    "time": 52.63611395336313
+  },
+  {
+    "speedM": 0.62,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 54.823,
+    "fuelFromPrev": 7.256,
+    "distanceFrom0": 41.802,
+    "distanceFromPrev": 5.618000000000002,
+    "speedV": 368.28,
+    "time": 54.91691104594333
+  },
+  {
+    "speedM": 0.62,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 62.079,
+    "fuelFromPrev": 7.479999999999997,
+    "distanceFrom0": 47.42,
+    "distanceFromPrev": 5.751999999999995,
+    "speedV": 365.18,
+    "time": 56.70409113313978
+  },
+  {
+    "speedM": 0.62,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 69.559,
+    "fuelFromPrev": 7.605000000000004,
+    "distanceFrom0": 53.172,
+    "distanceFromPrev": 5.802,
+    "speedV": 362.08,
+    "time": 57.68669907202828
+  },
+  {
+    "speedM": 0.62,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 77.164,
+    "fuelFromPrev": 7.691999999999993,
+    "distanceFrom0": 58.974,
+    "distanceFromPrev": 5.770000000000003,
+    "speedV": 358.98,
+    "time": 57.86394785224807
+  },
+  {
+    "speedM": 0.62,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 84.856,
+    "fuelFromPrev": 8.099000000000004,
+    "distanceFrom0": 64.744,
+    "distanceFromPrev": 5.9680000000000035,
+    "speedV": 355.26,
+    "time": 60.47627090018582
+  },
+  {
+    "speedM": 0.62,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 92.955,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 70.712,
+    "distanceFromPrev": 0,
+    "speedV": 355.26,
+    "time": 0
+  },
+  {
+    "speedM": 0.62,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 355.26,
+    "time": 0
+  },
+  {
+    "speedM": 0.63,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 20.313896484375,
+    "fuelFromPrev": 5.556126953124998,
+    "distanceFrom0": 15.271798828125,
+    "distanceFromPrev": 4.3396171875,
+    "speedV": 389.97,
+    "time": 40.06108642972536
+  },
+  {
+    "speedM": 0.63,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 25.8700234375,
+    "fuelFromPrev": 5.9094238281250036,
+    "distanceFrom0": 19.611416015625,
+    "distanceFromPrev": 4.625810546874998,
+    "speedV": 386.82,
+    "time": 43.05081942182409
+  },
+  {
+    "speedM": 0.63,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 31.779447265625002,
+    "fuelFromPrev": 6.19632421875,
+    "distanceFrom0": 24.2372265625,
+    "distanceFromPrev": 4.885607421875001,
+    "speedV": 383.67,
+    "time": 45.84196501876613
+  },
+  {
+    "speedM": 0.63,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 37.975771484375,
+    "fuelFromPrev": 6.496238281250001,
+    "distanceFrom0": 29.122833984375,
+    "distanceFromPrev": 5.115068359375002,
+    "speedV": 380.52,
+    "time": 48.39232128074742
+  },
+  {
+    "speedM": 0.63,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 44.472009765625,
+    "fuelFromPrev": 6.773287109374991,
+    "distanceFrom0": 34.23790234375,
+    "distanceFromPrev": 5.335818359375004,
+    "speedV": 377.37,
+    "time": 50.90215463272124
+  },
+  {
+    "speedM": 0.63,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 51.245296874999994,
+    "fuelFromPrev": 7.038501953125007,
+    "distanceFrom0": 39.573720703125005,
+    "distanceFromPrev": 5.531019531249996,
+    "speedV": 374.22,
+    "time": 53.20846109908606
+  },
+  {
+    "speedM": 0.63,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 58.283798828125,
+    "fuelFromPrev": 7.279623046874988,
+    "distanceFrom0": 45.104740234375,
+    "distanceFromPrev": 5.682419921874995,
+    "speedV": 371.07,
+    "time": 55.12898299175353
+  },
+  {
+    "speedM": 0.63,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 65.56342187499999,
+    "fuelFromPrev": 7.433822265625025,
+    "distanceFrom0": 50.787160156249996,
+    "distanceFromPrev": 5.757332031250002,
+    "speedV": 367.92,
+    "time": 56.333972908512735
+  },
+  {
+    "speedM": 0.63,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 72.99724414062501,
+    "fuelFromPrev": 7.551892578124978,
+    "distanceFrom0": 56.5444921875,
+    "distanceFromPrev": 5.756160156250004,
+    "speedV": 364.77,
+    "time": 56.808883851468096
+  },
+  {
+    "speedM": 0.63,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 80.54913671874999,
+    "fuelFromPrev": 7.994406249999997,
+    "distanceFrom0": 62.30065234375,
+    "distanceFromPrev": 5.990322265625011,
+    "speedV": 360.99,
+    "time": 59.738940569683486
+  },
+  {
+    "speedM": 0.63,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 88.54354296874999,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 68.29097460937501,
+    "distanceFromPrev": 0,
+    "speedV": 360.99,
+    "time": 0
+  },
+  {
+    "speedM": 0.63,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 360.99,
+    "time": 0
+  },
+  {
+    "speedM": 0.64,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 17.90779296875,
+    "fuelFromPrev": 5.310253906249997,
+    "distanceFrom0": 13.59559765625,
+    "distanceFromPrev": 4.209234375000001,
+    "speedV": 396.16,
+    "time": 38.250312373788375
+  },
+  {
+    "speedM": 0.64,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 23.218046875,
+    "fuelFromPrev": 5.670847656250004,
+    "distanceFrom0": 17.80483203125,
+    "distanceFromPrev": 4.509621093749999,
+    "speedV": 392.96000000000004,
+    "time": 41.313711160168964
+  },
+  {
+    "speedM": 0.64,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 28.888894531250003,
+    "fuelFromPrev": 5.9626484375,
+    "distanceFrom0": 22.314453125,
+    "distanceFromPrev": 4.77521484375,
+    "speedV": 389.76,
+    "time": 44.10604843365147
+  },
+  {
+    "speedM": 0.64,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 34.85154296875,
+    "fuelFromPrev": 6.266476562499996,
+    "distanceFrom0": 27.08966796875,
+    "distanceFromPrev": 5.014136718750002,
+    "speedV": 386.56,
+    "time": 46.69622358107411
+  },
+  {
+    "speedM": 0.64,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 41.11801953125,
+    "fuelFromPrev": 6.549574218749996,
+    "distanceFrom0": 32.1038046875,
+    "distanceFromPrev": 5.2416367187500015,
+    "speedV": 383.36,
+    "time": 49.22238154084934
+  },
+  {
+    "speedM": 0.64,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 47.667593749999995,
+    "fuelFromPrev": 6.821003906250006,
+    "distanceFrom0": 37.34544140625,
+    "distanceFromPrev": 5.444039062499996,
+    "speedV": 380.16,
+    "time": 51.553400213068144
+  },
+  {
+    "speedM": 0.64,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 54.48859765625,
+    "fuelFromPrev": 7.079246093749994,
+    "distanceFrom0": 42.78948046875,
+    "distanceFromPrev": 5.612839843749995,
+    "speedV": 376.96,
+    "time": 53.60309697978561
+  },
+  {
+    "speedM": 0.64,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 61.567843749999994,
+    "fuelFromPrev": 7.262644531250018,
+    "distanceFrom0": 48.402320312499995,
+    "distanceFromPrev": 5.7126640624999965,
+    "speedV": 373.76,
+    "time": 55.023519437606986
+  },
+  {
+    "speedM": 0.64,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 68.83048828125001,
+    "fuelFromPrev": 7.411785156249977,
+    "distanceFrom0": 54.11498437499999,
+    "distanceFromPrev": 5.742320312500006,
+    "speedV": 370.56,
+    "time": 55.78679060071249
+  },
+  {
+    "speedM": 0.64,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 76.24227343749999,
+    "fuelFromPrev": 7.889812500000005,
+    "distanceFrom0": 59.8573046875,
+    "distanceFromPrev": 6.012644531250011,
+    "speedV": 366.72,
+    "time": 59.02465181200927
+  },
+  {
+    "speedM": 0.64,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 84.1320859375,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 65.86994921875001,
+    "distanceFromPrev": 0,
+    "speedV": 366.72,
+    "time": 0
+  },
+  {
+    "speedM": 0.64,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 366.72,
+    "time": 0
+  },
+  {
+    "speedM": 0.65,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 15.2645,
+    "fuelFromPrev": 5.1004999999999985,
+    "distanceFrom0": 11.7915,
+    "distanceFromPrev": 4.121,
+    "speedV": 402.35,
+    "time": 36.872374798061394
+  },
+  {
+    "speedM": 0.65,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 20.365,
+    "fuelFromPrev": 5.423500000000001,
+    "distanceFrom0": 15.9125,
+    "distanceFromPrev": 4.3930000000000025,
+    "speedV": 399.1,
+    "time": 39.62615885742924
+  },
+  {
+    "speedM": 0.65,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 25.7885,
+    "fuelFromPrev": 5.720500000000001,
+    "distanceFrom0": 20.305500000000002,
+    "distanceFromPrev": 4.664499999999997,
+    "speedV": 395.85,
+    "time": 42.4206138688897
+  },
+  {
+    "speedM": 0.65,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 31.509,
+    "fuelFromPrev": 6.030000000000001,
+    "distanceFrom0": 24.97,
+    "distanceFromPrev": 4.914999999999999,
+    "speedV": 392.6,
+    "time": 45.06877228731532
+  },
+  {
+    "speedM": 0.65,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 37.539,
+    "fuelFromPrev": 6.320499999999996,
+    "distanceFrom0": 29.884999999999998,
+    "distanceFromPrev": 5.149999999999999,
+    "speedV": 389.35,
+    "time": 47.617824579427236
+  },
+  {
+    "speedM": 0.65,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 43.8595,
+    "fuelFromPrev": 6.598500000000001,
+    "distanceFrom0": 35.035,
+    "distanceFromPrev": 5.359000000000009,
+    "speedV": 386.1,
+    "time": 49.96736596736605
+  },
+  {
+    "speedM": 0.65,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 50.458,
+    "fuelFromPrev": 6.877499999999998,
+    "distanceFrom0": 40.394000000000005,
+    "distanceFromPrev": 5.547999999999995,
+    "speedV": 382.85,
+    "time": 52.168734491315085
+  },
+  {
+    "speedM": 0.65,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 57.335499999999996,
+    "fuelFromPrev": 7.094500000000011,
+    "distanceFrom0": 45.942,
+    "distanceFromPrev": 5.6754999999999995,
+    "speedV": 379.6,
+    "time": 53.82455216016859
+  },
+  {
+    "speedM": 0.65,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 64.43,
+    "fuelFromPrev": 7.278499999999994,
+    "distanceFrom0": 51.6175,
+    "distanceFromPrev": 5.738999999999997,
+    "speedV": 376.35,
+    "time": 54.896771622160195
+  },
+  {
+    "speedM": 0.65,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 71.7085,
+    "fuelFromPrev": 7.793999999999997,
+    "distanceFrom0": 57.3565,
+    "distanceFromPrev": 6.0460000000000065,
+    "speedV": 372.45,
+    "time": 58.43898509867103
+  },
+  {
+    "speedM": 0.65,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 79.5025,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 63.4025,
+    "distanceFromPrev": 0,
+    "speedV": 372.45,
+    "time": 0
+  },
+  {
+    "speedM": 0.65,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 372.45,
+    "time": 0
+  },
+  {
+    "speedM": 0.66,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 13.095585937500001,
+    "fuelFromPrev": 4.818507812499998,
+    "distanceFrom0": 10.2431953125,
+    "distanceFromPrev": 3.94846875,
+    "speedV": 408.54,
+    "time": 34.793380085181376
+  },
+  {
+    "speedM": 0.66,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 17.91409375,
+    "fuelFromPrev": 5.193695312500001,
+    "distanceFrom0": 14.1916640625,
+    "distanceFromPrev": 4.277242187500004,
+    "speedV": 405.24,
+    "time": 37.99741356973649
+  },
+  {
+    "speedM": 0.66,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 23.1077890625,
+    "fuelFromPrev": 5.495296875000001,
+    "distanceFrom0": 18.468906250000003,
+    "distanceFromPrev": 4.554429687499997,
+    "speedV": 401.94,
+    "time": 40.79202586206895
+  },
+  {
+    "speedM": 0.66,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 28.6030859375,
+    "fuelFromPrev": 5.806953125000003,
+    "distanceFrom0": 23.0233359375,
+    "distanceFromPrev": 4.8122734374999965,
+    "speedV": 398.64000000000004,
+    "time": 43.45821888169773
+  },
+  {
+    "speedM": 0.66,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 34.410039062500005,
+    "fuelFromPrev": 6.1021484374999915,
+    "distanceFrom0": 27.835609374999997,
+    "distanceFromPrev": 5.053273437500003,
+    "speedV": 395.34000000000003,
+    "time": 46.015542001821245
+  },
+  {
+    "speedM": 0.66,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 40.512187499999996,
+    "fuelFromPrev": 6.386007812500004,
+    "distanceFrom0": 32.8888828125,
+    "distanceFromPrev": 5.270078125000005,
+    "speedV": 392.04,
+    "time": 48.39373852157947
+  },
+  {
+    "speedM": 0.66,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 46.8981953125,
+    "fuelFromPrev": 6.678492187499998,
+    "distanceFrom0": 38.158960937500005,
+    "distanceFromPrev": 5.473679687499995,
+    "speedV": 388.74,
+    "time": 50.690041866028665
+  },
+  {
+    "speedM": 0.66,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 53.5766875,
+    "fuelFromPrev": 6.920289062500011,
+    "distanceFrom0": 43.632640625,
+    "distanceFromPrev": 5.623328124999993,
+    "speedV": 385.44,
+    "time": 52.52174462951426
+  },
+  {
+    "speedM": 0.66,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 60.49697656250001,
+    "fuelFromPrev": 7.1315703124999885,
+    "distanceFrom0": 49.255968749999994,
+    "distanceFromPrev": 5.714640625000001,
+    "speedV": 382.14000000000004,
+    "time": 53.83552166745173
+  },
+  {
+    "speedM": 0.66,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 67.628546875,
+    "fuelFromPrev": 7.680625000000006,
+    "distanceFrom0": 54.970609374999995,
+    "distanceFromPrev": 6.057289062500004,
+    "speedV": 378.18,
+    "time": 57.66100963826754
+  },
+  {
+    "speedM": 0.66,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 75.309171875,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 61.0278984375,
+    "distanceFromPrev": 0,
+    "speedV": 378.18,
+    "time": 0
+  },
+  {
+    "speedM": 0.66,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 0,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 0,
+    "distanceFromPrev": 0,
+    "speedV": 378.18,
+    "time": 0
+  },
+  {
+    "speedM": 0.67,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": 10.926671875,
+    "fuelFromPrev": 4.536515625,
+    "distanceFrom0": 8.694890625,
+    "distanceFromPrev": 3.7759375000000013,
+    "speedV": 414.73,
+    "time": 32.776444915969435
+  },
+  {
+    "speedM": 0.67,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": 15.4631875,
+    "fuelFromPrev": 4.963890625000001,
+    "distanceFrom0": 12.470828125,
+    "distanceFromPrev": 4.161484375000001,
+    "speedV": 411.38000000000005,
+    "time": 36.41728754436287
+  },
+  {
+    "speedM": 0.67,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": 20.427078125,
+    "fuelFromPrev": 5.270093750000001,
+    "distanceFrom0": 16.6323125,
+    "distanceFromPrev": 4.444359374999998,
+    "speedV": 408.03000000000003,
+    "time": 39.21205242261596
+  },
+  {
+    "speedM": 0.67,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": 25.697171875000002,
+    "fuelFromPrev": 5.583906249999998,
+    "distanceFrom0": 21.076671875,
+    "distanceFromPrev": 4.709546875000001,
+    "speedV": 404.68,
+    "time": 41.89574169714343
+  },
+  {
+    "speedM": 0.67,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": 31.281078125,
+    "fuelFromPrev": 5.8837968749999945,
+    "distanceFrom0": 25.78621875,
+    "distanceFromPrev": 4.956546874999997,
+    "speedV": 401.33000000000004,
+    "time": 44.461088754889964
+  },
+  {
+    "speedM": 0.67,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": 37.164874999999995,
+    "fuelFromPrev": 6.173515625000007,
+    "distanceFrom0": 30.742765624999997,
+    "distanceFromPrev": 5.181156250000008,
+    "speedV": 397.98,
+    "time": 46.86708502939853
+  },
+  {
+    "speedM": 0.67,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": 43.338390625,
+    "fuelFromPrev": 6.479484374999998,
+    "distanceFrom0": 35.923921875000005,
+    "distanceFromPrev": 5.399359374999996,
+    "speedV": 394.63,
+    "time": 49.255489319109
+  },
+  {
+    "speedM": 0.67,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": 49.817875,
+    "fuelFromPrev": 6.746078125000004,
+    "distanceFrom0": 41.32328125,
+    "distanceFromPrev": 5.571156249999994,
+    "speedV": 391.28000000000003,
+    "time": 51.257826875894445
+  },
+  {
+    "speedM": 0.67,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": 56.563953125000005,
+    "fuelFromPrev": 6.984640624999997,
+    "distanceFrom0": 46.894437499999995,
+    "distanceFromPrev": 5.690281250000005,
+    "speedV": 387.93,
+    "time": 52.80595081586889
+  },
+  {
+    "speedM": 0.67,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": 63.54859375,
+    "fuelFromPrev": 7.567249999999994,
+    "distanceFrom0": 52.58471875,
+    "distanceFromPrev": 6.068578125000002,
+    "speedV": 383.91,
+    "time": 56.90625732593578
+  },
+  {
+    "speedM": 0.67,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": 71.11584375,
+    "fuelFromPrev": 5.884156250000004,
+    "distanceFrom0": 58.653296875,
+    "distanceFromPrev": 5.346703124999998,
+    "speedV": 383.91,
+    "time": 50.137092677971374
+  },
+  {
+    "speedM": 0.67,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": 77,
+    "fuelFromPrev": 0,
+    "distanceFrom0": 64,
+    "distanceFromPrev": 0,
+    "speedV": 383.91,
+    "time": 0
+  },
+  {
     "speedM": 0.68,
     "speedOfSound": 619,
     "altitude": 18000,
     "fuelFrom0": 7.809,
     "fuelFromPrev": 4.399,
     "distanceFrom0": 6.635,
-    "distanceFromPrev": 3.772,
+    "distanceFromPrev": 3.7720000000000002,
     "speedV": 420.92,
-    "time": 32.2607621400741
+    "time": 32.26076214007412
   },
   {
     "speedM": 0.68,
@@ -17,20 +2426,20 @@
     "fuelFrom0": 12.208,
     "fuelFromPrev": 4.699,
     "distanceFrom0": 10.407,
-    "distanceFromPrev": 4.044,
-    "speedV": 417.52,
-    "time": 34.8687488024526
+    "distanceFromPrev": 4.0440000000000005,
+    "speedV": 417.52000000000004,
+    "time": 34.86874880245258
   },
   {
     "speedM": 0.68,
     "speedOfSound": 609,
     "altitude": 22000,
     "fuelFrom0": 16.907,
-    "fuelFromPrev": 5.011,
+    "fuelFromPrev": 5.010999999999999,
     "distanceFrom0": 14.451,
-    "distanceFromPrev": 4.333,
+    "distanceFromPrev": 4.332999999999998,
     "speedV": 414.12,
-    "time": 37.6673427991886
+    "time": 37.66734279918863
   },
   {
     "speedM": 0.68,
@@ -39,86 +2448,86 @@
     "fuelFrom0": 21.918,
     "fuelFromPrev": 5.334,
     "distanceFrom0": 18.784,
-    "distanceFromPrev": 4.614,
+    "distanceFromPrev": 4.614000000000001,
     "speedV": 410.72,
-    "time": 40.4421503700818
+    "time": 40.44215037008181
   },
   {
     "speedM": 0.68,
     "speedOfSound": 599,
     "altitude": 26000,
     "fuelFrom0": 27.252,
-    "fuelFromPrev": 5.644,
+    "fuelFromPrev": 5.644000000000002,
     "distanceFrom0": 23.398,
-    "distanceFromPrev": 4.87,
-    "speedV": 407.32,
-    "time": 43.0423254443681
+    "distanceFromPrev": 4.870000000000001,
+    "speedV": 407.32000000000005,
+    "time": 43.04232544436807
   },
   {
     "speedM": 0.68,
     "speedOfSound": 594,
     "altitude": 28000,
     "fuelFrom0": 32.896,
-    "fuelFromPrev": 5.941,
+    "fuelFromPrev": 5.9410000000000025,
     "distanceFrom0": 28.268,
-    "distanceFromPrev": 5.1,
+    "distanceFromPrev": 5.100000000000001,
     "speedV": 403.92,
-    "time": 45.4545454545455
+    "time": 45.45454545454547
   },
   {
     "speedM": 0.68,
     "speedOfSound": 589,
     "altitude": 30000,
     "fuelFrom0": 38.837,
-    "fuelFromPrev": 6.275,
+    "fuelFromPrev": 6.274999999999999,
     "distanceFrom0": 33.368,
-    "distanceFromPrev": 5.344,
-    "speedV": 400.52,
-    "time": 48.0335563767103
+    "distanceFromPrev": 5.344000000000001,
+    "speedV": 400.52000000000004,
+    "time": 48.03355637671029
   },
   {
     "speedM": 0.68,
     "speedOfSound": 584,
     "altitude": 32000,
     "fuelFrom0": 45.112,
-    "fuelFromPrev": 6.584,
+    "fuelFromPrev": 6.583999999999996,
     "distanceFrom0": 38.712,
-    "distanceFromPrev": 5.549,
+    "distanceFromPrev": 5.5489999999999995,
     "speedV": 397.12,
-    "time": 50.3031829170024
+    "time": 50.30318291700241
   },
   {
     "speedM": 0.68,
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 51.696,
-    "fuelFromPrev": 6.865,
+    "fuelFromPrev": 6.865000000000002,
     "distanceFrom0": 44.261,
-    "distanceFromPrev": 5.708,
+    "distanceFromPrev": 5.707999999999998,
     "speedV": 393.72,
-    "time": 52.1914050594331
+    "time": 52.19140505943308
   },
   {
     "speedM": 0.68,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 58.561,
-    "fuelFromPrev": 7.489,
+    "fuelFromPrev": 7.488999999999997,
     "distanceFrom0": 49.969,
-    "distanceFromPrev": 6.124,
-    "speedV": 389.64,
-    "time": 56.5814598090545
+    "distanceFromPrev": 6.124000000000002,
+    "speedV": 389.64000000000004,
+    "time": 56.58145980905453
   },
   {
     "speedM": 0.68,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 66.05,
-    "fuelFromPrev": 7.545,
+    "fuelFromPrev": 7.545000000000002,
     "distanceFrom0": 56.093,
-    "distanceFromPrev": 6.09099999999999,
-    "speedV": 389.64,
-    "time": 56.2765629812134
+    "distanceFromPrev": 6.090999999999994,
+    "speedV": 389.64000000000004,
+    "time": 56.27656298121337
   },
   {
     "speedM": 0.68,
@@ -128,19 +2537,19 @@
     "fuelFromPrev": 0,
     "distanceFrom0": 62.184,
     "distanceFromPrev": 0,
-    "speedV": 389.64,
+    "speedV": 389.64000000000004,
     "time": 0
   },
   {
     "speedM": 0.69,
     "speedOfSound": 619,
     "altitude": 18000,
-    "fuelFrom0": 6.58884375,
-    "fuelFromPrev": 3.97253125,
-    "distanceFrom0": 5.59828125,
-    "distanceFromPrev": 3.430875,
-    "speedV": 427.11,
-    "time": 28.9179602444335
+    "fuelFrom0": 6.5888437500000006,
+    "fuelFromPrev": 3.9725312499999994,
+    "distanceFrom0": 5.598281249999999,
+    "distanceFromPrev": 3.4308750000000003,
+    "speedV": 427.10999999999996,
+    "time": 28.917960244433523
   },
   {
     "speedM": 0.69,
@@ -149,108 +2558,108 @@
     "fuelFrom0": 10.561375,
     "fuelFromPrev": 4.50428125,
     "distanceFrom0": 9.02915625,
-    "distanceFromPrev": 3.92996875,
-    "speedV": 423.66,
-    "time": 33.3944377566917
+    "distanceFromPrev": 3.9299687500000005,
+    "speedV": 423.65999999999997,
+    "time": 33.394437756691694
   },
   {
     "speedM": 0.69,
     "speedOfSound": 609,
     "altitude": 22000,
     "fuelFrom0": 15.06565625,
-    "fuelFromPrev": 4.8196875,
+    "fuelFromPrev": 4.819687500000001,
     "distanceFrom0": 12.959125,
-    "distanceFromPrev": 4.22421875,
+    "distanceFromPrev": 4.224218749999999,
     "speedV": 420.21,
-    "time": 36.189494538445
+    "time": 36.189494538445054
   },
   {
     "speedM": 0.69,
     "speedOfSound": 604,
     "altitude": 24000,
     "fuelFrom0": 19.88534375,
-    "fuelFromPrev": 5.1378125,
+    "fuelFromPrev": 5.137812499999999,
     "distanceFrom0": 17.18334375,
-    "distanceFromPrev": 4.50409375,
+    "distanceFromPrev": 4.504093750000003,
     "speedV": 416.76,
-    "time": 38.9066549093003
+    "time": 38.906654909300336
   },
   {
     "speedM": 0.69,
     "speedOfSound": 599,
     "altitude": 26000,
     "fuelFrom0": 25.02315625,
-    "fuelFromPrev": 5.44709375,
+    "fuelFromPrev": 5.4470937500000005,
     "distanceFrom0": 21.6874375,
-    "distanceFromPrev": 4.76309375,
-    "speedV": 413.31,
-    "time": 41.4873521085868
+    "distanceFromPrev": 4.7630937499999995,
+    "speedV": 413.30999999999995,
+    "time": 41.48735210858678
   },
   {
     "speedM": 0.69,
     "speedOfSound": 594,
     "altitude": 28000,
     "fuelFrom0": 30.47025,
-    "fuelFromPrev": 5.74853125000001,
+    "fuelFromPrev": 5.748531250000006,
     "distanceFrom0": 26.45053125,
     "distanceFromPrev": 5.0033125,
-    "speedV": 409.86,
-    "time": 43.9465305226175
+    "speedV": 409.85999999999996,
+    "time": 43.946530522617486
   },
   {
     "speedM": 0.69,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 36.21878125,
-    "fuelFromPrev": 6.08146875,
+    "fuelFrom0": 36.218781250000006,
+    "fuelFromPrev": 6.081468749999999,
     "distanceFrom0": 31.45384375,
-    "distanceFromPrev": 5.25071875,
-    "speedV": 406.41,
-    "time": 46.5111279250019
+    "distanceFromPrev": 5.250718750000001,
+    "speedV": 406.40999999999997,
+    "time": 46.51112792500186
   },
   {
     "speedM": 0.69,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 42.30025,
-    "fuelFromPrev": 6.39765625,
+    "fuelFrom0": 42.300250000000005,
+    "fuelFromPrev": 6.397656249999997,
     "distanceFrom0": 36.7045625,
-    "distanceFromPrev": 5.4668125,
+    "distanceFromPrev": 5.466812499999996,
     "speedV": 402.96,
-    "time": 48.8398972602739
+    "time": 48.83989726027394
   },
   {
     "speedM": 0.69,
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 48.69790625,
-    "fuelFromPrev": 6.69078125,
+    "fuelFromPrev": 6.690781250000001,
     "distanceFrom0": 42.171375,
-    "distanceFromPrev": 5.64156250000001,
+    "distanceFromPrev": 5.641562500000006,
     "speedV": 399.51,
-    "time": 50.8363370128408
+    "time": 50.83633701284079
   },
   {
     "speedM": 0.69,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 55.3886875,
-    "fuelFromPrev": 7.34049999999999,
-    "distanceFrom0": 47.8129375,
-    "distanceFromPrev": 6.09115625,
-    "speedV": 395.37,
-    "time": 55.4623833371272
+    "fuelFromPrev": 7.340499999999992,
+    "distanceFrom0": 47.812937500000004,
+    "distanceFromPrev": 6.091156249999997,
+    "speedV": 395.36999999999995,
+    "time": 55.46238333712723
   },
   {
     "speedM": 0.69,
     "speedOfSound": 573,
     "altitude": 38000,
-    "fuelFrom0": 62.7291875,
-    "fuelFromPrev": 7.43275,
+    "fuelFrom0": 62.729187499999995,
+    "fuelFromPrev": 7.432749999999999,
     "distanceFrom0": 53.90409375,
-    "distanceFromPrev": 6.09231249999999,
-    "speedV": 395.37,
-    "time": 55.4729114500341
+    "distanceFromPrev": 6.092312499999991,
+    "speedV": 395.36999999999995,
+    "time": 55.47291145003407
   },
   {
     "speedM": 0.69,
@@ -258,9 +2667,9 @@
     "altitude": 40000,
     "fuelFrom0": 70.1619375,
     "fuelFromPrev": 0,
-    "distanceFrom0": 59.99640625,
+    "distanceFrom0": 59.99640624999999,
     "distanceFromPrev": 0,
-    "speedV": 395.37,
+    "speedV": 395.36999999999995,
     "time": 0
   },
   {
@@ -268,11 +2677,11 @@
     "speedOfSound": 619,
     "altitude": 18000,
     "fuelFrom0": 5.3686875,
-    "fuelFromPrev": 3.5460625,
+    "fuelFromPrev": 3.5460624999999997,
     "distanceFrom0": 4.5615625,
-    "distanceFromPrev": 3.08975,
-    "speedV": 433.3,
-    "time": 25.6706669743826
+    "distanceFromPrev": 3.0897500000000004,
+    "speedV": 433.29999999999995,
+    "time": 25.67066697438265
   },
   {
     "speedM": 0.7,
@@ -281,53 +2690,53 @@
     "fuelFrom0": 8.91475,
     "fuelFromPrev": 4.3095625,
     "distanceFrom0": 7.6513125,
-    "distanceFromPrev": 3.8159375,
-    "speedV": 429.8,
-    "time": 31.9622498836668
+    "distanceFromPrev": 3.8159374999999995,
+    "speedV": 429.79999999999995,
+    "time": 31.96224988366682
   },
   {
     "speedM": 0.7,
     "speedOfSound": 609,
     "altitude": 22000,
     "fuelFrom0": 13.2243125,
-    "fuelFromPrev": 4.628375,
+    "fuelFromPrev": 4.628375000000002,
     "distanceFrom0": 11.46725,
-    "distanceFromPrev": 4.1154375,
-    "speedV": 426.3,
-    "time": 34.7538705137227
+    "distanceFromPrev": 4.115437499999999,
+    "speedV": 426.29999999999995,
+    "time": 34.753870513722724
   },
   {
     "speedM": 0.7,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 17.8526875,
-    "fuelFromPrev": 4.941625,
-    "distanceFrom0": 15.5826875,
-    "distanceFromPrev": 4.3941875,
-    "speedV": 422.8,
-    "time": 37.4150307473983
+    "fuelFrom0": 17.852687500000002,
+    "fuelFromPrev": 4.941624999999995,
+    "distanceFrom0": 15.582687499999999,
+    "distanceFromPrev": 4.394187500000001,
+    "speedV": 422.79999999999995,
+    "time": 37.41503074739831
   },
   {
     "speedM": 0.7,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 22.7943125,
-    "fuelFromPrev": 5.2501875,
+    "fuelFrom0": 22.794312499999997,
+    "fuelFromPrev": 5.250187500000003,
     "distanceFrom0": 19.976875,
-    "distanceFromPrev": 4.6561875,
-    "speedV": 419.3,
-    "time": 39.9768065823992
+    "distanceFromPrev": 4.6561875000000015,
+    "speedV": 419.29999999999995,
+    "time": 39.976806582399256
   },
   {
     "speedM": 0.7,
     "speedOfSound": 594,
     "altitude": 28000,
     "fuelFrom0": 28.0445,
-    "fuelFromPrev": 5.5560625,
+    "fuelFromPrev": 5.556062500000003,
     "distanceFrom0": 24.6330625,
-    "distanceFromPrev": 4.906625,
-    "speedV": 415.8,
-    "time": 42.4816017316017
+    "distanceFromPrev": 4.906624999999998,
+    "speedV": 415.79999999999995,
+    "time": 42.48160173160172
   },
   {
     "speedM": 0.7,
@@ -337,30 +2746,30 @@
     "fuelFromPrev": 5.8879375,
     "distanceFrom0": 29.5396875,
     "distanceFromPrev": 5.1574375,
-    "speedV": 412.3,
-    "time": 45.0321974290565
+    "speedV": 412.29999999999995,
+    "time": 45.032197429056524
   },
   {
     "speedM": 0.7,
     "speedOfSound": 584,
     "altitude": 32000,
     "fuelFrom0": 39.4885,
-    "fuelFromPrev": 6.2113125,
+    "fuelFromPrev": 6.211312499999998,
     "distanceFrom0": 34.697125,
     "distanceFromPrev": 5.384625,
-    "speedV": 408.8,
-    "time": 47.4184197651663
+    "speedV": 408.79999999999995,
+    "time": 47.41841976516635
   },
   {
     "speedM": 0.7,
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 45.6998125,
-    "fuelFromPrev": 6.5165625,
+    "fuelFromPrev": 6.516562499999999,
     "distanceFrom0": 40.08175,
     "distanceFromPrev": 5.575125,
-    "speedV": 405.3,
-    "time": 49.519985196151
+    "speedV": 405.29999999999995,
+    "time": 49.519985196151005
   },
   {
     "speedM": 0.7,
@@ -369,20 +2778,20 @@
     "fuelFrom0": 52.216375,
     "fuelFromPrev": 7.192,
     "distanceFrom0": 45.656875,
-    "distanceFromPrev": 6.0583125,
-    "speedV": 401.1,
-    "time": 54.3752804786836
+    "distanceFromPrev": 6.0583124999999995,
+    "speedV": 401.09999999999997,
+    "time": 54.37528047868362
   },
   {
     "speedM": 0.7,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 59.408375,
-    "fuelFromPrev": 7.3205,
+    "fuelFromPrev": 7.320500000000003,
     "distanceFrom0": 51.7151875,
-    "distanceFromPrev": 6.093625,
-    "speedV": 401.1,
-    "time": 54.6922213911742
+    "distanceFromPrev": 6.093624999999996,
+    "speedV": 401.09999999999997,
+    "time": 54.69222139117424
   },
   {
     "speedM": 0.7,
@@ -390,9 +2799,9 @@
     "altitude": 40000,
     "fuelFrom0": 66.728875,
     "fuelFromPrev": 0,
-    "distanceFrom0": 57.8088125,
+    "distanceFrom0": 57.808812499999995,
     "distanceFromPrev": 0,
-    "speedV": 401.1,
+    "speedV": 401.09999999999997,
     "time": 0
   },
   {
@@ -402,9 +2811,9 @@
     "fuelFrom0": 3.9045,
     "fuelFromPrev": 3.243,
     "distanceFrom0": 3.3175,
-    "distanceFromPrev": 2.879,
-    "speedV": 439.49,
-    "time": 23.58278914196
+    "distanceFromPrev": 2.8790000000000004,
+    "speedV": 439.48999999999995,
+    "time": 23.582789141960006
   },
   {
     "speedM": 0.71,
@@ -415,18 +2824,18 @@
     "distanceFrom0": 6.1965,
     "distanceFromPrev": 3.7295,
     "speedV": 435.94,
-    "time": 30.7982749919714
+    "time": 30.79827499197137
   },
   {
     "speedM": 0.71,
     "speedOfSound": 609,
     "altitude": 22000,
     "fuelFrom0": 11.285,
-    "fuelFromPrev": 4.428,
+    "fuelFromPrev": 4.427999999999999,
     "distanceFrom0": 9.926,
-    "distanceFromPrev": 4.001,
+    "distanceFromPrev": 4.0009999999999994,
     "speedV": 432.39,
-    "time": 33.3115937001318
+    "time": 33.31159370013182
   },
   {
     "speedM": 0.71,
@@ -435,31 +2844,31 @@
     "fuelFrom0": 15.713,
     "fuelFromPrev": 4.737,
     "distanceFrom0": 13.927,
-    "distanceFromPrev": 4.2795,
+    "distanceFromPrev": 4.279499999999999,
     "speedV": 428.84,
-    "time": 35.9252868202593
+    "time": 35.925286820259295
   },
   {
     "speedM": 0.71,
     "speedOfSound": 599,
     "altitude": 26000,
     "fuelFrom0": 20.45,
-    "fuelFromPrev": 5.0445,
+    "fuelFromPrev": 5.044500000000003,
     "distanceFrom0": 18.2065,
-    "distanceFromPrev": 4.5455,
-    "speedV": 425.29,
-    "time": 38.4768040631099
+    "distanceFromPrev": 4.545500000000004,
+    "speedV": 425.28999999999996,
+    "time": 38.47680406310992
   },
   {
     "speedM": 0.71,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 25.4945,
-    "fuelFromPrev": 5.358,
-    "distanceFrom0": 22.752,
-    "distanceFromPrev": 4.8075,
-    "speedV": 421.74,
-    "time": 41.0371318822023
+    "fuelFrom0": 25.494500000000002,
+    "fuelFromPrev": 5.357999999999997,
+    "distanceFrom0": 22.752000000000002,
+    "distanceFromPrev": 4.807499999999997,
+    "speedV": 421.73999999999995,
+    "time": 41.03713188220228
   },
   {
     "speedM": 0.71,
@@ -468,53 +2877,53 @@
     "fuelFrom0": 30.8525,
     "fuelFromPrev": 5.6875,
     "distanceFrom0": 27.5595,
-    "distanceFromPrev": 5.06,
+    "distanceFromPrev": 5.060000000000002,
     "speedV": 418.19,
-    "time": 43.5591477558048
+    "time": 43.559147755804794
   },
   {
     "speedM": 0.71,
     "speedOfSound": 584,
     "altitude": 32000,
     "fuelFrom0": 36.54,
-    "fuelFromPrev": 6.022,
+    "fuelFromPrev": 6.0219999999999985,
     "distanceFrom0": 32.6195,
-    "distanceFromPrev": 5.303,
+    "distanceFromPrev": 5.302999999999997,
     "speedV": 414.64,
-    "time": 46.0418676442215
+    "time": 46.04186764422147
   },
   {
     "speedM": 0.71,
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 42.562,
-    "fuelFromPrev": 6.3395,
+    "fuelFromPrev": 6.339500000000001,
     "distanceFrom0": 37.9225,
     "distanceFromPrev": 5.509,
     "speedV": 411.09,
-    "time": 48.2434503393418
+    "time": 48.243450339341756
   },
   {
     "speedM": 0.71,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 48.9015,
-    "fuelFromPrev": 7.045,
+    "fuelFromPrev": 7.045000000000002,
     "distanceFrom0": 43.4315,
-    "distanceFromPrev": 6.0285,
+    "distanceFromPrev": 6.028500000000001,
     "speedV": 406.83,
-    "time": 53.3456234790945
+    "time": 53.34562347909448
   },
   {
     "speedM": 0.71,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 55.9465,
-    "fuelFromPrev": 7.2135,
+    "fuelFromPrev": 7.213499999999996,
     "distanceFrom0": 49.46,
-    "distanceFromPrev": 6.1005,
+    "distanceFromPrev": 6.100499999999997,
     "speedV": 406.83,
-    "time": 53.9827446353513
+    "time": 53.982744635351345
   },
   {
     "speedM": 0.71,
@@ -534,53 +2943,53 @@
     "fuelFrom0": 2.928375,
     "fuelFromPrev": 2.693125,
     "distanceFrom0": 2.488125,
-    "distanceFromPrev": 2.4075,
+    "distanceFromPrev": 2.4075000000000006,
     "speedV": 445.68,
-    "time": 19.4466882067851
+    "time": 19.44668820678514
   },
   {
     "speedM": 0.72,
     "speedOfSound": 614,
     "altitude": 20000,
     "fuelFrom0": 5.6215,
-    "fuelFromPrev": 3.920125,
-    "distanceFrom0": 4.895625,
-    "distanceFromPrev": 3.587875,
+    "fuelFromPrev": 3.9201249999999996,
+    "distanceFrom0": 4.895625000000001,
+    "distanceFromPrev": 3.5878749999999986,
     "speedV": 442.08,
-    "time": 29.2172231270358
+    "time": 29.21722312703582
   },
   {
     "speedM": 0.72,
     "speedOfSound": 609,
     "altitude": 22000,
     "fuelFrom0": 9.541625,
-    "fuelFromPrev": 4.24575,
+    "fuelFromPrev": 4.245750000000001,
     "distanceFrom0": 8.4835,
-    "distanceFromPrev": 3.897875,
-    "speedV": 438.48,
-    "time": 32.0022577996716
+    "distanceFromPrev": 3.897875000000001,
+    "speedV": 438.47999999999996,
+    "time": 32.002257799671604
   },
   {
     "speedM": 0.72,
     "speedOfSound": 604,
     "altitude": 24000,
     "fuelFrom0": 13.787375,
-    "fuelFromPrev": 4.54925,
+    "fuelFromPrev": 4.549249999999997,
     "distanceFrom0": 12.381375,
-    "distanceFromPrev": 4.174375,
+    "distanceFromPrev": 4.1743749999999995,
     "speedV": 434.88,
-    "time": 34.5560844370861
+    "time": 34.556084437086085
   },
   {
     "speedM": 0.72,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 18.336625,
-    "fuelFromPrev": 4.856375,
+    "fuelFrom0": 18.336624999999998,
+    "fuelFromPrev": 4.856375000000003,
     "distanceFrom0": 16.55575,
-    "distanceFromPrev": 4.442375,
+    "distanceFromPrev": 4.442375000000002,
     "speedV": 431.28,
-    "time": 37.0815943238731
+    "time": 37.08159432387314
   },
   {
     "speedM": 0.72,
@@ -589,64 +2998,64 @@
     "fuelFrom0": 23.193,
     "fuelFromPrev": 5.171125,
     "distanceFrom0": 20.998125,
-    "distanceFromPrev": 4.71325,
+    "distanceFromPrev": 4.713249999999999,
     "speedV": 427.68,
-    "time": 39.6738215488215
+    "time": 39.673821548821536
   },
   {
     "speedM": 0.72,
     "speedOfSound": 589,
     "altitude": 30000,
     "fuelFrom0": 28.364125,
-    "fuelFromPrev": 5.50087499999999,
+    "fuelFromPrev": 5.5008749999999935,
     "distanceFrom0": 25.711375,
-    "distanceFromPrev": 4.970875,
+    "distanceFromPrev": 4.970875000000003,
     "speedV": 424.08,
-    "time": 42.1975806451613
+    "time": 42.197580645161324
   },
   {
     "speedM": 0.72,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 33.865,
-    "fuelFromPrev": 5.83862500000001,
-    "distanceFrom0": 30.68225,
+    "fuelFrom0": 33.864999999999995,
+    "fuelFromPrev": 5.8386250000000075,
+    "distanceFrom0": 30.682250000000003,
     "distanceFromPrev": 5.22025,
-    "speedV": 420.48,
-    "time": 44.6939212328767
+    "speedV": 420.47999999999996,
+    "time": 44.69392123287672
   },
   {
     "speedM": 0.72,
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 39.703625,
-    "fuelFromPrev": 6.168125,
+    "fuelFromPrev": 6.168124999999996,
     "distanceFrom0": 35.9025,
-    "distanceFromPrev": 5.44224999999999,
+    "distanceFromPrev": 5.442249999999994,
     "speedV": 416.88,
-    "time": 46.9969775474956
+    "time": 46.99697754749563
   },
   {
     "speedM": 0.72,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 45.87175,
-    "fuelFromPrev": 6.895,
+    "fuelFromPrev": 6.895000000000003,
     "distanceFrom0": 41.34475,
-    "distanceFromPrev": 5.992625,
+    "distanceFromPrev": 5.992624999999997,
     "speedV": 412.56,
-    "time": 52.2916666666666
+    "time": 52.291666666666636
   },
   {
     "speedM": 0.72,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 52.76675,
-    "fuelFromPrev": 7.096,
-    "distanceFrom0": 47.337375,
-    "distanceFromPrev": 6.09625,
+    "fuelFromPrev": 7.0959999999999965,
+    "distanceFrom0": 47.337374999999994,
+    "distanceFromPrev": 6.096249999999998,
     "speedV": 412.56,
-    "time": 53.1958987783595
+    "time": 53.195898778359485
   },
   {
     "speedM": 0.72,
@@ -654,7 +3063,7 @@
     "altitude": 40000,
     "fuelFrom0": 59.86275,
     "fuelFromPrev": 0,
-    "distanceFrom0": 53.433625,
+    "distanceFrom0": 53.43362499999999,
     "distanceFromPrev": 0,
     "speedV": 412.56,
     "time": 0
@@ -666,9 +3075,9 @@
     "fuelFrom0": 1.95225,
     "fuelFromPrev": 2.14325,
     "distanceFrom0": 1.65875,
-    "distanceFromPrev": 1.936,
+    "distanceFromPrev": 1.9360000000000004,
     "speedV": 451.87,
-    "time": 15.4239051054507
+    "time": 15.423905105450686
   },
   {
     "speedM": 0.73,
@@ -676,10 +3085,10 @@
     "altitude": 20000,
     "fuelFrom0": 4.0955,
     "fuelFromPrev": 3.70275,
-    "distanceFrom0": 3.59475,
+    "distanceFrom0": 3.5947500000000003,
     "distanceFromPrev": 3.44625,
-    "speedV": 448.22,
-    "time": 27.6794877515506
+    "speedV": 448.21999999999997,
+    "time": 27.67948775155058
   },
   {
     "speedM": 0.73,
@@ -688,97 +3097,97 @@
     "fuelFrom0": 7.79825,
     "fuelFromPrev": 4.0635,
     "distanceFrom0": 7.041,
-    "distanceFromPrev": 3.79475,
+    "distanceFromPrev": 3.7947500000000005,
     "speedV": 444.57,
-    "time": 30.7287941156623
+    "time": 30.728794115662332
   },
   {
     "speedM": 0.73,
     "speedOfSound": 604,
     "altitude": 24000,
     "fuelFrom0": 11.86175,
-    "fuelFromPrev": 4.3615,
+    "fuelFromPrev": 4.3614999999999995,
     "distanceFrom0": 10.83575,
-    "distanceFromPrev": 4.06925,
+    "distanceFromPrev": 4.0692499999999985,
     "speedV": 440.92,
-    "time": 33.2243944479724
+    "time": 33.22439444797241
   },
   {
     "speedM": 0.73,
     "speedOfSound": 599,
     "altitude": 26000,
     "fuelFrom0": 16.22325,
-    "fuelFromPrev": 4.66825,
+    "fuelFromPrev": 4.6682500000000005,
     "distanceFrom0": 14.905,
-    "distanceFromPrev": 4.33925,
+    "distanceFromPrev": 4.339250000000002,
     "speedV": 437.27,
-    "time": 35.724609508999
+    "time": 35.72460950899903
   },
   {
     "speedM": 0.73,
     "speedOfSound": 594,
     "altitude": 28000,
     "fuelFrom0": 20.8915,
-    "fuelFromPrev": 4.98425,
+    "fuelFromPrev": 4.984249999999999,
     "distanceFrom0": 19.24425,
     "distanceFromPrev": 4.619,
     "speedV": 433.62,
-    "time": 38.3478621834786
+    "time": 38.34786218347862
   },
   {
     "speedM": 0.73,
     "speedOfSound": 589,
     "altitude": 30000,
     "fuelFrom0": 25.87575,
-    "fuelFromPrev": 5.31425,
+    "fuelFromPrev": 5.314249999999998,
     "distanceFrom0": 23.86325,
     "distanceFromPrev": 4.88175,
-    "speedV": 429.97,
-    "time": 40.8733167430286
+    "speedV": 429.96999999999997,
+    "time": 40.87331674302859
   },
   {
     "speedM": 0.73,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 31.19,
-    "fuelFromPrev": 5.65525,
+    "fuelFrom0": 31.189999999999998,
+    "fuelFromPrev": 5.655250000000002,
     "distanceFrom0": 28.745,
-    "distanceFromPrev": 5.1375,
+    "distanceFromPrev": 5.137499999999999,
     "speedV": 426.32,
-    "time": 43.3829048601989
+    "time": 43.382904860198906
   },
   {
     "speedM": 0.73,
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 36.84525,
-    "fuelFromPrev": 5.99675,
+    "fuelFromPrev": 5.996749999999999,
     "distanceFrom0": 33.8825,
-    "distanceFromPrev": 5.3755,
+    "distanceFromPrev": 5.375499999999995,
     "speedV": 422.67,
-    "time": 45.7846546951522
+    "time": 45.784654695152206
   },
   {
     "speedM": 0.73,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 42.842,
-    "fuelFromPrev": 6.745,
-    "distanceFrom0": 39.258,
-    "distanceFromPrev": 5.95675,
-    "speedV": 418.29,
-    "time": 51.2665853833465
+    "fuelFromPrev": 6.7450000000000045,
+    "distanceFrom0": 39.257999999999996,
+    "distanceFromPrev": 5.9567499999999995,
+    "speedV": 418.28999999999996,
+    "time": 51.26658538334648
   },
   {
     "speedM": 0.73,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 49.587,
-    "fuelFromPrev": 6.9785,
-    "distanceFrom0": 45.21475,
-    "distanceFromPrev": 6.092,
-    "speedV": 418.29,
-    "time": 52.4306103421071
+    "fuelFromPrev": 6.978499999999997,
+    "distanceFrom0": 45.214749999999995,
+    "distanceFromPrev": 6.091999999999999,
+    "speedV": 418.28999999999996,
+    "time": 52.430610342107144
   },
   {
     "speedM": 0.73,
@@ -786,9 +3195,9 @@
     "altitude": 40000,
     "fuelFrom0": 56.5655,
     "fuelFromPrev": 0,
-    "distanceFrom0": 51.30675,
+    "distanceFrom0": 51.306749999999994,
     "distanceFromPrev": 0,
-    "speedV": 418.29,
+    "speedV": 418.28999999999996,
     "time": 0
   },
   {
@@ -800,7 +3209,7 @@
     "distanceFrom0": 0,
     "distanceFromPrev": 1.986,
     "speedV": 458.06,
-    "time": 15.6084355761254
+    "time": 15.608435576125398
   },
   {
     "speedM": 0.74,
@@ -811,29 +3220,29 @@
     "distanceFrom0": 1.986,
     "distanceFromPrev": 3.415,
     "speedV": 454.36,
-    "time": 27.0578395985562
+    "time": 27.05783959855621
   },
   {
     "speedM": 0.74,
     "speedOfSound": 609,
     "altitude": 22000,
     "fuelFrom0": 5.663,
-    "fuelFromPrev": 3.845,
+    "fuelFromPrev": 3.844999999999999,
     "distanceFrom0": 5.401,
-    "distanceFromPrev": 3.669,
-    "speedV": 450.66,
-    "time": 29.3090134469445
+    "distanceFromPrev": 3.6690000000000005,
+    "speedV": 450.65999999999997,
+    "time": 29.30901344694449
   },
   {
     "speedM": 0.74,
     "speedOfSound": 604,
     "altitude": 24000,
     "fuelFrom0": 9.508,
-    "fuelFromPrev": 4.14,
+    "fuelFromPrev": 4.140000000000001,
     "distanceFrom0": 9.07,
-    "distanceFromPrev": 3.945,
+    "distanceFromPrev": 3.9450000000000003,
     "speedV": 446.96,
-    "time": 31.7746554501521
+    "time": 31.774655450152142
   },
   {
     "speedM": 0.74,
@@ -851,33 +3260,33 @@
     "speedOfSound": 594,
     "altitude": 28000,
     "fuelFrom0": 18.093,
-    "fuelFromPrev": 4.775,
+    "fuelFromPrev": 4.774999999999999,
     "distanceFrom0": 17.236,
-    "distanceFromPrev": 4.515,
+    "distanceFromPrev": 4.515000000000001,
     "speedV": 439.56,
-    "time": 36.977886977887
+    "time": 36.97788697788698
   },
   {
     "speedM": 0.74,
     "speedOfSound": 589,
     "altitude": 30000,
     "fuelFrom0": 22.868,
-    "fuelFromPrev": 5.1,
+    "fuelFromPrev": 5.100000000000001,
     "distanceFrom0": 21.751,
     "distanceFromPrev": 4.776,
     "speedV": 435.86,
-    "time": 39.4475290230808
+    "time": 39.447529023080804
   },
   {
     "speedM": 0.74,
     "speedOfSound": 584,
     "altitude": 32000,
     "fuelFrom0": 27.968,
-    "fuelFromPrev": 5.46,
+    "fuelFromPrev": 5.459999999999997,
     "distanceFrom0": 26.527,
-    "distanceFromPrev": 5.057,
-    "speedV": 432.16,
-    "time": 42.126064420585
+    "distanceFromPrev": 5.056999999999999,
+    "speedV": 432.15999999999997,
+    "time": 42.12606442058496
   },
   {
     "speedM": 0.74,
@@ -886,31 +3295,31 @@
     "fuelFrom0": 33.428,
     "fuelFromPrev": 5.814,
     "distanceFrom0": 31.584,
-    "distanceFromPrev": 5.31,
+    "distanceFromPrev": 5.309999999999999,
     "speedV": 428.46,
-    "time": 44.6156000560146
+    "time": 44.61560005601456
   },
   {
     "speedM": 0.74,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 39.242,
-    "fuelFromPrev": 6.60100000000001,
+    "fuelFromPrev": 6.601000000000006,
     "distanceFrom0": 36.894,
     "distanceFromPrev": 5.933,
     "speedV": 424.02,
-    "time": 50.372152256969
+    "time": 50.37215225696901
   },
   {
     "speedM": 0.74,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 45.843,
-    "fuelFromPrev": 6.882,
+    "fuelFromPrev": 6.881999999999998,
     "distanceFrom0": 42.827,
-    "distanceFromPrev": 6.11,
+    "distanceFromPrev": 6.109999999999999,
     "speedV": 424.02,
-    "time": 51.8749115607754
+    "time": 51.87491156077544
   },
   {
     "speedM": 0.74,
@@ -939,77 +3348,77 @@
     "speedOfSound": 614,
     "altitude": 20000,
     "fuelFrom0": 1.0435,
-    "fuelFromPrev": 3.268,
+    "fuelFromPrev": 3.2680000000000007,
     "distanceFrom0": 0.993,
     "distanceFromPrev": 3.163,
     "speedV": 460.5,
-    "time": 24.7270358306189
+    "time": 24.727035830618888
   },
   {
     "speedM": 0.75,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 4.3115,
+    "fuelFrom0": 4.3115000000000006,
     "fuelFromPrev": 3.699,
     "distanceFrom0": 4.156,
-    "distanceFromPrev": 3.5885,
+    "distanceFromPrev": 3.5885000000000007,
     "speedV": 456.75,
-    "time": 28.2837438423645
+    "time": 28.28374384236454
   },
   {
     "speedM": 0.75,
     "speedOfSound": 604,
     "altitude": 24000,
     "fuelFrom0": 8.0105,
-    "fuelFromPrev": 3.986,
+    "fuelFromPrev": 3.9860000000000007,
     "distanceFrom0": 7.7445,
     "distanceFromPrev": 3.859,
     "speedV": 453,
-    "time": 30.6675496688742
+    "time": 30.66754966887417
   },
   {
     "speedM": 0.75,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 11.9965,
-    "fuelFromPrev": 4.292,
+    "fuelFrom0": 11.996500000000001,
+    "fuelFromPrev": 4.291999999999998,
     "distanceFrom0": 11.6035,
-    "distanceFromPrev": 4.133,
+    "distanceFromPrev": 4.132999999999999,
     "speedV": 449.25,
-    "time": 33.1191986644407
+    "time": 33.11919866444073
   },
   {
     "speedM": 0.75,
     "speedOfSound": 594,
     "altitude": 28000,
     "fuelFrom0": 16.2885,
-    "fuelFromPrev": 4.6105,
+    "fuelFromPrev": 4.610500000000002,
     "distanceFrom0": 15.7365,
-    "distanceFromPrev": 4.4305,
+    "distanceFromPrev": 4.430500000000002,
     "speedV": 445.5,
-    "time": 35.8020202020202
+    "time": 35.80202020202022
   },
   {
     "speedM": 0.75,
     "speedOfSound": 589,
     "altitude": 30000,
     "fuelFrom0": 20.899,
-    "fuelFromPrev": 4.941,
+    "fuelFromPrev": 4.940999999999999,
     "distanceFrom0": 20.167,
-    "distanceFromPrev": 4.7035,
+    "distanceFromPrev": 4.703499999999998,
     "speedV": 441.75,
-    "time": 38.3307300509338
+    "time": 38.330730050933774
   },
   {
     "speedM": 0.75,
     "speedOfSound": 584,
     "altitude": 32000,
     "fuelFrom0": 25.84,
-    "fuelFromPrev": 5.2885,
+    "fuelFromPrev": 5.288499999999999,
     "distanceFrom0": 24.8705,
-    "distanceFromPrev": 4.972,
+    "distanceFromPrev": 4.972000000000001,
     "speedV": 438,
-    "time": 40.8657534246576
+    "time": 40.86575342465755
   },
   {
     "speedM": 0.75,
@@ -1018,37 +3427,37 @@
     "fuelFrom0": 31.1285,
     "fuelFromPrev": 5.654,
     "distanceFrom0": 29.8425,
-    "distanceFromPrev": 5.242,
+    "distanceFromPrev": 5.241999999999997,
     "speedV": 434.25,
-    "time": 43.4569948186528
+    "time": 43.45699481865283
   },
   {
     "speedM": 0.75,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 36.7825,
-    "fuelFromPrev": 6.44500000000001,
+    "fuelFromPrev": 6.445000000000007,
     "distanceFrom0": 35.0845,
-    "distanceFromPrev": 5.885,
+    "distanceFromPrev": 5.884999999999998,
     "speedV": 429.75,
-    "time": 49.2984293193717
+    "time": 49.298429319371714
   },
   {
     "speedM": 0.75,
     "speedOfSound": 573,
     "altitude": 38000,
-    "fuelFrom0": 43.2275,
-    "fuelFromPrev": 6.7435,
+    "fuelFrom0": 43.227500000000006,
+    "fuelFromPrev": 6.743499999999997,
     "distanceFrom0": 40.9695,
-    "distanceFromPrev": 6.0835,
+    "distanceFromPrev": 6.083500000000001,
     "speedV": 429.75,
-    "time": 50.9612565445026
+    "time": 50.961256544502625
   },
   {
     "speedM": 0.75,
     "speedOfSound": 573,
     "altitude": 40000,
-    "fuelFrom0": 49.971,
+    "fuelFrom0": 49.971000000000004,
     "fuelFromPrev": 0,
     "distanceFrom0": 47.053,
     "distanceFromPrev": 0,
@@ -1075,7 +3484,7 @@
     "distanceFrom0": 0,
     "distanceFromPrev": 2.911,
     "speedV": 466.64,
-    "time": 22.4575690039431
+    "time": 22.45756900394308
   },
   {
     "speedM": 0.76,
@@ -1084,31 +3493,31 @@
     "fuelFrom0": 2.96,
     "fuelFromPrev": 3.553,
     "distanceFrom0": 2.911,
-    "distanceFromPrev": 3.508,
-    "speedV": 462.84,
-    "time": 27.2854550168525
+    "distanceFromPrev": 3.5079999999999996,
+    "speedV": 462.84000000000003,
+    "time": 27.28545501685247
   },
   {
     "speedM": 0.76,
     "speedOfSound": 604,
     "altitude": 24000,
     "fuelFrom0": 6.513,
-    "fuelFromPrev": 3.832,
+    "fuelFromPrev": 3.8320000000000007,
     "distanceFrom0": 6.419,
-    "distanceFromPrev": 3.773,
+    "distanceFromPrev": 3.7730000000000006,
     "speedV": 459.04,
-    "time": 29.5895782502614
+    "time": 29.589578250261415
   },
   {
     "speedM": 0.76,
     "speedOfSound": 599,
     "altitude": 26000,
     "fuelFrom0": 10.345,
-    "fuelFromPrev": 4.139,
+    "fuelFromPrev": 4.138999999999999,
     "distanceFrom0": 10.192,
     "distanceFromPrev": 4.045,
     "speedV": 455.24,
-    "time": 31.987523064757
+    "time": 31.98752306475705
   },
   {
     "speedM": 0.76,
@@ -1117,9 +3526,9 @@
     "fuelFrom0": 14.484,
     "fuelFromPrev": 4.446,
     "distanceFrom0": 14.237,
-    "distanceFromPrev": 4.346,
+    "distanceFromPrev": 4.345999999999998,
     "speedV": 451.44,
-    "time": 34.6570972886762
+    "time": 34.657097288676226
   },
   {
     "speedM": 0.76,
@@ -1130,17 +3539,17 @@
     "distanceFrom0": 18.583,
     "distanceFromPrev": 4.631,
     "speedV": 447.64,
-    "time": 37.2433205254222
+    "time": 37.24332052542222
   },
   {
     "speedM": 0.76,
     "speedOfSound": 584,
     "altitude": 32000,
     "fuelFrom0": 23.712,
-    "fuelFromPrev": 5.117,
+    "fuelFromPrev": 5.117000000000001,
     "distanceFrom0": 23.214,
-    "distanceFromPrev": 4.887,
-    "speedV": 443.84,
+    "distanceFromPrev": 4.8870000000000005,
+    "speedV": 443.84000000000003,
     "time": 39.6386085075703
   },
   {
@@ -1150,31 +3559,31 @@
     "fuelFrom0": 28.829,
     "fuelFromPrev": 5.494,
     "distanceFrom0": 28.101,
-    "distanceFromPrev": 5.174,
+    "distanceFromPrev": 5.1739999999999995,
     "speedV": 440.04,
-    "time": 42.3288791928007
+    "time": 42.32887919280065
   },
   {
     "speedM": 0.76,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 34.323,
-    "fuelFromPrev": 6.289,
+    "fuelFromPrev": 6.2890000000000015,
     "distanceFrom0": 33.275,
-    "distanceFromPrev": 5.837,
+    "distanceFromPrev": 5.837000000000003,
     "speedV": 435.48,
-    "time": 48.2529622485533
+    "time": 48.252962248553345
   },
   {
     "speedM": 0.76,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 40.612,
-    "fuelFromPrev": 6.605,
+    "fuelFromPrev": 6.604999999999997,
     "distanceFrom0": 39.112,
-    "distanceFromPrev": 6.057,
+    "distanceFromPrev": 6.056999999999995,
     "speedV": 435.48,
-    "time": 50.0716450812896
+    "time": 50.07164508128957
   },
   {
     "speedM": 0.76,
@@ -1206,107 +3615,107 @@
     "fuelFromPrev": 1.765,
     "distanceFrom0": 0,
     "distanceFromPrev": 1.745,
-    "speedV": 472.78,
-    "time": 13.2873641016963
+    "speedV": 472.78000000000003,
+    "time": 13.28736410169635
   },
   {
     "speedM": 0.77,
     "speedOfSound": 609,
     "altitude": 22000,
     "fuelFrom0": 1.765,
-    "fuelFromPrev": 3.416,
+    "fuelFromPrev": 3.4160000000000004,
     "distanceFrom0": 1.745,
     "distanceFromPrev": 3.418,
     "speedV": 468.93,
-    "time": 26.2401637771096
+    "time": 26.24016377710959
   },
   {
     "speedM": 0.77,
     "speedOfSound": 604,
     "altitude": 24000,
     "fuelFrom0": 5.181,
-    "fuelFromPrev": 3.667,
+    "fuelFromPrev": 3.6670000000000007,
     "distanceFrom0": 5.163,
     "distanceFromPrev": 3.67,
     "speedV": 465.08,
-    "time": 28.4080158252344
+    "time": 28.408015825234365
   },
   {
     "speedM": 0.77,
     "speedOfSound": 599,
     "altitude": 26000,
     "fuelFrom0": 8.848,
-    "fuelFromPrev": 3.961,
+    "fuelFromPrev": 3.9610000000000003,
     "distanceFrom0": 8.833,
-    "distanceFromPrev": 3.9425,
+    "distanceFromPrev": 3.942500000000001,
     "speedV": 461.23,
-    "time": 30.7720659974416
+    "time": 30.77206599744163
   },
   {
     "speedM": 0.77,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 12.809,
+    "fuelFrom0": 12.809000000000001,
     "fuelFromPrev": 4.2745,
-    "distanceFrom0": 12.7755,
-    "distanceFromPrev": 4.2415,
+    "distanceFrom0": 12.775500000000001,
+    "distanceFromPrev": 4.2414999999999985,
     "speedV": 457.38,
-    "time": 33.3844942935852
+    "time": 33.38449429358519
   },
   {
     "speedM": 0.77,
     "speedOfSound": 589,
     "altitude": 30000,
     "fuelFrom0": 17.0835,
-    "fuelFromPrev": 4.611,
+    "fuelFromPrev": 4.610999999999997,
     "distanceFrom0": 17.017,
-    "distanceFromPrev": 4.527,
-    "speedV": 453.53,
-    "time": 35.9341168169691
+    "distanceFromPrev": 4.5269999999999975,
+    "speedV": 453.53000000000003,
+    "time": 35.93411681696909
   },
   {
     "speedM": 0.77,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 21.6945,
+    "fuelFrom0": 21.694499999999998,
     "fuelFromPrev": 4.939,
-    "distanceFrom0": 21.544,
-    "distanceFromPrev": 4.794,
+    "distanceFrom0": 21.543999999999997,
+    "distanceFromPrev": 4.794000000000004,
     "speedV": 449.68,
-    "time": 38.3792919409358
+    "time": 38.37929194093581
   },
   {
     "speedM": 0.77,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 26.6335,
-    "fuelFromPrev": 5.31500000000001,
+    "fuelFrom0": 26.633499999999998,
+    "fuelFromPrev": 5.315000000000005,
     "distanceFrom0": 26.338,
-    "distanceFromPrev": 5.08,
+    "distanceFromPrev": 5.079999999999998,
     "speedV": 445.83,
-    "time": 41.0201197765965
+    "time": 41.02011977659645
   },
   {
     "speedM": 0.77,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuelFrom0": 31.9485,
-    "fuelFromPrev": 6.1195,
+    "fuelFrom0": 31.948500000000003,
+    "fuelFromPrev": 6.119499999999995,
     "distanceFrom0": 31.418,
-    "distanceFromPrev": 5.76,
-    "speedV": 441.21,
-    "time": 46.9980281498606
+    "distanceFromPrev": 5.759999999999998,
+    "speedV": 441.21000000000004,
+    "time": 46.99802814986059
   },
   {
     "speedM": 0.77,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 38.068,
-    "fuelFromPrev": 6.45350000000001,
+    "fuelFromPrev": 6.453500000000005,
     "distanceFrom0": 37.178,
-    "distanceFromPrev": 6.005,
-    "speedV": 441.21,
-    "time": 48.9970762222071
+    "distanceFromPrev": 6.005000000000003,
+    "speedV": 441.21000000000004,
+    "time": 48.99707622220713
   },
   {
     "speedM": 0.77,
@@ -1316,7 +3725,7 @@
     "fuelFromPrev": 0,
     "distanceFrom0": 43.183,
     "distanceFromPrev": 0,
-    "speedV": 441.21,
+    "speedV": 441.21000000000004,
     "time": 0
   },
   {
@@ -1346,11 +3755,11 @@
     "speedOfSound": 609,
     "altitude": 22000,
     "fuelFrom0": 0.57,
-    "fuelFromPrev": 3.279,
+    "fuelFromPrev": 3.2790000000000004,
     "distanceFrom0": 0.579,
-    "distanceFromPrev": 3.328,
-    "speedV": 475.02,
-    "time": 25.2216748768473
+    "distanceFromPrev": 3.3280000000000003,
+    "speedV": 475.02000000000004,
+    "time": 25.221674876847292
   },
   {
     "speedM": 0.78,
@@ -1361,18 +3770,18 @@
     "distanceFrom0": 3.907,
     "distanceFromPrev": 3.567,
     "speedV": 471.12,
-    "time": 27.2567498726439
+    "time": 27.256749872643912
   },
   {
     "speedM": 0.78,
     "speedOfSound": 599,
     "altitude": 26000,
     "fuelFrom0": 7.351,
-    "fuelFromPrev": 3.783,
+    "fuelFromPrev": 3.7830000000000004,
     "distanceFrom0": 7.474,
     "distanceFromPrev": 3.84,
     "speedV": 467.22,
-    "time": 29.5877744959548
+    "time": 29.587774495954793
   },
   {
     "speedM": 0.78,
@@ -1381,30 +3790,30 @@
     "fuelFrom0": 11.134,
     "fuelFromPrev": 4.103,
     "distanceFrom0": 11.314,
-    "distanceFromPrev": 4.137,
+    "distanceFromPrev": 4.1370000000000005,
     "speedV": 463.32,
-    "time": 32.1445221445221
+    "time": 32.14452214452215
   },
   {
     "speedM": 0.78,
     "speedOfSound": 589,
     "altitude": 30000,
     "fuelFrom0": 15.237,
-    "fuelFromPrev": 4.44,
+    "fuelFromPrev": 4.4399999999999995,
     "distanceFrom0": 15.451,
-    "distanceFromPrev": 4.423,
+    "distanceFromPrev": 4.422999999999998,
     "speedV": 459.42,
-    "time": 34.6584824343738
+    "time": 34.65848243437376
   },
   {
     "speedM": 0.78,
     "speedOfSound": 584,
     "altitude": 32000,
     "fuelFrom0": 19.677,
-    "fuelFromPrev": 4.761,
+    "fuelFromPrev": 4.760999999999999,
     "distanceFrom0": 19.874,
-    "distanceFromPrev": 4.701,
-    "speedV": 455.52,
+    "distanceFromPrev": 4.7010000000000005,
+    "speedV": 455.52000000000004,
     "time": 37.1522655426765
   },
   {
@@ -1412,22 +3821,22 @@
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 24.438,
-    "fuelFromPrev": 5.136,
+    "fuelFromPrev": 5.136000000000003,
     "distanceFrom0": 24.575,
-    "distanceFromPrev": 4.986,
+    "distanceFromPrev": 4.986000000000001,
     "speedV": 451.62,
-    "time": 39.7449182941411
+    "time": 39.744918294141094
   },
   {
     "speedM": 0.78,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 29.574,
-    "fuelFromPrev": 5.95,
+    "fuelFromPrev": 5.949999999999999,
     "distanceFrom0": 29.561,
     "distanceFromPrev": 5.683,
     "speedV": 446.94,
-    "time": 45.7752718485703
+    "time": 45.77527184857028
   },
   {
     "speedM": 0.78,
@@ -1436,9 +3845,9 @@
     "fuelFrom0": 35.524,
     "fuelFromPrev": 6.302,
     "distanceFrom0": 35.244,
-    "distanceFromPrev": 5.953,
+    "distanceFromPrev": 5.953000000000003,
     "speedV": 446.94,
-    "time": 47.9500604107934
+    "time": 47.95006041079342
   },
   {
     "speedM": 0.78,
@@ -1459,7 +3868,7 @@
     "fuelFromPrev": 0,
     "distanceFrom0": 0,
     "distanceFromPrev": 0,
-    "speedV": 489.01,
+    "speedV": 489.01000000000005,
     "time": 0
   },
   {
@@ -1479,21 +3888,21 @@
     "altitude": 22000,
     "fuelFrom0": 0.4275,
     "fuelFromPrev": 2.45925,
-    "distanceFrom0": 0.43425,
+    "distanceFrom0": 0.43424999999999997,
     "distanceFromPrev": 2.496,
     "speedV": 481.11,
-    "time": 18.6768098771591
+    "time": 18.67680987715907
   },
   {
     "speedM": 0.79,
     "speedOfSound": 604,
     "altitude": 24000,
     "fuelFrom0": 2.88675,
-    "fuelFromPrev": 3.2125,
+    "fuelFromPrev": 3.2124999999999995,
     "distanceFrom0": 2.93025,
     "distanceFromPrev": 3.30875,
     "speedV": 477.16,
-    "time": 24.9633246709699
+    "time": 24.963324670969904
   },
   {
     "speedM": 0.79,
@@ -1502,53 +3911,53 @@
     "fuelFrom0": 6.09925,
     "fuelFromPrev": 3.5975,
     "distanceFrom0": 6.239,
-    "distanceFromPrev": 3.69525,
-    "speedV": 473.21,
-    "time": 28.1120432788825
+    "distanceFromPrev": 3.6952500000000006,
+    "speedV": 473.21000000000004,
+    "time": 28.112043278882528
   },
   {
     "speedM": 0.79,
     "speedOfSound": 594,
     "altitude": 28000,
     "fuelFrom0": 9.69675,
-    "fuelFromPrev": 3.89875,
+    "fuelFromPrev": 3.8987500000000015,
     "distanceFrom0": 9.93425,
-    "distanceFromPrev": 3.98125,
-    "speedV": 469.26,
-    "time": 30.5427694668201
+    "distanceFromPrev": 3.9812499999999993,
+    "speedV": 469.26000000000005,
+    "time": 30.54276946682009
   },
   {
     "speedM": 0.79,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 13.5955,
-    "fuelFromPrev": 4.2225,
+    "fuelFrom0": 13.595500000000001,
+    "fuelFromPrev": 4.222499999999997,
     "distanceFrom0": 13.9155,
-    "distanceFromPrev": 4.26475,
+    "distanceFromPrev": 4.264750000000001,
     "speedV": 465.31,
-    "time": 32.9954224065677
+    "time": 32.99542240656767
   },
   {
     "speedM": 0.79,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 17.818,
-    "fuelFromPrev": 4.54275,
+    "fuelFrom0": 17.817999999999998,
+    "fuelFromPrev": 4.542750000000002,
     "distanceFrom0": 18.18025,
-    "distanceFromPrev": 4.54475,
+    "distanceFromPrev": 4.5447500000000005,
     "speedV": 461.36,
-    "time": 35.462762268077
+    "time": 35.46276226807699
   },
   {
     "speedM": 0.79,
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 22.36075,
-    "fuelFromPrev": 4.91025,
+    "fuelFromPrev": 4.910250000000001,
     "distanceFrom0": 22.725,
-    "distanceFromPrev": 4.8295,
+    "distanceFromPrev": 4.8294999999999995,
     "speedV": 457.41,
-    "time": 38.0101003476094
+    "time": 38.01010034760936
   },
   {
     "speedM": 0.79,
@@ -1557,20 +3966,20 @@
     "fuelFrom0": 27.271,
     "fuelFromPrev": 5.71425,
     "distanceFrom0": 27.5545,
-    "distanceFromPrev": 5.5325,
+    "distanceFromPrev": 5.532500000000002,
     "speedV": 452.67,
-    "time": 43.9989396248923
+    "time": 43.99893962489232
   },
   {
     "speedM": 0.79,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 32.98525,
-    "fuelFromPrev": 6.06375,
+    "fuelFromPrev": 6.063749999999999,
     "distanceFrom0": 33.087,
-    "distanceFromPrev": 5.8005,
+    "distanceFromPrev": 5.8004999999999995,
     "speedV": 452.67,
-    "time": 46.1302935913579
+    "time": 46.13029359135793
   },
   {
     "speedM": 0.79,
@@ -1591,7 +4000,7 @@
     "fuelFromPrev": 0,
     "distanceFrom0": 0,
     "distanceFromPrev": 0,
-    "speedV": 495.2,
+    "speedV": 495.20000000000005,
     "time": 0
   },
   {
@@ -1602,7 +4011,7 @@
     "fuelFromPrev": 0.285,
     "distanceFrom0": 0,
     "distanceFromPrev": 0,
-    "speedV": 491.2,
+    "speedV": 491.20000000000005,
     "time": 0
   },
   {
@@ -1610,11 +4019,11 @@
     "speedOfSound": 609,
     "altitude": 22000,
     "fuelFrom0": 0.285,
-    "fuelFromPrev": 1.6395,
+    "fuelFromPrev": 1.6395000000000002,
     "distanceFrom0": 0.2895,
-    "distanceFromPrev": 1.664,
-    "speedV": 487.2,
-    "time": 12.2955665024631
+    "distanceFromPrev": 1.6640000000000001,
+    "speedV": 487.20000000000005,
+    "time": 12.295566502463055
   },
   {
     "speedM": 0.8,
@@ -1623,53 +4032,53 @@
     "fuelFrom0": 1.9245,
     "fuelFromPrev": 2.923,
     "distanceFrom0": 1.9535,
-    "distanceFromPrev": 3.0505,
-    "speedV": 483.2,
-    "time": 22.7272350993377
+    "distanceFromPrev": 3.0504999999999995,
+    "speedV": 483.20000000000005,
+    "time": 22.727235099337744
   },
   {
     "speedM": 0.8,
     "speedOfSound": 599,
     "altitude": 26000,
     "fuelFrom0": 4.8475,
-    "fuelFromPrev": 3.412,
+    "fuelFromPrev": 3.411999999999999,
     "distanceFrom0": 5.004,
-    "distanceFromPrev": 3.5505,
-    "speedV": 479.2,
-    "time": 26.6732053422371
+    "distanceFromPrev": 3.5505000000000013,
+    "speedV": 479.20000000000005,
+    "time": 26.67320534223707
   },
   {
     "speedM": 0.8,
     "speedOfSound": 594,
     "altitude": 28000,
     "fuelFrom0": 8.2595,
-    "fuelFromPrev": 3.6945,
+    "fuelFromPrev": 3.6945000000000014,
     "distanceFrom0": 8.5545,
-    "distanceFromPrev": 3.8255,
-    "speedV": 475.2,
-    "time": 28.9810606060606
+    "distanceFromPrev": 3.825499999999998,
+    "speedV": 475.20000000000005,
+    "time": 28.981060606060588
   },
   {
     "speedM": 0.8,
     "speedOfSound": 589,
     "altitude": 30000,
     "fuelFrom0": 11.954,
-    "fuelFromPrev": 4.005,
-    "distanceFrom0": 12.38,
-    "distanceFromPrev": 4.1065,
-    "speedV": 471.2,
-    "time": 31.3739388794567
+    "fuelFromPrev": 4.004999999999999,
+    "distanceFrom0": 12.379999999999999,
+    "distanceFromPrev": 4.1065000000000005,
+    "speedV": 471.20000000000005,
+    "time": 31.373938879456706
   },
   {
     "speedM": 0.8,
     "speedOfSound": 584,
     "altitude": 32000,
     "fuelFrom0": 15.959,
-    "fuelFromPrev": 4.3245,
+    "fuelFromPrev": 4.3245000000000005,
     "distanceFrom0": 16.4865,
-    "distanceFromPrev": 4.3885,
-    "speedV": 467.2,
-    "time": 33.8154965753425
+    "distanceFromPrev": 4.3885000000000005,
+    "speedV": 467.20000000000005,
+    "time": 33.815496575342465
   },
   {
     "speedM": 0.8,
@@ -1678,9 +4087,9 @@
     "fuelFrom0": 20.2835,
     "fuelFromPrev": 4.6845,
     "distanceFrom0": 20.875,
-    "distanceFromPrev": 4.673,
-    "speedV": 463.2,
-    "time": 36.3186528497409
+    "distanceFromPrev": 4.673000000000002,
+    "speedV": 463.20000000000005,
+    "time": 36.31865284974094
   },
   {
     "speedM": 0.8,
@@ -1688,20 +4097,20 @@
     "altitude": 36000,
     "fuelFrom0": 24.968,
     "fuelFromPrev": 5.4785,
-    "distanceFrom0": 25.548,
-    "distanceFromPrev": 5.382,
-    "speedV": 458.4,
-    "time": 42.2670157068063
+    "distanceFrom0": 25.548000000000002,
+    "distanceFromPrev": 5.381999999999998,
+    "speedV": 458.40000000000003,
+    "time": 42.26701570680626
   },
   {
     "speedM": 0.8,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 30.4465,
-    "fuelFromPrev": 5.8255,
+    "fuelFromPrev": 5.825499999999998,
     "distanceFrom0": 30.93,
-    "distanceFromPrev": 5.648,
-    "speedV": 458.4,
+    "distanceFromPrev": 5.648000000000003,
+    "speedV": 458.40000000000003,
     "time": 44.3560209424084
   },
   {
@@ -1712,7 +4121,7 @@
     "fuelFromPrev": 0,
     "distanceFrom0": 36.578,
     "distanceFromPrev": 0,
-    "speedV": 458.4,
+    "speedV": 458.40000000000003,
     "time": 0
   },
   {
@@ -1723,7 +4132,7 @@
     "fuelFromPrev": 0,
     "distanceFrom0": 0,
     "distanceFromPrev": 0,
-    "speedV": 501.39,
+    "speedV": 501.39000000000004,
     "time": 0
   },
   {
@@ -1734,7 +4143,7 @@
     "fuelFromPrev": 0.1425,
     "distanceFrom0": 0,
     "distanceFromPrev": 0,
-    "speedV": 497.34,
+    "speedV": 497.34000000000003,
     "time": 0
   },
   {
@@ -1742,7 +4151,7 @@
     "speedOfSound": 609,
     "altitude": 22000,
     "fuelFrom0": 0.1425,
-    "fuelFromPrev": 0.81975,
+    "fuelFromPrev": 0.8197500000000001,
     "distanceFrom0": 0.14475,
     "distanceFromPrev": 0,
     "speedV": 493.29,
@@ -1753,88 +4162,88 @@
     "speedOfSound": 604,
     "altitude": 24000,
     "fuelFrom0": 0.96225,
-    "fuelFromPrev": 2.6335,
+    "fuelFromPrev": 2.6334999999999997,
     "distanceFrom0": 0.97675,
-    "distanceFromPrev": 2.79225,
+    "distanceFromPrev": 2.7922499999999997,
     "speedV": 489.24,
-    "time": 20.546357615894
+    "time": 20.54635761589404
   },
   {
     "speedM": 0.81,
     "speedOfSound": 599,
     "altitude": 26000,
     "fuelFrom0": 3.59575,
-    "fuelFromPrev": 3.2265,
-    "distanceFrom0": 3.769,
-    "distanceFromPrev": 3.40575,
-    "speedV": 485.19,
-    "time": 25.2698942682248
+    "fuelFromPrev": 3.2264999999999997,
+    "distanceFrom0": 3.7689999999999997,
+    "distanceFromPrev": 3.4057500000000007,
+    "speedV": 485.19000000000005,
+    "time": 25.26989426822482
   },
   {
     "speedM": 0.81,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 6.82225,
-    "fuelFromPrev": 3.49025,
+    "fuelFrom0": 6.8222499999999995,
+    "fuelFromPrev": 3.4902500000000005,
     "distanceFrom0": 7.17475,
-    "distanceFromPrev": 3.66975,
-    "speedV": 481.14,
-    "time": 27.4579124579125
+    "distanceFromPrev": 3.6697499999999996,
+    "speedV": 481.14000000000004,
+    "time": 27.457912457912453
   },
   {
     "speedM": 0.81,
     "speedOfSound": 589,
     "altitude": 30000,
     "fuelFrom0": 10.3125,
-    "fuelFromPrev": 3.7875,
+    "fuelFromPrev": 3.7874999999999996,
     "distanceFrom0": 10.8445,
     "distanceFromPrev": 3.94825,
-    "speedV": 477.09,
-    "time": 29.7924919826448
+    "speedV": 477.09000000000003,
+    "time": 29.79249198264478
   },
   {
     "speedM": 0.81,
     "speedOfSound": 584,
     "altitude": 32000,
     "fuelFrom0": 14.1,
-    "fuelFromPrev": 4.10625,
+    "fuelFromPrev": 4.106250000000001,
     "distanceFrom0": 14.79275,
-    "distanceFromPrev": 4.23225,
+    "distanceFromPrev": 4.232249999999999,
     "speedV": 473.04,
-    "time": 32.208904109589
+    "time": 32.20890410958903
   },
   {
     "speedM": 0.81,
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 18.20625,
-    "fuelFromPrev": 4.45875,
+    "fuelFromPrev": 4.458749999999998,
     "distanceFrom0": 19.025,
-    "distanceFromPrev": 4.5165,
+    "distanceFromPrev": 4.516500000000001,
     "speedV": 468.99,
-    "time": 34.6689694876223
+    "time": 34.66896948762234
   },
   {
     "speedM": 0.81,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 22.665,
-    "fuelFromPrev": 5.24275,
+    "fuelFromPrev": 5.242750000000001,
     "distanceFrom0": 23.5415,
-    "distanceFromPrev": 5.2315,
-    "speedV": 464.13,
-    "time": 40.5778553422532
+    "distanceFromPrev": 5.2315000000000005,
+    "speedV": 464.13000000000005,
+    "time": 40.577855342253244
   },
   {
     "speedM": 0.81,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 27.90775,
-    "fuelFromPrev": 5.58725,
+    "fuelFromPrev": 5.587249999999997,
     "distanceFrom0": 28.773,
-    "distanceFromPrev": 5.4955,
-    "speedV": 464.13,
-    "time": 42.6255574946675
+    "distanceFromPrev": 5.495500000000003,
+    "speedV": 464.13000000000005,
+    "time": 42.62555749466746
   },
   {
     "speedM": 0.81,
@@ -1844,7 +4253,7 @@
     "fuelFromPrev": 0,
     "distanceFrom0": 34.2685,
     "distanceFromPrev": 0,
-    "speedV": 464.13,
+    "speedV": 464.13000000000005,
     "time": 0
   },
   {
@@ -1866,7 +4275,7 @@
     "fuelFromPrev": 0,
     "distanceFrom0": 0,
     "distanceFromPrev": 0,
-    "speedV": 503.48,
+    "speedV": 503.47999999999996,
     "time": 0
   },
   {
@@ -1889,7 +4298,7 @@
     "distanceFrom0": 0,
     "distanceFromPrev": 2.534,
     "speedV": 495.28,
-    "time": 18.4186722661929
+    "time": 18.41867226619286
   },
   {
     "speedM": 0.82,
@@ -1899,63 +4308,63 @@
     "fuelFromPrev": 3.041,
     "distanceFrom0": 2.534,
     "distanceFromPrev": 3.261,
-    "speedV": 491.18,
-    "time": 23.9008102935787
+    "speedV": 491.17999999999995,
+    "time": 23.900810293578733
   },
   {
     "speedM": 0.82,
     "speedOfSound": 594,
     "altitude": 28000,
     "fuelFrom0": 5.385,
-    "fuelFromPrev": 3.286,
+    "fuelFromPrev": 3.2859999999999996,
     "distanceFrom0": 5.795,
-    "distanceFromPrev": 3.514,
+    "distanceFromPrev": 3.5139999999999993,
     "speedV": 487.08,
-    "time": 25.9719142645972
+    "time": 25.97191426459719
   },
   {
     "speedM": 0.82,
     "speedOfSound": 589,
     "altitude": 30000,
     "fuelFrom0": 8.671,
-    "fuelFromPrev": 3.57,
+    "fuelFromPrev": 3.5700000000000003,
     "distanceFrom0": 9.309,
-    "distanceFromPrev": 3.79,
-    "speedV": 482.98,
-    "time": 28.2496169613649
+    "distanceFromPrev": 3.790000000000001,
+    "speedV": 482.97999999999996,
+    "time": 28.24961696136487
   },
   {
     "speedM": 0.82,
     "speedOfSound": 584,
     "altitude": 32000,
     "fuelFrom0": 12.241,
-    "fuelFromPrev": 3.888,
+    "fuelFromPrev": 3.8880000000000017,
     "distanceFrom0": 13.099,
-    "distanceFromPrev": 4.076,
+    "distanceFromPrev": 4.0760000000000005,
     "speedV": 478.88,
-    "time": 30.6414968259272
+    "time": 30.64149682592717
   },
   {
     "speedM": 0.82,
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 16.129,
-    "fuelFromPrev": 4.233,
+    "fuelFromPrev": 4.232999999999997,
     "distanceFrom0": 17.175,
-    "distanceFromPrev": 4.36,
+    "distanceFromPrev": 4.359999999999999,
     "speedV": 474.78,
-    "time": 33.0595223050676
+    "time": 33.05952230506761
   },
   {
     "speedM": 0.82,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 20.362,
-    "fuelFromPrev": 5.007,
+    "fuelFromPrev": 5.0070000000000014,
     "distanceFrom0": 21.535,
-    "distanceFromPrev": 5.081,
-    "speedV": 469.86,
-    "time": 38.929894010982
+    "distanceFromPrev": 5.0809999999999995,
+    "speedV": 469.85999999999996,
+    "time": 38.92989401098199
   },
   {
     "speedM": 0.82,
@@ -1965,8 +4374,8 @@
     "fuelFromPrev": 5.349,
     "distanceFrom0": 26.616,
     "distanceFromPrev": 5.343,
-    "speedV": 469.86,
-    "time": 40.9373004724812
+    "speedV": 469.85999999999996,
+    "time": 40.93730047248117
   },
   {
     "speedM": 0.82,
@@ -1976,7 +4385,2383 @@
     "fuelFromPrev": 0,
     "distanceFrom0": 31.959,
     "distanceFromPrev": 0,
-    "speedV": 469.86,
+    "speedV": 469.85999999999996,
+    "time": 0
+  },
+  {
+    "speedM": 0.83,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 513.77,
+    "time": 0
+  },
+  {
+    "speedM": 0.83,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 509.61999999999995,
+    "time": 0
+  },
+  {
+    "speedM": 0.83,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 505.46999999999997,
+    "time": 0
+  },
+  {
+    "speedM": 0.83,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.484,
+    "speedV": 501.32,
+    "time": 17.837708449692812
+  },
+  {
+    "speedM": 0.83,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.2110000000000003,
+    "speedV": 497.16999999999996,
+    "time": 23.250799525313276
+  },
+  {
+    "speedM": 0.83,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.4639999999999995,
+    "speedV": 493.02,
+    "time": 25.293902884264327
+  },
+  {
+    "speedM": 0.83,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.740000000000001,
+    "speedV": 488.87,
+    "time": 27.54106408656699
+  },
+  {
+    "speedM": 0.83,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.026000000000001,
+    "speedV": 484.71999999999997,
+    "time": 29.90097375804589
+  },
+  {
+    "speedM": 0.83,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.31,
+    "speedV": 480.57,
+    "time": 32.28665959173481
+  },
+  {
+    "speedM": 0.83,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 5.031,
+    "speedV": 475.59,
+    "time": 38.08238188355516
+  },
+  {
+    "speedM": 0.83,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 5.293,
+    "speedV": 475.59,
+    "time": 40.06560272503628
+  },
+  {
+    "speedM": 0.83,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 475.59,
+    "time": 0
+  },
+  {
+    "speedM": 0.84,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 519.96,
+    "time": 0
+  },
+  {
+    "speedM": 0.84,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 515.76,
+    "time": 0
+  },
+  {
+    "speedM": 0.84,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 511.56,
+    "time": 0
+  },
+  {
+    "speedM": 0.84,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.434,
+    "speedV": 507.35999999999996,
+    "time": 17.270577105014194
+  },
+  {
+    "speedM": 0.84,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.1610000000000005,
+    "speedV": 503.15999999999997,
+    "time": 22.616265203911283
+  },
+  {
+    "speedM": 0.84,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.4139999999999997,
+    "speedV": 498.96,
+    "time": 24.63203463203463
+  },
+  {
+    "speedM": 0.84,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.6900000000000013,
+    "speedV": 494.76,
+    "time": 26.84938151831192
+  },
+  {
+    "speedM": 0.84,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.976000000000001,
+    "speedV": 490.56,
+    "time": 29.178082191780828
+  },
+  {
+    "speedM": 0.84,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.26,
+    "speedV": 486.35999999999996,
+    "time": 31.53219837157661
+  },
+  {
+    "speedM": 0.84,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.981,
+    "speedV": 481.32,
+    "time": 37.25504861630516
+  },
+  {
+    "speedM": 0.84,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 5.243,
+    "speedV": 481.32,
+    "time": 39.21465968586388
+  },
+  {
+    "speedM": 0.84,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 481.32,
+    "time": 0
+  },
+  {
+    "speedM": 0.85,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 526.15,
+    "time": 0
+  },
+  {
+    "speedM": 0.85,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 521.9,
+    "time": 0
+  },
+  {
+    "speedM": 0.85,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 517.65,
+    "time": 0
+  },
+  {
+    "speedM": 0.85,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.3840000000000003,
+    "speedV": 513.4,
+    "time": 16.716790027269187
+  },
+  {
+    "speedM": 0.85,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.1110000000000007,
+    "speedV": 509.15,
+    "time": 21.9966611018364
+  },
+  {
+    "speedM": 0.85,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.364,
+    "speedV": 504.9,
+    "time": 23.985739750445635
+  },
+  {
+    "speedM": 0.85,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.6400000000000015,
+    "speedV": 500.65,
+    "time": 26.17397383401579
+  },
+  {
+    "speedM": 0.85,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.926000000000001,
+    "speedV": 496.4,
+    "time": 28.47219983883965
+  },
+  {
+    "speedM": 0.85,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.21,
+    "speedV": 492.15,
+    "time": 30.795489180128012
+  },
+  {
+    "speedM": 0.85,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.931,
+    "speedV": 487.05,
+    "time": 36.44718201416692
+  },
+  {
+    "speedM": 0.85,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 5.1930000000000005,
+    "speedV": 487.05,
+    "time": 38.383738835848476
+  },
+  {
+    "speedM": 0.85,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 487.05,
+    "time": 0
+  },
+  {
+    "speedM": 0.86,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 532.34,
+    "time": 0
+  },
+  {
+    "speedM": 0.86,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 528.04,
+    "time": 0
+  },
+  {
+    "speedM": 0.86,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 523.74,
+    "time": 0
+  },
+  {
+    "speedM": 0.86,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.3340000000000005,
+    "speedV": 519.4399999999999,
+    "time": 16.175881718774068
+  },
+  {
+    "speedM": 0.86,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.061000000000001,
+    "speedV": 515.14,
+    "time": 21.391466397484187
+  },
+  {
+    "speedM": 0.86,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.314,
+    "speedV": 510.84,
+    "time": 23.354474982381962
+  },
+  {
+    "speedM": 0.86,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.5900000000000016,
+    "speedV": 506.54,
+    "time": 25.51427330516841
+  },
+  {
+    "speedM": 0.86,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.8760000000000012,
+    "speedV": 502.24,
+    "time": 27.782733354571526
+  },
+  {
+    "speedM": 0.86,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.16,
+    "speedV": 497.94,
+    "time": 30.075912760573566
+  },
+  {
+    "speedM": 0.86,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.881,
+    "speedV": 492.78,
+    "time": 35.65810300742725
+  },
+  {
+    "speedM": 0.86,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 5.143000000000001,
+    "speedV": 492.78,
+    "time": 37.57214172653112
+  },
+  {
+    "speedM": 0.86,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 492.78,
+    "time": 0
+  },
+  {
+    "speedM": 0.87,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 538.53,
+    "time": 0
+  },
+  {
+    "speedM": 0.87,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 534.18,
+    "time": 0
+  },
+  {
+    "speedM": 0.87,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 529.83,
+    "time": 0
+  },
+  {
+    "speedM": 0.87,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.2840000000000007,
+    "speedV": 525.48,
+    "time": 15.647408084037457
+  },
+  {
+    "speedM": 0.87,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.011000000000001,
+    "speedV": 521.13,
+    "time": 20.800184215071102
+  },
+  {
+    "speedM": 0.87,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.2640000000000002,
+    "speedV": 516.78,
+    "time": 22.73772204806688
+  },
+  {
+    "speedM": 0.87,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.540000000000002,
+    "speedV": 512.43,
+    "time": 24.86973830571982
+  },
+  {
+    "speedM": 0.87,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.8260000000000014,
+    "speedV": 508.08,
+    "time": 27.109116674539454
+  },
+  {
+    "speedM": 0.87,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.11,
+    "speedV": 503.73,
+    "time": 29.37287832767554
+  },
+  {
+    "speedM": 0.87,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.831,
+    "speedV": 498.51,
+    "time": 34.88716374796895
+  },
+  {
+    "speedM": 0.87,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 5.093000000000001,
+    "speedV": 498.51,
+    "time": 36.77920202202564
+  },
+  {
+    "speedM": 0.87,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 498.51,
+    "time": 0
+  },
+  {
+    "speedM": 0.88,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 544.72,
+    "time": 0
+  },
+  {
+    "speedM": 0.88,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 540.32,
+    "time": 0
+  },
+  {
+    "speedM": 0.88,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 535.92,
+    "time": 0
+  },
+  {
+    "speedM": 0.88,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.234000000000001,
+    "speedV": 531.52,
+    "time": 15.130945213726678
+  },
+  {
+    "speedM": 0.88,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.961000000000001,
+    "speedV": 527.12,
+    "time": 20.2223402640765
+  },
+  {
+    "speedM": 0.88,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.2140000000000004,
+    "speedV": 522.72,
+    "time": 22.134986225895318
+  },
+  {
+    "speedM": 0.88,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.490000000000002,
+    "speedV": 518.32,
+    "time": 24.239851828985966
+  },
+  {
+    "speedM": 0.88,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.7760000000000016,
+    "speedV": 513.92,
+    "time": 26.450809464508108
+  },
+  {
+    "speedM": 0.88,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.0600000000000005,
+    "speedV": 509.52,
+    "time": 28.685821950070657
+  },
+  {
+    "speedM": 0.88,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.781000000000001,
+    "speedV": 504.24,
+    "time": 34.13374583531652
+  },
+  {
+    "speedM": 0.88,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 5.043000000000001,
+    "speedV": 504.24,
+    "time": 36.00428367444075
+  },
+  {
+    "speedM": 0.88,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 504.24,
+    "time": 0
+  },
+  {
+    "speedM": 0.89,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 550.91,
+    "time": 0
+  },
+  {
+    "speedM": 0.89,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 546.46,
+    "time": 0
+  },
+  {
+    "speedM": 0.89,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 542.01,
+    "time": 0
+  },
+  {
+    "speedM": 0.89,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.184000000000001,
+    "speedV": 537.5600000000001,
+    "time": 14.62608825061389
+  },
+  {
+    "speedM": 0.89,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.9110000000000014,
+    "speedV": 533.11,
+    "time": 19.657481570407615
+  },
+  {
+    "speedM": 0.89,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.1640000000000006,
+    "speedV": 528.66,
+    "time": 21.5457950289411
+  },
+  {
+    "speedM": 0.89,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.440000000000002,
+    "speedV": 524.21,
+    "time": 23.62412010453827
+  },
+  {
+    "speedM": 0.89,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.7260000000000018,
+    "speedV": 519.76,
+    "time": 25.807295674926902
+  },
+  {
+    "speedM": 0.89,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.010000000000001,
+    "speedV": 515.3100000000001,
+    "time": 28.01420504162543
+  },
+  {
+    "speedM": 0.89,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.731000000000001,
+    "speedV": 509.97,
+    "time": 33.397258662274254
+  },
+  {
+    "speedM": 0.89,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.993000000000001,
+    "speedV": 509.97,
+    "time": 35.2467792223072
+  },
+  {
+    "speedM": 0.89,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 509.97,
+    "time": 0
+  },
+  {
+    "speedM": 0.9,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 557.1,
+    "time": 0
+  },
+  {
+    "speedM": 0.9,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 552.6,
+    "time": 0
+  },
+  {
+    "speedM": 0.9,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 548.1,
+    "time": 0
+  },
+  {
+    "speedM": 0.9,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.1340000000000012,
+    "speedV": 543.6,
+    "time": 14.132450331125836
+  },
+  {
+    "speedM": 0.9,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.8610000000000015,
+    "speedV": 539.1,
+    "time": 19.1051752921536
+  },
+  {
+    "speedM": 0.9,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.1140000000000008,
+    "speedV": 534.6,
+    "time": 20.969696969696972
+  },
+  {
+    "speedM": 0.9,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.3900000000000023,
+    "speedV": 530.1,
+    "time": 23.022071307300525
+  },
+  {
+    "speedM": 0.9,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.676000000000002,
+    "speedV": 525.6,
+    "time": 25.178082191780835
+  },
+  {
+    "speedM": 0.9,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.960000000000001,
+    "speedV": 521.1,
+    "time": 27.35751295336788
+  },
+  {
+    "speedM": 0.9,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.681000000000001,
+    "speedV": 515.7,
+    "time": 32.677137870855155
+  },
+  {
+    "speedM": 0.9,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.943000000000001,
+    "speedV": 515.7,
+    "time": 34.506108202443286
+  },
+  {
+    "speedM": 0.9,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 515.7,
+    "time": 0
+  },
+  {
+    "speedM": 0.91,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 563.29,
+    "time": 0
+  },
+  {
+    "speedM": 0.91,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 558.74,
+    "time": 0
+  },
+  {
+    "speedM": 0.91,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 554.19,
+    "time": 0
+  },
+  {
+    "speedM": 0.91,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.0840000000000014,
+    "speedV": 549.64,
+    "time": 13.649661596681474
+  },
+  {
+    "speedM": 0.91,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.8110000000000017,
+    "speedV": 545.09,
+    "time": 18.56500761342165
+  },
+  {
+    "speedM": 0.91,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.064000000000001,
+    "speedV": 540.54,
+    "time": 20.406260406260415
+  },
+  {
+    "speedM": 0.91,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.3400000000000025,
+    "speedV": 535.99,
+    "time": 22.433254351760308
+  },
+  {
+    "speedM": 0.91,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.626000000000002,
+    "speedV": 531.44,
+    "time": 24.562697576396218
+  },
+  {
+    "speedM": 0.91,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.910000000000001,
+    "speedV": 526.89,
+    "time": 26.715253658258845
+  },
+  {
+    "speedM": 0.91,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.631000000000001,
+    "speedV": 521.4300000000001,
+    "time": 31.972843910016692
+  },
+  {
+    "speedM": 0.91,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.893000000000002,
+    "speedV": 521.4300000000001,
+    "time": 33.78171566653243
+  },
+  {
+    "speedM": 0.91,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 521.4300000000001,
+    "time": 0
+  },
+  {
+    "speedM": 0.92,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 569.48,
+    "time": 0
+  },
+  {
+    "speedM": 0.92,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 564.88,
+    "time": 0
+  },
+  {
+    "speedM": 0.92,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 560.28,
+    "time": 0
+  },
+  {
+    "speedM": 0.92,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.0340000000000016,
+    "speedV": 555.6800000000001,
+    "time": 13.177368269507639
+  },
+  {
+    "speedM": 0.92,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.761000000000002,
+    "speedV": 551.08,
+    "time": 18.036582710314303
+  },
+  {
+    "speedM": 0.92,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.014000000000001,
+    "speedV": 546.48,
+    "time": 19.855072463768124
+  },
+  {
+    "speedM": 0.92,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.2900000000000027,
+    "speedV": 541.88,
+    "time": 21.857237764818798
+  },
+  {
+    "speedM": 0.92,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.5760000000000023,
+    "speedV": 537.28,
+    "time": 23.960690887433014
+  },
+  {
+    "speedM": 0.92,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.860000000000001,
+    "speedV": 532.6800000000001,
+    "time": 26.086956521739136
+  },
+  {
+    "speedM": 0.92,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.581000000000001,
+    "speedV": 527.16,
+    "time": 31.283860687457327
+  },
+  {
+    "speedM": 0.92,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.843000000000002,
+    "speedV": 527.16,
+    "time": 33.07307079444572
+  },
+  {
+    "speedM": 0.92,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 527.16,
+    "time": 0
+  },
+  {
+    "speedM": 0.93,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 575.6700000000001,
+    "time": 0
+  },
+  {
+    "speedM": 0.93,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 571.02,
+    "time": 0
+  },
+  {
+    "speedM": 0.93,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 566.37,
+    "time": 0
+  },
+  {
+    "speedM": 0.93,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 1.9840000000000015,
+    "speedV": 561.72,
+    "time": 12.71523178807948
+  },
+  {
+    "speedM": 0.93,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.711000000000002,
+    "speedV": 557.07,
+    "time": 17.51952178361787
+  },
+  {
+    "speedM": 0.93,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.9640000000000013,
+    "speedV": 552.4200000000001,
+    "time": 19.31573802541545
+  },
+  {
+    "speedM": 0.93,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.240000000000003,
+    "speedV": 547.77,
+    "time": 21.2936086313599
+  },
+  {
+    "speedM": 0.93,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.5260000000000025,
+    "speedV": 543.12,
+    "time": 23.371630578877614
+  },
+  {
+    "speedM": 0.93,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.8100000000000014,
+    "speedV": 538.47,
+    "time": 25.472171151596196
+  },
+  {
+    "speedM": 0.93,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.5310000000000015,
+    "speedV": 532.89,
+    "time": 30.609694308393863
+  },
+  {
+    "speedM": 0.93,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.793000000000002,
+    "speedV": 532.89,
+    "time": 32.37966559702754
+  },
+  {
+    "speedM": 0.93,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 532.89,
+    "time": 0
+  },
+  {
+    "speedM": 0.9400000000000001,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 581.86,
+    "time": 0
+  },
+  {
+    "speedM": 0.9400000000000001,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 577.1600000000001,
+    "time": 0
+  },
+  {
+    "speedM": 0.9400000000000001,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 572.46,
+    "time": 0
+  },
+  {
+    "speedM": 0.9400000000000001,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 1.9340000000000015,
+    "speedV": 567.76,
+    "time": 12.262927997745535
+  },
+  {
+    "speedM": 0.9400000000000001,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.6610000000000023,
+    "speedV": 563.0600000000001,
+    "time": 17.013462153234126
+  },
+  {
+    "speedM": 0.9400000000000001,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.9140000000000015,
+    "speedV": 558.36,
+    "time": 18.787878787878796
+  },
+  {
+    "speedM": 0.9400000000000001,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.190000000000003,
+    "speedV": 553.6600000000001,
+    "time": 20.74197160712352
+  },
+  {
+    "speedM": 0.9400000000000001,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.4760000000000026,
+    "speedV": 548.96,
+    "time": 22.795103468376585
+  },
+  {
+    "speedM": 0.9400000000000001,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.7600000000000016,
+    "speedV": 544.26,
+    "time": 24.870466321243534
+  },
+  {
+    "speedM": 0.9400000000000001,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.481000000000002,
+    "speedV": 538.62,
+    "time": 29.949871894842385
+  },
+  {
+    "speedM": 0.9400000000000001,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.743000000000002,
+    "speedV": 538.62,
+    "time": 31.70101370168209
+  },
+  {
+    "speedM": 0.9400000000000001,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 538.62,
+    "time": 0
+  },
+  {
+    "speedM": 0.9500000000000001,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 588.0500000000001,
+    "time": 0
+  },
+  {
+    "speedM": 0.9500000000000001,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 583.3000000000001,
+    "time": 0
+  },
+  {
+    "speedM": 0.9500000000000001,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 578.5500000000001,
+    "time": 0
+  },
+  {
+    "speedM": 0.9500000000000001,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 1.8840000000000015,
+    "speedV": 573.8000000000001,
+    "time": 11.820146392471251
+  },
+  {
+    "speedM": 0.9500000000000001,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.6110000000000024,
+    "speedV": 569.0500000000001,
+    "time": 16.51805640980583
+  },
+  {
+    "speedM": 0.9500000000000001,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.8640000000000017,
+    "speedV": 564.3000000000001,
+    "time": 18.271132376395542
+  },
+  {
+    "speedM": 0.9500000000000001,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.1400000000000032,
+    "speedV": 559.5500000000001,
+    "time": 20.201947993923707
+  },
+  {
+    "speedM": 0.9500000000000001,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.426000000000003,
+    "speedV": 554.8000000000001,
+    "time": 22.230713770728208
+  },
+  {
+    "speedM": 0.9500000000000001,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.7100000000000017,
+    "speedV": 550.0500000000001,
+    "time": 24.281428961003552
+  },
+  {
+    "speedM": 0.9500000000000001,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.431000000000002,
+    "speedV": 544.35,
+    "time": 29.30394047947094
+  },
+  {
+    "speedM": 0.9500000000000001,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.693000000000002,
+    "speedV": 544.35,
+    "time": 31.036649214659697
+  },
+  {
+    "speedM": 0.9500000000000001,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 544.35,
+    "time": 0
+  },
+  {
+    "speedM": 0.9600000000000001,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 594.24,
+    "time": 0
+  },
+  {
+    "speedM": 0.9600000000000001,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 589.44,
+    "time": 0
+  },
+  {
+    "speedM": 0.9600000000000001,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 584.6400000000001,
+    "time": 0
+  },
+  {
+    "speedM": 0.9600000000000001,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 1.8340000000000014,
+    "speedV": 579.84,
+    "time": 11.386589403973518
+  },
+  {
+    "speedM": 0.9600000000000001,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.5610000000000026,
+    "speedV": 575.0400000000001,
+    "time": 16.032971619365625
+  },
+  {
+    "speedM": 0.9600000000000001,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.814000000000002,
+    "speedV": 570.24,
+    "time": 17.765151515151526
+  },
+  {
+    "speedM": 0.9600000000000001,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.0900000000000034,
+    "speedV": 565.44,
+    "time": 19.673174872665555
+  },
+  {
+    "speedM": 0.9600000000000001,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.376000000000003,
+    "speedV": 560.6400000000001,
+    "time": 21.678082191780838
+  },
+  {
+    "speedM": 0.9600000000000001,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.660000000000002,
+    "speedV": 555.84,
+    "time": 23.704663212435243
+  },
+  {
+    "speedM": 0.9600000000000001,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.381000000000002,
+    "speedV": 550.08,
+    "time": 28.671465968586396
+  },
+  {
+    "speedM": 0.9600000000000001,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.6430000000000025,
+    "speedV": 550.08,
+    "time": 30.386125654450275
+  },
+  {
+    "speedM": 0.9600000000000001,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 550.08,
+    "time": 0
+  },
+  {
+    "speedM": 0.9700000000000001,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 600.4300000000001,
+    "time": 0
+  },
+  {
+    "speedM": 0.9700000000000001,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 595.58,
+    "time": 0
+  },
+  {
+    "speedM": 0.9700000000000001,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 590.73,
+    "time": 0
+  },
+  {
+    "speedM": 0.9700000000000001,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 1.7840000000000014,
+    "speedV": 585.88,
+    "time": 10.961971734826253
+  },
+  {
+    "speedM": 0.9700000000000001,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.511000000000003,
+    "speedV": 581.0300000000001,
+    "time": 15.557888577181917
+  },
+  {
+    "speedM": 0.9700000000000001,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.764000000000002,
+    "speedV": 576.1800000000001,
+    "time": 17.269603248984705
+  },
+  {
+    "speedM": 0.9700000000000001,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.0400000000000036,
+    "speedV": 571.33,
+    "time": 19.155304289990045
+  },
+  {
+    "speedM": 0.9700000000000001,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.326000000000003,
+    "speedV": 566.48,
+    "time": 21.13684507837878
+  },
+  {
+    "speedM": 0.9700000000000001,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.610000000000002,
+    "speedV": 561.63,
+    "time": 23.139789541157004
+  },
+  {
+    "speedM": 0.9700000000000001,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.331000000000002,
+    "speedV": 555.8100000000001,
+    "time": 28.05203216926649
+  },
+  {
+    "speedM": 0.9700000000000001,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.593000000000003,
+    "speedV": 555.8100000000001,
+    "time": 29.74901495115239
+  },
+  {
+    "speedM": 0.9700000000000001,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 555.8100000000001,
+    "time": 0
+  },
+  {
+    "speedM": 0.9800000000000001,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 606.62,
+    "time": 0
+  },
+  {
+    "speedM": 0.9800000000000001,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 601.72,
+    "time": 0
+  },
+  {
+    "speedM": 0.9800000000000001,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 596.82,
+    "time": 0
+  },
+  {
+    "speedM": 0.9800000000000001,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 1.7340000000000013,
+    "speedV": 591.9200000000001,
+    "time": 10.546019732396276
+  },
+  {
+    "speedM": 0.9800000000000001,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.461000000000003,
+    "speedV": 587.0200000000001,
+    "time": 15.09250110728767
+  },
+  {
+    "speedM": 0.9800000000000001,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.714000000000002,
+    "speedV": 582.12,
+    "time": 16.784168212739655
+  },
+  {
+    "speedM": 0.9800000000000001,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.9900000000000038,
+    "speedV": 577.22,
+    "time": 18.648002494716078
+  },
+  {
+    "speedM": 0.9800000000000001,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.2760000000000034,
+    "speedV": 572.32,
+    "time": 20.60665362035227
+  },
+  {
+    "speedM": 0.9800000000000001,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.5600000000000023,
+    "speedV": 567.4200000000001,
+    "time": 22.586443903986478
+  },
+  {
+    "speedM": 0.9800000000000001,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.281000000000002,
+    "speedV": 561.5400000000001,
+    "time": 27.445239876055144
+  },
+  {
+    "speedM": 0.9800000000000001,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.543000000000003,
+    "speedV": 561.5400000000001,
+    "time": 29.124906507105475
+  },
+  {
+    "speedM": 0.9800000000000001,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 561.5400000000001,
+    "time": 0
+  },
+  {
+    "speedM": 0.9900000000000001,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 612.8100000000001,
+    "time": 0
+  },
+  {
+    "speedM": 0.9900000000000001,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 607.86,
+    "time": 0
+  },
+  {
+    "speedM": 0.9900000000000001,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 602.9100000000001,
+    "time": 0
+  },
+  {
+    "speedM": 0.9900000000000001,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 1.6840000000000013,
+    "speedV": 597.96,
+    "time": 10.138470800722464
+  },
+  {
+    "speedM": 0.9900000000000001,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.411000000000003,
+    "speedV": 593.0100000000001,
+    "time": 14.636515404461997
+  },
+  {
+    "speedM": 0.9900000000000001,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.6640000000000024,
+    "speedV": 588.0600000000001,
+    "time": 16.308539944903593
+  },
+  {
+    "speedM": 0.9900000000000001,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.940000000000004,
+    "speedV": 583.11,
+    "time": 18.15094922055875
+  },
+  {
+    "speedM": 0.9900000000000001,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.2260000000000035,
+    "speedV": 578.1600000000001,
+    "time": 20.087173100871752
+  },
+  {
+    "speedM": 0.9900000000000001,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.5100000000000025,
+    "speedV": 573.21,
+    "time": 22.044276966556772
+  },
+  {
+    "speedM": 0.9900000000000001,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.2310000000000025,
+    "speedV": 567.2700000000001,
+    "time": 26.850706013009688
+  },
+  {
+    "speedM": 0.9900000000000001,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.493000000000003,
+    "speedV": 567.2700000000001,
+    "time": 28.51340631445345
+  },
+  {
+    "speedM": 0.9900000000000001,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 567.2700000000001,
+    "time": 0
+  },
+  {
+    "speedM": 1,
+    "speedOfSound": 619,
+    "altitude": 18000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 619,
+    "time": 0
+  },
+  {
+    "speedM": 1,
+    "speedOfSound": 614,
+    "altitude": 20000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 614,
+    "time": 0
+  },
+  {
+    "speedM": 1,
+    "speedOfSound": 609,
+    "altitude": 22000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 609,
+    "time": 0
+  },
+  {
+    "speedM": 1,
+    "speedOfSound": 604,
+    "altitude": 24000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 1.6340000000000012,
+    "speedV": 604,
+    "time": 9.739072847682127
+  },
+  {
+    "speedM": 1,
+    "speedOfSound": 599,
+    "altitude": 26000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.3610000000000033,
+    "speedV": 599,
+    "time": 14.189649415692841
+  },
+  {
+    "speedM": 1,
+    "speedOfSound": 594,
+    "altitude": 28000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.6140000000000025,
+    "speedV": 594,
+    "time": 15.842424242424258
+  },
+  {
+    "speedM": 1,
+    "speedOfSound": 589,
+    "altitude": 30000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 2.890000000000004,
+    "speedV": 589,
+    "time": 17.663837011884574
+  },
+  {
+    "speedM": 1,
+    "speedOfSound": 584,
+    "altitude": 32000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.1760000000000037,
+    "speedV": 584,
+    "time": 19.578082191780844
+  },
+  {
+    "speedM": 1,
+    "speedOfSound": 579,
+    "altitude": 34000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 3.4600000000000026,
+    "speedV": 579,
+    "time": 21.512953367875664
+  },
+  {
+    "speedM": 1,
+    "speedOfSound": 573,
+    "altitude": 36000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.181000000000003,
+    "speedV": 573,
+    "time": 26.268062827225148
+  },
+  {
+    "speedM": 1,
+    "speedOfSound": 573,
+    "altitude": 38000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 4.443000000000003,
+    "speedV": 573,
+    "time": 27.914136125654473
+  },
+  {
+    "speedM": 1,
+    "speedOfSound": 573,
+    "altitude": 40000,
+    "fuelFrom0": null,
+    "fuelFromPrev": null,
+    "distanceFrom0": null,
+    "distanceFromPrev": 0,
+    "speedV": 573,
     "time": 0
   }
 ]
