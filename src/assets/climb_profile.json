@@ -8,7 +8,7 @@
     "distanceFrom0": 2.426,
     "distanceFromPrev": 2.426,
     "speedV": 309.5,
-    "time": 28.2184168012924
+    "time": 28.2184
   },
   {
     "speedM": 0.5,
@@ -19,7 +19,7 @@
     "distanceFrom0": 5.665,
     "distanceFromPrev": 3.239,
     "speedV": 307,
-    "time": 37.9817589576547
+    "time": 37.9818
   },
   {
     "speedM": 0.5,
@@ -30,7 +30,7 @@
     "distanceFrom0": 9.21,
     "distanceFromPrev": 3.545,
     "speedV": 304.5,
-    "time": 41.9113300492611
+    "time": 41.9113
   },
   {
     "speedM": 0.5,
@@ -41,7 +41,7 @@
     "distanceFrom0": 13.165,
     "distanceFromPrev": 3.955,
     "speedV": 302,
-    "time": 47.1456953642384
+    "time": 47.1457
   },
   {
     "speedM": 0.5,
@@ -52,7 +52,7 @@
     "distanceFrom0": 17.701,
     "distanceFromPrev": 4.536,
     "speedV": 299.5,
-    "time": 54.5228714524207
+    "time": 54.5229
   },
   {
     "speedM": 0.5,
@@ -63,7 +63,7 @@
     "distanceFrom0": 23.13,
     "distanceFromPrev": 5.429,
     "speedV": 297,
-    "time": 65.8060606060606
+    "time": 65.8061
   },
   {
     "speedM": 0.5,
@@ -74,7 +74,7 @@
     "distanceFrom0": 30.018,
     "distanceFromPrev": 6.888,
     "speedV": 294.5,
-    "time": 84.1996604414262
+    "time": 84.1997
   },
   {
     "speedM": 0.5,
@@ -85,7 +85,7 @@
     "distanceFrom0": 39.513,
     "distanceFromPrev": 9.495,
     "speedV": 292,
-    "time": 117.061643835616
+    "time": 117.0616
   },
   {
     "speedM": 0.5,
@@ -135,89 +135,89 @@
     "speedM": 0.51,
     "speedOfSound": 619,
     "altitude": 18000,
-    "fuelFrom0": 30.418138671875,
-    "fuelFromPrev": 30.418138671875,
-    "distanceFrom0": 2.461037109375,
-    "distanceFromPrev": 2.461037109375,
+    "fuelFrom0": 30.4181,
+    "fuelFromPrev": 30.4181,
+    "distanceFrom0": 2.461,
+    "distanceFromPrev": 2.461,
     "speedV": 315.69,
-    "time": 28.064663415851
+    "time": 28.0647
   },
   {
     "speedM": 0.51,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuelFrom0": 69.521969909668,
-    "fuelFromPrev": 39.103831237793,
-    "distanceFrom0": 5.7382154083252,
-    "distanceFromPrev": 3.2771782989502,
+    "fuelFrom0": 69.522,
+    "fuelFromPrev": 39.1038,
+    "distanceFrom0": 5.7382,
+    "distanceFromPrev": 3.2772,
     "speedV": 313.14,
-    "time": 37.6759336917056
+    "time": 37.6759
   },
   {
     "speedM": 0.51,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 110.113366889954,
-    "fuelFromPrev": 40.5913969802856,
-    "distanceFrom0": 9.31331788635254,
-    "distanceFromPrev": 3.57510247802734,
+    "fuelFrom0": 110.1134,
+    "fuelFromPrev": 40.5914,
+    "distanceFrom0": 9.3133,
+    "distanceFromPrev": 3.5751,
     "speedV": 310.59,
-    "time": 41.4384523677467
+    "time": 41.4385
   },
   {
     "speedM": 0.51,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 153.085961608887,
-    "fuelFromPrev": 42.9725947189331,
-    "distanceFrom0": 13.2884408187866,
-    "distanceFromPrev": 3.97512293243408,
+    "fuelFrom0": 153.086,
+    "fuelFromPrev": 42.9726,
+    "distanceFrom0": 13.2884,
+    "distanceFromPrev": 3.9751,
     "speedV": 308.04,
-    "time": 46.4564425294205
+    "time": 46.4564
   },
   {
     "speedM": 0.51,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 199.545145759583,
-    "fuelFromPrev": 46.4591841506958,
-    "distanceFrom0": 17.8245292358398,
-    "distanceFromPrev": 4.53608841705322,
+    "fuelFrom0": 199.5451,
+    "fuelFromPrev": 46.4592,
+    "distanceFrom0": 17.8245,
+    "distanceFromPrev": 4.5361,
     "speedV": 305.49,
-    "time": 53.4548374787771
+    "time": 53.4548
   },
   {
     "speedM": 0.51,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 251.150528289795,
-    "fuelFromPrev": 51.6053825302124,
-    "distanceFrom0": 23.2118950653076,
-    "distanceFromPrev": 5.38736582946777,
+    "fuelFrom0": 251.1505,
+    "fuelFromPrev": 51.6054,
+    "distanceFrom0": 23.2119,
+    "distanceFromPrev": 5.3874,
     "speedV": 302.94,
-    "time": 64.0209843074007
+    "time": 64.021
   },
   {
     "speedM": 0.51,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 311.302502990723,
-    "fuelFromPrev": 60.1519747009278,
-    "distanceFrom0": 29.9752653503418,
-    "distanceFromPrev": 6.76337028503419,
+    "fuelFrom0": 311.3025,
+    "fuelFromPrev": 60.152,
+    "distanceFrom0": 29.9753,
+    "distanceFromPrev": 6.7634,
     "speedV": 300.39,
-    "time": 81.0550718270351
+    "time": 81.0551
   },
   {
     "speedM": 0.51,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 386.765680152893,
-    "fuelFromPrev": 75.4631771621704,
-    "distanceFrom0": 39.1743924255371,
-    "distanceFromPrev": 9.19912707519531,
+    "fuelFrom0": 386.7657,
+    "fuelFromPrev": 75.4632,
+    "distanceFrom0": 39.1744,
+    "distanceFromPrev": 9.1991,
     "speedV": 297.84,
-    "time": 111.190093576092
+    "time": 111.1901
   },
   {
     "speedM": 0.51,
@@ -267,89 +267,89 @@
     "speedM": 0.52,
     "speedOfSound": 619,
     "altitude": 18000,
-    "fuelFrom0": 30.33327734375,
-    "fuelFromPrev": 30.33327734375,
-    "distanceFrom0": 2.49607421875,
-    "distanceFromPrev": 2.49607421875,
+    "fuelFrom0": 30.3333,
+    "fuelFromPrev": 30.3333,
+    "distanceFrom0": 2.4961,
+    "distanceFromPrev": 2.4961,
     "speedV": 321.88,
-    "time": 27.9168236221573
+    "time": 27.9168
   },
   {
     "speedM": 0.52,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuelFrom0": 69.1969398193359,
-    "fuelFromPrev": 38.8636624755859,
-    "distanceFrom0": 5.81143081665039,
-    "distanceFromPrev": 3.31535659790039,
+    "fuelFrom0": 69.1969,
+    "fuelFromPrev": 38.8637,
+    "distanceFrom0": 5.8114,
+    "distanceFromPrev": 3.3154,
     "speedV": 319.28,
-    "time": 37.3818709359854
+    "time": 37.3819
   },
   {
     "speedM": 0.52,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 109.464733779907,
-    "fuelFromPrev": 40.2677939605713,
-    "distanceFrom0": 9.41663577270508,
-    "distanceFromPrev": 3.60520495605469,
+    "fuelFrom0": 109.4647,
+    "fuelFromPrev": 40.2678,
+    "distanceFrom0": 9.4166,
+    "distanceFromPrev": 3.6052,
     "speedV": 316.68,
-    "time": 40.9837622893674
+    "time": 40.9838
   },
   {
     "speedM": 0.52,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 151.965923217773,
-    "fuelFromPrev": 42.5011894378662,
-    "distanceFrom0": 13.4118816375732,
-    "distanceFromPrev": 3.99524586486816,
+    "fuelFrom0": 151.9659,
+    "fuelFromPrev": 42.5012,
+    "distanceFrom0": 13.4119,
+    "distanceFromPrev": 3.9952,
     "speedV": 314.08,
-    "time": 45.7936994190187
+    "time": 45.7937
   },
   {
     "speedM": 0.52,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 197.715291519165,
-    "fuelFromPrev": 45.7493683013916,
-    "distanceFrom0": 17.9480584716797,
-    "distanceFromPrev": 4.53617683410645,
+    "fuelFrom0": 197.7153,
+    "fuelFromPrev": 45.7494,
+    "distanceFrom0": 17.9481,
+    "distanceFromPrev": 4.5362,
     "speedV": 311.48,
-    "time": 52.4278817348889
+    "time": 52.4279
   },
   {
     "speedM": 0.52,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 248.24405657959,
-    "fuelFromPrev": 50.5287650604248,
-    "distanceFrom0": 23.2937901306152,
-    "distanceFromPrev": 5.34573165893555,
+    "fuelFrom0": 248.2441,
+    "fuelFromPrev": 50.5288,
+    "distanceFrom0": 23.2938,
+    "distanceFromPrev": 5.3457,
     "speedV": 308.88,
-    "time": 62.3045647894586
+    "time": 62.3046
   },
   {
     "speedM": 0.52,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 306.639005981445,
-    "fuelFromPrev": 58.3949494018555,
-    "distanceFrom0": 29.9325307006836,
-    "distanceFromPrev": 6.63874057006836,
+    "fuelFrom0": 306.639,
+    "fuelFromPrev": 58.3949,
+    "distanceFrom0": 29.9325,
+    "distanceFromPrev": 6.6387,
     "speedV": 306.28,
-    "time": 78.031428928582
+    "time": 78.0314
   },
   {
     "speedM": 0.52,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 378.982360305786,
-    "fuelFromPrev": 72.3433543243408,
-    "distanceFrom0": 38.8357848510742,
-    "distanceFromPrev": 8.90325415039063,
+    "fuelFrom0": 378.9824,
+    "fuelFromPrev": 72.3434,
+    "distanceFrom0": 38.8358,
+    "distanceFromPrev": 8.9033,
     "speedV": 303.68,
-    "time": 105.544372172702
+    "time": 105.5444
   },
   {
     "speedM": 0.52,
@@ -404,7 +404,7 @@
     "distanceFrom0": 2.527,
     "distanceFromPrev": 2.527,
     "speedV": 328.07,
-    "time": 27.729447983662
+    "time": 27.7294
   },
   {
     "speedM": 0.53,
@@ -415,7 +415,7 @@
     "distanceFrom0": 5.874,
     "distanceFromPrev": 3.347,
     "speedV": 325.42,
-    "time": 37.0266117632598
+    "time": 37.0266
   },
   {
     "speedM": 0.53,
@@ -426,7 +426,7 @@
     "distanceFrom0": 9.5035,
     "distanceFromPrev": 3.6295,
     "speedV": 322.77,
-    "time": 40.4814573845153
+    "time": 40.4815
   },
   {
     "speedM": 0.53,
@@ -437,7 +437,7 @@
     "distanceFrom0": 13.5125,
     "distanceFromPrev": 4.009,
     "speedV": 320.12,
-    "time": 45.0843433712358
+    "time": 45.0843
   },
   {
     "speedM": 0.53,
@@ -448,7 +448,7 @@
     "distanceFrom0": 18.04,
     "distanceFromPrev": 4.5275,
     "speedV": 317.47,
-    "time": 51.3402841213343
+    "time": 51.3403
   },
   {
     "speedM": 0.53,
@@ -459,18 +459,18 @@
     "distanceFrom0": 23.3305,
     "distanceFromPrev": 5.2905,
     "speedV": 314.82,
-    "time": 60.4974271012007
+    "time": 60.4974
   },
   {
     "speedM": 0.53,
     "speedOfSound": 589,
     "altitude": 30000,
     "fuelFrom0": 301.234,
-    "fuelFromPrev": 56.4180000000001,
+    "fuelFromPrev": 56.418,
     "distanceFrom0": 29.822,
     "distanceFromPrev": 6.4915,
     "speedV": 312.17,
-    "time": 74.8611333568248
+    "time": 74.8611
   },
   {
     "speedM": 0.53,
@@ -481,7 +481,7 @@
     "distanceFrom0": 38.3855,
     "distanceFromPrev": 8.5635,
     "speedV": 309.52,
-    "time": 99.6013181700697
+    "time": 99.6013
   },
   {
     "speedM": 0.53,
@@ -492,7 +492,7 @@
     "distanceFrom0": 47,
     "distanceFromPrev": 8.6145,
     "speedV": 306.87,
-    "time": 101.059732134128
+    "time": 101.0597
   },
   {
     "speedM": 0.53,
@@ -531,100 +531,100 @@
     "speedM": 0.54,
     "speedOfSound": 619,
     "altitude": 18000,
-    "fuelFrom0": 30.1635546875,
-    "fuelFromPrev": 30.1635546875,
-    "distanceFrom0": 2.5661484375,
-    "distanceFromPrev": 2.5661484375,
+    "fuelFrom0": 30.1636,
+    "fuelFromPrev": 30.1636,
+    "distanceFrom0": 2.5661,
+    "distanceFromPrev": 2.5661,
     "speedV": 334.26,
-    "time": 27.6375706785137
+    "time": 27.6376
   },
   {
     "speedM": 0.54,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuelFrom0": 68.5468796386719,
-    "fuelFromPrev": 38.3833249511719,
-    "distanceFrom0": 5.95786163330078,
-    "distanceFromPrev": 3.39171319580078,
+    "fuelFrom0": 68.5469,
+    "fuelFromPrev": 38.3833,
+    "distanceFrom0": 5.9579,
+    "distanceFromPrev": 3.3917,
     "speedV": 331.56,
-    "time": 36.8264190640693
+    "time": 36.8264
   },
   {
     "speedM": 0.54,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 108.167467559814,
-    "fuelFromPrev": 39.6205879211426,
-    "distanceFrom0": 9.62327154541016,
-    "distanceFromPrev": 3.66540991210937,
+    "fuelFrom0": 108.1675,
+    "fuelFromPrev": 39.6206,
+    "distanceFrom0": 9.6233,
+    "distanceFromPrev": 3.6654,
     "speedV": 328.86,
-    "time": 40.1249032524289
+    "time": 40.1249
   },
   {
     "speedM": 0.54,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 149.725846435547,
-    "fuelFromPrev": 41.5583788757324,
-    "distanceFrom0": 13.6587632751465,
-    "distanceFromPrev": 4.03549172973633,
+    "fuelFrom0": 149.7258,
+    "fuelFromPrev": 41.5584,
+    "distanceFrom0": 13.6588,
+    "distanceFromPrev": 4.0355,
     "speedV": 326.16,
-    "time": 44.541851321593
+    "time": 44.5419
   },
   {
     "speedM": 0.54,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 194.05558303833,
-    "fuelFromPrev": 44.3297366027832,
-    "distanceFrom0": 18.1951169433594,
-    "distanceFromPrev": 4.53635366821289,
+    "fuelFrom0": 194.0556,
+    "fuelFromPrev": 44.3297,
+    "distanceFrom0": 18.1951,
+    "distanceFromPrev": 4.5364,
     "speedV": 323.46,
-    "time": 50.488076440878
+    "time": 50.4881
   },
   {
     "speedM": 0.54,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 242.43111315918,
-    "fuelFromPrev": 48.3755301208496,
-    "distanceFrom0": 23.4575802612305,
-    "distanceFromPrev": 5.2624633178711,
+    "fuelFrom0": 242.4311,
+    "fuelFromPrev": 48.3755,
+    "distanceFrom0": 23.4576,
+    "distanceFromPrev": 5.2625,
     "speedV": 320.76,
-    "time": 59.0624390333456
+    "time": 59.0624
   },
   {
     "speedM": 0.54,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 297.312011962891,
-    "fuelFromPrev": 54.880898803711,
-    "distanceFrom0": 29.8470614013672,
-    "distanceFromPrev": 6.38948114013672,
+    "fuelFrom0": 297.312,
+    "fuelFromPrev": 54.8809,
+    "distanceFrom0": 29.8471,
+    "distanceFromPrev": 6.3895,
     "speedV": 318.06,
-    "time": 72.3201034537264
+    "time": 72.3201
   },
   {
     "speedM": 0.54,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 363.415720611572,
-    "fuelFromPrev": 66.1037086486816,
-    "distanceFrom0": 38.1585697021484,
-    "distanceFromPrev": 8.31150830078125,
+    "fuelFrom0": 363.4157,
+    "fuelFromPrev": 66.1037,
+    "distanceFrom0": 38.1586,
+    "distanceFromPrev": 8.3115,
     "speedV": 315.36,
-    "time": 94.8802317440782
+    "time": 94.8802
   },
   {
     "speedM": 0.54,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 449.065299407959,
-    "fuelFromPrev": 85.6495787963867,
-    "distanceFrom0": 47.2128608703613,
-    "distanceFromPrev": 9.05429116821288,
+    "fuelFrom0": 449.0653,
+    "fuelFromPrev": 85.6496,
+    "distanceFrom0": 47.2129,
+    "distanceFromPrev": 9.0543,
     "speedV": 312.66,
-    "time": 104.252057204524
+    "time": 104.2521
   },
   {
     "speedM": 0.54,
@@ -663,100 +663,100 @@
     "speedM": 0.55,
     "speedOfSound": 619,
     "altitude": 18000,
-    "fuelFrom0": 30.123609375,
-    "fuelFromPrev": 30.123609375,
-    "distanceFrom0": 2.605296875,
-    "distanceFromPrev": 2.605296875,
+    "fuelFrom0": 30.1236,
+    "fuelFromPrev": 30.1236,
+    "distanceFrom0": 2.6053,
+    "distanceFromPrev": 2.6053,
     "speedV": 340.45,
-    "time": 27.5490343662799
+    "time": 27.549
   },
   {
     "speedM": 0.55,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuelFrom0": 68.3577592773437,
-    "fuelFromPrev": 38.2341499023437,
-    "distanceFrom0": 6.04172326660156,
-    "distanceFromPrev": 3.43642639160156,
+    "fuelFrom0": 68.3578,
+    "fuelFromPrev": 38.2341,
+    "distanceFrom0": 6.0417,
+    "distanceFromPrev": 3.4364,
     "speedV": 337.7,
-    "time": 36.6335060993948
+    "time": 36.6335
   },
   {
     "speedM": 0.55,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 107.723435119629,
-    "fuelFromPrev": 39.3656758422852,
-    "distanceFrom0": 9.74304309082031,
-    "distanceFromPrev": 3.70131982421875,
+    "fuelFrom0": 107.7234,
+    "fuelFromPrev": 39.3657,
+    "distanceFrom0": 9.743,
+    "distanceFromPrev": 3.7013,
     "speedV": 334.95,
-    "time": 39.7813147251455
+    "time": 39.7813
   },
   {
     "speedM": 0.55,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 148.881192871094,
-    "fuelFromPrev": 41.1577577514648,
-    "distanceFrom0": 13.805026550293,
-    "distanceFromPrev": 4.06198345947266,
+    "fuelFrom0": 148.8812,
+    "fuelFromPrev": 41.1578,
+    "distanceFrom0": 13.805,
+    "distanceFromPrev": 4.062,
     "speedV": 332.2,
-    "time": 44.0190862555736
+    "time": 44.0191
   },
   {
     "speedM": 0.55,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 192.60316607666,
-    "fuelFromPrev": 43.7219732055664,
-    "distanceFrom0": 18.3502338867188,
-    "distanceFromPrev": 4.54520733642578,
+    "fuelFrom0": 192.6032,
+    "fuelFromPrev": 43.722,
+    "distanceFrom0": 18.3502,
+    "distanceFromPrev": 4.5452,
     "speedV": 329.45,
-    "time": 49.6668581306202
+    "time": 49.6669
   },
   {
     "speedM": 0.55,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 240.046226318359,
-    "fuelFromPrev": 47.4430602416992,
-    "distanceFrom0": 23.5846605224609,
-    "distanceFromPrev": 5.23442663574219,
+    "fuelFrom0": 240.0462,
+    "fuelFromPrev": 47.4431,
+    "distanceFrom0": 23.5847,
+    "distanceFromPrev": 5.2344,
     "speedV": 326.7,
-    "time": 57.6796323497761
+    "time": 57.6796
   },
   {
     "speedM": 0.55,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 293.390023925781,
-    "fuelFromPrev": 53.343797607422,
-    "distanceFrom0": 29.8721228027344,
-    "distanceFromPrev": 6.28746228027344,
+    "fuelFrom0": 293.39,
+    "fuelFromPrev": 53.3438,
+    "distanceFrom0": 29.8721,
+    "distanceFromPrev": 6.2875,
     "speedV": 323.95,
-    "time": 69.8714746380132
+    "time": 69.8715
   },
   {
     "speedM": 0.55,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 356.761441223145,
-    "fuelFromPrev": 63.3714172973632,
-    "distanceFrom0": 37.9316394042969,
-    "distanceFromPrev": 8.0595166015625,
+    "fuelFrom0": 356.7614,
+    "fuelFromPrev": 63.3714,
+    "distanceFrom0": 37.9316,
+    "distanceFromPrev": 8.0595,
     "speedV": 321.2,
-    "time": 90.3308211881226
+    "time": 90.3308
   },
   {
     "speedM": 0.55,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 438.130598815918,
-    "fuelFromPrev": 81.3691575927735,
-    "distanceFrom0": 47.4257217407227,
-    "distanceFromPrev": 9.49408233642578,
+    "fuelFrom0": 438.1306,
+    "fuelFromPrev": 81.3692,
+    "distanceFrom0": 47.4257,
+    "distanceFromPrev": 9.4941,
     "speedV": 318.45,
-    "time": 107.328297726905
+    "time": 107.3283
   },
   {
     "speedM": 0.55,
@@ -800,7 +800,7 @@
     "distanceFrom0": 2.628,
     "distanceFromPrev": 2.628,
     "speedV": 346.64,
-    "time": 27.2928686822063
+    "time": 27.2929
   },
   {
     "speedM": 0.56,
@@ -811,7 +811,7 @@
     "distanceFrom0": 6.083,
     "distanceFromPrev": 3.455,
     "speedV": 343.84,
-    "time": 36.1738017682643
+    "time": 36.1738
   },
   {
     "speedM": 0.56,
@@ -822,7 +822,7 @@
     "distanceFrom0": 9.797,
     "distanceFromPrev": 3.714,
     "speedV": 341.04,
-    "time": 39.2047853624208
+    "time": 39.2048
   },
   {
     "speedM": 0.56,
@@ -833,7 +833,7 @@
     "distanceFrom0": 13.86,
     "distanceFromPrev": 4.063,
     "speedV": 338.24,
-    "time": 43.2438505203406
+    "time": 43.2439
   },
   {
     "speedM": 0.56,
@@ -844,7 +844,7 @@
     "distanceFrom0": 18.379,
     "distanceFromPrev": 4.519,
     "speedV": 335.44,
-    "time": 48.4986882900072
+    "time": 48.4987
   },
   {
     "speedM": 0.56,
@@ -855,7 +855,7 @@
     "distanceFrom0": 23.531,
     "distanceFromPrev": 5.152,
     "speedV": 332.64,
-    "time": 55.7575757575757
+    "time": 55.7576
   },
   {
     "speedM": 0.56,
@@ -866,7 +866,7 @@
     "distanceFrom0": 29.626,
     "distanceFromPrev": 6.095,
     "speedV": 329.84,
-    "time": 66.5231627455736
+    "time": 66.5232
   },
   {
     "speedM": 0.56,
@@ -877,7 +877,7 @@
     "distanceFrom0": 37.258,
     "distanceFromPrev": 7.632,
     "speedV": 327.04,
-    "time": 84.0117416829746
+    "time": 84.0117
   },
   {
     "speedM": 0.56,
@@ -888,7 +888,7 @@
     "distanceFrom0": 47.872,
     "distanceFromPrev": 10.614,
     "speedV": 324.24,
-    "time": 117.846039970392
+    "time": 117.846
   },
   {
     "speedM": 0.56,
@@ -899,7 +899,7 @@
     "distanceFrom0": 65.644,
     "distanceFromPrev": 17.772,
     "speedV": 320.88,
-    "time": 199.386686611818
+    "time": 199.3867
   },
   {
     "speedM": 0.56,
@@ -927,111 +927,111 @@
     "speedM": 0.57,
     "speedOfSound": 619,
     "altitude": 18000,
-    "fuelFrom0": 30.04371875,
-    "fuelFromPrev": 30.04371875,
-    "distanceFrom0": 2.68359375,
-    "distanceFromPrev": 2.68359375,
+    "fuelFrom0": 30.0437,
+    "fuelFromPrev": 30.0437,
+    "distanceFrom0": 2.6836,
+    "distanceFromPrev": 2.6836,
     "speedV": 352.83,
-    "time": 27.3812813536264
+    "time": 27.3813
   },
   {
     "speedM": 0.57,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuelFrom0": 67.9795185546875,
-    "fuelFromPrev": 37.9357998046875,
-    "distanceFrom0": 6.20944653320313,
-    "distanceFromPrev": 3.52585278320312,
+    "fuelFrom0": 67.9795,
+    "fuelFromPrev": 37.9358,
+    "distanceFrom0": 6.2094,
+    "distanceFromPrev": 3.5259,
     "speedV": 349.98,
-    "time": 36.2679867979063
+    "time": 36.268
   },
   {
     "speedM": 0.57,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 106.835370239258,
-    "fuelFromPrev": 38.8558516845703,
-    "distanceFrom0": 9.98258618164063,
-    "distanceFromPrev": 3.7731396484375,
+    "fuelFrom0": 106.8354,
+    "fuelFromPrev": 38.8559,
+    "distanceFrom0": 9.9826,
+    "distanceFromPrev": 3.7731,
     "speedV": 347.13,
-    "time": 39.1303048839772
+    "time": 39.1303
   },
   {
     "speedM": 0.57,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 147.191885742188,
-    "fuelFromPrev": 40.3565155029297,
-    "distanceFrom0": 14.0975531005859,
-    "distanceFromPrev": 4.11496691894531,
+    "fuelFrom0": 147.1919,
+    "fuelFromPrev": 40.3565,
+    "distanceFrom0": 14.0976,
+    "distanceFromPrev": 4.115,
     "speedV": 344.28,
-    "time": 43.0285840252211
+    "time": 43.0286
   },
   {
     "speedM": 0.57,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 189.69833215332,
-    "fuelFromPrev": 42.5064464111328,
-    "distanceFrom0": 18.6604677734375,
-    "distanceFromPrev": 4.56291467285157,
+    "fuelFrom0": 189.6983,
+    "fuelFromPrev": 42.5064,
+    "distanceFrom0": 18.6605,
+    "distanceFromPrev": 4.5629,
     "speedV": 341.43,
-    "time": 48.1108655427632
+    "time": 48.1109
   },
   {
     "speedM": 0.57,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 235.276452636719,
-    "fuelFromPrev": 45.5781204833985,
-    "distanceFrom0": 23.8388210449219,
-    "distanceFromPrev": 5.17835327148437,
+    "fuelFrom0": 235.2765,
+    "fuelFromPrev": 45.5781,
+    "distanceFrom0": 23.8388,
+    "distanceFromPrev": 5.1784,
     "speedV": 338.58,
-    "time": 55.0595775809077
+    "time": 55.0596
   },
   {
     "speedM": 0.57,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 285.546047851563,
-    "fuelFromPrev": 50.2695952148438,
-    "distanceFrom0": 29.9222456054688,
-    "distanceFromPrev": 6.08342456054688,
+    "fuelFrom0": 285.546,
+    "fuelFromPrev": 50.2696,
+    "distanceFrom0": 29.9222,
+    "distanceFromPrev": 6.0834,
     "speedV": 335.73,
-    "time": 65.2319674082411
+    "time": 65.232
   },
   {
     "speedM": 0.57,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 343.452882446289,
-    "fuelFromPrev": 57.9068345947266,
-    "distanceFrom0": 37.4777788085938,
-    "distanceFromPrev": 7.555533203125,
+    "fuelFrom0": 343.4529,
+    "fuelFromPrev": 57.9068,
+    "distanceFrom0": 37.4778,
+    "distanceFromPrev": 7.5555,
     "speedV": 332.88,
-    "time": 81.7108853978911
+    "time": 81.7109
   },
   {
     "speedM": 0.57,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 416.261197631836,
-    "fuelFromPrev": 72.8083151855469,
-    "distanceFrom0": 47.8514434814453,
-    "distanceFromPrev": 10.3736646728516,
+    "fuelFrom0": 416.2612,
+    "fuelFromPrev": 72.8083,
+    "distanceFrom0": 47.8514,
+    "distanceFromPrev": 10.3737,
     "speedV": 330.03,
-    "time": 113.156963979837
+    "time": 113.157
   },
   {
     "speedM": 0.57,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuelFrom0": 525.297005859375,
-    "fuelFromPrev": 109.035808227539,
-    "distanceFrom0": 64.8227608642578,
-    "distanceFromPrev": 16.9713173828125,
+    "fuelFrom0": 525.297,
+    "fuelFromPrev": 109.0358,
+    "distanceFrom0": 64.8228,
+    "distanceFromPrev": 16.9713,
     "speedV": 326.61,
-    "time": 187.063294382061
+    "time": 187.0633
   },
   {
     "speedM": 0.57,
@@ -1059,111 +1059,111 @@
     "speedM": 0.58,
     "speedOfSound": 619,
     "altitude": 18000,
-    "fuelFrom0": 30.1834375,
-    "fuelFromPrev": 30.1834375,
-    "distanceFrom0": 2.7391875,
-    "distanceFromPrev": 2.7391875,
+    "fuelFrom0": 30.1834,
+    "fuelFromPrev": 30.1834,
+    "distanceFrom0": 2.7392,
+    "distanceFromPrev": 2.7392,
     "speedV": 359.02,
-    "time": 27.4666453122389
+    "time": 27.4666
   },
   {
     "speedM": 0.58,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuelFrom0": 68.334037109375,
-    "fuelFromPrev": 38.150599609375,
-    "distanceFrom0": 6.33589306640625,
-    "distanceFromPrev": 3.59670556640625,
+    "fuelFrom0": 68.334,
+    "fuelFromPrev": 38.1506,
+    "distanceFrom0": 6.3359,
+    "distanceFromPrev": 3.5967,
     "speedV": 356.12,
-    "time": 36.3589240679055
+    "time": 36.3589
   },
   {
     "speedM": 0.58,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 107.209740478516,
-    "fuelFromPrev": 38.8757033691406,
-    "distanceFrom0": 10.1681723632813,
-    "distanceFromPrev": 3.832279296875,
+    "fuelFrom0": 107.2097,
+    "fuelFromPrev": 38.8757,
+    "distanceFrom0": 10.1682,
+    "distanceFromPrev": 3.8323,
     "speedV": 353.22,
-    "time": 39.0583926978937
+    "time": 39.0584
   },
   {
     "speedM": 0.58,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 147.448771484375,
-    "fuelFromPrev": 40.2390310058594,
-    "distanceFrom0": 14.3351062011719,
-    "distanceFromPrev": 4.16693383789062,
+    "fuelFrom0": 147.4488,
+    "fuelFromPrev": 40.239,
+    "distanceFrom0": 14.3351,
+    "distanceFromPrev": 4.1669,
     "speedV": 350.32,
-    "time": 42.820740512692
+    "time": 42.8207
   },
   {
     "speedM": 0.58,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 189.755664306641,
-    "fuelFromPrev": 42.3068928222656,
-    "distanceFrom0": 18.941935546875,
-    "distanceFromPrev": 4.60682934570313,
+    "fuelFrom0": 189.7557,
+    "fuelFromPrev": 42.3069,
+    "distanceFrom0": 18.9419,
+    "distanceFromPrev": 4.6068,
     "speedV": 347.42,
-    "time": 47.7364159937
+    "time": 47.7364
   },
   {
     "speedM": 0.58,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 234.977905273437,
-    "fuelFromPrev": 45.2222409667969,
-    "distanceFrom0": 24.1466420898437,
-    "distanceFromPrev": 5.20470654296875,
+    "fuelFrom0": 234.9779,
+    "fuelFromPrev": 45.2222,
+    "distanceFrom0": 24.1466,
+    "distanceFromPrev": 5.2047,
     "speedV": 344.52,
-    "time": 54.3856483068835
+    "time": 54.3856
   },
   {
     "speedM": 0.58,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 284.590095703125,
-    "fuelFromPrev": 49.6121904296875,
-    "distanceFrom0": 30.2184912109375,
-    "distanceFromPrev": 6.07184912109375,
+    "fuelFrom0": 284.5901,
+    "fuelFromPrev": 49.6122,
+    "distanceFrom0": 30.2185,
+    "distanceFromPrev": 6.0718,
     "speedV": 341.62,
-    "time": 63.9852960480578
+    "time": 63.9853
   },
   {
     "speedM": 0.58,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 341.314764892578,
-    "fuelFromPrev": 56.7246691894531,
-    "distanceFrom0": 37.6975576171875,
-    "distanceFromPrev": 7.47906640625,
+    "fuelFrom0": 341.3148,
+    "fuelFromPrev": 56.7247,
+    "distanceFrom0": 37.6976,
+    "distanceFromPrev": 7.4791,
     "speedV": 338.72,
-    "time": 79.4893689847071
+    "time": 79.4894
   },
   {
     "speedM": 0.58,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 411.809395263672,
-    "fuelFromPrev": 70.4946303710938,
-    "distanceFrom0": 47.8308869628906,
-    "distanceFromPrev": 10.1333293457031,
+    "fuelFrom0": 411.8094,
+    "fuelFromPrev": 70.4946,
+    "distanceFrom0": 47.8309,
+    "distanceFromPrev": 10.1333,
     "speedV": 335.82,
-    "time": 108.629580264818
+    "time": 108.6296
   },
   {
     "speedM": 0.58,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuelFrom0": 514.92801171875,
-    "fuelFromPrev": 103.118616455078,
-    "distanceFrom0": 64.0015217285156,
-    "distanceFromPrev": 16.170634765625,
+    "fuelFrom0": 514.928,
+    "fuelFromPrev": 103.1186,
+    "distanceFrom0": 64.0015,
+    "distanceFromPrev": 16.1706,
     "speedV": 332.34,
-    "time": 175.164846711952
+    "time": 175.1648
   },
   {
     "speedM": 0.58,
@@ -1196,7 +1196,7 @@
     "distanceFrom0": 2.8005,
     "distanceFromPrev": 2.8005,
     "speedV": 365.21,
-    "time": 27.6054872539087
+    "time": 27.6055
   },
   {
     "speedM": 0.59,
@@ -1207,7 +1207,7 @@
     "distanceFrom0": 6.4465,
     "distanceFromPrev": 3.646,
     "speedV": 362.26,
-    "time": 36.2325401645227
+    "time": 36.2325
   },
   {
     "speedM": 0.59,
@@ -1218,7 +1218,7 @@
     "distanceFrom0": 10.3285,
     "distanceFromPrev": 3.882,
     "speedV": 359.31,
-    "time": 38.8945478834433
+    "time": 38.8945
   },
   {
     "speedM": 0.59,
@@ -1229,7 +1229,7 @@
     "distanceFrom0": 14.5385,
     "distanceFromPrev": 4.21,
     "speedV": 356.36,
-    "time": 42.53002581659
+    "time": 42.53
   },
   {
     "speedM": 0.59,
@@ -1240,7 +1240,7 @@
     "distanceFrom0": 19.182,
     "distanceFromPrev": 4.6435,
     "speedV": 353.41,
-    "time": 47.3008686794375
+    "time": 47.3009
   },
   {
     "speedM": 0.59,
@@ -1251,7 +1251,7 @@
     "distanceFrom0": 24.4055,
     "distanceFromPrev": 5.2235,
     "speedV": 350.46,
-    "time": 53.6569080636877
+    "time": 53.6569
   },
   {
     "speedM": 0.59,
@@ -1262,7 +1262,7 @@
     "distanceFrom0": 30.455,
     "distanceFromPrev": 6.0495,
     "speedV": 347.51,
-    "time": 62.6692757042963
+    "time": 62.6693
   },
   {
     "speedM": 0.59,
@@ -1273,18 +1273,18 @@
     "distanceFrom0": 37.8395,
     "distanceFromPrev": 7.3845,
     "speedV": 344.56,
-    "time": 77.1540515439982
+    "time": 77.1541
   },
   {
     "speedM": 0.59,
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 406.349,
-    "fuelFromPrev": 67.8865000000001,
+    "fuelFromPrev": 67.8865,
     "distanceFrom0": 47.6955,
-    "distanceFromPrev": 9.85599999999999,
+    "distanceFromPrev": 9.856,
     "speedV": 341.61,
-    "time": 103.865811890753
+    "time": 103.8658
   },
   {
     "speedM": 0.59,
@@ -1295,7 +1295,7 @@
     "distanceFrom0": 62.9515,
     "distanceFromPrev": 15.256,
     "speedV": 338.07,
-    "time": 162.456296033366
+    "time": 162.4563
   },
   {
     "speedM": 0.59,
@@ -1323,111 +1323,111 @@
     "speedM": 0.6,
     "speedOfSound": 619,
     "altitude": 18000,
-    "fuelFrom0": 30.462875,
-    "fuelFromPrev": 30.462875,
-    "distanceFrom0": 2.850375,
-    "distanceFromPrev": 2.850375,
+    "fuelFrom0": 30.4629,
+    "fuelFromPrev": 30.4629,
+    "distanceFrom0": 2.8504,
+    "distanceFromPrev": 2.8504,
     "speedV": 371.4,
-    "time": 27.6288368336026
+    "time": 27.6288
   },
   {
     "speedM": 0.6,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuelFrom0": 69.04307421875,
-    "fuelFromPrev": 38.58019921875,
-    "distanceFrom0": 6.5887861328125,
-    "distanceFromPrev": 3.7384111328125,
+    "fuelFrom0": 69.0431,
+    "fuelFromPrev": 38.5802,
+    "distanceFrom0": 6.5888,
+    "distanceFromPrev": 3.7384,
     "speedV": 368.4,
-    "time": 36.5317048809039
+    "time": 36.5317
   },
   {
     "speedM": 0.6,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 107.958480957031,
-    "fuelFromPrev": 38.9154067382812,
-    "distanceFrom0": 10.5393447265625,
-    "distanceFromPrev": 3.95055859375,
+    "fuelFrom0": 107.9585,
+    "fuelFromPrev": 38.9154,
+    "distanceFrom0": 10.5393,
+    "distanceFromPrev": 3.9506,
     "speedV": 365.4,
-    "time": 38.921759544335
+    "time": 38.9218
   },
   {
     "speedM": 0.6,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 147.96254296875,
-    "fuelFromPrev": 40.0040620117187,
-    "distanceFrom0": 14.8102124023438,
-    "distanceFromPrev": 4.27086767578125,
+    "fuelFrom0": 147.9625,
+    "fuelFromPrev": 40.0041,
+    "distanceFrom0": 14.8102,
+    "distanceFromPrev": 4.2709,
     "speedV": 362.4,
-    "time": 42.4258378388866
+    "time": 42.4258
   },
   {
     "speedM": 0.6,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 189.870328613281,
-    "fuelFromPrev": 41.9077856445312,
-    "distanceFrom0": 19.50487109375,
-    "distanceFromPrev": 4.69465869140625,
+    "fuelFrom0": 189.8703,
+    "fuelFromPrev": 41.9078,
+    "distanceFrom0": 19.5049,
+    "distanceFromPrev": 4.6947,
     "speedV": 359.4,
-    "time": 47.02496185048
+    "time": 47.025
   },
   {
     "speedM": 0.6,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 234.380810546875,
-    "fuelFromPrev": 44.5104819335938,
-    "distanceFrom0": 24.7622841796875,
-    "distanceFromPrev": 5.2574130859375,
+    "fuelFrom0": 234.3808,
+    "fuelFromPrev": 44.5105,
+    "distanceFrom0": 24.7623,
+    "distanceFromPrev": 5.2574,
     "speedV": 356.4,
-    "time": 53.1051826862373
+    "time": 53.1052
   },
   {
     "speedM": 0.6,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 282.67819140625,
-    "fuelFromPrev": 48.297380859375,
-    "distanceFrom0": 30.810982421875,
-    "distanceFromPrev": 6.0486982421875,
+    "fuelFrom0": 282.6782,
+    "fuelFromPrev": 48.2974,
+    "distanceFrom0": 30.811,
+    "distanceFromPrev": 6.0487,
     "speedV": 353.4,
-    "time": 61.6166204637097
+    "time": 61.6166
   },
   {
     "speedM": 0.6,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 337.038529785156,
-    "fuelFromPrev": 54.3603383789062,
-    "distanceFrom0": 38.137115234375,
-    "distanceFromPrev": 7.3261328125,
+    "fuelFrom0": 337.0385,
+    "fuelFromPrev": 54.3603,
+    "distanceFrom0": 38.1371,
+    "distanceFromPrev": 7.3261,
     "speedV": 350.4,
-    "time": 75.2684877996576
+    "time": 75.2685
   },
   {
     "speedM": 0.6,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 402.905790527344,
-    "fuelFromPrev": 65.8672607421876,
-    "distanceFrom0": 47.7897739257813,
-    "distanceFromPrev": 9.65265869140625,
+    "fuelFrom0": 402.9058,
+    "fuelFromPrev": 65.8673,
+    "distanceFrom0": 47.7898,
+    "distanceFromPrev": 9.6527,
     "speedV": 347.4,
-    "time": 100.027551206282
+    "time": 100.0276
   },
   {
     "speedM": 0.6,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuelFrom0": 494.1900234375,
-    "fuelFromPrev": 91.2842329101562,
-    "distanceFrom0": 62.3590434570312,
-    "distanceFromPrev": 14.56926953125,
+    "fuelFrom0": 494.19,
+    "fuelFromPrev": 91.2842,
+    "distanceFrom0": 62.359,
+    "distanceFromPrev": 14.5693,
     "speedV": 343.8,
-    "time": 152.557796138743
+    "time": 152.5578
   },
   {
     "speedM": 0.6,
@@ -1455,111 +1455,111 @@
     "speedM": 0.61,
     "speedOfSound": 619,
     "altitude": 18000,
-    "fuelFrom0": 30.47525,
-    "fuelFromPrev": 30.47525,
-    "distanceFrom0": 2.90025,
-    "distanceFromPrev": 2.90025,
+    "fuelFrom0": 30.4752,
+    "fuelFromPrev": 30.4752,
+    "distanceFrom0": 2.9003,
+    "distanceFromPrev": 2.9003,
     "speedV": 377.59,
-    "time": 27.6514208533065
+    "time": 27.6514
   },
   {
     "speedM": 0.61,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuelFrom0": 69.5356484375,
-    "fuelFromPrev": 39.0603984375,
-    "distanceFrom0": 6.731072265625,
-    "distanceFromPrev": 3.830822265625,
+    "fuelFrom0": 69.5356,
+    "fuelFromPrev": 39.0604,
+    "distanceFrom0": 6.7311,
+    "distanceFromPrev": 3.8308,
     "speedV": 374.54,
-    "time": 36.8210609180595
+    "time": 36.8211
   },
   {
     "speedM": 0.61,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 108.557961914063,
-    "fuelFromPrev": 39.0223134765625,
-    "distanceFrom0": 10.750189453125,
-    "distanceFromPrev": 4.0191171875,
+    "fuelFrom0": 108.558,
+    "fuelFromPrev": 39.0223,
+    "distanceFrom0": 10.7502,
+    "distanceFromPrev": 4.0191,
     "speedV": 371.49,
-    "time": 38.9480790196237
+    "time": 38.9481
   },
   {
     "speedM": 0.61,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 148.5310859375,
-    "fuelFromPrev": 39.9731240234375,
-    "distanceFrom0": 15.0819248046875,
-    "distanceFromPrev": 4.3317353515625,
+    "fuelFrom0": 148.5311,
+    "fuelFromPrev": 39.9731,
+    "distanceFrom0": 15.0819,
+    "distanceFromPrev": 4.3317,
     "speedV": 368.44,
-    "time": 42.3250658604522
+    "time": 42.3251
   },
   {
     "speedM": 0.61,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 190.305157226563,
-    "fuelFromPrev": 41.7740712890625,
-    "distanceFrom0": 19.8277421875,
-    "distanceFromPrev": 4.7458173828125,
+    "fuelFrom0": 190.3052,
+    "fuelFromPrev": 41.7741,
+    "distanceFrom0": 19.8277,
+    "distanceFromPrev": 4.7458,
     "speedV": 365.39,
-    "time": 46.7581011470621
+    "time": 46.7581
   },
   {
     "speedM": 0.61,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 234.52862109375,
-    "fuelFromPrev": 44.2234638671875,
-    "distanceFrom0": 25.119068359375,
-    "distanceFromPrev": 5.291326171875,
+    "fuelFrom0": 234.5286,
+    "fuelFromPrev": 44.2235,
+    "distanceFrom0": 25.1191,
+    "distanceFromPrev": 5.2913,
     "speedV": 362.34,
-    "time": 52.5715466654247
+    "time": 52.5715
   },
   {
     "speedM": 0.61,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 282.2688828125,
-    "fuelFromPrev": 47.74026171875,
-    "distanceFrom0": 31.16696484375,
-    "distanceFromPrev": 6.047896484375,
+    "fuelFrom0": 282.2689,
+    "fuelFromPrev": 47.7403,
+    "distanceFrom0": 31.167,
+    "distanceFromPrev": 6.0479,
     "speedV": 359.29,
-    "time": 60.5984785096997
+    "time": 60.5985
   },
   {
     "speedM": 0.61,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 335.614559570313,
-    "fuelFromPrev": 53.3456767578125,
-    "distanceFrom0": 38.43473046875,
-    "distanceFromPrev": 7.267765625,
+    "fuelFrom0": 335.6146,
+    "fuelFromPrev": 53.3457,
+    "distanceFrom0": 38.4347,
+    "distanceFromPrev": 7.2678,
     "speedV": 356.24,
-    "time": 73.4447458174265
+    "time": 73.4447
   },
   {
     "speedM": 0.61,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 399.462581054688,
-    "fuelFromPrev": 63.848021484375,
-    "distanceFrom0": 47.8840478515625,
-    "distanceFromPrev": 9.4493173828125,
+    "fuelFrom0": 399.4626,
+    "fuelFromPrev": 63.848,
+    "distanceFrom0": 47.884,
+    "distanceFromPrev": 9.4493,
     "speedV": 353.19,
-    "time": 96.3151351344177
+    "time": 96.3151
   },
   {
     "speedM": 0.61,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuelFrom0": 485.631546875,
-    "fuelFromPrev": 86.1689658203125,
-    "distanceFrom0": 61.7665869140625,
-    "distanceFromPrev": 13.8825390625,
+    "fuelFrom0": 485.6315,
+    "fuelFromPrev": 86.169,
+    "distanceFrom0": 61.7666,
+    "distanceFromPrev": 13.8825,
     "speedV": 349.53,
-    "time": 142.983837224273
+    "time": 142.9838
   },
   {
     "speedM": 0.61,
@@ -1592,7 +1592,7 @@
     "distanceFrom0": 2.973,
     "distanceFromPrev": 2.973,
     "speedV": 383.78,
-    "time": 27.8878524154463
+    "time": 27.8879
   },
   {
     "speedM": 0.62,
@@ -1603,7 +1603,7 @@
     "distanceFrom0": 6.81,
     "distanceFromPrev": 3.837,
     "speedV": 380.68,
-    "time": 36.2855941998529
+    "time": 36.2856
   },
   {
     "speedM": 0.62,
@@ -1614,7 +1614,7 @@
     "distanceFrom0": 10.86,
     "distanceFromPrev": 4.05,
     "speedV": 377.58,
-    "time": 38.6143333863022
+    "time": 38.6143
   },
   {
     "speedM": 0.62,
@@ -1625,7 +1625,7 @@
     "distanceFrom0": 15.217,
     "distanceFromPrev": 4.357,
     "speedV": 374.48,
-    "time": 41.8852809228797
+    "time": 41.8853
   },
   {
     "speedM": 0.62,
@@ -1636,7 +1636,7 @@
     "distanceFrom0": 19.985,
     "distanceFromPrev": 4.768,
     "speedV": 371.38,
-    "time": 46.2189670956971
+    "time": 46.219
   },
   {
     "speedM": 0.62,
@@ -1647,7 +1647,7 @@
     "distanceFrom0": 25.28,
     "distanceFromPrev": 5.295,
     "speedV": 368.28,
-    "time": 51.7595307917889
+    "time": 51.7595
   },
   {
     "speedM": 0.62,
@@ -1658,7 +1658,7 @@
     "distanceFrom0": 31.284,
     "distanceFromPrev": 6.004,
     "speedV": 365.18,
-    "time": 59.1883454734651
+    "time": 59.1883
   },
   {
     "speedM": 0.62,
@@ -1669,7 +1669,7 @@
     "distanceFrom0": 38.421,
     "distanceFromPrev": 7.137,
     "speedV": 362.08,
-    "time": 70.9600088378259
+    "time": 70.96
   },
   {
     "speedM": 0.62,
@@ -1680,7 +1680,7 @@
     "distanceFrom0": 47.519,
     "distanceFromPrev": 9.098,
     "speedV": 358.98,
-    "time": 91.2385091091426
+    "time": 91.2385
   },
   {
     "speedM": 0.62,
@@ -1691,7 +1691,7 @@
     "distanceFrom0": 60.259,
     "distanceFromPrev": 12.74,
     "speedV": 355.26,
-    "time": 129.099814220571
+    "time": 129.0998
   },
   {
     "speedM": 0.62,
@@ -1702,7 +1702,7 @@
     "distanceFrom0": 82.611,
     "distanceFromPrev": 22.352,
     "speedV": 355.26,
-    "time": 226.502280020267
+    "time": 226.5023
   },
   {
     "speedM": 0.62,
@@ -1724,117 +1724,117 @@
     "distanceFrom0": 3,
     "distanceFromPrev": 3,
     "speedV": 389.97,
-    "time": 27.6944380336949
+    "time": 27.6944
   },
   {
     "speedM": 0.63,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuelFrom0": 70.520796875,
-    "fuelFromPrev": 40.020796875,
-    "distanceFrom0": 7.01564453125,
-    "distanceFromPrev": 4.01564453125,
+    "fuelFrom0": 70.5208,
+    "fuelFromPrev": 40.0208,
+    "distanceFrom0": 7.0156,
+    "distanceFromPrev": 4.0156,
     "speedV": 386.82,
-    "time": 37.3722152745463
+    "time": 37.3722
   },
   {
     "speedM": 0.63,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 109.756923828125,
-    "fuelFromPrev": 39.236126953125,
-    "distanceFrom0": 11.17187890625,
-    "distanceFromPrev": 4.156234375,
+    "fuelFrom0": 109.7569,
+    "fuelFromPrev": 39.2361,
+    "distanceFrom0": 11.1719,
+    "distanceFromPrev": 4.1562,
     "speedV": 383.67,
-    "time": 38.9982113535069
+    "time": 38.9982
   },
   {
     "speedM": 0.63,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 149.668171875,
-    "fuelFromPrev": 39.911248046875,
-    "distanceFrom0": 15.625349609375,
-    "distanceFromPrev": 4.453470703125,
+    "fuelFrom0": 149.6682,
+    "fuelFromPrev": 39.9112,
+    "distanceFrom0": 15.6253,
+    "distanceFromPrev": 4.4535,
     "speedV": 380.52,
-    "time": 42.1331192348628
+    "time": 42.1331
   },
   {
     "speedM": 0.63,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 191.174814453125,
-    "fuelFromPrev": 41.506642578125,
-    "distanceFrom0": 20.473484375,
-    "distanceFromPrev": 4.848134765625,
+    "fuelFrom0": 191.1748,
+    "fuelFromPrev": 41.5066,
+    "distanceFrom0": 20.4735,
+    "distanceFromPrev": 4.8481,
     "speedV": 377.37,
-    "time": 46.2497950453136
+    "time": 46.2498
   },
   {
     "speedM": 0.63,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 234.8242421875,
-    "fuelFromPrev": 43.649427734375,
-    "distanceFrom0": 25.83263671875,
-    "distanceFromPrev": 5.35915234375,
+    "fuelFrom0": 234.8242,
+    "fuelFromPrev": 43.6494,
+    "distanceFrom0": 25.8326,
+    "distanceFromPrev": 5.3592,
     "speedV": 374.22,
-    "time": 51.5550971019721
+    "time": 51.5551
   },
   {
     "speedM": 0.63,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 281.450265625,
-    "fuelFromPrev": 46.6260234375,
-    "distanceFrom0": 31.8789296875,
-    "distanceFromPrev": 6.04629296875,
+    "fuelFrom0": 281.4503,
+    "fuelFromPrev": 46.626,
+    "distanceFrom0": 31.8789,
+    "distanceFromPrev": 6.0463,
     "speedV": 371.07,
-    "time": 58.6591605020616
+    "time": 58.6592
   },
   {
     "speedM": 0.63,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 332.766619140625,
-    "fuelFromPrev": 51.3163535156251,
-    "distanceFrom0": 39.0299609375,
-    "distanceFromPrev": 7.15103125,
+    "fuelFrom0": 332.7666,
+    "fuelFromPrev": 51.3164,
+    "distanceFrom0": 39.03,
+    "distanceFromPrev": 7.151,
     "speedV": 367.92,
-    "time": 69.9709515655577
+    "time": 69.971
   },
   {
     "speedM": 0.63,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 392.576162109375,
-    "fuelFromPrev": 59.80954296875,
-    "distanceFrom0": 48.072595703125,
-    "distanceFromPrev": 9.042634765625,
+    "fuelFrom0": 392.5762,
+    "fuelFromPrev": 59.8095,
+    "distanceFrom0": 48.0726,
+    "distanceFromPrev": 9.0426,
     "speedV": 364.77,
-    "time": 89.2438664261042
+    "time": 89.2439
   },
   {
     "speedM": 0.63,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuelFrom0": 468.51459375,
-    "fuelFromPrev": 75.938431640625,
-    "distanceFrom0": 60.581673828125,
-    "distanceFromPrev": 12.509078125,
+    "fuelFrom0": 468.5146,
+    "fuelFromPrev": 75.9384,
+    "distanceFrom0": 60.5817,
+    "distanceFromPrev": 12.5091,
     "speedV": 360.99,
-    "time": 124.747725006233
+    "time": 124.7477
   },
   {
     "speedM": 0.63,
     "speedOfSound": 573,
     "altitude": 38000,
-    "fuelFrom0": 588.380203125,
-    "fuelFromPrev": 119.865609375,
-    "distanceFrom0": 82.13128515625,
-    "distanceFromPrev": 21.549611328125,
+    "fuelFrom0": 588.3802,
+    "fuelFromPrev": 119.8656,
+    "distanceFrom0": 82.1313,
+    "distanceFromPrev": 21.5496,
     "speedV": 360.99,
-    "time": 214.905124189728
+    "time": 214.9051
   },
   {
     "speedM": 0.63,
@@ -1856,117 +1856,117 @@
     "distanceFrom0": 3,
     "distanceFromPrev": 3,
     "speedV": 396.16,
-    "time": 27.2617124394184
+    "time": 27.2617
   },
   {
     "speedM": 0.64,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuelFrom0": 71.56559375,
-    "fuelFromPrev": 40.56559375,
-    "distanceFrom0": 7.2212890625,
-    "distanceFromPrev": 4.2212890625,
+    "fuelFrom0": 71.5656,
+    "fuelFromPrev": 40.5656,
+    "distanceFrom0": 7.2213,
+    "distanceFromPrev": 4.2213,
     "speedV": 392.96,
-    "time": 38.672232860851
+    "time": 38.6722
   },
   {
     "speedM": 0.64,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 111.25684765625,
-    "fuelFromPrev": 39.69125390625,
-    "distanceFrom0": 11.4837578125,
-    "distanceFromPrev": 4.26246875,
+    "fuelFrom0": 111.2568,
+    "fuelFromPrev": 39.6913,
+    "distanceFrom0": 11.4838,
+    "distanceFromPrev": 4.2625,
     "speedV": 389.76,
-    "time": 39.3700931342364
+    "time": 39.3701
   },
   {
     "speedM": 0.64,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 151.48334375,
-    "fuelFromPrev": 40.22649609375,
-    "distanceFrom0": 16.03369921875,
-    "distanceFromPrev": 4.54994140625,
+    "fuelFrom0": 151.4833,
+    "fuelFromPrev": 40.2265,
+    "distanceFrom0": 16.0337,
+    "distanceFromPrev": 4.5499,
     "speedV": 386.56,
-    "time": 42.3732125995964
+    "time": 42.3732
   },
   {
     "speedM": 0.64,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 193.11962890625,
-    "fuelFromPrev": 41.63628515625,
-    "distanceFrom0": 20.96196875,
-    "distanceFromPrev": 4.92826953125,
+    "fuelFrom0": 193.1196,
+    "fuelFromPrev": 41.6363,
+    "distanceFrom0": 20.962,
+    "distanceFromPrev": 4.9283,
     "speedV": 383.36,
-    "time": 46.2796596215046
+    "time": 46.2797
   },
   {
     "speedM": 0.64,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 236.757484375,
-    "fuelFromPrev": 43.63785546875,
-    "distanceFrom0": 26.3852734375,
-    "distanceFromPrev": 5.4233046875,
+    "fuelFrom0": 236.7575,
+    "fuelFromPrev": 43.6379,
+    "distanceFrom0": 26.3853,
+    "distanceFromPrev": 5.4233,
     "speedV": 380.16,
-    "time": 51.3570519649621
+    "time": 51.3571
   },
   {
     "speedM": 0.64,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 283.22753125,
-    "fuelFromPrev": 46.470046875,
-    "distanceFrom0": 32.473859375,
-    "distanceFromPrev": 6.0885859375,
+    "fuelFrom0": 283.2275,
+    "fuelFromPrev": 46.47,
+    "distanceFrom0": 32.4739,
+    "distanceFromPrev": 6.0886,
     "speedV": 376.96,
-    "time": 58.1465125610145
+    "time": 58.1465
   },
   {
     "speedM": 0.64,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 334.19923828125,
-    "fuelFromPrev": 50.97170703125,
-    "distanceFrom0": 39.638921875,
-    "distanceFromPrev": 7.1650625,
+    "fuelFrom0": 334.1992,
+    "fuelFromPrev": 50.9717,
+    "distanceFrom0": 39.6389,
+    "distanceFromPrev": 7.1651,
     "speedV": 373.76,
-    "time": 69.0128023330479
+    "time": 69.0128
   },
   {
     "speedM": 0.64,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 393.16732421875,
-    "fuelFromPrev": 58.9680859375,
-    "distanceFrom0": 48.62619140625,
-    "distanceFromPrev": 8.98726953125,
+    "fuelFrom0": 393.1673,
+    "fuelFromPrev": 58.9681,
+    "distanceFrom0": 48.6262,
+    "distanceFromPrev": 8.9873,
     "speedV": 370.56,
-    "time": 87.3115563269106
+    "time": 87.3116
   },
   {
     "speedM": 0.64,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuelFrom0": 467.1981875,
-    "fuelFromPrev": 74.03086328125,
-    "distanceFrom0": 60.90434765625,
-    "distanceFromPrev": 12.27815625,
+    "fuelFrom0": 467.1982,
+    "fuelFromPrev": 74.0309,
+    "distanceFrom0": 60.9043,
+    "distanceFromPrev": 12.2782,
     "speedV": 366.72,
-    "time": 120.531638579843
+    "time": 120.5316
   },
   {
     "speedM": 0.64,
     "speedOfSound": 573,
     "altitude": 38000,
-    "fuelFrom0": 581.88140625,
-    "fuelFromPrev": 114.68321875,
-    "distanceFrom0": 81.6515703125,
-    "distanceFromPrev": 20.74722265625,
+    "fuelFrom0": 581.8814,
+    "fuelFromPrev": 114.6832,
+    "distanceFrom0": 81.6516,
+    "distanceFromPrev": 20.7472,
     "speedV": 366.72,
-    "time": 203.670379478894
+    "time": 203.6704
   },
   {
     "speedM": 0.64,
@@ -1988,7 +1988,7 @@
     "distanceFrom0": 3.2355,
     "distanceFromPrev": 3.2355,
     "speedV": 402.35,
-    "time": 28.9494221448987
+    "time": 28.9494
   },
   {
     "speedM": 0.65,
@@ -1999,7 +1999,7 @@
     "distanceFrom0": 7.3995,
     "distanceFromPrev": 4.164,
     "speedV": 399.1,
-    "time": 37.5605111500877
+    "time": 37.5605
   },
   {
     "speedM": 0.65,
@@ -2010,7 +2010,7 @@
     "distanceFrom0": 11.7535,
     "distanceFromPrev": 4.354,
     "speedV": 395.85,
-    "time": 39.5968169761273
+    "time": 39.5968
   },
   {
     "speedM": 0.65,
@@ -2021,7 +2021,7 @@
     "distanceFrom0": 16.3855,
     "distanceFromPrev": 4.632,
     "speedV": 392.6,
-    "time": 42.4737646459501
+    "time": 42.4738
   },
   {
     "speedM": 0.65,
@@ -2032,7 +2032,7 @@
     "distanceFrom0": 21.378,
     "distanceFromPrev": 4.9925,
     "speedV": 389.35,
-    "time": 46.1615513034545
+    "time": 46.1616
   },
   {
     "speedM": 0.65,
@@ -2043,7 +2043,7 @@
     "distanceFrom0": 26.851,
     "distanceFromPrev": 5.473,
     "speedV": 386.1,
-    "time": 51.030303030303
+    "time": 51.0303
   },
   {
     "speedM": 0.65,
@@ -2054,7 +2054,7 @@
     "distanceFrom0": 32.968,
     "distanceFromPrev": 6.117,
     "speedV": 382.85,
-    "time": 57.5191328196422
+    "time": 57.5191
   },
   {
     "speedM": 0.65,
@@ -2065,7 +2065,7 @@
     "distanceFrom0": 40.129,
     "distanceFromPrev": 7.161,
     "speedV": 379.6,
-    "time": 67.9125395152793
+    "time": 67.9125
   },
   {
     "speedM": 0.65,
@@ -2076,7 +2076,7 @@
     "distanceFrom0": 49.0305,
     "distanceFromPrev": 8.9015,
     "speedV": 376.35,
-    "time": 85.1478676763651
+    "time": 85.1479
   },
   {
     "speedM": 0.65,
@@ -2087,7 +2087,7 @@
     "distanceFrom0": 61.0215,
     "distanceFromPrev": 11.991,
     "speedV": 372.45,
-    "time": 115.901731776077
+    "time": 115.9017
   },
   {
     "speedM": 0.65,
@@ -2098,7 +2098,7 @@
     "distanceFrom0": 80.8195,
     "distanceFromPrev": 19.798,
     "speedV": 372.45,
-    "time": 191.362062021748
+    "time": 191.3621
   },
   {
     "speedM": 0.65,
@@ -2120,117 +2120,117 @@
     "distanceFrom0": 3.3,
     "distanceFromPrev": 3.3,
     "speedV": 408.54,
-    "time": 29.0791599353796
+    "time": 29.0792
   },
   {
     "speedM": 0.66,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuelFrom0": 73.6551875,
-    "fuelFromPrev": 40.6551875,
-    "distanceFrom0": 7.632578125,
-    "distanceFromPrev": 4.332578125,
+    "fuelFrom0": 73.6552,
+    "fuelFromPrev": 40.6552,
+    "distanceFrom0": 7.6326,
+    "distanceFromPrev": 4.3326,
     "speedV": 405.24,
-    "time": 38.4889972608824
+    "time": 38.489
   },
   {
     "speedM": 0.66,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 114.2566953125,
-    "fuelFromPrev": 40.6015078125,
-    "distanceFrom0": 12.107515625,
-    "distanceFromPrev": 4.4749375,
+    "fuelFrom0": 114.2567,
+    "fuelFromPrev": 40.6015,
+    "distanceFrom0": 12.1075,
+    "distanceFromPrev": 4.4749,
     "speedV": 401.94,
-    "time": 40.0800492610837
+    "time": 40.08
   },
   {
     "speedM": 0.66,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 155.1136875,
-    "fuelFromPrev": 40.8569921875,
-    "distanceFrom0": 16.8503984375,
-    "distanceFromPrev": 4.7428828125,
+    "fuelFrom0": 155.1137,
+    "fuelFromPrev": 40.857,
+    "distanceFrom0": 16.8504,
+    "distanceFromPrev": 4.7429,
     "speedV": 398.64,
-    "time": 42.8315726595424
+    "time": 42.8316
   },
   {
     "speedM": 0.66,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 197.0092578125,
-    "fuelFromPrev": 41.8955703125,
-    "distanceFrom0": 21.9389375,
-    "distanceFromPrev": 5.0885390625,
+    "fuelFrom0": 197.0093,
+    "fuelFromPrev": 41.8956,
+    "distanceFrom0": 21.9389,
+    "distanceFromPrev": 5.0885,
     "speedV": 395.34,
-    "time": 46.3366738124147
+    "time": 46.3367
   },
   {
     "speedM": 0.66,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 240.62396875,
-    "fuelFromPrev": 43.6147109375,
-    "distanceFrom0": 27.490546875,
-    "distanceFromPrev": 5.551609375,
+    "fuelFrom0": 240.624,
+    "fuelFromPrev": 43.6147,
+    "distanceFrom0": 27.4905,
+    "distanceFromPrev": 5.5516,
     "speedV": 392.04,
-    "time": 50.9789657943067
+    "time": 50.979
   },
   {
     "speedM": 0.66,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 286.7820625,
-    "fuelFromPrev": 46.1580937499999,
-    "distanceFrom0": 33.66371875,
-    "distanceFromPrev": 6.173171875,
+    "fuelFrom0": 286.7821,
+    "fuelFromPrev": 46.1581,
+    "distanceFrom0": 33.6637,
+    "distanceFromPrev": 6.1732,
     "speedV": 388.74,
-    "time": 57.1678210371971
+    "time": 57.1678
   },
   {
     "speedM": 0.66,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 337.0644765625,
-    "fuelFromPrev": 50.2824140625,
-    "distanceFrom0": 40.85684375,
-    "distanceFromPrev": 7.193125,
+    "fuelFrom0": 337.0645,
+    "fuelFromPrev": 50.2824,
+    "distanceFrom0": 40.8568,
+    "distanceFromPrev": 7.1931,
     "speedV": 385.44,
-    "time": 67.1836083437111
+    "time": 67.1836
   },
   {
     "speedM": 0.66,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 394.3496484375,
-    "fuelFromPrev": 57.285171875,
-    "distanceFrom0": 49.7333828125,
-    "distanceFromPrev": 8.8765390625,
+    "fuelFrom0": 394.3496,
+    "fuelFromPrev": 57.2852,
+    "distanceFrom0": 49.7334,
+    "distanceFromPrev": 8.8765,
     "speedV": 382.14,
-    "time": 83.6226006829958
+    "time": 83.6226
   },
   {
     "speedM": 0.66,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuelFrom0": 464.565375,
-    "fuelFromPrev": 70.2157265625,
-    "distanceFrom0": 61.5496953125,
-    "distanceFromPrev": 11.8163125,
+    "fuelFrom0": 464.5654,
+    "fuelFromPrev": 70.2157,
+    "distanceFrom0": 61.5497,
+    "distanceFromPrev": 11.8163,
     "speedV": 378.18,
-    "time": 112.48274631128
+    "time": 112.4827
   },
   {
     "speedM": 0.66,
     "speedOfSound": 573,
     "altitude": 38000,
-    "fuelFrom0": 568.8838125,
-    "fuelFromPrev": 104.3184375,
-    "distanceFrom0": 80.692140625,
-    "distanceFromPrev": 19.1424453125,
+    "fuelFrom0": 568.8838,
+    "fuelFromPrev": 104.3184,
+    "distanceFrom0": 80.6921,
+    "distanceFromPrev": 19.1424,
     "speedV": 378.18,
-    "time": 182.222230485483
+    "time": 182.2222
   },
   {
     "speedM": 0.66,
@@ -2252,117 +2252,117 @@
     "distanceFrom0": 3.4,
     "distanceFromPrev": 3.4,
     "speedV": 414.73,
-    "time": 29.513177247848
+    "time": 29.5132
   },
   {
     "speedM": 0.67,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuelFrom0": 74.921375,
-    "fuelFromPrev": 41.421375,
-    "distanceFrom0": 7.86565625,
-    "distanceFromPrev": 4.46565625,
+    "fuelFrom0": 74.9214,
+    "fuelFromPrev": 41.4214,
+    "distanceFrom0": 7.8657,
+    "distanceFromPrev": 4.4657,
     "speedV": 411.38,
-    "time": 39.0791056930332
+    "time": 39.0791
   },
   {
     "speedM": 0.67,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 116.085890625,
-    "fuelFromPrev": 41.164515625,
-    "distanceFrom0": 12.46153125,
-    "distanceFromPrev": 4.595875,
+    "fuelFrom0": 116.0859,
+    "fuelFromPrev": 41.1645,
+    "distanceFrom0": 12.4615,
+    "distanceFromPrev": 4.5959,
     "speedV": 408.03,
-    "time": 40.5488567017131
+    "time": 40.5489
   },
   {
     "speedM": 0.67,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 157.372875,
-    "fuelFromPrev": 41.286984375,
-    "distanceFrom0": 17.315296875,
-    "distanceFromPrev": 4.853765625,
+    "fuelFrom0": 157.3729,
+    "fuelFromPrev": 41.287,
+    "distanceFrom0": 17.3153,
+    "distanceFromPrev": 4.8538,
     "speedV": 404.68,
-    "time": 43.1786998369082
+    "time": 43.1787
   },
   {
     "speedM": 0.67,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 199.519015625,
-    "fuelFromPrev": 42.146140625,
-    "distanceFrom0": 22.499875,
-    "distanceFromPrev": 5.184578125,
+    "fuelFrom0": 199.519,
+    "fuelFromPrev": 42.1461,
+    "distanceFrom0": 22.4999,
+    "distanceFromPrev": 5.1846,
     "speedV": 401.33,
-    "time": 46.5065687837939
+    "time": 46.5066
   },
   {
     "speedM": 0.67,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 243.2339375,
-    "fuelFromPrev": 43.714921875,
-    "distanceFrom0": 28.13009375,
-    "distanceFromPrev": 5.63021875,
+    "fuelFrom0": 243.2339,
+    "fuelFromPrev": 43.7149,
+    "distanceFrom0": 28.1301,
+    "distanceFromPrev": 5.6302,
     "speedV": 397.98,
-    "time": 50.9291610131162
+    "time": 50.9292
   },
   {
     "speedM": 0.67,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 289.331625,
-    "fuelFromPrev": 46.0976875,
-    "distanceFrom0": 34.3594375,
-    "distanceFromPrev": 6.22934375,
+    "fuelFrom0": 289.3316,
+    "fuelFromPrev": 46.0977,
+    "distanceFrom0": 34.3594,
+    "distanceFromPrev": 6.2293,
     "speedV": 394.63,
-    "time": 56.826996173631
+    "time": 56.827
   },
   {
     "speedM": 0.67,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 339.376453125,
-    "fuelFromPrev": 50.044828125,
-    "distanceFrom0": 41.5846875,
-    "distanceFromPrev": 7.22525,
+    "fuelFrom0": 339.3765,
+    "fuelFromPrev": 50.0448,
+    "distanceFrom0": 41.5847,
+    "distanceFromPrev": 7.2252,
     "speedV": 391.28,
-    "time": 66.4764363115927
+    "time": 66.4764
   },
   {
     "speedM": 0.67,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 396.006796875,
-    "fuelFromPrev": 56.63034375,
-    "distanceFrom0": 50.436265625,
-    "distanceFromPrev": 8.851578125,
+    "fuelFrom0": 396.0068,
+    "fuelFromPrev": 56.6303,
+    "distanceFrom0": 50.4363,
+    "distanceFromPrev": 8.8516,
     "speedV": 387.93,
-    "time": 82.1428640476375
+    "time": 82.1429
   },
   {
     "speedM": 0.67,
     "speedOfSound": 573,
     "altitude": 36000,
-    "fuelFrom0": 464.63875,
-    "fuelFromPrev": 68.6319531250001,
-    "distanceFrom0": 62.077890625,
-    "distanceFromPrev": 11.641625,
+    "fuelFrom0": 464.6388,
+    "fuelFromPrev": 68.632,
+    "distanceFrom0": 62.0779,
+    "distanceFromPrev": 11.6416,
     "speedV": 383.91,
-    "time": 109.165820114089
+    "time": 109.1658
   },
   {
     "speedM": 0.67,
     "speedOfSound": 573,
     "altitude": 38000,
-    "fuelFrom0": 564.588125,
-    "fuelFromPrev": 99.949375,
-    "distanceFrom0": 80.56478125,
-    "distanceFromPrev": 18.486890625,
+    "fuelFrom0": 564.5881,
+    "fuelFromPrev": 99.9494,
+    "distanceFrom0": 80.5648,
+    "distanceFromPrev": 18.4869,
     "speedV": 383.91,
-    "time": 173.355229741346
+    "time": 173.3552
   },
   {
     "speedM": 0.67,
@@ -2384,7 +2384,7 @@
     "distanceFrom0": 3.498,
     "distanceFromPrev": 3.498,
     "speedV": 420.92,
-    "time": 29.9173239570465
+    "time": 29.9173
   },
   {
     "speedM": 0.68,
@@ -2395,7 +2395,7 @@
     "distanceFrom0": 7.989,
     "distanceFromPrev": 4.491,
     "speedV": 417.52,
-    "time": 38.7229354282429
+    "time": 38.7229
   },
   {
     "speedM": 0.68,
@@ -2406,7 +2406,7 @@
     "distanceFrom0": 12.647,
     "distanceFromPrev": 4.658,
     "speedV": 414.12,
-    "time": 40.4926108374384
+    "time": 40.4926
   },
   {
     "speedM": 0.68,
@@ -2417,7 +2417,7 @@
     "distanceFrom0": 17.554,
     "distanceFromPrev": 4.907,
     "speedV": 410.72,
-    "time": 43.0103233346319
+    "time": 43.0103
   },
   {
     "speedM": 0.68,
@@ -2428,7 +2428,7 @@
     "distanceFrom0": 22.771,
     "distanceFromPrev": 5.217,
     "speedV": 407.32,
-    "time": 46.1092016105274
+    "time": 46.1092
   },
   {
     "speedM": 0.68,
@@ -2439,7 +2439,7 @@
     "distanceFrom0": 28.422,
     "distanceFromPrev": 5.651,
     "speedV": 403.92,
-    "time": 50.3654188948307
+    "time": 50.3654
   },
   {
     "speedM": 0.68,
@@ -2450,7 +2450,7 @@
     "distanceFrom0": 34.652,
     "distanceFromPrev": 6.23,
     "speedV": 400.52,
-    "time": 55.9972036352741
+    "time": 55.9972
   },
   {
     "speedM": 0.68,
@@ -2461,7 +2461,7 @@
     "distanceFrom0": 41.837,
     "distanceFromPrev": 7.185,
     "speedV": 397.12,
-    "time": 65.133964544722
+    "time": 65.134
   },
   {
     "speedM": 0.68,
@@ -2472,7 +2472,7 @@
     "distanceFrom0": 50.542,
     "distanceFromPrev": 8.705,
     "speedV": 393.72,
-    "time": 79.5946357817738
+    "time": 79.5946
   },
   {
     "speedM": 0.68,
@@ -2483,7 +2483,7 @@
     "distanceFrom0": 61.784,
     "distanceFromPrev": 11.242,
     "speedV": 389.64,
-    "time": 103.868186017863
+    "time": 103.8682
   },
   {
     "speedM": 0.68,
@@ -2494,7 +2494,7 @@
     "distanceFrom0": 79.028,
     "distanceFromPrev": 17.244,
     "speedV": 389.64,
-    "time": 159.322451493687
+    "time": 159.3225
   },
   {
     "speedM": 0.68,
@@ -2505,7 +2505,7 @@
     "distanceFrom0": 114.46,
     "distanceFromPrev": 35.432,
     "speedV": 389.64,
-    "time": 327.36680012319
+    "time": 327.3668
   },
   {
     "speedM": 0.69,
@@ -2522,122 +2522,122 @@
     "speedM": 0.69,
     "speedOfSound": 614,
     "altitude": 20000,
-    "fuelFrom0": 77.45375,
+    "fuelFrom0": 77.4537,
     "fuelFromPrev": 42.5,
-    "distanceFrom0": 8.3318125,
+    "distanceFrom0": 8.3318,
     "distanceFromPrev": 4.6,
     "speedV": 423.66,
-    "time": 39.0879478827361
+    "time": 39.0879
   },
   {
     "speedM": 0.69,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 119.74428125,
-    "fuelFromPrev": 42.29053125,
-    "distanceFrom0": 13.1695625,
-    "distanceFromPrev": 4.83775,
+    "fuelFrom0": 119.7443,
+    "fuelFromPrev": 42.2905,
+    "distanceFrom0": 13.1696,
+    "distanceFromPrev": 4.8377,
     "speedV": 420.21,
-    "time": 41.4457057185693
+    "time": 41.4457
   },
   {
     "speedM": 0.69,
     "speedOfSound": 604,
     "altitude": 24000,
-    "fuelFrom0": 161.89125,
-    "fuelFromPrev": 42.14696875,
-    "distanceFrom0": 18.24509375,
-    "distanceFromPrev": 5.07553124999999,
+    "fuelFrom0": 161.8913,
+    "fuelFromPrev": 42.147,
+    "distanceFrom0": 18.2451,
+    "distanceFromPrev": 5.0755,
     "speedV": 416.76,
-    "time": 43.8427692196947
+    "time": 43.8428
   },
   {
     "speedM": 0.69,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 204.53853125,
-    "fuelFromPrev": 42.64728125,
-    "distanceFrom0": 23.62175,
-    "distanceFromPrev": 5.37665625,
+    "fuelFrom0": 204.5385,
+    "fuelFromPrev": 42.6473,
+    "distanceFrom0": 23.6217,
+    "distanceFromPrev": 5.3767,
     "speedV": 413.31,
-    "time": 46.8315852507803
+    "time": 46.8316
   },
   {
     "speedM": 0.69,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 248.453875,
-    "fuelFromPrev": 43.91534375,
-    "distanceFrom0": 29.4091875,
-    "distanceFromPrev": 5.7874375,
+    "fuelFrom0": 248.4539,
+    "fuelFromPrev": 43.9153,
+    "distanceFrom0": 29.4092,
+    "distanceFromPrev": 5.7874,
     "speedV": 409.86,
-    "time": 50.8338823012736
+    "time": 50.8339
   },
   {
     "speedM": 0.69,
     "speedOfSound": 589,
     "altitude": 30000,
-    "fuelFrom0": 294.43075,
-    "fuelFromPrev": 45.976875,
-    "distanceFrom0": 35.750875,
-    "distanceFromPrev": 6.3416875,
+    "fuelFrom0": 294.4307,
+    "fuelFromPrev": 45.9769,
+    "distanceFrom0": 35.7509,
+    "distanceFromPrev": 6.3417,
     "speedV": 406.41,
-    "time": 56.1749833911567
+    "time": 56.175
   },
   {
     "speedM": 0.69,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 344.00040625,
-    "fuelFromPrev": 49.56965625,
-    "distanceFrom0": 43.040375,
+    "fuelFrom0": 344.0004,
+    "fuelFromPrev": 49.5697,
+    "distanceFrom0": 43.0404,
     "distanceFromPrev": 7.2895,
     "speedV": 402.96,
-    "time": 65.1235854675402
+    "time": 65.1236
   },
   {
     "speedM": 0.69,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 399.32109375,
-    "fuelFromPrev": 55.3206875,
-    "distanceFrom0": 51.84203125,
-    "distanceFromPrev": 8.80165625,
+    "fuelFrom0": 399.3211,
+    "fuelFromPrev": 55.3207,
+    "distanceFrom0": 51.842,
+    "distanceFromPrev": 8.8017,
     "speedV": 399.51,
-    "time": 79.3120635278216
+    "time": 79.3121
   },
   {
     "speedM": 0.69,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 464.7855,
-    "fuelFromPrev": 65.46440625,
-    "distanceFrom0": 63.13428125,
-    "distanceFromPrev": 11.29225,
+    "fuelFromPrev": 65.4644,
+    "distanceFrom0": 63.1343,
+    "distanceFromPrev": 11.2922,
     "speedV": 395.37,
-    "time": 102.82039608468
+    "time": 102.8204
   },
   {
     "speedM": 0.69,
     "speedOfSound": 573,
     "altitude": 38000,
-    "fuelFrom0": 555.99675,
-    "fuelFromPrev": 91.21125,
-    "distanceFrom0": 80.3100625,
-    "distanceFromPrev": 17.17578125,
+    "fuelFrom0": 555.9968,
+    "fuelFromPrev": 91.2113,
+    "distanceFrom0": 80.3101,
+    "distanceFromPrev": 17.1758,
     "speedV": 395.37,
-    "time": 156.392271796039
+    "time": 156.3923
   },
   {
     "speedM": 0.69,
     "speedOfSound": 573,
     "altitude": 40000,
-    "fuelFrom0": 720.4389375,
-    "fuelFromPrev": 164.4421875,
-    "distanceFrom0": 114.5980625,
+    "fuelFrom0": 720.4389,
+    "fuelFromPrev": 164.4422,
+    "distanceFrom0": 114.5981,
     "distanceFromPrev": 34.288,
     "speedV": 395.37,
-    "time": 312.205781925791
+    "time": 312.2058
   },
   {
     "speedM": 0.7,
@@ -2656,98 +2656,98 @@
     "altitude": 20000,
     "fuelFrom0": 79.6055,
     "fuelFromPrev": 43.7,
-    "distanceFrom0": 8.674625,
+    "distanceFrom0": 8.6746,
     "distanceFromPrev": 4.8,
     "speedV": 429.8,
-    "time": 40.2047463936715
+    "time": 40.2047
   },
   {
     "speedM": 0.7,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 122.8905625,
-    "fuelFromPrev": 43.2850625,
-    "distanceFrom0": 13.692125,
+    "fuelFrom0": 122.8906,
+    "fuelFromPrev": 43.2851,
+    "distanceFrom0": 13.6921,
     "distanceFromPrev": 5.0175,
     "speedV": 426.3,
-    "time": 42.3715693173821
+    "time": 42.3716
   },
   {
     "speedM": 0.7,
     "speedOfSound": 604,
     "altitude": 24000,
     "fuelFrom0": 165.9265,
-    "fuelFromPrev": 43.0359375,
-    "distanceFrom0": 18.9361875,
-    "distanceFromPrev": 5.2440625,
+    "fuelFromPrev": 43.0359,
+    "distanceFrom0": 18.9362,
+    "distanceFromPrev": 5.2441,
     "speedV": 422.8,
-    "time": 44.651430936613
+    "time": 44.6514
   },
   {
     "speedM": 0.7,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 209.3080625,
-    "fuelFromPrev": 43.3815625,
+    "fuelFrom0": 209.3081,
+    "fuelFromPrev": 43.3816,
     "distanceFrom0": 24.4725,
-    "distanceFromPrev": 5.5363125,
+    "distanceFromPrev": 5.5363,
     "speedV": 419.3,
-    "time": 47.5333293584546
+    "time": 47.5333
   },
   {
     "speedM": 0.7,
     "speedOfSound": 594,
     "altitude": 28000,
-    "fuelFrom0": 253.77075,
-    "fuelFromPrev": 44.4626875,
-    "distanceFrom0": 30.396375,
-    "distanceFromPrev": 5.923875,
+    "fuelFrom0": 253.7707,
+    "fuelFromPrev": 44.4627,
+    "distanceFrom0": 30.3964,
+    "distanceFromPrev": 5.9239,
     "speedV": 415.8,
-    "time": 51.288961038961
+    "time": 51.289
   },
   {
     "speedM": 0.7,
     "speedOfSound": 589,
     "altitude": 30000,
     "fuelFrom0": 300.0695,
-    "fuelFromPrev": 46.29875,
-    "distanceFrom0": 36.84975,
-    "distanceFromPrev": 6.453375,
+    "fuelFromPrev": 46.2987,
+    "distanceFrom0": 36.8498,
+    "distanceFromPrev": 6.4534,
     "speedV": 412.3,
-    "time": 56.3476837254427
+    "time": 56.3477
   },
   {
     "speedM": 0.7,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 349.8298125,
-    "fuelFromPrev": 49.7603125000001,
-    "distanceFrom0": 44.24375,
-    "distanceFromPrev": 7.39400000000001,
+    "fuelFrom0": 349.8298,
+    "fuelFromPrev": 49.7603,
+    "distanceFrom0": 44.2437,
+    "distanceFromPrev": 7.394,
     "speedV": 408.8,
-    "time": 65.1135029354208
+    "time": 65.1135
   },
   {
     "speedM": 0.7,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 405.2421875,
-    "fuelFromPrev": 55.412375,
-    "distanceFrom0": 53.1420625,
-    "distanceFromPrev": 8.8983125,
+    "fuelFrom0": 405.2422,
+    "fuelFromPrev": 55.4124,
+    "distanceFrom0": 53.1421,
+    "distanceFromPrev": 8.8983,
     "speedV": 405.3,
-    "time": 79.0375647668393
+    "time": 79.0376
   },
   {
     "speedM": 0.7,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 470.418,
-    "fuelFromPrev": 65.1758125,
-    "distanceFrom0": 64.4845625,
+    "fuelFromPrev": 65.1758,
+    "distanceFrom0": 64.4846,
     "distanceFromPrev": 11.3425,
     "speedV": 401.1,
-    "time": 101.802543006731
+    "time": 101.8025
   },
   {
     "speedM": 0.7,
@@ -2755,21 +2755,21 @@
     "altitude": 38000,
     "fuelFrom0": 560.5135,
     "fuelFromPrev": 90.0955,
-    "distanceFrom0": 81.592125,
-    "distanceFromPrev": 17.1075625,
+    "distanceFrom0": 81.5921,
+    "distanceFromPrev": 17.1076,
     "speedV": 401.1,
-    "time": 153.545811518325
+    "time": 153.5458
   },
   {
     "speedM": 0.7,
     "speedOfSound": 573,
     "altitude": 40000,
-    "fuelFrom0": 718.358875,
-    "fuelFromPrev": 157.845375,
-    "distanceFrom0": 114.736125,
+    "fuelFrom0": 718.3589,
+    "fuelFromPrev": 157.8454,
+    "distanceFrom0": 114.7361,
     "distanceFromPrev": 33.144,
     "speedV": 401.1,
-    "time": 297.477935676888
+    "time": 297.4779
   },
   {
     "speedM": 0.71,
@@ -2791,7 +2791,7 @@
     "distanceFrom0": 9.0025,
     "distanceFromPrev": 5,
     "speedV": 435.94,
-    "time": 41.2900857916227
+    "time": 41.2901
   },
   {
     "speedM": 0.71,
@@ -2802,7 +2802,7 @@
     "distanceFrom0": 14.193,
     "distanceFromPrev": 5.1905,
     "speedV": 432.39,
-    "time": 43.2151529868869
+    "time": 43.2152
   },
   {
     "speedM": 0.71,
@@ -2813,7 +2813,7 @@
     "distanceFrom0": 19.599,
     "distanceFromPrev": 5.406,
     "speedV": 428.84,
-    "time": 45.3819606380001
+    "time": 45.382
   },
   {
     "speedM": 0.71,
@@ -2824,7 +2824,7 @@
     "distanceFrom0": 25.29,
     "distanceFromPrev": 5.691,
     "speedV": 425.29,
-    "time": 48.1732464906299
+    "time": 48.1732
   },
   {
     "speedM": 0.71,
@@ -2835,7 +2835,7 @@
     "distanceFrom0": 31.345,
     "distanceFromPrev": 6.055,
     "speedV": 421.74,
-    "time": 51.6858728126334
+    "time": 51.6859
   },
   {
     "speedM": 0.71,
@@ -2846,7 +2846,7 @@
     "distanceFrom0": 37.905,
     "distanceFromPrev": 6.56,
     "speedV": 418.19,
-    "time": 56.4719385925058
+    "time": 56.4719
   },
   {
     "speedM": 0.71,
@@ -2857,7 +2857,7 @@
     "distanceFrom0": 45.402,
     "distanceFromPrev": 7.497,
     "speedV": 414.64,
-    "time": 65.0906810727378
+    "time": 65.0907
   },
   {
     "speedM": 0.71,
@@ -2868,7 +2868,7 @@
     "distanceFrom0": 54.39,
     "distanceFromPrev": 8.988,
     "speedV": 411.09,
-    "time": 78.7097715828651
+    "time": 78.7098
   },
   {
     "speedM": 0.71,
@@ -2879,7 +2879,7 @@
     "distanceFrom0": 65.7665,
     "distanceFromPrev": 11.3765,
     "speedV": 406.83,
-    "time": 100.669567141066
+    "time": 100.6696
   },
   {
     "speedM": 0.71,
@@ -2890,7 +2890,7 @@
     "distanceFrom0": 82.77,
     "distanceFromPrev": 17.0035,
     "speedV": 406.83,
-    "time": 150.462355283534
+    "time": 150.4624
   },
   {
     "speedM": 0.71,
@@ -2901,7 +2901,7 @@
     "distanceFrom0": 114.5775,
     "distanceFromPrev": 31.8075,
     "speedV": 406.83,
-    "time": 281.461544133913
+    "time": 281.4615
   },
   {
     "speedM": 0.72,
@@ -2920,54 +2920,54 @@
     "altitude": 20000,
     "fuelFrom0": 83.909,
     "fuelFromPrev": 46,
-    "distanceFrom0": 9.36025,
+    "distanceFrom0": 9.3603,
     "distanceFromPrev": 5.2,
     "speedV": 442.08,
-    "time": 42.3452768729642
+    "time": 42.3453
   },
   {
     "speedM": 0.72,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 129.183125,
-    "fuelFromPrev": 45.274125,
-    "distanceFrom0": 14.73725,
+    "fuelFrom0": 129.1831,
+    "fuelFromPrev": 45.2741,
+    "distanceFrom0": 14.7372,
     "distanceFromPrev": 5.377,
     "speedV": 438.48,
-    "time": 44.1461412151068
+    "time": 44.1461
   },
   {
     "speedM": 0.72,
     "speedOfSound": 604,
     "altitude": 24000,
     "fuelFrom0": 173.997,
-    "fuelFromPrev": 44.813875,
-    "distanceFrom0": 20.318375,
-    "distanceFromPrev": 5.581125,
+    "fuelFromPrev": 44.8139,
+    "distanceFrom0": 20.3184,
+    "distanceFromPrev": 5.5811,
     "speedV": 434.88,
-    "time": 46.2013658940397
+    "time": 46.2014
   },
   {
     "speedM": 0.72,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 218.847125,
-    "fuelFromPrev": 44.850125,
+    "fuelFrom0": 218.8471,
+    "fuelFromPrev": 44.8501,
     "distanceFrom0": 26.174,
-    "distanceFromPrev": 5.855625,
+    "distanceFromPrev": 5.8556,
     "speedV": 431.28,
-    "time": 48.8783388981636
+    "time": 48.8783
   },
   {
     "speedM": 0.72,
     "speedOfSound": 594,
     "altitude": 28000,
     "fuelFrom0": 264.4045,
-    "fuelFromPrev": 45.557375,
-    "distanceFrom0": 32.37075,
-    "distanceFromPrev": 6.19675,
+    "fuelFromPrev": 45.5574,
+    "distanceFrom0": 32.3708,
+    "distanceFromPrev": 6.1967,
     "speedV": 427.68,
-    "time": 52.1611952861953
+    "time": 52.1612
   },
   {
     "speedM": 0.72,
@@ -2976,42 +2976,42 @@
     "fuelFrom0": 311.347,
     "fuelFromPrev": 46.9425,
     "distanceFrom0": 39.0475,
-    "distanceFromPrev": 6.67675,
+    "distanceFromPrev": 6.6768,
     "speedV": 424.08,
-    "time": 56.6786926994906
+    "time": 56.6787
   },
   {
     "speedM": 0.72,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 361.488625,
-    "fuelFromPrev": 50.1416250000001,
+    "fuelFrom0": 361.4886,
+    "fuelFromPrev": 50.1416,
     "distanceFrom0": 46.6505,
     "distanceFromPrev": 7.603,
     "speedV": 420.48,
-    "time": 65.0941780821918
+    "time": 65.0942
   },
   {
     "speedM": 0.72,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 417.084375,
-    "fuelFromPrev": 55.59575,
-    "distanceFrom0": 55.742125,
-    "distanceFromPrev": 9.091625,
+    "fuelFrom0": 417.0844,
+    "fuelFromPrev": 55.5958,
+    "distanceFrom0": 55.7421,
+    "distanceFromPrev": 9.0916,
     "speedV": 416.88,
-    "time": 78.5114421416235
+    "time": 78.5114
   },
   {
     "speedM": 0.72,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 481.683,
-    "fuelFromPrev": 64.598625,
-    "distanceFrom0": 67.185125,
+    "fuelFromPrev": 64.5986,
+    "distanceFrom0": 67.1851,
     "distanceFromPrev": 11.443,
     "speedV": 412.56,
-    "time": 99.8516579406632
+    "time": 99.8517
   },
   {
     "speedM": 0.72,
@@ -3019,21 +3019,21 @@
     "altitude": 38000,
     "fuelFrom0": 569.547,
     "fuelFromPrev": 87.864,
-    "distanceFrom0": 84.15625,
-    "distanceFromPrev": 16.971125,
+    "distanceFrom0": 84.1563,
+    "distanceFromPrev": 16.9711,
     "speedV": 412.56,
-    "time": 148.090095986038
+    "time": 148.0901
   },
   {
     "speedM": 0.72,
     "speedOfSound": 573,
     "altitude": 40000,
-    "fuelFrom0": 714.19875,
-    "fuelFromPrev": 144.65175,
-    "distanceFrom0": 115.01225,
+    "fuelFrom0": 714.1988,
+    "fuelFromPrev": 144.6517,
+    "distanceFrom0": 115.0122,
     "distanceFromPrev": 30.856,
     "speedV": 412.56,
-    "time": 269.249563699825
+    "time": 269.2496
   },
   {
     "speedM": 0.73,
@@ -3055,51 +3055,51 @@
     "distanceFrom0": 9.718,
     "distanceFromPrev": 5.4,
     "speedV": 448.22,
-    "time": 43.3715586096114
+    "time": 43.3716
   },
   {
     "speedM": 0.73,
     "speedOfSound": 609,
     "altitude": 22000,
-    "fuelFrom0": 132.49625,
-    "fuelFromPrev": 46.31725,
+    "fuelFrom0": 132.4963,
+    "fuelFromPrev": 46.3173,
     "distanceFrom0": 15.2815,
     "distanceFromPrev": 5.5635,
     "speedV": 444.57,
-    "time": 45.0516229165261
+    "time": 45.0516
   },
   {
     "speedM": 0.73,
     "speedOfSound": 604,
     "altitude": 24000,
     "fuelFrom0": 178.216,
-    "fuelFromPrev": 45.71975,
-    "distanceFrom0": 21.03775,
-    "distanceFromPrev": 5.75625,
+    "fuelFromPrev": 45.7197,
+    "distanceFrom0": 21.0377,
+    "distanceFromPrev": 5.7562,
     "speedV": 440.92,
-    "time": 46.9983216910097
+    "time": 46.9983
   },
   {
     "speedM": 0.73,
     "speedOfSound": 599,
     "altitude": 26000,
-    "fuelFrom0": 223.81925,
-    "fuelFromPrev": 45.60325,
+    "fuelFrom0": 223.8193,
+    "fuelFromPrev": 45.6033,
     "distanceFrom0": 27.058,
-    "distanceFromPrev": 6.02025,
+    "distanceFromPrev": 6.0202,
     "speedV": 437.27,
-    "time": 49.5641137054909
+    "time": 49.5641
   },
   {
     "speedM": 0.73,
     "speedOfSound": 594,
     "altitude": 28000,
     "fuelFrom0": 269.9375,
-    "fuelFromPrev": 46.11825,
+    "fuelFromPrev": 46.1183,
     "distanceFrom0": 33.3965,
     "distanceFromPrev": 6.3385,
     "speedV": 433.62,
-    "time": 52.623495226235
+    "time": 52.6235
   },
   {
     "speedM": 0.73,
@@ -3108,42 +3108,42 @@
     "fuelFrom0": 317.2225,
     "fuelFromPrev": 47.285,
     "distanceFrom0": 40.19,
-    "distanceFromPrev": 6.79349999999999,
+    "distanceFromPrev": 6.7935,
     "speedV": 429.97,
-    "time": 56.8797823103937
+    "time": 56.8798
   },
   {
     "speedM": 0.73,
     "speedOfSound": 584,
     "altitude": 32000,
-    "fuelFrom0": 367.55575,
-    "fuelFromPrev": 50.3332500000001,
+    "fuelFrom0": 367.5557,
+    "fuelFromPrev": 50.3333,
     "distanceFrom0": 47.899,
     "distanceFromPrev": 7.709,
     "speedV": 426.32,
-    "time": 65.0975792831676
+    "time": 65.0976
   },
   {
     "speedM": 0.73,
     "speedOfSound": 579,
     "altitude": 34000,
-    "fuelFrom0": 423.26475,
-    "fuelFromPrev": 55.7089999999999,
-    "distanceFrom0": 57.09425,
-    "distanceFromPrev": 9.19525,
+    "fuelFrom0": 423.2647,
+    "fuelFromPrev": 55.709,
+    "distanceFrom0": 57.0943,
+    "distanceFromPrev": 9.1952,
     "speedV": 422.67,
-    "time": 78.3185463837036
+    "time": 78.3185
   },
   {
     "speedM": 0.73,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 487.658,
-    "fuelFromPrev": 64.39325,
-    "distanceFrom0": 68.60375,
+    "fuelFromPrev": 64.3932,
+    "distanceFrom0": 68.6038,
     "distanceFromPrev": 11.5095,
     "speedV": 418.29,
-    "time": 99.0561572115039
+    "time": 99.0562
   },
   {
     "speedM": 0.73,
@@ -3152,9 +3152,9 @@
     "fuelFrom0": 574.5875,
     "fuelFromPrev": 86.9295,
     "distanceFrom0": 85.5425,
-    "distanceFromPrev": 16.93875,
+    "distanceFromPrev": 16.9387,
     "speedV": 418.29,
-    "time": 145.782830093954
+    "time": 145.7828
   },
   {
     "speedM": 0.73,
@@ -3165,7 +3165,7 @@
     "distanceFrom0": 115.447,
     "distanceFromPrev": 29.9045,
     "speedV": 418.29,
-    "time": 257.372158072151
+    "time": 257.3722
   },
   {
     "speedM": 0.74,
@@ -3187,7 +3187,7 @@
     "distanceFrom0": 10.016,
     "distanceFromPrev": 5.55,
     "speedV": 454.36,
-    "time": 43.9739413680782
+    "time": 43.9739
   },
   {
     "speedM": 0.74,
@@ -3198,7 +3198,7 @@
     "distanceFrom0": 15.739,
     "distanceFromPrev": 5.723,
     "speedV": 450.66,
-    "time": 45.7169484755692
+    "time": 45.7169
   },
   {
     "speedM": 0.74,
@@ -3209,7 +3209,7 @@
     "distanceFrom0": 21.644,
     "distanceFromPrev": 5.905,
     "speedV": 446.96,
-    "time": 47.5613030248792
+    "time": 47.5613
   },
   {
     "speedM": 0.74,
@@ -3220,7 +3220,7 @@
     "distanceFrom0": 27.809,
     "distanceFromPrev": 6.165,
     "speedV": 443.26,
-    "time": 50.0699363804539
+    "time": 50.0699
   },
   {
     "speedM": 0.74,
@@ -3231,7 +3231,7 @@
     "distanceFrom0": 34.268,
     "distanceFromPrev": 6.459,
     "speedV": 439.56,
-    "time": 52.8992628992629
+    "time": 52.8993
   },
   {
     "speedM": 0.74,
@@ -3242,7 +3242,7 @@
     "distanceFrom0": 41.158,
     "distanceFromPrev": 6.89,
     "speedV": 435.86,
-    "time": 56.9081815261781
+    "time": 56.9082
   },
   {
     "speedM": 0.74,
@@ -3253,7 +3253,7 @@
     "distanceFrom0": 48.967,
     "distanceFromPrev": 7.809,
     "speedV": 432.16,
-    "time": 65.050907071455
+    "time": 65.0509
   },
   {
     "speedM": 0.74,
@@ -3264,7 +3264,7 @@
     "distanceFrom0": 58.238,
     "distanceFromPrev": 9.271,
     "speedV": 428.46,
-    "time": 77.8966531298138
+    "time": 77.8967
   },
   {
     "speedM": 0.74,
@@ -3275,7 +3275,7 @@
     "distanceFrom0": 69.749,
     "distanceFromPrev": 11.511,
     "speedV": 424.02,
-    "time": 97.7302957407669
+    "time": 97.7303
   },
   {
     "speedM": 0.74,
@@ -3286,7 +3286,7 @@
     "distanceFrom0": 86.512,
     "distanceFromPrev": 16.763,
     "speedV": 424.02,
-    "time": 142.320645252582
+    "time": 142.3206
   },
   {
     "speedM": 0.74,
@@ -3297,7 +3297,7 @@
     "distanceFrom0": 114.695,
     "distanceFromPrev": 28.183,
     "speedV": 424.02,
-    "time": 239.278335927551
+    "time": 239.2783
   },
   {
     "speedM": 0.75,
@@ -3319,7 +3319,7 @@
     "distanceFrom0": 10.4335,
     "distanceFromPrev": 5.8,
     "speedV": 460.5,
-    "time": 45.3420195439739
+    "time": 45.342
   },
   {
     "speedM": 0.75,
@@ -3330,7 +3330,7 @@
     "distanceFrom0": 16.37,
     "distanceFromPrev": 5.9365,
     "speedV": 456.75,
-    "time": 46.7901477832512
+    "time": 46.7901
   },
   {
     "speedM": 0.75,
@@ -3341,7 +3341,7 @@
     "distanceFrom0": 22.4765,
     "distanceFromPrev": 6.1065,
     "speedV": 453,
-    "time": 48.5284768211921
+    "time": 48.5285
   },
   {
     "speedM": 0.75,
@@ -3352,7 +3352,7 @@
     "distanceFrom0": 28.826,
     "distanceFromPrev": 6.3495,
     "speedV": 449.25,
-    "time": 50.8808013355593
+    "time": 50.8808
   },
   {
     "speedM": 0.75,
@@ -3363,7 +3363,7 @@
     "distanceFrom0": 35.448,
     "distanceFromPrev": 6.622,
     "speedV": 445.5,
-    "time": 53.5111111111111
+    "time": 53.5111
   },
   {
     "speedM": 0.75,
@@ -3374,29 +3374,29 @@
     "distanceFrom0": 42.475,
     "distanceFromPrev": 7.027,
     "speedV": 441.75,
-    "time": 57.2658743633277
+    "time": 57.2659
   },
   {
     "speedM": 0.75,
     "speedOfSound": 584,
     "altitude": 32000,
     "fuelFrom0": 379.69,
-    "fuelFromPrev": 50.7165000000001,
+    "fuelFromPrev": 50.7165,
     "distanceFrom0": 50.396,
     "distanceFromPrev": 7.921,
     "speedV": 438,
-    "time": 65.1041095890411
+    "time": 65.1041
   },
   {
     "speedM": 0.75,
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 435.6255,
-    "fuelFromPrev": 55.9354999999999,
+    "fuelFromPrev": 55.9355,
     "distanceFrom0": 59.7985,
     "distanceFromPrev": 9.4025,
     "speedV": 434.25,
-    "time": 77.9481865284974
+    "time": 77.9482
   },
   {
     "speedM": 0.75,
@@ -3407,18 +3407,18 @@
     "distanceFrom0": 71.441,
     "distanceFromPrev": 11.6425,
     "speedV": 429.75,
-    "time": 97.5287958115183
+    "time": 97.5288
   },
   {
     "speedM": 0.75,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 584.6685,
-    "fuelFromPrev": 85.0605000000001,
+    "fuelFromPrev": 85.0605,
     "distanceFrom0": 88.315,
     "distanceFromPrev": 16.874,
     "speedV": 429.75,
-    "time": 141.352879581152
+    "time": 141.3529
   },
   {
     "speedM": 0.75,
@@ -3429,7 +3429,7 @@
     "distanceFrom0": 116.3165,
     "distanceFromPrev": 28.0015,
     "speedV": 429.75,
-    "time": 234.567539267016
+    "time": 234.5675
   },
   {
     "speedM": 0.76,
@@ -3451,7 +3451,7 @@
     "distanceFrom0": 10.851,
     "distanceFromPrev": 6,
     "speedV": 466.64,
-    "time": 46.2883593348191
+    "time": 46.2884
   },
   {
     "speedM": 0.76,
@@ -3462,7 +3462,7 @@
     "distanceFrom0": 17.001,
     "distanceFromPrev": 6.15,
     "speedV": 462.84,
-    "time": 47.835105003889
+    "time": 47.8351
   },
   {
     "speedM": 0.76,
@@ -3473,7 +3473,7 @@
     "distanceFrom0": 23.309,
     "distanceFromPrev": 6.308,
     "speedV": 459.04,
-    "time": 49.4701986754967
+    "time": 49.4702
   },
   {
     "speedM": 0.76,
@@ -3484,7 +3484,7 @@
     "distanceFrom0": 29.843,
     "distanceFromPrev": 6.534,
     "speedV": 455.24,
-    "time": 51.6703277392145
+    "time": 51.6703
   },
   {
     "speedM": 0.76,
@@ -3495,7 +3495,7 @@
     "distanceFrom0": 36.628,
     "distanceFromPrev": 6.785,
     "speedV": 451.44,
-    "time": 54.1068580542265
+    "time": 54.1069
   },
   {
     "speedM": 0.76,
@@ -3506,7 +3506,7 @@
     "distanceFrom0": 43.792,
     "distanceFromPrev": 7.164,
     "speedV": 447.64,
-    "time": 57.6141542310786
+    "time": 57.6142
   },
   {
     "speedM": 0.76,
@@ -3517,7 +3517,7 @@
     "distanceFrom0": 51.825,
     "distanceFromPrev": 8.033,
     "speedV": 443.84,
-    "time": 65.1559120403749
+    "time": 65.1559
   },
   {
     "speedM": 0.76,
@@ -3528,7 +3528,7 @@
     "distanceFrom0": 61.359,
     "distanceFromPrev": 9.534,
     "speedV": 440.04,
-    "time": 77.9983637851104
+    "time": 77.9984
   },
   {
     "speedM": 0.76,
@@ -3539,7 +3539,7 @@
     "distanceFrom0": 73.133,
     "distanceFromPrev": 11.774,
     "speedV": 435.48,
-    "time": 97.3325985119867
+    "time": 97.3326
   },
   {
     "speedM": 0.76,
@@ -3550,7 +3550,7 @@
     "distanceFrom0": 90.118,
     "distanceFromPrev": 16.985,
     "speedV": 435.48,
-    "time": 140.41058142739
+    "time": 140.4106
   },
   {
     "speedM": 0.76,
@@ -3561,7 +3561,7 @@
     "distanceFrom0": 117.938,
     "distanceFromPrev": 27.82,
     "speedV": 435.48,
-    "time": 229.980710939653
+    "time": 229.9807
   },
   {
     "speedM": 0.77,
@@ -3594,7 +3594,7 @@
     "distanceFrom0": 17.956,
     "distanceFromPrev": 6.5,
     "speedV": 468.93,
-    "time": 49.900838078178
+    "time": 49.9008
   },
   {
     "speedM": 0.77,
@@ -3605,7 +3605,7 @@
     "distanceFrom0": 24.571,
     "distanceFromPrev": 6.615,
     "speedV": 465.08,
-    "time": 51.2040939193257
+    "time": 51.2041
   },
   {
     "speedM": 0.77,
@@ -3616,7 +3616,7 @@
     "distanceFrom0": 31.4015,
     "distanceFromPrev": 6.8305,
     "speedV": 461.23,
-    "time": 53.3135312100254
+    "time": 53.3135
   },
   {
     "speedM": 0.77,
@@ -3627,7 +3627,7 @@
     "distanceFrom0": 38.456,
     "distanceFromPrev": 7.0545,
     "speedV": 457.38,
-    "time": 55.5253837072019
+    "time": 55.5254
   },
   {
     "speedM": 0.77,
@@ -3636,20 +3636,20 @@
     "fuelFrom0": 348.16,
     "fuelFromPrev": 49.456,
     "distanceFrom0": 45.8625,
-    "distanceFromPrev": 7.40649999999999,
+    "distanceFromPrev": 7.4065,
     "speedV": 453.53,
-    "time": 58.7908186889511
+    "time": 58.7908
   },
   {
     "speedM": 0.77,
     "speedOfSound": 584,
     "altitude": 32000,
     "fuelFrom0": 399.9365,
-    "fuelFromPrev": 51.7765000000001,
+    "fuelFromPrev": 51.7765,
     "distanceFrom0": 54.1155,
     "distanceFromPrev": 8.253,
     "speedV": 449.68,
-    "time": 66.0709838107098
+    "time": 66.071
   },
   {
     "speedM": 0.77,
@@ -3660,7 +3660,7 @@
     "distanceFrom0": 63.8635,
     "distanceFromPrev": 9.748,
     "speedV": 445.83,
-    "time": 78.7134109413903
+    "time": 78.7134
   },
   {
     "speedM": 0.77,
@@ -3671,18 +3671,18 @@
     "distanceFrom0": 75.9235,
     "distanceFromPrev": 12.06,
     "speedV": 441.21,
-    "time": 98.4021214387706
+    "time": 98.4021
   },
   {
     "speedM": 0.77,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 607.7525,
-    "fuelFromPrev": 85.8615000000001,
+    "fuelFromPrev": 85.8615,
     "distanceFrom0": 93.2625,
     "distanceFromPrev": 17.339,
     "speedV": 441.21,
-    "time": 141.475487862922
+    "time": 141.4755
   },
   {
     "speedM": 0.77,
@@ -3693,7 +3693,7 @@
     "distanceFrom0": 121.4915,
     "distanceFromPrev": 28.229,
     "speedV": 441.21,
-    "time": 230.331134833753
+    "time": 230.3311
   },
   {
     "speedM": 0.78,
@@ -3726,7 +3726,7 @@
     "distanceFrom0": 18.911,
     "distanceFromPrev": 6.8,
     "speedV": 475.02,
-    "time": 51.5346722243274
+    "time": 51.5347
   },
   {
     "speedM": 0.78,
@@ -3737,7 +3737,7 @@
     "distanceFrom0": 25.833,
     "distanceFromPrev": 6.922,
     "speedV": 471.12,
-    "time": 52.8935303107488
+    "time": 52.8935
   },
   {
     "speedM": 0.78,
@@ -3748,7 +3748,7 @@
     "distanceFrom0": 32.96,
     "distanceFromPrev": 7.127,
     "speedV": 467.22,
-    "time": 54.9146012585078
+    "time": 54.9146
   },
   {
     "speedM": 0.78,
@@ -3759,7 +3759,7 @@
     "distanceFrom0": 40.284,
     "distanceFromPrev": 7.324,
     "speedV": 463.32,
-    "time": 56.9075369075369
+    "time": 56.9075
   },
   {
     "speedM": 0.78,
@@ -3770,7 +3770,7 @@
     "distanceFrom0": 47.933,
     "distanceFromPrev": 7.649,
     "speedV": 459.42,
-    "time": 59.9373122632885
+    "time": 59.9373
   },
   {
     "speedM": 0.78,
@@ -3781,7 +3781,7 @@
     "distanceFrom0": 56.406,
     "distanceFromPrev": 8.473,
     "speedV": 455.52,
-    "time": 66.9625922023182
+    "time": 66.9626
   },
   {
     "speedM": 0.78,
@@ -3792,7 +3792,7 @@
     "distanceFrom0": 66.368,
     "distanceFromPrev": 9.962,
     "speedV": 451.62,
-    "time": 79.4101235552012
+    "time": 79.4101
   },
   {
     "speedM": 0.78,
@@ -3803,18 +3803,18 @@
     "distanceFrom0": 78.714,
     "distanceFromPrev": 12.346,
     "speedV": 446.94,
-    "time": 99.4442207007652
+    "time": 99.4442
   },
   {
     "speedM": 0.78,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 623.701,
-    "fuelFromPrev": 86.8720000000001,
+    "fuelFromPrev": 86.872,
     "distanceFrom0": 96.407,
     "distanceFromPrev": 17.693,
     "speedV": 446.94,
-    "time": 142.513089005236
+    "time": 142.5131
   },
   {
     "speedM": 0.78,
@@ -3825,7 +3825,7 @@
     "distanceFrom0": 125.045,
     "distanceFromPrev": 28.638,
     "speedV": 446.94,
-    "time": 230.672573499799
+    "time": 230.6726
   },
   {
     "speedM": 0.79,
@@ -3858,7 +3858,7 @@
     "distanceFrom0": 20.698,
     "distanceFromPrev": 7.3,
     "speedV": 481.11,
-    "time": 54.6236827336784
+    "time": 54.6237
   },
   {
     "speedM": 0.79,
@@ -3869,7 +3869,7 @@
     "distanceFrom0": 28.189,
     "distanceFromPrev": 7.491,
     "speedV": 477.16,
-    "time": 56.5168916086847
+    "time": 56.5169
   },
   {
     "speedM": 0.79,
@@ -3880,7 +3880,7 @@
     "distanceFrom0": 35.87,
     "distanceFromPrev": 7.681,
     "speedV": 473.21,
-    "time": 58.4340990258025
+    "time": 58.4341
   },
   {
     "speedM": 0.79,
@@ -3891,7 +3891,7 @@
     "distanceFrom0": 43.736,
     "distanceFromPrev": 7.866,
     "speedV": 469.26,
-    "time": 60.3452243958573
+    "time": 60.3452
   },
   {
     "speedM": 0.79,
@@ -3900,9 +3900,9 @@
     "fuelFrom0": 386.891,
     "fuelFromPrev": 53.365,
     "distanceFrom0": 51.886,
-    "distanceFromPrev": 8.15000000000001,
+    "distanceFromPrev": 8.15,
     "speedV": 465.31,
-    "time": 63.0547377017473
+    "time": 63.0547
   },
   {
     "speedM": 0.79,
@@ -3913,7 +3913,7 @@
     "distanceFrom0": 60.893,
     "distanceFromPrev": 9.007,
     "speedV": 461.36,
-    "time": 70.2817756199063
+    "time": 70.2818
   },
   {
     "speedM": 0.79,
@@ -3924,7 +3924,7 @@
     "distanceFrom0": 71.442,
     "distanceFromPrev": 10.549,
     "speedV": 457.41,
-    "time": 83.0248573489866
+    "time": 83.0249
   },
   {
     "speedM": 0.79,
@@ -3935,7 +3935,7 @@
     "distanceFrom0": 84.44,
     "distanceFromPrev": 12.998,
     "speedV": 452.67,
-    "time": 103.370667373583
+    "time": 103.3707
   },
   {
     "speedM": 0.79,
@@ -3946,7 +3946,7 @@
     "distanceFrom0": 103.178,
     "distanceFromPrev": 18.738,
     "speedV": 452.67,
-    "time": 149.019815759825
+    "time": 149.0198
   },
   {
     "speedM": 0.79,
@@ -3957,7 +3957,7 @@
     "distanceFrom0": 133.618,
     "distanceFromPrev": 30.44,
     "speedV": 452.67,
-    "time": 242.083637086619
+    "time": 242.0836
   },
   {
     "speedM": 0.8,
@@ -4001,7 +4001,7 @@
     "distanceFrom0": 32.2755,
     "distanceFromPrev": 8.5,
     "speedV": 483.2,
-    "time": 63.3278145695364
+    "time": 63.3278
   },
   {
     "speedM": 0.8,
@@ -4012,7 +4012,7 @@
     "distanceFrom0": 40.82,
     "distanceFromPrev": 8.5445,
     "speedV": 479.2,
-    "time": 64.190734557596
+    "time": 64.1907
   },
   {
     "speedM": 0.8,
@@ -4023,7 +4023,7 @@
     "distanceFrom0": 49.4645,
     "distanceFromPrev": 8.6445,
     "speedV": 475.2,
-    "time": 65.4886363636364
+    "time": 65.4886
   },
   {
     "speedM": 0.8,
@@ -4034,7 +4034,7 @@
     "distanceFrom0": 58.351,
     "distanceFromPrev": 8.8865,
     "speedV": 471.2,
-    "time": 67.8934634974533
+    "time": 67.8935
   },
   {
     "speedM": 0.8,
@@ -4045,18 +4045,18 @@
     "distanceFrom0": 68.1525,
     "distanceFromPrev": 9.8015,
     "speedV": 467.2,
-    "time": 75.5252568493151
+    "time": 75.5253
   },
   {
     "speedM": 0.8,
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 556.136,
-    "fuelFromPrev": 65.0264999999999,
+    "fuelFromPrev": 65.0265,
     "distanceFrom0": 79.627,
     "distanceFromPrev": 11.4745,
     "speedV": 463.2,
-    "time": 89.1800518134714
+    "time": 89.1801
   },
   {
     "speedM": 0.8,
@@ -4067,18 +4067,18 @@
     "distanceFrom0": 93.756,
     "distanceFromPrev": 14.129,
     "speedV": 458.4,
-    "time": 110.960732984293
+    "time": 110.9607
   },
   {
     "speedM": 0.8,
     "speedOfSound": 573,
     "altitude": 38000,
     "fuelFrom0": 729.8405,
-    "fuelFromPrev": 99.5025000000001,
+    "fuelFromPrev": 99.5025,
     "distanceFrom0": 114.403,
     "distanceFromPrev": 20.647,
     "speedV": 458.4,
-    "time": 162.149214659686
+    "time": 162.1492
   },
   {
     "speedM": 0.8,
@@ -4089,7 +4089,7 @@
     "distanceFrom0": 149.68,
     "distanceFromPrev": 35.277,
     "speedV": 458.4,
-    "time": 277.044502617801
+    "time": 277.0445
   },
   {
     "speedM": 0.81,
@@ -4133,7 +4133,7 @@
     "distanceFrom0": 36.362,
     "distanceFromPrev": 9.4,
     "speedV": 489.24,
-    "time": 69.168506254599
+    "time": 69.1685
   },
   {
     "speedM": 0.81,
@@ -4144,7 +4144,7 @@
     "distanceFrom0": 45.77,
     "distanceFromPrev": 9.408,
     "speedV": 485.19,
-    "time": 69.8052309404563
+    "time": 69.8052
   },
   {
     "speedM": 0.81,
@@ -4155,7 +4155,7 @@
     "distanceFrom0": 55.193,
     "distanceFromPrev": 9.423,
     "speedV": 481.14,
-    "time": 70.5050505050505
+    "time": 70.5051
   },
   {
     "speedM": 0.81,
@@ -4166,40 +4166,40 @@
     "distanceFrom0": 64.816,
     "distanceFromPrev": 9.623,
     "speedV": 477.09,
-    "time": 72.6127145821543
+    "time": 72.6127
   },
   {
     "speedM": 0.81,
     "speedOfSound": 584,
     "altitude": 32000,
     "fuelFrom0": 539.758,
-    "fuelFromPrev": 64.0700000000001,
+    "fuelFromPrev": 64.07,
     "distanceFrom0": 75.412,
     "distanceFromPrev": 10.596,
     "speedV": 473.04,
-    "time": 80.6392694063927
+    "time": 80.6393
   },
   {
     "speedM": 0.81,
     "speedOfSound": 579,
     "altitude": 34000,
     "fuelFrom0": 609.411,
-    "fuelFromPrev": 69.6529999999999,
+    "fuelFromPrev": 69.653,
     "distanceFrom0": 87.812,
     "distanceFromPrev": 12.4,
     "speedV": 468.99,
-    "time": 95.1832661677221
+    "time": 95.1833
   },
   {
     "speedM": 0.81,
     "speedOfSound": 573,
     "altitude": 36000,
     "fuelFrom0": 688.83,
-    "fuelFromPrev": 79.4190000000001,
+    "fuelFromPrev": 79.419,
     "distanceFrom0": 103.072,
     "distanceFromPrev": 15.26,
     "speedV": 464.13,
-    "time": 118.363389567578
+    "time": 118.3634
   },
   {
     "speedM": 0.81,
@@ -4210,7 +4210,7 @@
     "distanceFrom0": 125.628,
     "distanceFromPrev": 22.556,
     "speedV": 464.13,
-    "time": 174.954430870661
+    "time": 174.9544
   },
   {
     "speedM": 0.81,
@@ -4221,7 +4221,7 @@
     "distanceFrom0": 165.742,
     "distanceFromPrev": 40.114,
     "speedV": 464.13,
-    "time": 311.142136901299
+    "time": 311.1421
   },
   {
     "speedM": 0.82,
@@ -4265,7 +4265,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 10.3,
     "speedV": 495.28,
-    "time": 74.8667420449039
+    "time": 74.8667
   },
   {
     "speedM": 0.82,
@@ -4276,7 +4276,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 10.2715,
     "speedV": 491.18,
-    "time": 75.2827883871493
+    "time": 75.2828
   },
   {
     "speedM": 0.82,
@@ -4287,7 +4287,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 10.2015,
     "speedV": 487.08,
-    "time": 75.3991130820398
+    "time": 75.3991
   },
   {
     "speedM": 0.82,
@@ -4298,7 +4298,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 10.3595,
     "speedV": 482.98,
-    "time": 77.2168619818627
+    "time": 77.2169
   },
   {
     "speedM": 0.82,
@@ -4309,7 +4309,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 11.3905,
     "speedV": 478.88,
-    "time": 85.6285499498831
+    "time": 85.6285
   },
   {
     "speedM": 0.82,
@@ -4320,7 +4320,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 13.3255,
     "speedV": 474.78,
-    "time": 101.040060659674
+    "time": 101.0401
   },
   {
     "speedM": 0.82,
@@ -4331,7 +4331,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 16.391,
     "speedV": 469.86,
-    "time": 125.585493551271
+    "time": 125.5855
   },
   {
     "speedM": 0.82,
@@ -4342,7 +4342,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 24.465,
     "speedV": 469.86,
-    "time": 187.447324735027
+    "time": 187.4473
   },
   {
     "speedM": 0.82,
@@ -4353,7 +4353,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 44.951,
     "speedV": 469.86,
-    "time": 344.408121568126
+    "time": 344.4081
   },
   {
     "speedM": 0.83,
@@ -4397,7 +4397,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 11.3,
     "speedV": 501.32,
-    "time": 81.1457751535945
+    "time": 81.1458
   },
   {
     "speedM": 0.83,
@@ -4408,7 +4408,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 11.2715,
     "speedV": 497.17,
-    "time": 81.6167508095823
+    "time": 81.6168
   },
   {
     "speedM": 0.83,
@@ -4419,7 +4419,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 11.2015,
     "speedV": 493.02,
-    "time": 81.792625045637
+    "time": 81.7926
   },
   {
     "speedM": 0.83,
@@ -4430,7 +4430,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 11.3595,
     "speedV": 488.87,
-    "time": 83.6504592222882
+    "time": 83.6505
   },
   {
     "speedM": 0.83,
@@ -4441,7 +4441,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 12.3905,
     "speedV": 484.72,
-    "time": 92.0238488199373
+    "time": 92.0238
   },
   {
     "speedM": 0.83,
@@ -4452,7 +4452,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 14.3255,
     "speedV": 480.57,
-    "time": 107.313814844872
+    "time": 107.3138
   },
   {
     "speedM": 0.83,
@@ -4463,7 +4463,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 17.391,
     "speedV": 475.59,
-    "time": 131.641960512206
+    "time": 131.642
   },
   {
     "speedM": 0.83,
@@ -4474,7 +4474,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 25.465,
     "speedV": 475.59,
-    "time": 192.758468428689
+    "time": 192.7585
   },
   {
     "speedM": 0.83,
@@ -4485,7 +4485,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 45.951,
     "speedV": 475.59,
-    "time": 347.828171324039
+    "time": 347.8282
   },
   {
     "speedM": 0.84,
@@ -4529,7 +4529,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 12.3,
     "speedV": 507.36,
-    "time": 87.275307473983
+    "time": 87.2753
   },
   {
     "speedM": 0.84,
@@ -4540,7 +4540,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 12.2715,
     "speedV": 503.16,
-    "time": 87.7999046029096
+    "time": 87.7999
   },
   {
     "speedM": 0.84,
@@ -4551,7 +4551,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 12.2015,
     "speedV": 498.96,
-    "time": 88.0339105339105
+    "time": 88.0339
   },
   {
     "speedM": 0.84,
@@ -4562,7 +4562,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 12.3595,
     "speedV": 494.76,
-    "time": 89.9308755760369
+    "time": 89.9309
   },
   {
     "speedM": 0.84,
@@ -4573,7 +4573,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 13.3905,
     "speedV": 490.56,
-    "time": 98.266878669276
+    "time": 98.2669
   },
   {
     "speedM": 0.84,
@@ -4584,7 +4584,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 15.3255,
     "speedV": 486.36,
-    "time": 113.438193930422
+    "time": 113.4382
   },
   {
     "speedM": 0.84,
@@ -4595,7 +4595,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 18.391,
     "speedV": 481.32,
-    "time": 137.554225878833
+    "time": 137.5542
   },
   {
     "speedM": 0.84,
@@ -4606,7 +4606,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 26.465,
     "speedV": 481.32,
-    "time": 197.94315632012
+    "time": 197.9432
   },
   {
     "speedM": 0.84,
@@ -4617,7 +4617,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 46.951,
     "speedV": 481.32,
-    "time": 351.166791323859
+    "time": 351.1668
   },
   {
     "speedM": 0.85,
@@ -4661,7 +4661,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 13.3,
     "speedV": 513.4,
-    "time": 93.2606155044799
+    "time": 93.2606
   },
   {
     "speedM": 0.85,
@@ -4672,7 +4672,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 13.2715,
     "speedV": 509.15,
-    "time": 93.8375724246293
+    "time": 93.8376
   },
   {
     "speedM": 0.85,
@@ -4683,7 +4683,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 13.2015,
     "speedV": 504.9,
-    "time": 94.1283422459892
+    "time": 94.1283
   },
   {
     "speedM": 0.85,
@@ -4694,7 +4694,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 13.3595,
     "speedV": 500.65,
-    "time": 96.0635174273445
+    "time": 96.0635
   },
   {
     "speedM": 0.85,
@@ -4705,7 +4705,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 14.3905,
     "speedV": 496.4,
-    "time": 104.36301369863
+    "time": 104.363
   },
   {
     "speedM": 0.85,
@@ -4716,7 +4716,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 16.3255,
     "speedV": 492.15,
-    "time": 119.418469978665
+    "time": 119.4185
   },
   {
     "speedM": 0.85,
@@ -4727,7 +4727,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 19.391,
     "speedV": 487.05,
-    "time": 143.327379119187
+    "time": 143.3274
   },
   {
     "speedM": 0.85,
@@ -4738,7 +4738,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 27.465,
     "speedV": 487.05,
-    "time": 203.005851555282
+    "time": 203.0059
   },
   {
     "speedM": 0.85,
@@ -4749,7 +4749,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 47.951,
     "speedV": 487.05,
-    "time": 354.426855558977
+    "time": 354.4269
   },
   {
     "speedM": 0.86,
@@ -4793,7 +4793,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 14.3,
     "speedV": 519.44,
-    "time": 99.1067303249654
+    "time": 99.1067
   },
   {
     "speedM": 0.86,
@@ -4804,7 +4804,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 14.2715,
     "speedV": 515.14,
-    "time": 99.7348293667741
+    "time": 99.7348
   },
   {
     "speedM": 0.86,
@@ -4815,7 +4815,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 14.2015,
     "speedV": 510.84,
-    "time": 100.08104298802
+    "time": 100.081
   },
   {
     "speedM": 0.86,
@@ -4826,7 +4826,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 14.3595,
     "speedV": 506.54,
-    "time": 102.053539700715
+    "time": 102.0535
   },
   {
     "speedM": 0.86,
@@ -4837,7 +4837,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 15.3905,
     "speedV": 502.24,
-    "time": 110.317378145906
+    "time": 110.3174
   },
   {
     "speedM": 0.86,
@@ -4848,7 +4848,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 17.3255,
     "speedV": 497.94,
-    "time": 125.25966983974
+    "time": 125.2597
   },
   {
     "speedM": 0.86,
@@ -4859,7 +4859,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 20.391,
     "speedV": 492.78,
-    "time": 148.966272981858
+    "time": 148.9663
   },
   {
     "speedM": 0.86,
@@ -4870,7 +4870,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 28.465,
     "speedV": 492.78,
-    "time": 207.950809691952
+    "time": 207.9508
   },
   {
     "speedM": 0.86,
@@ -4881,7 +4881,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 48.951,
     "speedV": 492.78,
-    "time": 357.611104346767
+    "time": 357.6111
   },
   {
     "speedM": 0.87,
@@ -4925,7 +4925,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 15.3,
     "speedV": 525.48,
-    "time": 104.818451701302
+    "time": 104.8185
   },
   {
     "speedM": 0.87,
@@ -4936,7 +4936,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 15.2715,
     "speedV": 521.13,
-    "time": 105.496517183812
+    "time": 105.4965
   },
   {
     "speedM": 0.87,
@@ -4947,7 +4947,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 15.2015,
     "speedV": 516.78,
-    "time": 105.896900034831
+    "time": 105.8969
   },
   {
     "speedM": 0.87,
@@ -4958,7 +4958,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 15.3595,
     "speedV": 512.43,
-    "time": 107.905860312628
+    "time": 107.9059
   },
   {
     "speedM": 0.87,
@@ -4969,7 +4969,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 16.3905,
     "speedV": 508.08,
-    "time": 116.134860651866
+    "time": 116.1349
   },
   {
     "speedM": 0.87,
@@ -4980,7 +4980,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 18.3255,
     "speedV": 503.73,
-    "time": 130.966589244238
+    "time": 130.9666
   },
   {
     "speedM": 0.87,
@@ -4991,7 +4991,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 21.391,
     "speedV": 498.51,
-    "time": 154.47553710056
+    "time": 154.4755
   },
   {
     "speedM": 0.87,
@@ -5002,7 +5002,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 29.465,
     "speedV": 498.51,
-    "time": 212.782090630078
+    "time": 212.7821
   },
   {
     "speedM": 0.87,
@@ -5013,7 +5013,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 49.951,
     "speedV": 498.51,
-    "time": 360.722152012998
+    "time": 360.7222
   },
   {
     "speedM": 0.88,
@@ -5057,7 +5057,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 16.3,
     "speedV": 531.52,
-    "time": 110.400361228176
+    "time": 110.4004
   },
   {
     "speedM": 0.88,
@@ -5068,7 +5068,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 16.2715,
     "speedV": 527.12,
-    "time": 111.127257550463
+    "time": 111.1273
   },
   {
     "speedM": 0.88,
@@ -5079,7 +5079,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 16.2015,
     "speedV": 522.72,
-    "time": 111.580578512397
+    "time": 111.5806
   },
   {
     "speedM": 0.88,
@@ -5090,7 +5090,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 16.3595,
     "speedV": 518.32,
-    "time": 113.625173637907
+    "time": 113.6252
   },
   {
     "speedM": 0.88,
@@ -5101,7 +5101,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 17.3905,
     "speedV": 513.92,
-    "time": 121.820127646326
+    "time": 121.8201
   },
   {
     "speedM": 0.88,
@@ -5112,7 +5112,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 19.3255,
     "speedV": 509.52,
-    "time": 136.543805934998
+    "time": 136.5438
   },
   {
     "speedM": 0.88,
@@ -5123,7 +5123,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 22.391,
     "speedV": 504.24,
-    "time": 159.859590671109
+    "time": 159.8596
   },
   {
     "speedM": 0.88,
@@ -5134,7 +5134,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 30.465,
     "speedV": 504.24,
-    "time": 217.503569728701
+    "time": 217.5036
   },
   {
     "speedM": 0.88,
@@ -5145,7 +5145,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 50.951,
     "speedV": 504.24,
-    "time": 363.762494050452
+    "time": 363.7625
   },
   {
     "speedM": 0.89,
@@ -5189,7 +5189,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 17.3,
     "speedV": 537.56,
-    "time": 115.856834585907
+    "time": 115.8568
   },
   {
     "speedM": 0.89,
@@ -5200,7 +5200,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 17.2715,
     "speedV": 533.11,
-    "time": 116.631464425728
+    "time": 116.6315
   },
   {
     "speedM": 0.89,
@@ -5211,7 +5211,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 17.2015,
     "speedV": 528.66,
-    "time": 117.136533878107
+    "time": 117.1365
   },
   {
     "speedM": 0.89,
@@ -5222,7 +5222,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 17.3595,
     "speedV": 524.21,
-    "time": 119.215963068236
+    "time": 119.216
   },
   {
     "speedM": 0.89,
@@ -5233,7 +5233,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 18.3905,
     "speedV": 519.76,
-    "time": 127.377635831922
+    "time": 127.3776
   },
   {
     "speedM": 0.89,
@@ -5244,7 +5244,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 20.3255,
     "speedV": 515.31,
-    "time": 141.995691913605
+    "time": 141.9957
   },
   {
     "speedM": 0.89,
@@ -5255,7 +5255,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 23.391,
     "speedV": 509.97,
-    "time": 165.122654273781
+    "time": 165.1227
   },
   {
     "speedM": 0.89,
@@ -5266,7 +5266,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 31.465,
     "speedV": 509.97,
-    "time": 222.118948173422
+    "time": 222.1189
   },
   {
     "speedM": 0.89,
@@ -5277,7 +5277,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 51.951,
     "speedV": 509.97,
-    "time": 366.734513794929
+    "time": 366.7345
   },
   {
     "speedM": 0.9,
@@ -5321,7 +5321,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 18.3,
     "speedV": 543.6,
-    "time": 121.192052980132
+    "time": 121.1921
   },
   {
     "speedM": 0.9,
@@ -5332,7 +5332,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 18.2715,
     "speedV": 539.1,
-    "time": 122.013355592654
+    "time": 122.0134
   },
   {
     "speedM": 0.9,
@@ -5343,7 +5343,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 18.2015,
     "speedV": 534.6,
-    "time": 122.569023569024
+    "time": 122.569
   },
   {
     "speedM": 0.9,
@@ -5354,7 +5354,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 18.3595,
     "speedV": 530.1,
-    "time": 124.682512733447
+    "time": 124.6825
   },
   {
     "speedM": 0.9,
@@ -5365,7 +5365,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 19.3905,
     "speedV": 525.6,
-    "time": 132.811643835616
+    "time": 132.8116
   },
   {
     "speedM": 0.9,
@@ -5376,7 +5376,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 21.3255,
     "speedV": 521.1,
-    "time": 147.326424870466
+    "time": 147.3264
   },
   {
     "speedM": 0.9,
@@ -5387,7 +5387,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 24.391,
     "speedV": 515.7,
-    "time": 170.268760907504
+    "time": 170.2688
   },
   {
     "speedM": 0.9,
@@ -5398,7 +5398,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 32.465,
     "speedV": 515.7,
-    "time": 226.631762652705
+    "time": 226.6318
   },
   {
     "speedM": 0.9,
@@ -5409,7 +5409,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 52.951,
     "speedV": 515.7,
-    "time": 369.640488656195
+    "time": 369.6405
   },
   {
     "speedM": 0.91,
@@ -5453,7 +5453,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 19.3,
     "speedV": 549.64,
-    "time": 126.410013827232
+    "time": 126.41
   },
   {
     "speedM": 0.91,
@@ -5464,7 +5464,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 19.2715,
     "speedV": 545.09,
-    "time": 127.276963437231
+    "time": 127.277
   },
   {
     "speedM": 0.91,
@@ -5475,7 +5475,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 19.2015,
     "speedV": 540.54,
-    "time": 127.882117882118
+    "time": 127.8821
   },
   {
     "speedM": 0.91,
@@ -5486,7 +5486,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 19.3595,
     "speedV": 535.99,
-    "time": 130.028918449971
+    "time": 130.0289
   },
   {
     "speedM": 0.91,
@@ -5497,7 +5497,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 20.3905,
     "speedV": 531.44,
-    "time": 138.126223091977
+    "time": 138.1262
   },
   {
     "speedM": 0.91,
@@ -5508,7 +5508,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 22.3255,
     "speedV": 526.89,
-    "time": 152.539998861242
+    "time": 152.54
   },
   {
     "speedM": 0.91,
@@ -5519,7 +5519,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 25.391,
     "speedV": 521.43,
-    "time": 175.301766296531
+    "time": 175.3018
   },
   {
     "speedM": 0.91,
@@ -5530,7 +5530,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 33.465,
     "speedV": 521.43,
-    "time": 231.04539439618
+    "time": 231.0454
   },
   {
     "speedM": 0.91,
@@ -5541,7 +5541,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 53.951,
     "speedV": 521.43,
-    "time": 372.482595938093
+    "time": 372.4826
   },
   {
     "speedM": 0.92,
@@ -5585,7 +5585,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 20.3,
     "speedV": 555.68,
-    "time": 131.514540742874
+    "time": 131.5145
   },
   {
     "speedM": 0.92,
@@ -5596,7 +5596,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 20.2715,
     "speedV": 551.08,
-    "time": 132.426145024316
+    "time": 132.4261
   },
   {
     "speedM": 0.92,
@@ -5607,7 +5607,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 20.2015,
     "speedV": 546.48,
-    "time": 133.079710144927
+    "time": 133.0797
   },
   {
     "speedM": 0.92,
@@ -5618,7 +5618,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 20.3595,
     "speedV": 541.88,
-    "time": 135.259097955267
+    "time": 135.2591
   },
   {
     "speedM": 0.92,
@@ -5629,7 +5629,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 21.3905,
     "speedV": 537.28,
-    "time": 143.325268016677
+    "time": 143.3253
   },
   {
     "speedM": 0.92,
@@ -5640,7 +5640,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 23.3255,
     "speedV": 532.68,
-    "time": 157.640234287002
+    "time": 157.6402
   },
   {
     "speedM": 0.92,
@@ -5651,7 +5651,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 26.391,
     "speedV": 527.16,
-    "time": 180.225358524926
+    "time": 180.2254
   },
   {
     "speedM": 0.92,
@@ -5662,7 +5662,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 34.465,
     "speedV": 527.16,
-    "time": 235.363077623492
+    "time": 235.3631
   },
   {
     "speedM": 0.92,
@@ -5673,7 +5673,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 54.951,
     "speedV": 527.16,
-    "time": 375.26291827908
+    "time": 375.2629
   },
   {
     "speedM": 0.93,
@@ -5717,7 +5717,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 21.3,
     "speedV": 561.72,
-    "time": 136.509292886135
+    "time": 136.5093
   },
   {
     "speedM": 0.93,
@@ -5728,7 +5728,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 21.2715,
     "speedV": 557.07,
-    "time": 137.464591523507
+    "time": 137.4646
   },
   {
     "speedM": 0.93,
@@ -5739,7 +5739,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 21.2015,
     "speedV": 552.42,
-    "time": 138.165526230042
+    "time": 138.1655
   },
   {
     "speedM": 0.93,
@@ -5750,7 +5750,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 21.3595,
     "speedV": 547.77,
-    "time": 140.376800481954
+    "time": 140.3768
   },
   {
     "speedM": 0.93,
@@ -5761,7 +5761,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 22.3905,
     "speedV": 543.12,
-    "time": 148.412505523641
+    "time": 148.4125
   },
   {
     "speedM": 0.93,
@@ -5772,7 +5772,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 24.3255,
     "speedV": 538.47,
-    "time": 162.630787230486
+    "time": 162.6308
   },
   {
     "speedM": 0.93,
@@ -5783,7 +5783,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 27.391,
     "speedV": 532.89,
-    "time": 185.043067049485
+    "time": 185.0431
   },
   {
     "speedM": 0.93,
@@ -5794,7 +5794,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 35.465,
     "speedV": 532.89,
-    "time": 239.587907448066
+    "time": 239.5879
   },
   {
     "speedM": 0.93,
@@ -5805,7 +5805,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 55.951,
     "speedV": 532.89,
-    "time": 377.983448741766
+    "time": 377.9834
   },
   {
     "speedM": 0.94,
@@ -5849,7 +5849,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 22.3,
     "speedV": 567.76,
-    "time": 141.3977737072
+    "time": 141.3978
   },
   {
     "speedM": 0.94,
@@ -5860,7 +5860,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 22.2715,
     "speedV": 563.06,
-    "time": 142.395837033353
+    "time": 142.3958
   },
   {
     "speedM": 0.94,
@@ -5871,7 +5871,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 22.2015,
     "speedV": 558.36,
-    "time": 143.143133462282
+    "time": 143.1431
   },
   {
     "speedM": 0.94,
@@ -5882,7 +5882,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 22.3595,
     "speedV": 553.66,
-    "time": 145.38561572084
+    "time": 145.3856
   },
   {
     "speedM": 0.94,
@@ -5893,7 +5893,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 23.3905,
     "speedV": 548.96,
-    "time": 153.391503934713
+    "time": 153.3915
   },
   {
     "speedM": 0.94,
@@ -5904,7 +5904,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 25.3255,
     "speedV": 544.26,
-    "time": 167.51515819645
+    "time": 167.5152
   },
   {
     "speedM": 0.94,
@@ -5915,7 +5915,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 28.391,
     "speedV": 538.62,
-    "time": 189.758271137351
+    "time": 189.7583
   },
   {
     "speedM": 0.94,
@@ -5926,7 +5926,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 36.465,
     "speedV": 538.62,
-    "time": 243.722847276373
+    "time": 243.7228
   },
   {
     "speedM": 0.94,
@@ -5937,7 +5937,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 56.951,
     "speedV": 538.62,
-    "time": 380.646095577587
+    "time": 380.6461
   },
   {
     "speedM": 0.94,
@@ -5981,7 +5981,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 23.3,
     "speedV": 567.76,
-    "time": 147.73848104833
+    "time": 147.7385
   },
   {
     "speedM": 0.94,
@@ -5992,7 +5992,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 23.2715,
     "speedV": 563.06,
-    "time": 148.789471814727
+    "time": 148.7895
   },
   {
     "speedM": 0.94,
@@ -6003,7 +6003,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 23.2015,
     "speedV": 558.36,
-    "time": 149.590586718246
+    "time": 149.5906
   },
   {
     "speedM": 0.94,
@@ -6014,7 +6014,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 23.3595,
     "speedV": 553.66,
-    "time": 151.887801177618
+    "time": 151.8878
   },
   {
     "speedM": 0.94,
@@ -6025,7 +6025,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 24.3905,
     "speedV": 548.96,
-    "time": 159.949358787526
+    "time": 159.9494
   },
   {
     "speedM": 0.94,
@@ -6036,7 +6036,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 26.3255,
     "speedV": 544.26,
-    "time": 174.129643920185
+    "time": 174.1296
   },
   {
     "speedM": 0.94,
@@ -6047,7 +6047,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 29.391,
     "speedV": 538.62,
-    "time": 196.442018491701
+    "time": 196.442
   },
   {
     "speedM": 0.94,
@@ -6058,7 +6058,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 37.465,
     "speedV": 538.62,
-    "time": 250.406594630723
+    "time": 250.4066
   },
   {
     "speedM": 0.94,
@@ -6069,7 +6069,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 57.951,
     "speedV": 538.62,
-    "time": 387.329842931937
+    "time": 387.3298
   },
   {
     "speedM": 0.95,
@@ -6113,7 +6113,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 24.3,
     "speedV": 573.8,
-    "time": 152.457302195887
+    "time": 152.4573
   },
   {
     "speedM": 0.95,
@@ -6124,7 +6124,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 24.2715,
     "speedV": 569.05,
-    "time": 153.549600210878
+    "time": 153.5496
   },
   {
     "speedM": 0.95,
@@ -6135,7 +6135,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 24.2015,
     "speedV": 564.3,
-    "time": 154.395534290271
+    "time": 154.3955
   },
   {
     "speedM": 0.95,
@@ -6146,7 +6146,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 24.3595,
     "speedV": 559.55,
-    "time": 156.722723617192
+    "time": 156.7227
   },
   {
     "speedM": 0.95,
@@ -6157,7 +6157,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 25.3905,
     "speedV": 554.8,
-    "time": 164.754506128335
+    "time": 164.7545
   },
   {
     "speedM": 0.95,
@@ -6168,7 +6168,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 27.3255,
     "speedV": 550.05,
-    "time": 178.841559858195
+    "time": 178.8416
   },
   {
     "speedM": 0.95,
@@ -6179,7 +6179,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 30.391,
     "speedV": 544.35,
-    "time": 200.987599889777
+    "time": 200.9876
   },
   {
     "speedM": 0.95,
@@ -6190,7 +6190,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 38.465,
     "speedV": 544.35,
-    "time": 254.384127858914
+    "time": 254.3841
   },
   {
     "speedM": 0.95,
@@ -6201,7 +6201,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 58.951,
     "speedV": 544.35,
-    "time": 389.866078809589
+    "time": 389.8661
   },
   {
     "speedM": 0.96,
@@ -6245,7 +6245,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 25.3,
     "speedV": 579.84,
-    "time": 157.077814569536
+    "time": 157.0778
   },
   {
     "speedM": 0.96,
@@ -6256,7 +6256,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 25.2715,
     "speedV": 575.04,
-    "time": 158.210559265442
+    "time": 158.2106
   },
   {
     "speedM": 0.96,
@@ -6267,7 +6267,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 25.2015,
     "speedV": 570.24,
-    "time": 159.100378787879
+    "time": 159.1004
   },
   {
     "speedM": 0.96,
@@ -6278,7 +6278,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 25.3595,
     "speedV": 565.44,
-    "time": 161.456918505942
+    "time": 161.4569
   },
   {
     "speedM": 0.96,
@@ -6289,7 +6289,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 26.3905,
     "speedV": 560.64,
-    "time": 169.459546232877
+    "time": 169.4595
   },
   {
     "speedM": 0.96,
@@ -6300,7 +6300,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 28.3255,
     "speedV": 555.84,
-    "time": 183.455310880829
+    "time": 183.4553
   },
   {
     "speedM": 0.96,
@@ -6311,7 +6311,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 31.391,
     "speedV": 550.08,
-    "time": 205.438481675393
+    "time": 205.4385
   },
   {
     "speedM": 0.96,
@@ -6322,7 +6322,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 39.465,
     "speedV": 550.08,
-    "time": 258.278795811518
+    "time": 258.2788
   },
   {
     "speedM": 0.96,
@@ -6333,7 +6333,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 59.951,
     "speedV": 550.08,
-    "time": 392.34947643979
+    "time": 392.3495
   },
   {
     "speedM": 0.97,
@@ -6377,7 +6377,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 26.3,
     "speedV": 585.88,
-    "time": 161.603058646822
+    "time": 161.6031
   },
   {
     "speedM": 0.97,
@@ -6388,7 +6388,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 26.2715,
     "speedV": 581.03,
-    "time": 162.775416071459
+    "time": 162.7754
   },
   {
     "speedM": 0.97,
@@ -6399,7 +6399,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 26.2015,
     "speedV": 576.18,
-    "time": 163.708216182443
+    "time": 163.7082
   },
   {
     "speedM": 0.97,
@@ -6410,7 +6410,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 26.3595,
     "speedV": 571.33,
-    "time": 166.093501128945
+    "time": 166.0935
   },
   {
     "speedM": 0.97,
@@ -6421,7 +6421,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 27.3905,
     "speedV": 566.48,
-    "time": 174.067575201243
+    "time": 174.0676
   },
   {
     "speedM": 0.97,
@@ -6432,7 +6432,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 29.3255,
     "speedV": 561.63,
-    "time": 187.973933016399
+    "time": 187.9739
   },
   {
     "speedM": 0.97,
@@ -6443,7 +6443,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 32.391,
     "speedV": 555.81,
-    "time": 209.797592702542
+    "time": 209.7976
   },
   {
     "speedM": 0.97,
@@ -6454,7 +6454,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 40.465,
     "speedV": 555.81,
-    "time": 262.09316133211
+    "time": 262.0932
   },
   {
     "speedM": 0.97,
@@ -6465,7 +6465,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 60.951,
     "speedV": 555.81,
-    "time": 394.781669995142
+    "time": 394.7817
   },
   {
     "speedM": 0.98,
@@ -6509,7 +6509,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 27.3,
     "speedV": 591.92,
-    "time": 166.035950804163
+    "time": 166.036
   },
   {
     "speedM": 0.98,
@@ -6520,7 +6520,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 27.2715,
     "speedV": 587.02,
-    "time": 167.247112534496
+    "time": 167.2471
   },
   {
     "speedM": 0.98,
@@ -6531,7 +6531,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 27.2015,
     "speedV": 582.12,
-    "time": 168.222016079159
+    "time": 168.222
   },
   {
     "speedM": 0.98,
@@ -6542,7 +6542,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 27.3595,
     "speedV": 577.22,
-    "time": 170.635459616784
+    "time": 170.6355
   },
   {
     "speedM": 0.98,
@@ -6553,7 +6553,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 28.3905,
     "speedV": 572.32,
-    "time": 178.581562762091
+    "time": 178.5816
   },
   {
     "speedM": 0.98,
@@ -6564,7 +6564,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 30.3255,
     "speedV": 567.42,
-    "time": 192.400338373691
+    "time": 192.4003
   },
   {
     "speedM": 0.98,
@@ -6575,7 +6575,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 33.391,
     "speedV": 561.54,
-    "time": 214.067742280158
+    "time": 214.0677
   },
   {
     "speedM": 0.98,
@@ -6586,7 +6586,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 41.465,
     "speedV": 561.54,
-    "time": 265.829682658404
+    "time": 265.8297
   },
   {
     "speedM": 0.98,
@@ -6597,7 +6597,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 61.951,
     "speedV": 561.54,
-    "time": 397.164226947323
+    "time": 397.1642
   },
   {
     "speedM": 0.99,
@@ -6641,7 +6641,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 28.3,
     "speedV": 597.96,
-    "time": 170.379289584588
+    "time": 170.3793
   },
   {
     "speedM": 0.99,
@@ -6652,7 +6652,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 28.2715,
     "speedV": 593.01,
-    "time": 171.62847169525
+    "time": 171.6285
   },
   {
     "speedM": 0.99,
@@ -6663,7 +6663,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 28.2015,
     "speedV": 588.06,
-    "time": 172.644628099174
+    "time": 172.6446
   },
   {
     "speedM": 0.99,
@@ -6674,7 +6674,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 28.3595,
     "speedV": 583.11,
-    "time": 175.085661367495
+    "time": 175.0857
   },
   {
     "speedM": 0.99,
@@ -6685,7 +6685,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 29.3905,
     "speedV": 578.16,
-    "time": 183.004358655044
+    "time": 183.0044
   },
   {
     "speedM": 0.99,
@@ -6696,7 +6696,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 31.3255,
     "speedV": 573.21,
-    "time": 196.737321400534
+    "time": 196.7373
   },
   {
     "speedM": 0.99,
@@ -6707,7 +6707,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 34.391,
     "speedV": 567.27,
-    "time": 218.251626209741
+    "time": 218.2516
   },
   {
     "speedM": 0.99,
@@ -6718,7 +6718,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 42.465,
     "speedV": 567.27,
-    "time": 269.490718705378
+    "time": 269.4907
   },
   {
     "speedM": 0.99,
@@ -6729,7 +6729,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 62.951,
     "speedV": 567.27,
-    "time": 399.498651435824
+    "time": 399.4987
   },
   {
     "speedM": 1,
@@ -6773,7 +6773,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 29.3,
     "speedV": 604,
-    "time": 174.635761589404
+    "time": 174.6358
   },
   {
     "speedM": 1,
@@ -6784,7 +6784,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 29.2715,
     "speedV": 599,
-    "time": 175.922203672788
+    "time": 175.9222
   },
   {
     "speedM": 1,
@@ -6795,7 +6795,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 29.2015,
     "speedV": 594,
-    "time": 176.978787878788
+    "time": 176.9788
   },
   {
     "speedM": 1,
@@ -6806,7 +6806,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 29.3595,
     "speedV": 589,
-    "time": 179.446859083192
+    "time": 179.4469
   },
   {
     "speedM": 1,
@@ -6817,7 +6817,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 30.3905,
     "speedV": 584,
-    "time": 187.338698630137
+    "time": 187.3387
   },
   {
     "speedM": 1,
@@ -6828,7 +6828,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 32.3255,
     "speedV": 579,
-    "time": 200.987564766839
+    "time": 200.9876
   },
   {
     "speedM": 1,
@@ -6839,7 +6839,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 35.391,
     "speedV": 573,
-    "time": 222.351832460733
+    "time": 222.3518
   },
   {
     "speedM": 1,
@@ -6850,7 +6850,7 @@
     "distanceFrom0": null,
     "distanceFromPrev": 43.465,
     "speedV": 573,
-    "time": 273.078534031414
+    "time": 273.0785
   },
   {
     "speedM": 1,
@@ -6861,6 +6861,6 @@
     "distanceFrom0": null,
     "distanceFromPrev": 63.951,
     "speedV": 573,
-    "time": 401.786387434555
+    "time": 401.7864
   }
 ]
