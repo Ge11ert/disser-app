@@ -47,7 +47,8 @@ export default class FlightProfileParser {
       const profileData = formattedData.map((row) => {
         return row.reduce<Record<string, number>>((acc, item, index) => {
           const name = this.profileType === 'climb' ? climbProfileNames[index] : cruiseProfileNames[index];
-          acc[name] = item;
+          const numPrecision = (name === 'speedM' || name === 'speedV') ? 2 : 4;
+          acc[name] = getWithPrecision(item, numPrecision);
           return acc;
         }, {});
       });
@@ -58,4 +59,12 @@ export default class FlightProfileParser {
 
 function isString(item: any): item is string {
   return (typeof item === 'string' || item instanceof String);
+}
+
+function getWithPrecision(num: number, precision: number) {
+  if (Number.isInteger(num) || Number.isNaN(num)) {
+    return num;
+  }
+
+  return parseFloat(num.toFixed(precision));
 }
