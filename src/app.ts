@@ -197,7 +197,7 @@ export default class DisserApp implements DisserAppAPI {
     if (prevAltitude !== null) {
       prevAltAirConditions = this.airConditionsPerAlt[prevAltitude];
       try {
-        ascentSpecifications = extractAscentSpecifications(speedM, altitude, airConditions, climbProfile, entryPoint);
+        ascentSpecifications = extractAscentSpecifications(speedM, altitude, prevAltAirConditions, climbProfile, entryPoint);
         climbOffsetXInMiles = Math.cos(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
         climbOffsetYInMiles = Math.sin(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
         climbOffsetXInCells = fromMilesToGridUnits(climbOffsetXInMiles, cell.H_SIZE, 0.52);
