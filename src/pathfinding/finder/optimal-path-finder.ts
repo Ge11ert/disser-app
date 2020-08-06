@@ -92,7 +92,7 @@ export default class OptimalPathFinder {
         if (timeFlightCost < minimumTimeFlightCost) {
           minimumTimeFlightCost = timeFlightCost;
           timeOptimalPath = {
-            flightCost: fuelFlightCost,
+            flightCost: timeFlightCost,
             fuel: fuelConsumption,
             time: timeSpent,
             distance: flightDistance,
@@ -108,7 +108,7 @@ export default class OptimalPathFinder {
         if (combinedFlightCost < minimumCombinedFlightCost) {
           minimumCombinedFlightCost = combinedFlightCost;
           combinedOptimalPath = {
-            flightCost: fuelFlightCost,
+            flightCost: combinedFlightCost,
             fuel: fuelConsumption,
             time: timeSpent,
             distance: flightDistance,
