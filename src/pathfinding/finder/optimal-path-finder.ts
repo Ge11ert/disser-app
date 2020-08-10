@@ -28,6 +28,17 @@ const costFactor = {
   },
 };
 
+const emptyOptimalPath: OptimalPath = {
+  flightCost: 0,
+  fuel: 0,
+  time: 0,
+  distance: 0,
+  speed: 0,
+  altitude: 0,
+  path: [],
+  averageWind: 0,
+};
+
 // TODO: брать из приложения
 const minMach = 0.71;
 const maxMach = 0.81;
@@ -46,9 +57,9 @@ export default class OptimalPathFinder {
     let minimumFuelFlightCost = Number.MAX_SAFE_INTEGER;
     let minimumTimeFlightCost = Number.MAX_SAFE_INTEGER;
     let minimumCombinedFlightCost = Number.MAX_SAFE_INTEGER;
-    let fuelOptimalPath: OptimalPath|null = null;
-    let timeOptimalPath: OptimalPath|null = null;
-    let combinedOptimalPath: OptimalPath|null = null;
+    let fuelOptimalPath: OptimalPath = emptyOptimalPath;
+    let timeOptimalPath: OptimalPath = emptyOptimalPath;
+    let combinedOptimalPath: OptimalPath = emptyOptimalPath;
 
     const flightCostLog: {
       fuel: [number, number, number][],
@@ -126,8 +137,7 @@ export default class OptimalPathFinder {
     this.fuelOptimalPath = fuelOptimalPath;
     this.timeOptimalPath = timeOptimalPath;
     this.combinedOptimalPath = combinedOptimalPath;
-    this.rtaOptimalPath = fuelOptimalPath ? this.findRTAOptimalPath(fuelOptimalPath) : null;
-    console.log('finished');
+    this.rtaOptimalPath = this.findRTAOptimalPath(fuelOptimalPath);
   }
 
   findRTAOptimalPath(fuelOptimalPath: OptimalPath): OptimalPath|null {
