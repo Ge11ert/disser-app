@@ -28,6 +28,17 @@ const costFactor = {
   },
 };
 
+const emptyOptimalPath: OptimalPath = {
+  flightCost: 0,
+  fuel: 0,
+  time: 0,
+  distance: 0,
+  speed: 0,
+  altitude: 0,
+  path: [],
+  averageWind: 0,
+};
+
 // TODO: брать из приложения
 const minMach = 0.71;
 const maxMach = 0.81;
@@ -46,9 +57,9 @@ export default class OptimalPathFinder {
     let minimumFuelFlightCost = Number.MAX_SAFE_INTEGER;
     let minimumTimeFlightCost = Number.MAX_SAFE_INTEGER;
     let minimumCombinedFlightCost = Number.MAX_SAFE_INTEGER;
-    let fuelOptimalPath: OptimalPath|null = null;
-    let timeOptimalPath: OptimalPath|null = null;
-    let combinedOptimalPath: OptimalPath|null = null;
+    let fuelOptimalPath: OptimalPath = emptyOptimalPath;
+    let timeOptimalPath: OptimalPath = emptyOptimalPath;
+    let combinedOptimalPath: OptimalPath = emptyOptimalPath;
 
     const flightCostLog: {
       fuel: [number, number, number][],
@@ -92,7 +103,7 @@ export default class OptimalPathFinder {
         if (timeFlightCost < minimumTimeFlightCost) {
           minimumTimeFlightCost = timeFlightCost;
           timeOptimalPath = {
-            flightCost: fuelFlightCost,
+            flightCost: timeFlightCost,
             fuel: fuelConsumption,
             time: timeSpent,
             distance: flightDistance,
@@ -108,7 +119,7 @@ export default class OptimalPathFinder {
         if (combinedFlightCost < minimumCombinedFlightCost) {
           minimumCombinedFlightCost = combinedFlightCost;
           combinedOptimalPath = {
-            flightCost: fuelFlightCost,
+            flightCost: combinedFlightCost,
             fuel: fuelConsumption,
             time: timeSpent,
             distance: flightDistance,
@@ -123,11 +134,14 @@ export default class OptimalPathFinder {
       }
     }
 
+    flightCostLog.fuel = flightCostLog.fuel.sort(compareFn);
+    flightCostLog.time = flightCostLog.time.sort(compareFn);
+    flightCostLog.combined = flightCostLog.combined.sort(compareFn);
+
     this.fuelOptimalPath = fuelOptimalPath;
     this.timeOptimalPath = timeOptimalPath;
     this.combinedOptimalPath = combinedOptimalPath;
-    this.rtaOptimalPath = fuelOptimalPath ? this.findRTAOptimalPath(fuelOptimalPath) : null;
-    console.log('finished');
+    this.rtaOptimalPath = this.findRTAOptimalPath(fuelOptimalPath);
   }
 
   findRTAOptimalPath(fuelOptimalPath: OptimalPath): OptimalPath|null {
@@ -157,4 +171,12 @@ function getFlightCost(fuelBurned: number, time: number, costFactor: { Cf: numbe
 
 function summarize(altSummary: AltitudeRun, fieldName: 'fuelBurnInKgs'|'timeInHours'|'distanceInMiles'): number {
   return altSummary.ascent[fieldName] + altSummary.cruise[fieldName] + altSummary.descent[fieldName];
+}
+
+function compareFn(a: [number, number, number], b: [number, number, number]) {
+  if (a[0] === b[0]) {
+    return a[1] < b[1] ? -1 : 1;
+  }
+
+  return 0;
 }

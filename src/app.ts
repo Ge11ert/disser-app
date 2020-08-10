@@ -122,19 +122,20 @@ export default class DisserApp implements DisserAppAPI {
   }
 
   performSpeedCycleStep(speedValue: number): SpeedRun {
-    const operatingAlt = this.possibleAltitudeList.filter(alt => (alt >= this.geo.startAltInFeet));
+    const upperOperatingAlt = this.possibleAltitudeList.filter(alt => (alt >= this.geo.startAltInFeet));
+    const lowerOperatingAlt = this.possibleAltitudeList.filter(alt => (alt <= this.geo.startAltInFeet)).reverse();
     const climbProfileForCurrentSpeed = getClimbProfileRowsBySpeed(speedValue);
     const descentProfileForCurrentSpeed = getDescentProfileRowsBySpeed(speedValue);
-
-    this.lastUsedEntryPoint = {...this.initialEntryPoint};
-    this.lastUsedExitPoint = {...this.initialExitPoint};
 
     // Структура, в которой хранится проход по всем высотам для текущей скорости в формате «высота : данные»
     const singleSpeedRun: SpeedRun = new Map<number, AltitudeRun>();
 
-    for (let i = 0; i < operatingAlt.length; i++) {
-      const currentAlt = operatingAlt[i];
-      const prevAlt = i > 0 ? operatingAlt[i - 1] : null;
+    this.lastUsedEntryPoint = {...this.initialEntryPoint};
+    this.lastUsedExitPoint = {...this.initialExitPoint};
+
+    for (let i = 0; i < upperOperatingAlt.length; i++) {
+      const currentAlt = upperOperatingAlt[i];
+      const prevAlt = i > 0 ? upperOperatingAlt[i - 1] : null;
       const [canContinue, altitudeRunSummary] = this.performAltitudeCycleStep(
         speedValue,
         currentAlt,
@@ -148,7 +149,30 @@ export default class DisserApp implements DisserAppAPI {
         singleSpeedRun.set(currentAlt, currentAltitudeRunSummary);
       }
       if (!canContinue) {
-        return singleSpeedRun;
+        break;
+      }
+    }
+
+    this.lastUsedEntryPoint = {...this.initialEntryPoint};
+    this.lastUsedExitPoint = {...this.initialExitPoint};
+
+    for (let i = 0; i < lowerOperatingAlt.length; i++) {
+      const currentAlt = lowerOperatingAlt[i];
+      const prevAlt = i > 0 ? lowerOperatingAlt[i - 1] : null;
+      const [canContinue, altitudeRunSummary] = this.performAltitudeCycleStep(
+        speedValue,
+        currentAlt,
+        prevAlt,
+        climbProfileForCurrentSpeed,
+        descentProfileForCurrentSpeed,
+      );
+      if (altitudeRunSummary) {
+        const prevSummary = prevAlt ? singleSpeedRun.get(prevAlt) : undefined;
+        const currentAltitudeRunSummary: AltitudeRun = combineWithPrev(altitudeRunSummary, prevSummary);
+        singleSpeedRun.set(currentAlt, currentAltitudeRunSummary);
+      }
+      if (!canContinue) {
+        break;
       }
     }
 
@@ -163,7 +187,6 @@ export default class DisserApp implements DisserAppAPI {
     descentProfile: ClimbDescentProfile,
   ): [boolean, AltitudeRun?] {
     const airConditions = this.airConditionsPerAlt[altitude];
-    let prevAltAirConditions: AirConditions|null = null;
     if (airConditions === undefined) {
       throw new Error(`No air conditions added for altitude ${altitude}`);
     }
@@ -184,33 +207,30 @@ export default class DisserApp implements DisserAppAPI {
       averageWind: 0,
     };
 
-    let climbOffsetXInMiles = 0;
-    let climbOffsetYInMiles = 0;
-    let climbOffsetXInCells = 0;
-    let climbOffsetYInCells = 0;
-
-    let descentOffsetXInMiles = 0;
-    let descentOffsetYInMiles = 0;
-    let descentOffsetXInCells = 0;
-    let descentOffsetYInCells = 0;
-
     if (prevAltitude !== null) {
-      prevAltAirConditions = this.airConditionsPerAlt[prevAltitude];
+      const prevAltAirConditions = this.airConditionsPerAlt[prevAltitude];
+      let nextEntryPoint = { ...entryPoint };
+      let nextExitPoint = { ...exitPoint };
+
       try {
-        ascentSpecifications = extractAscentSpecifications(speedM, altitude, airConditions, climbProfile, entryPoint);
-        climbOffsetXInMiles = Math.cos(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
-        climbOffsetYInMiles = Math.sin(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
-        climbOffsetXInCells = fromMilesToGridUnits(climbOffsetXInMiles, cell.H_SIZE, 0.52);
-        climbOffsetYInCells = fromMilesToGridUnits(climbOffsetYInMiles, cell.V_SIZE, 0.52);
+        const res = this.getNextEntryPoint(
+          speedM, entryPoint, exitPoint,
+          altitude, airConditions, climbProfile,
+          prevAltitude, prevAltAirConditions, descentProfile,
+        );
+
+        nextEntryPoint = res.nextEntryPoint;
+        if (res.ascentSpec) {
+          ascentSpecifications = res.ascentSpec;
+        }
+
+        if (res.descentSpec) {
+          descentSpecifications = res.descentSpec;
+        }
       } catch (e) {
         // TODO: перехватываем ошибку, если с учётом ветра скорость вышла за диапазон, и абортим текущий шаг по высоте
         return [false];
       }
-
-      const nextEntryPoint = {
-        x: this.lastUsedEntryPoint.x + climbOffsetXInCells,
-        y: this.lastUsedEntryPoint.y + climbOffsetYInCells,
-      };
 
       const forbiddenAreasDuringClimb = checkPrevAltitudeForbiddenAreas(
         entryPoint,
@@ -222,30 +242,27 @@ export default class DisserApp implements DisserAppAPI {
         return [false];
       }
 
-      ascentSpecifications.averageWind = (getWindAtPoint(entryPoint, prevAltAirConditions) + getWindAtPoint(nextEntryPoint, airConditions)) / 2;
       entryPoint = nextEntryPoint;
 
       try {
-        descentSpecifications = extractDescentSpecifications(
-          speedM,
-          prevAltitude,
-          prevAltAirConditions,
-          descentProfile,
-          exitPoint,
+        const res = this.getNextExitPoint(
+          speedM, entryPoint, exitPoint,
+          altitude, airConditions, climbProfile,
+          prevAltitude, prevAltAirConditions, descentProfile,
         );
-        descentOffsetXInMiles = Math.cos(this.usedPathAngle) * descentSpecifications.distanceInMiles;
-        descentOffsetYInMiles = Math.sin(this.usedPathAngle) * descentSpecifications.distanceInMiles;
-        descentOffsetXInCells = fromMilesToGridUnits(descentOffsetXInMiles, cell.H_SIZE, 0.52);
-        descentOffsetYInCells = fromMilesToGridUnits(descentOffsetYInMiles, cell.V_SIZE, 0.52);
+
+        nextExitPoint = res.nextExitPoint;
+        if (res.ascentSpec) {
+          ascentSpecifications = res.ascentSpec;
+        }
+
+        if (res.descentSpec) {
+          descentSpecifications = res.descentSpec;
+        }
       } catch (e) {
         // TODO: перехватываем ошибку, если с учётом ветра скорость вышла за диапазон, и абортим текущий шаг по высоте
         return [false];
       }
-
-      const nextExitPoint = {
-        x: this.lastUsedExitPoint.x - descentOffsetXInCells,
-        y: this.lastUsedExitPoint.y - descentOffsetYInCells,
-      };
 
       const forbiddenAreasDuringDescent = checkPrevAltitudeForbiddenAreas(
         nextExitPoint,
@@ -257,7 +274,6 @@ export default class DisserApp implements DisserAppAPI {
         return [false];
       }
 
-      descentSpecifications.averageWind = (getWindAtPoint(exitPoint, prevAltAirConditions) + getWindAtPoint(nextExitPoint, airConditions)) / 2;
       exitPoint = nextExitPoint;
     }
 
@@ -403,6 +419,128 @@ export default class DisserApp implements DisserAppAPI {
     const diffInSeconds = Math.abs(differenceInSeconds(startDate, endDate));
     const diffInHours = diffInSeconds / 3600;
     return diffInHours;
+  }
+
+  getNextEntryPoint(
+    speedM: number,
+    prevEntryPoint: { x: number, y: number }, prevExitPoint: { x: number, y: number },
+    altitude: number, airConditions: AirConditions, climbProfile: ClimbDescentProfile,
+    prevAltitude: number, prevAltAirConditions: AirConditions, descentProfile: ClimbDescentProfile,
+  ): { nextEntryPoint: { x: number, y: number }, ascentSpec?: AltitudeRun['ascent'], descentSpec?: AltitudeRun['descent'] } {
+    // от стартовой высоты идём вниз, а не вверх, поэтому сначала снижение, а потом набор
+    const isGettingLow = altitude < prevAltitude;
+
+    if (isGettingLow) {
+      const descentSpecifications = extractDescentSpecifications(
+        speedM, altitude, prevAltAirConditions, descentProfile, prevEntryPoint,
+      );
+
+      if (!descentSpecifications.distanceInMiles) {
+        throw new Error(`Cannot descent to alt ${altitude} at speed ${speedM}`);
+      }
+
+      const descentOffsetXInMiles = Math.cos(this.usedPathAngle) * descentSpecifications.distanceInMiles;
+      const descentOffsetYInMiles = Math.sin(this.usedPathAngle) * descentSpecifications.distanceInMiles;
+      const descentOffsetXInCells = fromMilesToGridUnits(descentOffsetXInMiles, cell.H_SIZE, 0.52);
+      const descentOffsetYInCells = fromMilesToGridUnits(descentOffsetYInMiles, cell.V_SIZE, 0.52);
+
+      const nextEntryPoint = {
+        x: prevEntryPoint.x + descentOffsetXInCells,
+        y: prevEntryPoint.y + descentOffsetYInCells,
+      };
+
+      descentSpecifications.averageWind = (getWindAtPoint(prevEntryPoint, prevAltAirConditions) + getWindAtPoint(nextEntryPoint, airConditions)) / 2;
+
+      return {
+        nextEntryPoint,
+        descentSpec: descentSpecifications,
+      };
+    }
+
+    const ascentSpecifications = extractAscentSpecifications(
+      speedM, altitude, prevAltAirConditions, climbProfile, prevEntryPoint
+    );
+
+    if (!ascentSpecifications.distanceInMiles) {
+      throw new Error(`Cannot climb to alt ${altitude} at speed ${speedM}`);
+    }
+
+    const climbOffsetXInMiles = Math.cos(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
+    const climbOffsetYInMiles = Math.sin(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
+    const climbOffsetXInCells = fromMilesToGridUnits(climbOffsetXInMiles, cell.H_SIZE, 0.52);
+    const climbOffsetYInCells = fromMilesToGridUnits(climbOffsetYInMiles, cell.V_SIZE, 0.52);
+    const nextEntryPoint = {
+      x: prevEntryPoint.x + climbOffsetXInCells,
+      y: prevEntryPoint.y + climbOffsetYInCells,
+    };
+
+    ascentSpecifications.averageWind = (getWindAtPoint(prevEntryPoint, prevAltAirConditions) + getWindAtPoint(nextEntryPoint, airConditions)) / 2;
+
+    return {
+      nextEntryPoint,
+      ascentSpec: ascentSpecifications,
+    };
+  }
+
+  getNextExitPoint(
+    speedM: number,
+    prevEntryPoint: { x: number, y: number }, prevExitPoint: { x: number, y: number },
+    altitude: number, airConditions: AirConditions, climbProfile: ClimbDescentProfile,
+    prevAltitude: number, prevAltAirConditions: AirConditions, descentProfile: ClimbDescentProfile,
+  ): { nextExitPoint: { x: number, y: number }, ascentSpec?: AltitudeRun['ascent'], descentSpec?: AltitudeRun['descent'] } {
+    // от стартовой высоты идём вниз, а не вверх, поэтому сначала снижение, а потом набор
+    const isGettingLow = altitude < prevAltitude;
+
+    if (isGettingLow) {
+      const ascentSpecifications = extractAscentSpecifications(
+        speedM, prevAltitude, prevAltAirConditions, climbProfile, prevExitPoint
+      );
+
+      if (!ascentSpecifications.distanceInMiles) {
+        throw new Error(`Cannot climb to alt ${altitude} at speed ${speedM}`);
+      }
+
+      const climbOffsetXInMiles = Math.cos(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
+      const climbOffsetYInMiles = Math.sin(this.usedPathAngle) * ascentSpecifications.distanceInMiles;
+      const climbOffsetXInCells = fromMilesToGridUnits(climbOffsetXInMiles, cell.H_SIZE, 0.52);
+      const climbOffsetYInCells = fromMilesToGridUnits(climbOffsetYInMiles, cell.V_SIZE, 0.52);
+
+      const nextExitPoint = {
+        x: prevExitPoint.x - climbOffsetXInCells,
+        y: prevExitPoint.y - climbOffsetYInCells,
+      };
+
+      ascentSpecifications.averageWind = (getWindAtPoint(prevExitPoint, prevAltAirConditions) + getWindAtPoint(nextExitPoint, airConditions)) / 2;
+
+      return {
+        nextExitPoint,
+        ascentSpec: ascentSpecifications,
+      };
+    }
+
+    const descentSpecifications = extractDescentSpecifications(
+      speedM, prevAltitude, prevAltAirConditions, descentProfile, prevExitPoint,
+    );
+
+    if (!descentSpecifications.distanceInMiles) {
+      throw new Error(`Cannot descent to alt ${altitude} at speed ${speedM}`);
+    }
+
+    const descentOffsetXInMiles = Math.cos(this.usedPathAngle) * descentSpecifications.distanceInMiles;
+    const descentOffsetYInMiles = Math.sin(this.usedPathAngle) * descentSpecifications.distanceInMiles;
+    const descentOffsetXInCells = fromMilesToGridUnits(descentOffsetXInMiles, cell.H_SIZE, 0.52);
+    const descentOffsetYInCells = fromMilesToGridUnits(descentOffsetYInMiles, cell.V_SIZE, 0.52);
+    const nextExitPoint = {
+      x: prevExitPoint.x - descentOffsetXInCells,
+      y: prevExitPoint.y - descentOffsetYInCells,
+    };
+
+    descentSpecifications.averageWind = (getWindAtPoint(prevExitPoint, prevAltAirConditions) + getWindAtPoint(nextExitPoint, airConditions)) / 2;
+
+    return {
+      nextExitPoint,
+      descentSpec: descentSpecifications,
+    };
   }
 };
 
