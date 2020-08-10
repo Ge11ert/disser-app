@@ -134,6 +134,10 @@ export default class OptimalPathFinder {
       }
     }
 
+    flightCostLog.fuel = flightCostLog.fuel.sort(compareFn);
+    flightCostLog.time = flightCostLog.time.sort(compareFn);
+    flightCostLog.combined = flightCostLog.combined.sort(compareFn);
+
     this.fuelOptimalPath = fuelOptimalPath;
     this.timeOptimalPath = timeOptimalPath;
     this.combinedOptimalPath = combinedOptimalPath;
@@ -167,4 +171,12 @@ function getFlightCost(fuelBurned: number, time: number, costFactor: { Cf: numbe
 
 function summarize(altSummary: AltitudeRun, fieldName: 'fuelBurnInKgs'|'timeInHours'|'distanceInMiles'): number {
   return altSummary.ascent[fieldName] + altSummary.cruise[fieldName] + altSummary.descent[fieldName];
+}
+
+function compareFn(a: [number, number, number], b: [number, number, number]) {
+  if (a[0] === b[0]) {
+    return a[1] < b[1] ? -1 : 1;
+  }
+
+  return 0;
 }
