@@ -1,4 +1,5 @@
 import { getCruiseProfileRowsByAltitude } from '../../flight-profiles';
+import settings from '../../app.settings';
 
 import type { TotalRun, AltitudeRun } from '../../types/interfaces';
 
@@ -141,10 +142,41 @@ export default class OptimalPathFinder {
     this.fuelOptimalPath = fuelOptimalPath;
     this.timeOptimalPath = timeOptimalPath;
     this.combinedOptimalPath = combinedOptimalPath;
-    this.rtaOptimalPath = this.findRTAOptimalPath(fuelOptimalPath);
+
+    const arrivalTimeConstraints = this.calculateTimeArrivalConstraints(fuelOptimalPath);
+
+    this.rtaOptimalPath = this.findRTAOptimalPath(fuelOptimalPath, arrivalTimeConstraints);
   }
 
-  findRTAOptimalPath(fuelOptimalPath: OptimalPath): OptimalPath|null {
+  calculateTimeArrivalConstraints(fuelOptimalPath: OptimalPath): { min: number, max: number } {
+    const profileRowForAltitude = getCruiseProfileRowsByAltitude(fuelOptimalPath.altitude);
+    const speedOfSound = profileRowForAltitude[0].speedOfSound;
+
+    const minimumAirSpeed = settings.environment.minM * speedOfSound; // knots
+    const maximumAirSpeed = settings.environment.maxM * speedOfSound; // knots
+
+    const minGroundSpeed = minimumAirSpeed + fuelOptimalPath.averageWind;
+    const maxGroundSpeed = maximumAirSpeed + fuelOptimalPath.averageWind;
+
+    const maxFlightTime = fuelOptimalPath.distance / minGroundSpeed; // hours
+    const minFlightTime = fuelOptimalPath.distance / maxGroundSpeed;
+    return {
+      min: minFlightTime,
+      max: maxFlightTime,
+    };
+  }
+
+  findRTAOptimalPath(fuelOptimalPath: OptimalPath, arrivalTimeConstraints: { min: number, max: number }): OptimalPath|null {
+    if (
+      this.availableTimeInHours < arrivalTimeConstraints.min
+      || this.availableTimeInHours > arrivalTimeConstraints.max
+    ) {
+      const err = `Unsupported arrival time.
+Min time: ${arrivalTimeConstraints.min} hours, max time: ${arrivalTimeConstraints.max} hours.
+Selected time: ${this.availableTimeInHours} hours.`;
+      throw new Error(err);
+    }
+
     const requiredGroundSpeed = fuelOptimalPath.distance / this.availableTimeInHours; // knots (nm per hour)
     const requiredAirSpeed = requiredGroundSpeed + fuelOptimalPath.averageWind;
 
