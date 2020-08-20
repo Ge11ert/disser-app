@@ -5,17 +5,18 @@
   "scripts": {
     "prebuild": "rm -rf build",
     "build": "tsc",
-    "postbuild": "npm run cp-index && npm run cp-assets",
-    "cp-index": "cp src/electron/index.html build/electron/index.html",
+    "postbuild": "npm run cp-assets",
     "cp-assets": "mkdir build/assets && cp src/assets/* build/assets",
     "watch": "tsc -w",
     "lint": "echo \"Error: no linter specified\" && exit 1",
-    "start": "npm run build && electron --inspect=5858 ./build/index.js",
+    "start": "npm run build && npm run dev:react && electron --inspect=5858 ./build/index.js",
     "pretest": "npm run build",
     "test": "jest",
     "dist": "electron-builder",
     "dist-linux": "electron-builder --linux AppImage",
-    "dist-win": "electron-builder --windows portable"
+    "dist-win": "electron-builder --windows portable",
+    "dev:react": "NODE_ENV=development webpack --config ./webpack.react.config.js --mode development",
+    "build:react": "NODE_ENV=production webpack --config ./webpack.react.config.js --mode production"
   },
   "main": "./build/main.js",
   "repository": {
