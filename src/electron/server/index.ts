@@ -8,7 +8,7 @@ import bindIpcEvents from '../ipc-events';
 import { DisserAppAPI } from '../../types/interfaces';
 import { SHOW_MAIN_APP_DATA } from '../ipc-events/event-names';
 
-const htmlFile = path.resolve(__dirname, '../index.html');
+const htmlFile = path.resolve(__dirname, '../renderer/index.html');
 const preloadScript = path.resolve(__dirname, '../context-bridge/index.js');
 
 if (isDev) {
