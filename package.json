@@ -5,17 +5,18 @@
   "scripts": {
     "prebuild": "rm -rf build",
     "build": "tsc",
-    "postbuild": "npm run cp-index && npm run cp-assets",
-    "cp-index": "cp src/electron/index.html build/electron/index.html",
+    "postbuild": "npm run cp-assets",
     "cp-assets": "mkdir build/assets && cp src/assets/* build/assets",
     "watch": "tsc -w",
     "lint": "echo \"Error: no linter specified\" && exit 1",
-    "start": "npm run build && electron --inspect=5858 ./build/index.js",
+    "start": "npm run build && npm run dev:react && electron --inspect=5858 ./build/index.js",
     "pretest": "npm run build",
     "test": "jest",
     "dist": "electron-builder",
     "dist-linux": "electron-builder --linux AppImage",
-    "dist-win": "electron-builder --windows portable"
+    "dist-win": "electron-builder --windows portable",
+    "dev:react": "NODE_ENV=development webpack --config ./webpack.react.config.js --mode development",
+    "build:react": "NODE_ENV=production webpack --config ./webpack.react.config.js --mode production"
   },
   "main": "./build/main.js",
   "repository": {
@@ -30,20 +31,39 @@
   },
   "homepage": "https://github.com/Ge11ert/disser-app#readme",
   "dependencies": {
+    "bem-react-helper": "1.2.1",
+    "core-js": "3.6.5",
     "date-fns": "2.15.0",
     "electron-is-dev": "1.2.0",
     "electron-reload": "1.5.0",
     "heap": "0.2.6",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
     "read-excel-file": "4.0.6",
+    "regenerator-runtime": "0.13.7",
     "typescript": "3.9.3"
   },
   "devDependencies": {
+    "@babel/core": "7.11.1",
+    "@babel/plugin-proposal-class-properties": "7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "7.11.0",
+    "@babel/plugin-transform-react-constant-elements": "7.10.4",
+    "@babel/preset-env": "7.11.0",
+    "@babel/preset-react": "7.10.4",
+    "@babel/preset-typescript": "7.10.4",
     "@types/jest": "26.0.0",
+    "@types/react": "16.9.46",
+    "@types/react-dom": "16.9.8",
+    "babel-loader": "8.1.0",
+    "clean-webpack-plugin": "3.0.0",
     "electron": "9.0.2",
     "electron-builder": "22.7.0",
+    "html-webpack-plugin": "4.3.0",
     "jest": "26.0.1",
     "ts-jest": "26.1.0",
-    "ts-node": "8.10.2"
+    "ts-node": "8.10.2",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12"
   },
   "build": {
     "files": [
@@ -61,6 +81,9 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "roots": ["tests/pathfinding", "tests/geo"]
+    "roots": [
+      "tests/pathfinding",
+      "tests/geo"
+    ]
   }
 }
