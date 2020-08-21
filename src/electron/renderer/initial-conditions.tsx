@@ -1,19 +1,92 @@
 import React from 'react';
 import b from 'bem-react-helper';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Grid from '@material-ui/core/Grid';
 
-export default class InitialConditions extends React.Component {
+type State = {
+  altitude: string,
+  initLat: string,
+  initLong: string,
+  finalLat: string,
+  finalLong: string,
+  formValid: boolean,
+};
+
+export default class InitialConditions extends React.Component<{}, State> {
+  state = {
+    altitude: '30000',
+    initLat: '37.6155600',
+    initLong: '55.752200',
+    finalLat: '53.390321',
+    finalLong: '58.757723',
+    formValid: true,
+  };
+
+  onAltChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      altitude: event.target.value,
+    }, this.validateForm);
+  };
+
+  onInitialLatChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      initLat: event.target.value,
+    }, this.validateForm);
+  };
+
+  onInitialLongChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      initLong: event.target.value,
+    }, this.validateForm);
+  };
+
+  onFinalLatChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      finalLat: event.target.value,
+    }, this.validateForm);
+  };
+
+  onFinalLongChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      finalLong: event.target.value,
+    }, this.validateForm);
+  };
+
+  validateForm = () => {
+    const currentValidity = Object.values(this.state).filter(v => (typeof v === 'string')).every(Boolean);
+
+    if (currentValidity !== this.state.formValid) {
+      this.setState({
+        formValid: currentValidity,
+      });
+    }
+  };
+
   onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (!this.initialConditionsForm.current) return;
+    if (!this.state.formValid) return;
 
-    const formFields = this.initialConditionsForm.current.querySelectorAll('.initial-conditions__field');
+    const {
+      altitude,
+      initLat,
+      initLong,
+      finalLat,
+      finalLong,
+    } = this.state;
 
-    const initialConditions: Record<string, string> = Array.from(formFields).reduce<Record<string, string>>((acc, field) => {
-      const { name, value } = (field as HTMLInputElement);
-      acc[name] = value;
-      return acc;
-    }, {});
+    const initialConditions = {
+      altitude,
+      'initial-latitude': initLat,
+      'initial-longitude': initLong,
+      'final-latitude': finalLat,
+      'final-longitude': finalLong,
+    };
 
     window.electron.applyInitialConditions(initialConditions);
   };
@@ -23,97 +96,143 @@ export default class InitialConditions extends React.Component {
   render() {
     return (
       <div className={b('initial-conditions')}>
-        <p className={b('initial-conditions__header')}>
-          Введите начальные условия
-        </p>
-        <form
-          className={b('initial-conditions__form')}
-          onSubmit={this.onSubmit}
-          ref={this.initialConditionsForm}
+        <Typography
+          variant="h4"
+          gutterBottom
+          className="initial-conditions__title"
         >
-          <p className="initial-conditions__form-field">
-            <label className="initial-conditions__label" htmlFor="altitude">
-              Высота (в футах)
-            </label>
-            <input
-              className="initial-conditions__field"
-              type="text"
-              id="altitude"
-              name="altitude"
-              value="30000"
-            />
-          </p>
+          Начальные условия
+        </Typography>
 
-          <p className="initial-conditions__form-field">
-            <label className="initial-conditions__label" htmlFor="initial-latitude">
-              Начальная широта (десят. градусы)
-            </label>
-            <input
-              className="initial-conditions__field"
-              type="text"
-              id="initial-latitude"
-              name="initial-latitude"
-              value="37.6155600"
-            />
-            <span className="initial-conditions__example">
-              (Например, 37.6155600)
-            </span>
-          </p>
+        <Box className="initial-conditions__content" mt={2}>
+          <form
+            className="initial-conditions__form"
+            onSubmit={this.onSubmit}
+            ref={this.initialConditionsForm}
+          >
+            <Grid container spacing={3}>
+              <Grid item xs={6}>
+                <TextField
+                  type="text"
+                  id="altitude"
+                  name="altitude"
+                  label="Начальная высота"
+                  value={this.state.altitude}
+                  onChange={this.onAltChange}
+                  variant="outlined"
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">Ft</InputAdornment>
+                    )
+                  }}
+                />
+              </Grid>
 
-          <p className="initial-conditions__form-field">
-            <label className="initial-conditions__label" htmlFor="initial-longitude">
-              Начальная долгота (десят. градусы)
-            </label>
-            <input
-              className="initial-conditions__field"
-              type="text"
-              id="initial-longitude"
-              name="initial-longitude"
-              value="55.752200"
-            />
-            <span className="initial-conditions__example">
-              (Например, 55.752200)
-            </span>
-          </p>
+              <Grid item xs={6}>
+                <TextField
+                  type="text"
+                  id="weight"
+                  name="weight"
+                  label="Начальная масса ВС"
+                  value="40 000"
+                  variant="outlined"
+                  disabled
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">Kg</InputAdornment>
+                    ),
+                    readOnly: true,
+                  }}
+                />
+              </Grid>
 
-          <p className="initial-conditions__form-field">
-            <label className="initial-conditions__label" htmlFor="final-latitude">
-              Конечная широта (десят. градусы)
-            </label>
-            <input
-              className="initial-conditions__field"
-              type="text"
-              id="final-latitude"
-              name="final-latitude"
-              value="53.390321"
-            />
-            <span className="initial-conditions__example">
-              (Например, 53.390321)
-            </span>
-          </p>
+              <Grid item xs={6}>
+                <TextField
+                  type="text"
+                  id="initial-latitude"
+                  name="initial-latitude"
+                  label="Начальная широта"
+                  value={this.state.initLat}
+                  onChange={this.onInitialLatChange}
+                  variant="outlined"
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">Deg</InputAdornment>
+                    )
+                  }}
+                />
+              </Grid>
 
-          <p className="initial-conditions__form-field">
-            <label className="initial-conditions__label" htmlFor="final-longitude">
-              Конечная долгота (десят. градусы)
-            </label>
-            <input
-              className="initial-conditions__field"
-              type="text"
-              id="final-longitude"
-              name="final-longitude"
-              value="58.757723"
-            />
-            <span className="initial-conditions__example">
-              (Например, 58.757723)
-            </span>
-          </p>
+              <Grid item xs={6}>
+                <TextField
+                  type="text"
+                  id="initial-longitude"
+                  name="initial-longitude"
+                  label="Начальная долгота"
+                  value={this.state.initLong}
+                  onChange={this.onInitialLongChange}
+                  variant="outlined"
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">Deg</InputAdornment>
+                    )
+                  }}
+                />
+              </Grid>
 
-          <p className="initial-conditions__form-field">
-            <button type="submit" className="initial-conditions__submit-button">
-              Подтвердить
-            </button>
-          </p>
-        </form>
+              <Grid item xs={6}>
+                <TextField
+                  type="text"
+                  id="final-latitude"
+                  name="final-latitude"
+                  label="Конечная широта"
+                  value={this.state.finalLat}
+                  onChange={this.onFinalLatChange}
+                  variant="outlined"
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">Deg</InputAdornment>
+                    )
+                  }}
+                />
+              </Grid>
+
+              <Grid item xs={6}>
+                <TextField
+                  type="text"
+                  id="final-longitude"
+                  name="final-longitude"
+                  label="Конечная долгота"
+                  value={this.state.finalLong}
+                  onChange={this.onFinalLongChange}
+                  variant="outlined"
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">Deg</InputAdornment>
+                    )
+                  }}
+                />
+              </Grid>
+            </Grid>
+
+            <FormControl margin="normal">
+              <Button
+                variant="outlined"
+                color="primary"
+                type="submit"
+                disabled={!this.state.formValid}
+              >
+                Подтвердить
+              </Button>
+            </FormControl>
+          </form>
+        </Box>
       </div>
     )
   }
