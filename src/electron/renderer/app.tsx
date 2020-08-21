@@ -7,6 +7,8 @@ import PathfinderController from './pathfinder-controller';
 
 class App extends React.Component {
   componentDidMount() {
+    // @ts-ignore
+    if (TARGET === 'web') return; // defined by webpack
     window.electron.listenToAirConditionsLoaded();
     window.electron.listenToMainAppData();
   }
