@@ -1,14 +1,17 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const projectDir = path.resolve(__dirname, './');
+
+const TARGET = process.env.TARGET || 'electron-renderer';
 
 module.exports = {
   entry: {
     app: path.join(projectDir, 'src/electron/renderer/app.tsx'),
   },
-  target: "electron-renderer",
+  target: TARGET,
   devtool: 'source-map',
   output: {
     path: path.resolve(projectDir, 'build/electron/renderer'),
@@ -34,5 +37,9 @@ module.exports = {
       template: path.join(projectDir, 'src/electron/renderer/index.html'),
       filename: "index.html"
     }),
+    new webpack.DefinePlugin({
+      TARGET: JSON.stringify(TARGET),
+      ENV: JSON.stringify(process.env.NODE_ENV),
+    })
   ]
 }
