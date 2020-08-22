@@ -3,7 +3,11 @@ import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
-const PathfinderController = () => {
+interface Props {
+  blocked?: boolean,
+}
+
+const PathfinderController = (props: Props) => {
   const onClick = () => {
     // fix of "Object could not be cloned"
     window.electron.findPath();
@@ -22,6 +26,7 @@ const PathfinderController = () => {
           variant="contained"
           color="primary"
           onClick={onClick}
+          disabled={props.blocked}
         >
           Найти траектории
         </Button>

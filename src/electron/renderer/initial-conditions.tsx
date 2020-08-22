@@ -14,7 +14,11 @@ type State = {
   formValid: boolean,
 };
 
-export default class InitialConditions extends React.Component<{}, State> {
+interface Props {
+  onSubmit(): void,
+}
+
+export default class InitialConditions extends React.Component<Props, State> {
   state = {
     altitude: '30000',
     initLat: '37.6155600',
@@ -86,6 +90,7 @@ export default class InitialConditions extends React.Component<{}, State> {
     };
 
     window.electron.applyInitialConditions(initialConditions);
+    this.props.onSubmit();
   };
 
   render() {

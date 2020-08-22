@@ -6,13 +6,15 @@ interface Props {
   title: string,
   children: React.ReactChild,
   level?: 'h1'|'h2'|'h3'|'h4'|'h5'|'h6',
+  blocked?: boolean,
 }
 
 const ContentSection = (props: Props) => {
   return (
-    <Box component="section">
+    <Box component="section" color={props.blocked ? 'text.disabled' : 'text.primary'}>
       <Typography
         variant={props.level || 'h4'}
+        color="inherit"
       >
         {props.title}
       </Typography>
