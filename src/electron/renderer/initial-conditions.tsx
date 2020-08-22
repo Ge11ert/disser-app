@@ -1,10 +1,7 @@
 import React from 'react';
-import b from 'bem-react-helper';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Grid from '@material-ui/core/Grid';
 
@@ -91,149 +88,131 @@ export default class InitialConditions extends React.Component<{}, State> {
     window.electron.applyInitialConditions(initialConditions);
   };
 
-  initialConditionsForm = React.createRef<HTMLFormElement>();
-
   render() {
     return (
-      <div className={b('initial-conditions')}>
-        <Typography
-          variant="h4"
-          gutterBottom
-          className="initial-conditions__title"
-        >
-          Начальные условия
-        </Typography>
+      <form onSubmit={this.onSubmit}>
+        <Grid container spacing={3}>
+          <Grid item xs={6}>
+            <TextField
+              type="text"
+              id="altitude"
+              name="altitude"
+              label="Начальная высота"
+              value={this.state.altitude}
+              onChange={this.onAltChange}
+              variant="outlined"
+              fullWidth
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">Ft</InputAdornment>
+                )
+              }}
+            />
+          </Grid>
 
-        <Box className="initial-conditions__content" mt={2}>
-          <form
-            className="initial-conditions__form"
-            onSubmit={this.onSubmit}
-            ref={this.initialConditionsForm}
+          <Grid item xs={6}>
+            <TextField
+              type="text"
+              id="weight"
+              name="weight"
+              label="Начальная масса ВС"
+              value="40 000"
+              variant="outlined"
+              disabled
+              fullWidth
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">Kg</InputAdornment>
+                ),
+                readOnly: true,
+              }}
+            />
+          </Grid>
+
+          <Grid item xs={6}>
+            <TextField
+              type="text"
+              id="initial-latitude"
+              name="initial-latitude"
+              label="Начальная широта"
+              value={this.state.initLat}
+              onChange={this.onInitialLatChange}
+              variant="outlined"
+              fullWidth
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">Deg</InputAdornment>
+                )
+              }}
+            />
+          </Grid>
+
+          <Grid item xs={6}>
+            <TextField
+              type="text"
+              id="initial-longitude"
+              name="initial-longitude"
+              label="Начальная долгота"
+              value={this.state.initLong}
+              onChange={this.onInitialLongChange}
+              variant="outlined"
+              fullWidth
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">Deg</InputAdornment>
+                )
+              }}
+            />
+          </Grid>
+
+          <Grid item xs={6}>
+            <TextField
+              type="text"
+              id="final-latitude"
+              name="final-latitude"
+              label="Конечная широта"
+              value={this.state.finalLat}
+              onChange={this.onFinalLatChange}
+              variant="outlined"
+              fullWidth
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">Deg</InputAdornment>
+                )
+              }}
+            />
+          </Grid>
+
+          <Grid item xs={6}>
+            <TextField
+              type="text"
+              id="final-longitude"
+              name="final-longitude"
+              label="Конечная долгота"
+              value={this.state.finalLong}
+              onChange={this.onFinalLongChange}
+              variant="outlined"
+              fullWidth
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">Deg</InputAdornment>
+                )
+              }}
+            />
+          </Grid>
+        </Grid>
+
+        <FormControl margin="normal">
+          <Button
+            variant="outlined"
+            color="primary"
+            type="submit"
+            disabled={!this.state.formValid}
           >
-            <Grid container spacing={3}>
-              <Grid item xs={6}>
-                <TextField
-                  type="text"
-                  id="altitude"
-                  name="altitude"
-                  label="Начальная высота"
-                  value={this.state.altitude}
-                  onChange={this.onAltChange}
-                  variant="outlined"
-                  fullWidth
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">Ft</InputAdornment>
-                    )
-                  }}
-                />
-              </Grid>
-
-              <Grid item xs={6}>
-                <TextField
-                  type="text"
-                  id="weight"
-                  name="weight"
-                  label="Начальная масса ВС"
-                  value="40 000"
-                  variant="outlined"
-                  disabled
-                  fullWidth
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">Kg</InputAdornment>
-                    ),
-                    readOnly: true,
-                  }}
-                />
-              </Grid>
-
-              <Grid item xs={6}>
-                <TextField
-                  type="text"
-                  id="initial-latitude"
-                  name="initial-latitude"
-                  label="Начальная широта"
-                  value={this.state.initLat}
-                  onChange={this.onInitialLatChange}
-                  variant="outlined"
-                  fullWidth
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">Deg</InputAdornment>
-                    )
-                  }}
-                />
-              </Grid>
-
-              <Grid item xs={6}>
-                <TextField
-                  type="text"
-                  id="initial-longitude"
-                  name="initial-longitude"
-                  label="Начальная долгота"
-                  value={this.state.initLong}
-                  onChange={this.onInitialLongChange}
-                  variant="outlined"
-                  fullWidth
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">Deg</InputAdornment>
-                    )
-                  }}
-                />
-              </Grid>
-
-              <Grid item xs={6}>
-                <TextField
-                  type="text"
-                  id="final-latitude"
-                  name="final-latitude"
-                  label="Конечная широта"
-                  value={this.state.finalLat}
-                  onChange={this.onFinalLatChange}
-                  variant="outlined"
-                  fullWidth
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">Deg</InputAdornment>
-                    )
-                  }}
-                />
-              </Grid>
-
-              <Grid item xs={6}>
-                <TextField
-                  type="text"
-                  id="final-longitude"
-                  name="final-longitude"
-                  label="Конечная долгота"
-                  value={this.state.finalLong}
-                  onChange={this.onFinalLongChange}
-                  variant="outlined"
-                  fullWidth
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">Deg</InputAdornment>
-                    )
-                  }}
-                />
-              </Grid>
-            </Grid>
-
-            <FormControl margin="normal">
-              <Button
-                variant="outlined"
-                color="primary"
-                type="submit"
-                disabled={!this.state.formValid}
-              >
-                Подтвердить
-              </Button>
-            </FormControl>
-          </form>
-        </Box>
-      </div>
+            Подтвердить
+          </Button>
+        </FormControl>
+      </form>
     )
   }
 }

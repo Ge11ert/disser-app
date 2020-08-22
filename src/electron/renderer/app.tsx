@@ -9,6 +9,7 @@ import InitialConditions from './initial-conditions';
 import FileSelector from './file-selector';
 import PathfinderController from './pathfinder-controller';
 import AsideStepper from './aside-stepper';
+import ContentSection from './content-section';
 
 class App extends React.Component {
   componentDidMount() {
@@ -26,9 +27,23 @@ class App extends React.Component {
 
         <Box display="flex">
           <Box component="main">
-            <InitialConditions/>
-            <FileSelector/>
-            <PathfinderController/>
+            <Box>
+              <ContentSection title="Начальные условия">
+                <InitialConditions/>
+              </ContentSection>
+            </Box>
+
+            <Box mt={5}>
+              <ContentSection title="Параметры воздушного пространства">
+                <FileSelector/>
+              </ContentSection>
+            </Box>
+
+            <Box mt={5}>
+              <ContentSection title="Расчёт множества траекторий">
+                <PathfinderController/>
+              </ContentSection>
+            </Box>
           </Box>
 
           <Box mr={3} ml={6}>

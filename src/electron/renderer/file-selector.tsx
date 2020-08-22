@@ -19,19 +19,8 @@ const FileSelector = () => {
   };
 
   return (
-    <div className="file-selector">
-      <Typography
-        variant="h4"
-        gutterBottom
-        className="file-selector__title"
-      >
-        Параметры воздушного пространства
-      </Typography>
-
-      <Typography
-        variant="subtitle1"
-        className="file-selector__subtitle"
-      >
+    <Box>
+      <Typography variant="subtitle1">
         Загрузите файл с текущими полётными условиями:
       </Typography>
 
@@ -58,7 +47,7 @@ const FileSelector = () => {
           </Typography>
         </Box>
       )}
-    </div>
+    </Box>
   );
 }
 

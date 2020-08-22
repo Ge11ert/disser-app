@@ -10,18 +10,9 @@ const PathfinderController = () => {
   };
 
   return (
-    <div className="pathfinder-controller">
-      <Typography
-        variant="h4"
-        gutterBottom
-        className="pathfinder-controller__title"
-      >
-        Расчёт множества траекторий
-      </Typography>
-
+    <Box>
       <Typography
         variant="subtitle1"
-        className="pathfinder-controller__subtitle"
       >
         Нажмите кнопку для расчета параметров множества существующих четырехмерных траекторий
       </Typography>
@@ -35,7 +26,7 @@ const PathfinderController = () => {
           Найти траектории
         </Button>
       </Box>
-    </div>
+    </Box>
   );
 };
 
