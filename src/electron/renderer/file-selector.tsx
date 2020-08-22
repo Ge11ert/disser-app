@@ -5,7 +5,12 @@ import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import CheckIcon from '@material-ui/icons/Check';
 
-const FileSelector = () => {
+interface Props {
+  blocked?: boolean,
+  onFileLoaded(): void,
+}
+
+const FileSelector = (props: Props) => {
   const [processing, setProcessing] = React.useState(false);
   const [loaded, setLoaded] = React.useState(false);
 
@@ -14,24 +19,14 @@ const FileSelector = () => {
     window.electron.listenToAirConditionsLoaded(() => {
       setProcessing(false);
       setLoaded(true);
+      props.onFileLoaded();
     });
     window.electron.loadAirConditions();
   };
 
   return (
-    <div className="file-selector">
-      <Typography
-        variant="h4"
-        gutterBottom
-        className="file-selector__title"
-      >
-        Параметры воздушного пространства
-      </Typography>
-
-      <Typography
-        variant="subtitle1"
-        className="file-selector__subtitle"
-      >
+    <Box>
+      <Typography variant="subtitle1">
         Загрузите файл с текущими полётными условиями:
       </Typography>
 
@@ -44,12 +39,14 @@ const FileSelector = () => {
               variant="outlined"
               color="primary"
               onClick={onClick}
+              disabled={props.blocked}
             >
               Загрузить
             </Button>
           )}
         </Box>
       )}
+
       { loaded && (
         <Box my={2} color="success.main">
           <Typography variant="body1">
@@ -58,7 +55,7 @@ const FileSelector = () => {
           </Typography>
         </Box>
       )}
-    </div>
+    </Box>
   );
 }
 

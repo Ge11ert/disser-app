@@ -9,15 +9,46 @@ import InitialConditions from './initial-conditions';
 import FileSelector from './file-selector';
 import PathfinderController from './pathfinder-controller';
 import AsideStepper from './aside-stepper';
+import ContentSection from './content-section';
 
-class App extends React.Component {
+type AppState = {
+  initialDataLoaded: boolean,
+  airConditionsLoaded: boolean,
+  routesCalculated: boolean,
+};
+
+class App extends React.Component<{}, AppState> {
+  state = {
+    initialDataLoaded: false,
+    airConditionsLoaded: false,
+    routesCalculated: false,
+  };
+
   componentDidMount() {
     // @ts-ignore
     if (TARGET === 'web') return; // defined by webpack
     window.electron.listenToMainAppData();
   }
 
+  onInitialDataLoad = () => {
+    this.setState({
+      initialDataLoaded: true,
+    });
+  };
+
+  onAirConditionsLoad = () => {
+    this.setState({
+      airConditionsLoaded: true,
+    });
+  }
+
   render() {
+    const {
+      initialDataLoaded,
+      airConditionsLoaded,
+      routesCalculated,
+    } = this.state;
+
     return (
       <Container className="page" maxWidth="lg">
         <Typography variant="h2" component="h1" gutterBottom>
@@ -26,9 +57,38 @@ class App extends React.Component {
 
         <Box display="flex">
           <Box component="main">
-            <InitialConditions/>
-            <FileSelector/>
-            <PathfinderController/>
+            <Box>
+              <ContentSection
+                title="Начальные условия"
+              >
+                <InitialConditions
+                  onSubmit={this.onInitialDataLoad}
+                />
+              </ContentSection>
+            </Box>
+
+            <Box mt={5}>
+              <ContentSection
+                title="Параметры воздушного пространства"
+                blocked={!initialDataLoaded}
+              >
+                <FileSelector
+                  blocked={!initialDataLoaded}
+                  onFileLoaded={this.onAirConditionsLoad}
+                />
+              </ContentSection>
+            </Box>
+
+            <Box mt={5}>
+              <ContentSection
+                title="Расчёт множества траекторий"
+                blocked={!initialDataLoaded || !airConditionsLoaded}
+              >
+                <PathfinderController
+                  blocked={!initialDataLoaded || !airConditionsLoaded}
+                />
+              </ContentSection>
+            </Box>
           </Box>
 
           <Box mr={3} ml={6}>
