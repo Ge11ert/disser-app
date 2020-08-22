@@ -41,7 +41,7 @@ export interface Reader<T> {
 
 export interface ElectronWindowAPI {
   loadAirConditions(): void;
-  listenToAirConditionsLoaded(callback: () => void): void;
+  listenToAirConditionsLoaded(callback: (arg: any) => void): void;
   listenToMainAppData(): void;
   findPath(): void;
   applyInitialConditions(conditions: Record<string, string>): void;
