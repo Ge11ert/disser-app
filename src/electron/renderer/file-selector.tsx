@@ -4,6 +4,11 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import CheckIcon from '@material-ui/icons/Check';
+import Grid from '@material-ui/core/Grid';
+import Dialog from './dialog';
+import AirConditionsComponent from './air-conditions';
+
+import { AirConditions } from '../../types/interfaces';
 
 interface Props {
   blocked?: boolean,
@@ -13,16 +18,27 @@ interface Props {
 const FileSelector = (props: Props) => {
   const [processing, setProcessing] = React.useState(false);
   const [loaded, setLoaded] = React.useState(false);
+  const [airConditions, setAirConditions] = React.useState<Map<number, AirConditions>|null>(null);
+  const [open, setOpen] = React.useState(false);
 
   const onClick = () => {
     setProcessing(true);
-    window.electron.listenToAirConditionsLoaded(() => {
+    window.electron.listenToAirConditionsLoaded((result: Map<number, AirConditions>) => {
       setProcessing(false);
       setLoaded(true);
+      setAirConditions(result);
       props.onFileLoaded();
     });
     window.electron.loadAirConditions();
   };
+
+  const showAirDialog = () => {
+    setOpen(true);
+  };
+
+  const closeAirDialog = () => {
+    setOpen(false);
+  }
 
   return (
     <Box>
@@ -49,12 +65,36 @@ const FileSelector = (props: Props) => {
 
       { loaded && (
         <Box my={2} color="success.main">
-          <Typography variant="body1">
-            <CheckIcon color="inherit" fontSize="small"/>
-            Параметры среды успешно загружены
-          </Typography>
+          <Grid container spacing={1}>
+            <Grid item xs={6}>
+              <Typography variant="body1">
+                <CheckIcon color="inherit" fontSize="small"/>
+                Параметры среды успешно загружены
+              </Typography>
+            </Grid>
+
+            <Grid item xs={6}>
+              <Button
+                variant="outlined"
+                size="small"
+                onClick={showAirDialog}
+              >
+                Просмотреть
+              </Button>
+            </Grid>
+          </Grid>
         </Box>
       )}
+
+      <Dialog
+        isOpen={open}
+        onClose={closeAirDialog}
+        title="Параметры воздушного пространства"
+      >
+        { airConditions && (
+          <AirConditionsComponent airConditions={airConditions}/>
+        )}
+      </Dialog>
     </Box>
   );
 }
