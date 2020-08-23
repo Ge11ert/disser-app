@@ -26,7 +26,7 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
           possibleAlts.forEach(alt => {
             disserApp.registerAirConditionsForAltitude(result.get(alt), alt);
           });
-          event.sender.send(RENDER_AIR_CONDITIONS, result.get(30000)); // TODO: временный костыль
+          event.sender.send(RENDER_AIR_CONDITIONS, result);
         });
       }
     });

@@ -35,10 +35,12 @@ class MainWindow {
   create() {
     this.window = new BrowserWindow(this.windowOptions);
 
-    this.window.loadFile(this.windowOptions.htmlFile);
 
     if (this.windowOptions.isDev) {
       this.window.webContents.openDevTools();
+      this.window.loadURL('http://localhost:8080');
+    } else {
+      this.window.loadFile(this.windowOptions.htmlFile);
     }
 
     this.window.once('ready-to-show', () => {
