@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Grid from '@material-ui/core/Grid';
+import MaskedTextField from './masked-text-field';
 
 type State = {
   altitude: string,
@@ -18,9 +19,12 @@ interface Props {
   onSubmit(): void,
 }
 
+const coordsMask = [/\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/];
+const coordsPlaceholder = '00.000000';
+
 export default class InitialConditions extends React.Component<Props, State> {
   state = {
-    altitude: '30000',
+    altitude: '30 000',
     initLat: '37.6155600',
     initLong: '55.752200',
     finalLat: '53.390321',
@@ -98,7 +102,7 @@ export default class InitialConditions extends React.Component<Props, State> {
       <form onSubmit={this.onSubmit}>
         <Grid container spacing={3}>
           <Grid item xs={6}>
-            <TextField
+            <MaskedTextField
               type="text"
               id="altitude"
               name="altitude"
@@ -112,6 +116,8 @@ export default class InitialConditions extends React.Component<Props, State> {
                   <InputAdornment position="end">Ft</InputAdornment>
                 )
               }}
+              mask={[/\d/, /\d/, '\u2000', /\d/, /\d/, /\d/]}
+              placeholder="30 000"
             />
           </Grid>
 
@@ -135,7 +141,7 @@ export default class InitialConditions extends React.Component<Props, State> {
           </Grid>
 
           <Grid item xs={6}>
-            <TextField
+            <MaskedTextField
               type="text"
               id="initial-latitude"
               name="initial-latitude"
@@ -149,11 +155,13 @@ export default class InitialConditions extends React.Component<Props, State> {
                   <InputAdornment position="end">Deg</InputAdornment>
                 )
               }}
+              placeholder={coordsPlaceholder}
+              mask={coordsMask}
             />
           </Grid>
 
           <Grid item xs={6}>
-            <TextField
+            <MaskedTextField
               type="text"
               id="initial-longitude"
               name="initial-longitude"
@@ -167,11 +175,13 @@ export default class InitialConditions extends React.Component<Props, State> {
                   <InputAdornment position="end">Deg</InputAdornment>
                 )
               }}
+              placeholder={coordsPlaceholder}
+              mask={coordsMask}
             />
           </Grid>
 
           <Grid item xs={6}>
-            <TextField
+            <MaskedTextField
               type="text"
               id="final-latitude"
               name="final-latitude"
@@ -185,11 +195,13 @@ export default class InitialConditions extends React.Component<Props, State> {
                   <InputAdornment position="end">Deg</InputAdornment>
                 )
               }}
+              placeholder={coordsPlaceholder}
+              mask={coordsMask}
             />
           </Grid>
 
           <Grid item xs={6}>
-            <TextField
+            <MaskedTextField
               type="text"
               id="final-longitude"
               name="final-longitude"
@@ -203,6 +215,8 @@ export default class InitialConditions extends React.Component<Props, State> {
                   <InputAdornment position="end">Deg</InputAdornment>
                 )
               }}
+              placeholder={coordsPlaceholder}
+              mask={coordsMask}
             />
           </Grid>
         </Grid>
