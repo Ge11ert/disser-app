@@ -18,34 +18,36 @@ const AirConditions = (props: Props) => {
   const { airConditions } = props;
 
   return (
-    <Box style={{ backgroundColor: '#f5f5f5' }}>
-      { Array.from(airConditions).map(([key, value]) => {
-        return (
-          <Accordion
-            TransitionProps={{
-              mountOnEnter: true,
-              unmountOnExit: true,
-            }}
-            key={key}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              id={`alt-${key}-header`}
+    <Box bgcolor="#f5f5f5">
+      <Box p={3}>
+        { Array.from(airConditions).map(([key, value]) => {
+          return (
+            <Accordion
+              TransitionProps={{
+                mountOnEnter: true,
+                unmountOnExit: true,
+              }}
+              key={key}
             >
-              <Typography variant="body1">
-                Высота
-                {' '}
-                {key}
-                {' '}
-                футов
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <AirConditionsTable air={value}/>
-            </AccordionDetails>
-          </Accordion>
-        );
-      })}
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                id={`alt-${key}-header`}
+              >
+                <Typography variant="body1">
+                  Высота
+                  {' '}
+                  {key}
+                  {' '}
+                  футов
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <AirConditionsTable air={value}/>
+              </AccordionDetails>
+            </Accordion>
+          );
+        })}
+      </Box>
     </Box>
   );
 };
