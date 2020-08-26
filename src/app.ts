@@ -118,6 +118,7 @@ export default class DisserApp implements DisserAppAPI {
       totalRun.set(speedM, speedRunSummary);
     });
 
+    this.sendTotalRunData(totalRun);
     this.findOptimalPaths(totalRun);
   }
 
@@ -349,23 +350,11 @@ export default class DisserApp implements DisserAppAPI {
     finderGrid = null;
     finder = null;
 
-    // // TODO: temp for debugging
-    // this.sendResults(path, finderArray);
-
     return [true, altitudeRun];
   }
 
-  sendResults(path: ReturnType<CruisePathFinder['findPath']>, finderArray: ReturnType<Grid['toString']>) {
-    const finderArrayWithPath = finderArray.map(row => row.map(cell => ({
-      ...cell,
-      inPath: path.some(c => (c[0] === cell.x && c[1] === cell.y))
-    })));
-
-    const result = {
-      gridType: 'airConditions',
-      finderGrid: finderArrayWithPath,
-    };
-    this.electronApp.sendToWindow(result);
+  sendTotalRunData(totalRun: TotalRun) {
+    this.electronApp.sendToWindow(totalRun);
   }
 
   createInitialEntryPoint(): void {

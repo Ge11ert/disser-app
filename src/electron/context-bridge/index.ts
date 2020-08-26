@@ -5,7 +5,7 @@ import {
   LOAD_AIR_CONDITIONS,
   RENDER_AIR_CONDITIONS,
   START_FINDER,
-  SHOW_MAIN_APP_DATA,
+  RENDER_TOTAL_RUN,
   APPLY_INITIAL_CONDITIONS,
 } from '../ipc-events/event-names';
 import { ElectronWindowAPI } from '../../types/interfaces';
@@ -19,23 +19,9 @@ const electronToWindowAPI: ElectronWindowAPI = {
       callback(airConditions);
     });
   },
-  listenToMainAppData: () => {
-    ipcRenderer.on(SHOW_MAIN_APP_DATA, (event, args: any) => {
-      const container = document.querySelector('.main-app-data-container');
-      try {
-        if (container) {
-          const { gridType, finderGrid } = args;
-          const rowsHtml = renderFinderGrid(finderGrid);
-          const resultHTML = `
-          Используется сетка из ${gridType === 'coords' ? 'координат' : 'условий маршрута'}.
-          <br/>
-          <table>${rowsHtml}</table>
-          `;
-          container.innerHTML = resultHTML;
-        }
-      } catch (e) {
-        console.log(`Error during main app data parsing, ${e.message}`);
-      }
+  listenToFlightRoutesCalculated: (callback: (arg: any) => void) => {
+    ipcRenderer.on(RENDER_TOTAL_RUN, (event, routes: any) => {
+      callback(routes);
     });
   },
   findPath: () => {

@@ -25,6 +25,7 @@ const AirConditionsTable = (props: Props) => {
               { row.map((cell, index) => (
                 <TableCell
                   align="center"
+                  padding="none"
                   key={`air-cell-${index}`}
                 >
                   { getCellLabel(cell) }
