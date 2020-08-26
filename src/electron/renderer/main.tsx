@@ -23,12 +23,6 @@ class Main extends React.Component<{}, AppState> {
     routesCalculated: false,
   };
 
-  componentDidMount() {
-    // @ts-ignore
-    if (TARGET === 'web') return; // defined by webpack
-    window.electron.listenToMainAppData();
-  }
-
   onInitialDataLoad = () => {
     this.setState({
       initialDataLoaded: true,
