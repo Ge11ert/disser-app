@@ -1,3 +1,5 @@
+import format from 'date-fns/format';
+import parseISO from 'date-fns/parseISO';
 import { WGS84Params } from '../constants/geo';
 import { cell } from '../constants/grid';
 import fromGeodeticToECEF from '../utils/geo/from-geodetic-to-ecef';
@@ -6,6 +8,7 @@ import { fromFeetToMeters, fromMetersToMiles } from '../utils/converters';
 export default class Geo {
   public startAltInFeet = 0;
   public startAltInMeters = 0;
+  public departureDate = new Date();
 
   public startLBHCoords = {
     lat: 0,
@@ -53,7 +56,7 @@ export default class Geo {
   private coordsLoaded = false;
 
   applyStartAndFinalCoords(coords: Record<string, string>) {
-    this.startAltInFeet = parseInt(coords.altitude, 10);
+    this.startAltInFeet = parseInt(coords.altitude.replace(/\s/g, ''), 10);
     this.startAltInMeters = Math.round(fromFeetToMeters(this.startAltInFeet));
 
     this.startLBHCoords = {
@@ -66,6 +69,11 @@ export default class Geo {
       long: parseFloat(coords['final-longitude']),
       alt: parseInt(coords.altitude, 10),
     };
+
+    const currentISODate = format(new Date(), 'yyyy-LL-dd');
+    const startISODate = `${currentISODate}T${coords['departure-time']}`;
+    this.departureDate = parseISO(startISODate);
+
     this.coordsLoaded = true;
   }
 

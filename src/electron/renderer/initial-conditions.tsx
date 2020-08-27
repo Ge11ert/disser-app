@@ -1,4 +1,6 @@
 import React from 'react';
+import format from 'date-fns/esm/format';
+import startOfMinute from 'date-fns/esm/startOfMinute';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
@@ -12,6 +14,8 @@ type State = {
   initLong: string,
   finalLat: string,
   finalLong: string,
+  departureTime: string,
+  customCostIndex: string,
   formValid: boolean,
 };
 
@@ -29,6 +33,8 @@ export default class InitialConditions extends React.Component<Props, State> {
     initLong: '55.752200',
     finalLat: '53.390321',
     finalLong: '58.757723',
+    departureTime: format(startOfMinute(new Date()), 'HH:mm:ss'),
+    customCostIndex: '50',
     formValid: true,
   };
 
@@ -62,6 +68,18 @@ export default class InitialConditions extends React.Component<Props, State> {
     }, this.validateForm);
   };
 
+  onDepartureTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      departureTime: event.target.value,
+    }, this.validateForm);
+  }
+
+  onCustomCostIndexChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      customCostIndex: event.target.value,
+    }, this.validateForm);
+  }
+
   validateForm = () => {
     const currentValidity = Object.values(this.state).filter(v => (typeof v === 'string')).every(Boolean);
 
@@ -83,6 +101,8 @@ export default class InitialConditions extends React.Component<Props, State> {
       initLong,
       finalLat,
       finalLong,
+      departureTime,
+      customCostIndex,
     } = this.state;
 
     const initialConditions = {
@@ -91,6 +111,8 @@ export default class InitialConditions extends React.Component<Props, State> {
       'initial-longitude': initLong,
       'final-latitude': finalLat,
       'final-longitude': finalLong,
+      'departure-time': departureTime,
+      'cost-index': customCostIndex,
     };
 
     window.electron.applyInitialConditions(initialConditions);
@@ -217,6 +239,36 @@ export default class InitialConditions extends React.Component<Props, State> {
               }}
               placeholder={coordsPlaceholder}
               mask={coordsMask}
+            />
+          </Grid>
+
+          <Grid item xs={6}>
+            <MaskedTextField
+              type="text"
+              id="departure-time"
+              name="departure-time"
+              label="Время отправления"
+              value={this.state.departureTime}
+              onChange={this.onDepartureTimeChange}
+              variant="outlined"
+              fullWidth
+              placeholder="00:00:00"
+              mask={[/\d/, /\d/, ':', /\d/, /\d/, ':', /\d/, /\d/]}
+            />
+          </Grid>
+
+          <Grid item xs={6}>
+            <MaskedTextField
+              type="text"
+              id="custom-cost-index"
+              name="custom-cost-index"
+              label="Cost Index"
+              value={this.state.customCostIndex}
+              onChange={this.onCustomCostIndexChange}
+              variant="outlined"
+              fullWidth
+              placeholder="00"
+              mask={[/\d/, /\d/]}
             />
           </Grid>
         </Grid>

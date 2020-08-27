@@ -1,5 +1,4 @@
-import format from 'date-fns/format';
-import parseISO from 'date-fns/parseISO';
+import addHours from 'date-fns/addHours';
 import differenceInSeconds from 'date-fns/differenceInSeconds';
 import ElectronApp from './electron/server';
 import Grid from './pathfinding/core/grid';
@@ -43,6 +42,7 @@ export default class DisserApp implements DisserAppAPI {
   private lastUsedEntryPoint = { x: 0, y: 0};
   private lastUsedExitPoint = { x: 0, y: 0};
   private usedPathAngle = 0;
+  private customCostIndex = 0;
   private readonly possibleAltitudeList: number[] = [];
   private readonly possibleMachList: number[] = [];
 
@@ -100,6 +100,8 @@ export default class DisserApp implements DisserAppAPI {
 
     this.createInitialEntryPoint();
     this.createInitialExitPoint();
+
+    this.customCostIndex = parseInt(geoConditions['cost-index'], 10);
   }
 
   startFinder() {
@@ -389,22 +391,13 @@ export default class DisserApp implements DisserAppAPI {
     const availableTime = this.getAvailableTime();
 
     const optimalPathFinder = new OptimalPathFinder(totalRun, availableTime);
-    // TODO: брать значение из интерфейса
-    optimalPathFinder.setCustomCostIndex(37);
+    optimalPathFinder.setCustomCostIndex(this.customCostIndex);
     optimalPathFinder.findOptimalPaths();
   }
 
   getAvailableTime(): number {
-    // TODO: брать значения из интерфейса
-    const startTimeMock = '18:04:00';
-    const endTimeMock = '19:15:00';
-
-    const currentISODate = format(new Date(), 'yyyy-LL-dd');
-    const startISODate = `${currentISODate}T${startTimeMock}`;
-    const endISODate = `${currentISODate}T${endTimeMock}`;
-
-    const startDate = parseISO(startISODate);
-    const endDate = parseISO(endISODate);
+    const startDate = this.geo.departureDate;
+    const endDate = addHours(startDate, 1); // TODO: брать из интерфейса
     const diffInSeconds = Math.abs(differenceInSeconds(startDate, endDate));
     const diffInHours = diffInSeconds / 3600;
     return diffInHours;
