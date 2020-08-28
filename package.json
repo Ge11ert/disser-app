@@ -5,11 +5,13 @@
   "scripts": {
     "prebuild": "rm -rf build",
     "build:electron": "tsc",
+    "build:electron-production": "tsc -p ./tsconfig.prod.json",
     "postbuild": "npm run cp-assets",
     "cp-assets": "mkdir build/assets && cp src/assets/* build/assets",
     "watch": "tsc -w",
     "lint": "echo \"Error: no linter specified\" && exit 1",
     "build": "npm run build:electron && npm run build:react",
+    "build-production": "npm run build:electron-production && npm run build:react-production",
     "start": "npm run build && electron --inspect=5858 ./build/index.js",
     "pretest": "npm run build",
     "test": "jest",
@@ -17,9 +19,10 @@
     "dist-linux": "electron-builder --linux AppImage",
     "dist-win": "electron-builder --windows portable",
     "dev:react": "TARGET=web NODE_ENV=development webpack-dev-server --config ./webpack.react.config.js --mode development",
-    "build:react": "NODE_ENV=production webpack --config ./webpack.react.config.js --mode production"
+    "build:react": "NODE_ENV=development webpack --config ./webpack.react.config.js --mode development",
+    "build:react-production": "NODE_ENV=production webpack --config ./webpack.react.config.js --mode production"
   },
-  "main": "./build/main.js",
+  "main": "./build/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ge11ert/disser-app.git"
