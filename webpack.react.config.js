@@ -6,13 +6,14 @@ const webpack = require('webpack');
 const projectDir = path.resolve(__dirname, './');
 
 const TARGET = process.env.TARGET || 'electron-renderer';
+const ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
   entry: {
     app: path.join(projectDir, 'src/electron/renderer/app.tsx'),
   },
   target: TARGET,
-  devtool: 'source-map',
+  devtool: ENV === 'development' ? 'source-map' : false,
   output: {
     path: path.resolve(projectDir, 'build/electron/renderer'),
     filename: "[name].js"
@@ -39,7 +40,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       TARGET: JSON.stringify(TARGET),
-      ENV: JSON.stringify(process.env.NODE_ENV),
+      ENV: JSON.stringify(ENV),
     })
   ]
 }
