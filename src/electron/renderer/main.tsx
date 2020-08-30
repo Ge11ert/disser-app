@@ -7,6 +7,7 @@ import Divider from '@material-ui/core/Divider';
 import InitialConditions from './initial-conditions';
 import FileSelector from './file-selector';
 import PathfinderController from './pathfinder-controller';
+import OptimalPaths from './optimal-paths';
 import AsideStepper from './aside-stepper';
 import ContentSection from './content-section';
 
@@ -32,6 +33,12 @@ class Main extends React.Component<{}, AppState> {
   onAirConditionsLoad = () => {
     this.setState({
       airConditionsLoaded: true,
+    });
+  }
+
+  onRoutesCalculated = () => {
+    this.setState({
+      routesCalculated: true,
     });
   }
 
@@ -79,7 +86,17 @@ class Main extends React.Component<{}, AppState> {
               >
                 <PathfinderController
                   blocked={!initialDataLoaded || !airConditionsLoaded}
+                  onRoutesCalculated={this.onRoutesCalculated}
                 />
+              </ContentSection>
+            </Box>
+
+            <Box mt={5}>
+              <ContentSection
+                title="Оптимальные маршруты"
+                blocked={!routesCalculated}
+              >
+                <OptimalPaths/>
               </ContentSection>
             </Box>
           </Box>

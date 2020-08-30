@@ -8,40 +8,12 @@ import Grid from '@material-ui/core/Grid';
 import Dialog from './dialog';
 import CalculatedRoutes from './calculated-routes';
 
-import { TotalRun, SpeedRun, AltitudeRun } from '../../types/interfaces';
+import { TotalRun } from '../../types/interfaces';
 
 interface Props {
   blocked?: boolean,
+  onRoutesCalculated(): void,
 }
-
-const totalMock: TotalRun = new Map();
-const speedMock: SpeedRun = new Map();
-const altMock: AltitudeRun = {
-  ascent: {
-    distanceInMiles: 200,
-    fuelBurnInKgs: 30,
-    timeInHours: 0.14,
-    averageWind: 15,
-  },
-  descent: {
-    distanceInMiles: 200,
-    fuelBurnInKgs: 30,
-    timeInHours: 0.14,
-    averageWind: 15,
-  },
-  cruise: {
-    distanceInMiles: 1200,
-    fuelBurnInKgs: 200,
-    timeInHours: 1.16,
-    averageWind: 25,
-    path: [],
-  },
-};
-
-speedMock.set(32000, altMock);
-speedMock.set(34000, altMock);
-totalMock.set(0.71, speedMock);
-totalMock.set(0.72, speedMock);
 
 const PathfinderController = (props: Props) => {
   const [processing, setProcessing] = React.useState(false);
@@ -55,6 +27,7 @@ const PathfinderController = (props: Props) => {
       setProcessing(false);
       setLoaded(true);
       setFlightRoutes(result);
+      props.onRoutesCalculated();
     });
     window.electron.findPath();
   };
