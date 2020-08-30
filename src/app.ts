@@ -1,4 +1,4 @@
-import addHours from 'date-fns/addHours';
+import addSeconds from 'date-fns/addSeconds';
 import differenceInSeconds from 'date-fns/differenceInSeconds';
 import ElectronApp from './electron/server';
 import Grid from './pathfinding/core/grid';
@@ -16,6 +16,7 @@ import type {
   AltitudeRun,
   SpeedRun,
   TotalRun,
+  OptimalPath,
 } from './types/interfaces';
 
 interface DisserAppSettings {
@@ -104,6 +105,10 @@ export default class DisserApp implements DisserAppAPI {
     this.customCostIndex = parseInt(geoConditions['cost-index'], 10);
   }
 
+  applyArrivalTime(arrivalTime: string) {
+    this.geo.applyArrivalDate(arrivalTime);
+  }
+
   startFinder() {
     if (!this.geo.isCoordsLoaded()) {
       throw new Error('No coords for start and dest points');
@@ -120,8 +125,14 @@ export default class DisserApp implements DisserAppAPI {
       totalRun.set(speedM, speedRunSummary);
     });
 
-    this.sendTotalRunData(totalRun);
-    this.findOptimalPaths(totalRun);
+    const optimalPaths = this.findBasicOptimalPaths(totalRun);
+
+    this.electronApp.renderTotalRun(totalRun);
+    this.electronApp.renderOptimalPaths(optimalPaths);
+
+    const timeConstraints = OptimalPathFinder.calculateTimeArrivalConstraints(optimalPaths.fuel);
+    const possibleArrivalTime = this.getArrivalTime(timeConstraints);
+    this.electronApp.requestArrivalTime(possibleArrivalTime);
   }
 
   performSpeedCycleStep(speedValue: number): SpeedRun {
@@ -355,10 +366,6 @@ export default class DisserApp implements DisserAppAPI {
     return [true, altitudeRun];
   }
 
-  sendTotalRunData(totalRun: TotalRun) {
-    this.electronApp.renderTotalRun(totalRun);
-  }
-
   createInitialEntryPoint(): void {
     this.initialEntryPoint.x = 0;
     this.initialEntryPoint.y = Math.ceil(this.airConditionsGridSize.height / 2) - 1;
@@ -387,24 +394,31 @@ export default class DisserApp implements DisserAppAPI {
     this.usedPathAngle = pathAngle;
   }
 
-  findOptimalPaths(totalRun: TotalRun): void {
+  findBasicOptimalPaths(totalRun: TotalRun): { fuel: OptimalPath, time: OptimalPath, combined: OptimalPath } {
     const optimalPathFinder = new OptimalPathFinder(totalRun);
     optimalPathFinder.setCustomCostIndex(this.customCostIndex);
     optimalPathFinder.findBasicOptimalPaths();
 
-    this.electronApp.renderOptimalPaths({
+    return {
       fuel: optimalPathFinder.fuelOptimalPath,
       time: optimalPathFinder.timeOptimalPath,
       combined: optimalPathFinder.combinedOptimalPath,
-    });
+    };
   }
 
   getAvailableTime(): number {
     const startDate = this.geo.departureDate;
-    const endDate = addHours(startDate, 1); // TODO: брать из интерфейса
+    const endDate = this.geo.arrivalDate;
     const diffInSeconds = Math.abs(differenceInSeconds(startDate, endDate));
     const diffInHours = diffInSeconds / 3600;
     return diffInHours;
+  }
+
+  getArrivalTime(flightTimeConstraints: { min: number, max: number }): { min: Date, max: Date } {
+    const minArrivalTime = addSeconds(this.geo.departureDate, flightTimeConstraints.min * 3600);
+    const maxArrivalTime = addSeconds(this.geo.departureDate, flightTimeConstraints.max * 3600);
+
+    return { min: minArrivalTime, max: maxArrivalTime };
   }
 
   getNextEntryPoint(

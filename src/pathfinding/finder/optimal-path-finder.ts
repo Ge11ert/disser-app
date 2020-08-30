@@ -2,6 +2,7 @@ import { getCruiseProfileRowsByAltitude } from '../../flight-profiles';
 import settings from '../../app.settings';
 
 import type { TotalRun, AltitudeRun, OptimalPath } from '../../types/interfaces';
+import differenceInSeconds from "date-fns/differenceInSeconds";
 
 const costFactor = {
   fuel: {
@@ -34,13 +35,31 @@ const minMach = 0.71;
 const maxMach = 0.81;
 
 export default class OptimalPathFinder {
-  fuelOptimalPath: OptimalPath|null = null;
-  timeOptimalPath: OptimalPath|null = null;
-  combinedOptimalPath: OptimalPath|null = null;
-  rtaOptimalPath: OptimalPath|null = null;
+  fuelOptimalPath: OptimalPath = emptyOptimalPath;
+  timeOptimalPath: OptimalPath = emptyOptimalPath;
+  combinedOptimalPath: OptimalPath = emptyOptimalPath;
+  rtaOptimalPath: OptimalPath = emptyOptimalPath;
 
   costFactor = costFactor;
   availableTimeInHours = 0;
+
+  static calculateTimeArrivalConstraints(fuelOptimalPath: OptimalPath): { min: number, max: number } {
+    const profileRowForAltitude = getCruiseProfileRowsByAltitude(fuelOptimalPath.altitude);
+    const speedOfSound = profileRowForAltitude[0].speedOfSound;
+
+    const minimumAirSpeed = settings.environment.minM * speedOfSound; // knots
+    const maximumAirSpeed = settings.environment.maxM * speedOfSound; // knots
+
+    const minGroundSpeed = minimumAirSpeed + fuelOptimalPath.averageWind;
+    const maxGroundSpeed = maximumAirSpeed + fuelOptimalPath.averageWind;
+
+    const maxFlightTime = fuelOptimalPath.distance / minGroundSpeed; // hours
+    const minFlightTime = fuelOptimalPath.distance / maxGroundSpeed;
+    return {
+      min: minFlightTime,
+      max: maxFlightTime,
+    };
+  }
 
   constructor(private totalRun: TotalRun) {}
 
@@ -132,24 +151,6 @@ export default class OptimalPathFinder {
     this.fuelOptimalPath = fuelOptimalPath;
     this.timeOptimalPath = timeOptimalPath;
     this.combinedOptimalPath = combinedOptimalPath;
-  }
-
-  calculateTimeArrivalConstraints(fuelOptimalPath: OptimalPath): { min: number, max: number } {
-    const profileRowForAltitude = getCruiseProfileRowsByAltitude(fuelOptimalPath.altitude);
-    const speedOfSound = profileRowForAltitude[0].speedOfSound;
-
-    const minimumAirSpeed = settings.environment.minM * speedOfSound; // knots
-    const maximumAirSpeed = settings.environment.maxM * speedOfSound; // knots
-
-    const minGroundSpeed = minimumAirSpeed + fuelOptimalPath.averageWind;
-    const maxGroundSpeed = maximumAirSpeed + fuelOptimalPath.averageWind;
-
-    const maxFlightTime = fuelOptimalPath.distance / minGroundSpeed; // hours
-    const minFlightTime = fuelOptimalPath.distance / maxGroundSpeed;
-    return {
-      min: minFlightTime,
-      max: maxFlightTime,
-    };
   }
 
   findRTAOptimalPath(fuelOptimalPath: OptimalPath, arrivalTimeConstraints: { min: number, max: number }): OptimalPath|null {

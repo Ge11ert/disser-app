@@ -44,14 +44,18 @@ export interface ElectronWindowAPI {
   listenToAirConditionsLoaded(callback: (arg: any) => void): void;
   listenToFlightRoutesCalculated(callback: (arg: any) => void): void;
   listenToOptimalPathsFound(callback: (arg: any) => void): void;
+  listenToArrivalTimeRequest(callback: (arg: any) => void): void;
   findPath(): void;
   applyInitialConditions(conditions: Record<string, string>): void;
+  applyArrivalTime(time: string): void;
 }
 
 export interface DisserAppAPI {
   startElectronApp(): void;
 
   applyInitialGeoConditions(geoConditions: Record<string, string>): void;
+
+  applyArrivalTime(time: string): void;
 
   startFinder(): void;
 

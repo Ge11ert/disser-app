@@ -8,6 +8,8 @@ import {
   START_FINDER,
   RENDER_TOTAL_RUN,
   APPLY_INITIAL_CONDITIONS,
+  REQUEST_ARRIVAL_TIME,
+  APPLY_ARRIVAL_TIME,
 } from '../ipc-events/event-names';
 import { ElectronWindowAPI } from '../../types/interfaces';
 
@@ -30,11 +32,19 @@ const electronToWindowAPI: ElectronWindowAPI = {
       callback(routes);
     });
   },
+  listenToArrivalTimeRequest: (callback: (arg: any) => void) => {
+    ipcRenderer.on(REQUEST_ARRIVAL_TIME, (event, possibleArrivalTimes: any) => {
+      callback(possibleArrivalTimes);
+    });
+  },
   findPath: () => {
     ipcRenderer.send(START_FINDER);
   },
   applyInitialConditions: (conditions) => {
     ipcRenderer.send(APPLY_INITIAL_CONDITIONS, conditions);
+  },
+  applyArrivalTime(time: string) {
+    ipcRenderer.send(APPLY_ARRIVAL_TIME, time);
   }
 };
 

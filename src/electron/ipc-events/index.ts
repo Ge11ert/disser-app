@@ -1,5 +1,6 @@
 import { App, ipcMain, IpcMainEvent, dialog, OpenDialogReturnValue, BrowserWindow } from 'electron';
 import {
+  APPLY_ARRIVAL_TIME,
   APPLY_INITIAL_CONDITIONS,
   LOAD_AIR_CONDITIONS,
   RENDER_AIR_CONDITIONS,
@@ -47,4 +48,12 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
       console.log(e);
     }
   });
+
+  ipcMain.on(APPLY_ARRIVAL_TIME, (event, time) => {
+    try {
+      disserApp.applyArrivalTime(time);
+    } catch (e) {
+      console.log(e);
+    }
+  })
 }

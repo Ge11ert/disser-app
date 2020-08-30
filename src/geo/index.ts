@@ -9,6 +9,7 @@ export default class Geo {
   public startAltInFeet = 0;
   public startAltInMeters = 0;
   public departureDate = new Date();
+  public arrivalDate = new Date();
 
   public startLBHCoords = {
     lat: 0,
@@ -75,6 +76,12 @@ export default class Geo {
     this.departureDate = parseISO(startISODate);
 
     this.coordsLoaded = true;
+  }
+
+  applyArrivalDate(arrivalTime: string) {
+    const currentISODate = format(new Date(), 'yyyy-LL-dd');
+    const endISODate = `${currentISODate}T${arrivalTime}`;
+    this.arrivalDate = parseISO(endISODate);
   }
 
   findDistanceBetweenStartAndEndPoints() {

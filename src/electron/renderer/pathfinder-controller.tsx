@@ -7,6 +7,7 @@ import CheckIcon from '@material-ui/icons/Check';
 import Grid from '@material-ui/core/Grid';
 import Dialog from './dialog';
 import CalculatedRoutes from './calculated-routes';
+import ArrivalTimeField from './arrival-time-field';
 
 import { TotalRun } from '../../types/interfaces';
 
@@ -38,7 +39,7 @@ const PathfinderController = (props: Props) => {
 
   const closeRoutesDialog = () => {
     setOpen(false);
-  }
+  };
 
   return (
     <Box>
@@ -87,6 +88,10 @@ const PathfinderController = (props: Props) => {
           </Grid>
         </Box>
       )}
+
+      <Box my={2}>
+        <ArrivalTimeField/>
+      </Box>
 
       <Dialog
         isOpen={open}
