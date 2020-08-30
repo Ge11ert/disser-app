@@ -356,7 +356,7 @@ export default class DisserApp implements DisserAppAPI {
   }
 
   sendTotalRunData(totalRun: TotalRun) {
-    this.electronApp.sendToWindow(totalRun);
+    this.electronApp.renderTotalRun(totalRun);
   }
 
   createInitialEntryPoint(): void {
@@ -388,11 +388,15 @@ export default class DisserApp implements DisserAppAPI {
   }
 
   findOptimalPaths(totalRun: TotalRun): void {
-    const availableTime = this.getAvailableTime();
-
-    const optimalPathFinder = new OptimalPathFinder(totalRun, availableTime);
+    const optimalPathFinder = new OptimalPathFinder(totalRun);
     optimalPathFinder.setCustomCostIndex(this.customCostIndex);
-    optimalPathFinder.findOptimalPaths();
+    optimalPathFinder.findBasicOptimalPaths();
+
+    this.electronApp.renderOptimalPaths({
+      fuel: optimalPathFinder.fuelOptimalPath,
+      time: optimalPathFinder.timeOptimalPath,
+      combined: optimalPathFinder.combinedOptimalPath,
+    });
   }
 
   getAvailableTime(): number {

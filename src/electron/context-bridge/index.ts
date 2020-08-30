@@ -4,6 +4,7 @@ import { contextBridge, ipcRenderer } from 'electron';
 import {
   LOAD_AIR_CONDITIONS,
   RENDER_AIR_CONDITIONS,
+  RENDER_OPTIMAL_PATHS,
   START_FINDER,
   RENDER_TOTAL_RUN,
   APPLY_INITIAL_CONDITIONS,
@@ -21,6 +22,11 @@ const electronToWindowAPI: ElectronWindowAPI = {
   },
   listenToFlightRoutesCalculated: (callback: (arg: any) => void) => {
     ipcRenderer.on(RENDER_TOTAL_RUN, (event, routes: any) => {
+      callback(routes);
+    });
+  },
+  listenToOptimalPathsFound: (callback: (arg: any) => void) => {
+    ipcRenderer.on(RENDER_OPTIMAL_PATHS, (event, routes: any) => {
       callback(routes);
     });
   },

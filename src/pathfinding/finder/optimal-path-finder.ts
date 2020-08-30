@@ -1,18 +1,7 @@
 import { getCruiseProfileRowsByAltitude } from '../../flight-profiles';
 import settings from '../../app.settings';
 
-import type { TotalRun, AltitudeRun } from '../../types/interfaces';
-
-type OptimalPath = {
-  flightCost: number,
-  fuel: number,
-  time: number,
-  distance: number,
-  speed: number,
-  altitude: number,
-  path: number[][],
-  averageWind: number,
-}
+import type { TotalRun, AltitudeRun, OptimalPath } from '../../types/interfaces';
 
 const costFactor = {
   fuel: {
@@ -51,10 +40,11 @@ export default class OptimalPathFinder {
   rtaOptimalPath: OptimalPath|null = null;
 
   costFactor = costFactor;
+  availableTimeInHours = 0;
 
-  constructor(private totalRun: TotalRun, private availableTimeInHours: number) {}
+  constructor(private totalRun: TotalRun) {}
 
-  findOptimalPaths(): void {
+  findBasicOptimalPaths(): void {
     let minimumFuelFlightCost = Number.MAX_SAFE_INTEGER;
     let minimumTimeFlightCost = Number.MAX_SAFE_INTEGER;
     let minimumCombinedFlightCost = Number.MAX_SAFE_INTEGER;
@@ -142,10 +132,6 @@ export default class OptimalPathFinder {
     this.fuelOptimalPath = fuelOptimalPath;
     this.timeOptimalPath = timeOptimalPath;
     this.combinedOptimalPath = combinedOptimalPath;
-
-    const arrivalTimeConstraints = this.calculateTimeArrivalConstraints(fuelOptimalPath);
-
-    this.rtaOptimalPath = this.findRTAOptimalPath(fuelOptimalPath, arrivalTimeConstraints);
   }
 
   calculateTimeArrivalConstraints(fuelOptimalPath: OptimalPath): { min: number, max: number } {

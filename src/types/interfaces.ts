@@ -43,6 +43,7 @@ export interface ElectronWindowAPI {
   loadAirConditions(): void;
   listenToAirConditionsLoaded(callback: (arg: any) => void): void;
   listenToFlightRoutesCalculated(callback: (arg: any) => void): void;
+  listenToOptimalPathsFound(callback: (arg: any) => void): void;
   findPath(): void;
   applyInitialConditions(conditions: Record<string, string>): void;
 }
@@ -65,3 +66,14 @@ type RunInfoWithPath = RunInfo & PathInfo;
 export type AltitudeRun = { ascent: RunInfo, cruise: RunInfoWithPath, descent: RunInfo };
 export type SpeedRun = Map<number, AltitudeRun>; // данные по всем высотам для указанной скорости
 export type TotalRun = Map<number, SpeedRun>; // набор по всем скоростям
+
+export type OptimalPath = {
+  flightCost: number,
+  fuel: number,
+  time: number,
+  distance: number,
+  speed: number,
+  altitude: number,
+  path: number[][],
+  averageWind: number,
+}
