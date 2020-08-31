@@ -100,28 +100,34 @@ class ArrivalTimeField extends React.Component<{}, State> {
           {' '}
           {format(possibleArrivalDates.max, 'HH:mm:ss')}
         </Typography>
-        <MaskedTextField
-          type="text"
-          id="arrival-time"
-          name="arrival-time"
-          label="Время прибытия"
-          value={arrivalTimeString}
-          onChange={this.onArrivalTimeChange}
-          variant="outlined"
-          placeholder="00:00:00"
-          mask={[/\d/, /\d/, ':', /\d/, /\d/, ':', /\d/, /\d/]}
-          {...(!isValid ? ({
-            error: true,
-            helperText: errorText,
-          }) : {})}
-        />
-        <Button
-          variant="outlined"
-          color="primary"
-          onClick={this.applyArrivalTime}
-        >
-          Применить
-        </Button>
+
+        <Box mt={2}>
+          <MaskedTextField
+            type="text"
+            id="arrival-time"
+            name="arrival-time"
+            label="Время прибытия"
+            value={arrivalTimeString}
+            onChange={this.onArrivalTimeChange}
+            variant="outlined"
+            placeholder="00:00:00"
+            mask={[/\d/, /\d/, ':', /\d/, /\d/, ':', /\d/, /\d/]}
+            {...(!isValid ? ({
+              error: true,
+              helperText: errorText,
+            }) : {})}
+          />
+        </Box>
+
+        <Box mt={2}>
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={this.applyArrivalTime}
+          >
+            Применить
+          </Button>
+        </Box>
       </Box>
     )
   }
