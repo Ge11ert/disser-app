@@ -107,6 +107,13 @@ export default class DisserApp implements DisserAppAPI {
   applyArrivalTime(arrivalTime: string) {
     this.geo.applyArrivalDate(arrivalTime);
     this.optimalPathFinder.findRTAOptimalPath(this.geo.departureDate, this.geo.arrivalDate);
+    const optimalPaths = {
+      fuel: this.optimalPathFinder.fuelOptimalPath,
+      time: this.optimalPathFinder.timeOptimalPath,
+      combined: this.optimalPathFinder.combinedOptimalPath,
+      rta: this.optimalPathFinder.rtaOptimalPath,
+    };
+    this.electronApp.renderOptimalPaths(optimalPaths);
   }
 
   startFinder() {

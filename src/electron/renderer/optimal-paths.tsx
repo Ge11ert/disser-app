@@ -4,12 +4,11 @@ import Typography from '@material-ui/core/Typography';
 
 import { OptimalPath } from '../../types/interfaces';
 
-const optimalMock: OptimalPaths = require('./optimal-mock.json');
-
 type OptimalPaths = {
   fuel: OptimalPath,
   time: OptimalPath,
   combined: OptimalPath,
+  rta: OptimalPath|null,
 };
 
 const OptimalPaths = () => {
@@ -22,10 +21,11 @@ const OptimalPaths = () => {
 
   if (!optimalPaths) return null;
 
-  const { fuel, time, combined } = optimalPaths;
+  const { fuel, time, combined, rta } = optimalPaths;
   const getFuelValue = getValueWithLabel(fuel);
   const getTimeValue = getValueWithLabel(time);
   const getCombinedValue = getValueWithLabel(combined);
+  const getRTAValue = rta ? getValueWithLabel(rta) : () => null;
 
   return (
     <Box>
@@ -98,6 +98,36 @@ const OptimalPaths = () => {
             <br/>
             {getCombinedValue('Средний ветер', 'averageWind')}
           </Typography>
+        </Box>
+      </Box>
+
+      <Box mt={2}>
+        <Typography variant="h5">
+          4. Оптимальный по критерию минимума задержки прибытия
+        </Typography>
+
+        <Box mt={2}>
+          { !!rta ? (
+            <Typography variant="body1">
+              {getRTAValue('Стоимость полёта', 'flightCost')}
+              <br/>
+              {getRTAValue('Высота', 'altitude')}
+              <br/>
+              {getRTAValue('Скорость', 'speed')}
+              <br/>
+              {getRTAValue('Дистанция', 'distance')}
+              <br/>
+              {getRTAValue('Затраты топлива', 'fuel')}
+              <br/>
+              {getRTAValue('Затраты времени', 'time')}
+              <br/>
+              {getRTAValue('Средний ветер', 'averageWind')}
+            </Typography>
+          ) : (
+            <Typography variant="body1">
+              Для выбранного времени прибытия маршрута не существует или не введено время прибытия.
+            </Typography>
+          )}
         </Box>
       </Box>
     </Box>
