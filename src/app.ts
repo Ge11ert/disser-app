@@ -1,5 +1,3 @@
-import addHours from 'date-fns/addHours';
-import differenceInSeconds from 'date-fns/differenceInSeconds';
 import ElectronApp from './electron/server';
 import Grid from './pathfinding/core/grid';
 import CruisePathFinder from './pathfinding/finder/cruise-path-finder';
@@ -16,6 +14,7 @@ import type {
   AltitudeRun,
   SpeedRun,
   TotalRun,
+  OptimalPath,
 } from './types/interfaces';
 
 interface DisserAppSettings {
@@ -34,6 +33,7 @@ export default class DisserApp implements DisserAppAPI {
 
   private readonly electronApp: ElectronApp;
   private readonly geo: Geo = new Geo();
+  private readonly optimalPathFinder: OptimalPathFinder = new OptimalPathFinder();
 
   private airConditionsPerAlt: Record<number, AirConditions> = {};
   private airConditionsGridSize = { width: 0, height: 0 };
@@ -104,6 +104,18 @@ export default class DisserApp implements DisserAppAPI {
     this.customCostIndex = parseInt(geoConditions['cost-index'], 10);
   }
 
+  applyArrivalTime(arrivalTime: string) {
+    this.geo.applyArrivalDate(arrivalTime);
+    this.optimalPathFinder.findRTAOptimalPath(this.geo.departureDate, this.geo.arrivalDate);
+    const optimalPaths = {
+      fuel: this.optimalPathFinder.fuelOptimalPath,
+      time: this.optimalPathFinder.timeOptimalPath,
+      combined: this.optimalPathFinder.combinedOptimalPath,
+      rta: this.optimalPathFinder.rtaOptimalPath,
+    };
+    this.electronApp.renderOptimalPaths(optimalPaths);
+  }
+
   startFinder() {
     if (!this.geo.isCoordsLoaded()) {
       throw new Error('No coords for start and dest points');
@@ -120,8 +132,13 @@ export default class DisserApp implements DisserAppAPI {
       totalRun.set(speedM, speedRunSummary);
     });
 
-    this.sendTotalRunData(totalRun);
-    this.findOptimalPaths(totalRun);
+    const optimalPaths = this.findBasicOptimalPaths(totalRun);
+
+    this.electronApp.renderTotalRun(totalRun);
+    this.electronApp.renderOptimalPaths(optimalPaths);
+
+    const possibleArrivalTime = this.optimalPathFinder.getPossibleArrivalTime(this.geo.departureDate);
+    this.electronApp.requestArrivalTime(possibleArrivalTime);
   }
 
   performSpeedCycleStep(speedValue: number): SpeedRun {
@@ -355,10 +372,6 @@ export default class DisserApp implements DisserAppAPI {
     return [true, altitudeRun];
   }
 
-  sendTotalRunData(totalRun: TotalRun) {
-    this.electronApp.sendToWindow(totalRun);
-  }
-
   createInitialEntryPoint(): void {
     this.initialEntryPoint.x = 0;
     this.initialEntryPoint.y = Math.ceil(this.airConditionsGridSize.height / 2) - 1;
@@ -387,20 +400,15 @@ export default class DisserApp implements DisserAppAPI {
     this.usedPathAngle = pathAngle;
   }
 
-  findOptimalPaths(totalRun: TotalRun): void {
-    const availableTime = this.getAvailableTime();
+  findBasicOptimalPaths(totalRun: TotalRun): { fuel: OptimalPath, time: OptimalPath, combined: OptimalPath } {
+    this.optimalPathFinder.setCustomCostIndex(this.customCostIndex);
+    this.optimalPathFinder.findBasicOptimalPaths(totalRun);
 
-    const optimalPathFinder = new OptimalPathFinder(totalRun, availableTime);
-    optimalPathFinder.setCustomCostIndex(this.customCostIndex);
-    optimalPathFinder.findOptimalPaths();
-  }
-
-  getAvailableTime(): number {
-    const startDate = this.geo.departureDate;
-    const endDate = addHours(startDate, 1); // TODO: брать из интерфейса
-    const diffInSeconds = Math.abs(differenceInSeconds(startDate, endDate));
-    const diffInHours = diffInSeconds / 3600;
-    return diffInHours;
+    return {
+      fuel: this.optimalPathFinder.fuelOptimalPath,
+      time: this.optimalPathFinder.timeOptimalPath,
+      combined: this.optimalPathFinder.combinedOptimalPath,
+    };
   }
 
   getNextEntryPoint(

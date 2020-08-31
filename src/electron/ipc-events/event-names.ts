@@ -1,5 +1,8 @@
 export const LOAD_AIR_CONDITIONS = 'LOAD_AIR_CONDITIONS' as const;
 export const RENDER_AIR_CONDITIONS = 'RENDER_AIR_CONDITIONS' as const;
 export const RENDER_TOTAL_RUN = 'RENDER_TOTAL_RUN' as const;
+export const RENDER_OPTIMAL_PATHS = 'RENDER_OPTIMAL_PATHS' as const;
 export const START_FINDER = 'START_FINDER' as const;
 export const APPLY_INITIAL_CONDITIONS = 'APPLY_INITIAL_CONDITIONS' as const;
+export const APPLY_ARRIVAL_TIME = 'APPLY_ARRIVAL_TIME' as const;
+export const REQUEST_ARRIVAL_TIME = 'REQUEST_ARRIVAL_TIME' as const;
