@@ -1,8 +1,11 @@
+import addSeconds from 'date-fns/addSeconds';
+import differenceInSeconds from 'date-fns/differenceInSeconds';
+import isBefore from 'date-fns/isBefore';
+import isAfter from 'date-fns/isAfter';
 import { getCruiseProfileRowsByAltitude } from '../../flight-profiles';
 import settings from '../../app.settings';
 
 import type { TotalRun, AltitudeRun, OptimalPath } from '../../types/interfaces';
-import differenceInSeconds from "date-fns/differenceInSeconds";
 
 const costFactor = {
   fuel: {
@@ -30,18 +33,13 @@ const emptyOptimalPath: OptimalPath = {
   averageWind: 0,
 };
 
-// TODO: брать из приложения
-const minMach = 0.71;
-const maxMach = 0.81;
-
 export default class OptimalPathFinder {
   fuelOptimalPath: OptimalPath = emptyOptimalPath;
   timeOptimalPath: OptimalPath = emptyOptimalPath;
   combinedOptimalPath: OptimalPath = emptyOptimalPath;
-  rtaOptimalPath: OptimalPath = emptyOptimalPath;
+  rtaOptimalPath: OptimalPath|null = null;
 
   costFactor = costFactor;
-  availableTimeInHours = 0;
 
   static calculateTimeArrivalConstraints(fuelOptimalPath: OptimalPath): { min: number, max: number } {
     const profileRowForAltitude = getCruiseProfileRowsByAltitude(fuelOptimalPath.altitude);
@@ -61,9 +59,7 @@ export default class OptimalPathFinder {
     };
   }
 
-  constructor(private totalRun: TotalRun) {}
-
-  findBasicOptimalPaths(): void {
+  findBasicOptimalPaths(totalRun: TotalRun): void {
     let minimumFuelFlightCost = Number.MAX_SAFE_INTEGER;
     let minimumTimeFlightCost = Number.MAX_SAFE_INTEGER;
     let minimumCombinedFlightCost = Number.MAX_SAFE_INTEGER;
@@ -81,7 +77,7 @@ export default class OptimalPathFinder {
       combined: [],
     };
 
-    for (const [speed, speedSummary] of this.totalRun) {
+    for (const [speed, speedSummary] of totalRun) {
       for (const [altitude, altSummary] of speedSummary) {
         const fuelConsumption = summarize(altSummary, 'fuelBurnInKgs');
         const timeSpent = summarize(altSummary, 'timeInHours');
@@ -153,33 +149,46 @@ export default class OptimalPathFinder {
     this.combinedOptimalPath = combinedOptimalPath;
   }
 
-  findRTAOptimalPath(fuelOptimalPath: OptimalPath, arrivalTimeConstraints: { min: number, max: number }): OptimalPath|null {
-    if (
-      this.availableTimeInHours < arrivalTimeConstraints.min
-      || this.availableTimeInHours > arrivalTimeConstraints.max
-    ) {
-      const err = `Unsupported arrival time.
-Min time: ${arrivalTimeConstraints.min} hours, max time: ${arrivalTimeConstraints.max} hours.
-Selected time: ${this.availableTimeInHours} hours.`;
-      throw new Error(err);
+  findRTAOptimalPath(departureDate: Date, arrivalDate: Date): void {
+    const possibleArrivalTime = this.getPossibleArrivalTime(departureDate);
+
+    if (isBefore(arrivalDate, possibleArrivalTime.min) || isAfter(arrivalDate, possibleArrivalTime.max)) {
+      console.log('No route');
+      this.rtaOptimalPath = null;
+      return;
     }
 
-    const requiredGroundSpeed = fuelOptimalPath.distance / this.availableTimeInHours; // knots (nm per hour)
-    const requiredAirSpeed = requiredGroundSpeed + fuelOptimalPath.averageWind;
+    const availableTimeInHours = this.getAvailableTime(departureDate, arrivalDate);
+    const requiredGroundSpeed = this.fuelOptimalPath.distance / availableTimeInHours; // knots (nm per hour)
+    const requiredAirSpeed = requiredGroundSpeed + this.fuelOptimalPath.averageWind;
 
-    const profileRowsForAltitude = getCruiseProfileRowsByAltitude(fuelOptimalPath.altitude);
+    const profileRowsForAltitude = getCruiseProfileRowsByAltitude(this.fuelOptimalPath.altitude);
     const speedOfSound = profileRowsForAltitude[0].speedOfSound;
     const requiredMach = requiredAirSpeed / speedOfSound;
 
-    if (requiredMach >= minMach && requiredMach <= maxMach) {
-      return fuelOptimalPath;
-    }
-
-    return null;
+    this.rtaOptimalPath = {
+      ...this.fuelOptimalPath,
+      speed: requiredAirSpeed,
+      time: availableTimeInHours,
+    };
   }
 
   setCustomCostIndex(costIndex: number): void {
     this.costFactor.custom.CI = costIndex;
+  }
+
+  getAvailableTime(startDate: Date, endDate: Date): number {
+    const diffInSeconds = Math.abs(differenceInSeconds(startDate, endDate));
+    const diffInHours = diffInSeconds / 3600;
+    return diffInHours;
+  }
+
+  getPossibleArrivalTime(departureDate: Date): { min: Date, max: Date } {
+    const timeConstraints = OptimalPathFinder.calculateTimeArrivalConstraints(this.fuelOptimalPath);
+    const minArrivalTime = addSeconds(departureDate, timeConstraints.min * 3600);
+    const maxArrivalTime = addSeconds(departureDate, timeConstraints.max * 3600);
+
+    return { min: minArrivalTime, max: maxArrivalTime };
   }
 }
 

@@ -1,8 +1,6 @@
 import React from 'react';
 import format from 'date-fns/esm/format';
 import parseISO from 'date-fns/esm/parseISO';
-import isBefore from 'date-fns/esm/isBefore';
-import isAfter from 'date-fns/esm/isAfter';
 import isValid from 'date-fns/esm/isValid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
@@ -25,11 +23,13 @@ class ArrivalTimeField extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    window.electron.listenToArrivalTimeRequest((arrivalDates: { min: Date, max: Date }) => {
-      this.setState({
-        possibleArrivalDates: arrivalDates,
+    if (window.electron) {
+      window.electron.listenToArrivalTimeRequest((arrivalDates: { min: Date, max: Date }) => {
+        this.setState({
+          possibleArrivalDates: arrivalDates,
+        });
       });
-    });
+    }
   }
 
   onArrivalTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,7 +44,7 @@ class ArrivalTimeField extends React.Component<{}, State> {
   };
 
   validate = () => {
-    const { possibleArrivalDates, arrivalTimeString } = this.state;
+    const { arrivalTimeString } = this.state;
 
     if (!arrivalTimeString) {
       this.setState({
@@ -65,14 +65,6 @@ class ArrivalTimeField extends React.Component<{}, State> {
       return false;
     }
 
-    if (possibleArrivalDates && (isBefore(userDate, possibleArrivalDates.min) || isAfter(userDate, possibleArrivalDates.max))) {
-      this.setState({
-        isValid: false,
-        errorText: 'Время не входит в заданный интервал',
-      });
-      return false;
-    }
-
     return true;
   };
 
@@ -81,7 +73,7 @@ class ArrivalTimeField extends React.Component<{}, State> {
 
     if (!isValid) return;
 
-
+    window.electron.applyArrivalTime(this.state.arrivalTimeString);
   };
 
   render() {

@@ -1,5 +1,3 @@
-import addSeconds from 'date-fns/addSeconds';
-import differenceInSeconds from 'date-fns/differenceInSeconds';
 import ElectronApp from './electron/server';
 import Grid from './pathfinding/core/grid';
 import CruisePathFinder from './pathfinding/finder/cruise-path-finder';
@@ -35,6 +33,7 @@ export default class DisserApp implements DisserAppAPI {
 
   private readonly electronApp: ElectronApp;
   private readonly geo: Geo = new Geo();
+  private readonly optimalPathFinder: OptimalPathFinder = new OptimalPathFinder();
 
   private airConditionsPerAlt: Record<number, AirConditions> = {};
   private airConditionsGridSize = { width: 0, height: 0 };
@@ -107,6 +106,7 @@ export default class DisserApp implements DisserAppAPI {
 
   applyArrivalTime(arrivalTime: string) {
     this.geo.applyArrivalDate(arrivalTime);
+    this.optimalPathFinder.findRTAOptimalPath(this.geo.departureDate, this.geo.arrivalDate);
   }
 
   startFinder() {
@@ -130,8 +130,7 @@ export default class DisserApp implements DisserAppAPI {
     this.electronApp.renderTotalRun(totalRun);
     this.electronApp.renderOptimalPaths(optimalPaths);
 
-    const timeConstraints = OptimalPathFinder.calculateTimeArrivalConstraints(optimalPaths.fuel);
-    const possibleArrivalTime = this.getArrivalTime(timeConstraints);
+    const possibleArrivalTime = this.optimalPathFinder.getPossibleArrivalTime(this.geo.departureDate);
     this.electronApp.requestArrivalTime(possibleArrivalTime);
   }
 
@@ -395,30 +394,14 @@ export default class DisserApp implements DisserAppAPI {
   }
 
   findBasicOptimalPaths(totalRun: TotalRun): { fuel: OptimalPath, time: OptimalPath, combined: OptimalPath } {
-    const optimalPathFinder = new OptimalPathFinder(totalRun);
-    optimalPathFinder.setCustomCostIndex(this.customCostIndex);
-    optimalPathFinder.findBasicOptimalPaths();
+    this.optimalPathFinder.setCustomCostIndex(this.customCostIndex);
+    this.optimalPathFinder.findBasicOptimalPaths(totalRun);
 
     return {
-      fuel: optimalPathFinder.fuelOptimalPath,
-      time: optimalPathFinder.timeOptimalPath,
-      combined: optimalPathFinder.combinedOptimalPath,
+      fuel: this.optimalPathFinder.fuelOptimalPath,
+      time: this.optimalPathFinder.timeOptimalPath,
+      combined: this.optimalPathFinder.combinedOptimalPath,
     };
-  }
-
-  getAvailableTime(): number {
-    const startDate = this.geo.departureDate;
-    const endDate = this.geo.arrivalDate;
-    const diffInSeconds = Math.abs(differenceInSeconds(startDate, endDate));
-    const diffInHours = diffInSeconds / 3600;
-    return diffInHours;
-  }
-
-  getArrivalTime(flightTimeConstraints: { min: number, max: number }): { min: Date, max: Date } {
-    const minArrivalTime = addSeconds(this.geo.departureDate, flightTimeConstraints.min * 3600);
-    const maxArrivalTime = addSeconds(this.geo.departureDate, flightTimeConstraints.max * 3600);
-
-    return { min: minArrivalTime, max: maxArrivalTime };
   }
 
   getNextEntryPoint(
