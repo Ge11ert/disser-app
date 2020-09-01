@@ -13,6 +13,7 @@ import FlightTakeoff from '@material-ui/icons/FlightTakeoff';
 import Flight from '@material-ui/icons/Flight';
 import FlightLand from '@material-ui/icons/FlightLand';
 import Divider from '@material-ui/core/Divider';
+import { formatTime } from './utils';
 
 import { TotalRun, AltitudeRun } from '../../types/interfaces';
 
@@ -144,9 +145,7 @@ function getDetails(route: AltitudeRun, type: 'ascent'|'cruise'|'descent') {
       <Typography variant="body1">
         Затраты времени:
         {' '}
-        {route[type].timeInHours.toFixed(5)}
-        {' '}
-        часов
+        {formatTime(route[type].timeInHours)}
       </Typography>
     </Box>
   )
