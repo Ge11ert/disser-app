@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+import { formatTime } from './utils';
 
 import { OptimalPath } from '../../types/interfaces';
 
@@ -46,7 +47,7 @@ const OptimalPaths = () => {
             <br/>
             {getFuelValue('Затраты топлива', 'fuel')}
             <br/>
-            {getFuelValue('Затраты времени', 'time')}
+            {getFuelValue('Затраты времени', 'time', formatTime)}
             <br/>
             {getFuelValue('Средний ветер', 'averageWind')}
           </Typography>
@@ -70,7 +71,7 @@ const OptimalPaths = () => {
             <br/>
             {getTimeValue('Затраты топлива', 'fuel')}
             <br/>
-            {getTimeValue('Затраты времени', 'time')}
+            {getTimeValue('Затраты времени', 'time', formatTime)}
             <br/>
             {getTimeValue('Средний ветер', 'averageWind')}
           </Typography>
@@ -94,7 +95,7 @@ const OptimalPaths = () => {
             <br/>
             {getCombinedValue('Затраты топлива', 'fuel')}
             <br/>
-            {getCombinedValue('Затраты времени', 'time')}
+            {getCombinedValue('Затраты времени', 'time', formatTime)}
             <br/>
             {getCombinedValue('Средний ветер', 'averageWind')}
           </Typography>
@@ -119,7 +120,7 @@ const OptimalPaths = () => {
               <br/>
               {getRTAValue('Затраты топлива', 'fuel')}
               <br/>
-              {getRTAValue('Затраты времени', 'time')}
+              {getRTAValue('Затраты времени', 'time', formatTime)}
               <br/>
               {getRTAValue('Средний ветер', 'averageWind')}
             </Typography>
@@ -137,7 +138,7 @@ const OptimalPaths = () => {
 export default OptimalPaths;
 
 function getValueWithLabel(pathInfo: OptimalPath) {
-  return function (label: string, fieldName: keyof OptimalPath) {
-    return `${label}: ${pathInfo[fieldName]}`;
+  return function (label: string, fieldName: keyof OptimalPath, formatter?: Function) {
+    return `${label}: ${formatter ? formatter(pathInfo[fieldName]) : pathInfo[fieldName]}`;
   }
 }
