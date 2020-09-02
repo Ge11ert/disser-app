@@ -15,7 +15,7 @@ interface Props {
   onFileLoaded(): void,
 }
 
-const FileSelector = (props: Props) => {
+const AirConditionsLoader = (props: Props) => {
   const [processing, setProcessing] = React.useState(false);
   const [loaded, setLoaded] = React.useState(false);
   const [airConditions, setAirConditions] = React.useState<Map<number, AirConditions>|null>(null);
@@ -99,4 +99,4 @@ const FileSelector = (props: Props) => {
   );
 }
 
-export default FileSelector;
+export default AirConditionsLoader;
