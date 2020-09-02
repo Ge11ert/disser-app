@@ -66,7 +66,7 @@ export default class DisserApp implements DisserAppAPI {
     this.electronApp.start();
   }
 
-  registerAirConditionsForAltitude(conditions: AirConditions|undefined, altitude: number) {
+  registerAirConditionsForAltitude(conditions: AirConditions|undefined, altitude: number, disableWind: boolean) {
     if (!Array.isArray(conditions) || conditions.length === 0) {
       throw new Error(`Air conditions matrix for altitude ${altitude} is empty`);
     }
@@ -86,7 +86,7 @@ export default class DisserApp implements DisserAppAPI {
       throw new Error(`Air condition matrix for altitude ${altitude} has different size, which is no-op`);
     }
 
-    this.airConditionsPerAlt[altitude] = conditions;
+    this.airConditionsPerAlt[altitude] = disableWind ? withoutWind(conditions) : conditions;
   }
 
   getAltitudeList() {
@@ -685,4 +685,8 @@ function combineWithPrev(currentSummary: AltitudeRun, prevSummary: AltitudeRun|u
 
 function getWindAtPoint(point: { x: number, y: number }, airConditions: AirConditions): number {
   return (airConditions[point.y][point.x] as number);
+}
+
+function withoutWind(conditions: AirConditions): AirConditions {
+  return conditions.map((row) => row.map(cell => typeof cell === 'number' ? 0 : cell));
 }

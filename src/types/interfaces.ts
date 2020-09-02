@@ -40,7 +40,7 @@ export interface Reader<T> {
 }
 
 export interface ElectronWindowAPI {
-  loadAirConditions(): void;
+  loadAirConditions(disableWind: boolean): void;
   listenToAirConditionsLoaded(callback: (arg: any) => void): void;
   listenToFlightRoutesCalculated(callback: (arg: any) => void): void;
   listenToOptimalPathsFound(callback: (arg: any) => void): void;
@@ -61,7 +61,7 @@ export interface DisserAppAPI {
 
   getAltitudeList(): number[];
 
-  registerAirConditionsForAltitude(conditions: AirConditions|undefined, alt: number): void;
+  registerAirConditionsForAltitude(conditions: AirConditions|undefined, alt: number, disableWind: boolean): void;
 }
 
 type RunInfo = { distanceInMiles: number, fuelBurnInKgs: number, timeInHours: number, averageWind: number };

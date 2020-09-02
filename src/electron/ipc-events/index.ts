@@ -11,7 +11,7 @@ import XlsReader from '../../utils/readers/xls-reader';
 import { DisserAppAPI } from '../../types/interfaces';
 
 export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, browserWindow: BrowserWindow) {
-  ipcMain.on(LOAD_AIR_CONDITIONS, (event: IpcMainEvent) => {
+  ipcMain.on(LOAD_AIR_CONDITIONS, (event: IpcMainEvent, disableWind: boolean) => {
     dialog.showOpenDialog(browserWindow, {
       title: 'Open a file',
       defaultPath: electronApp.getPath('home'),
@@ -25,7 +25,7 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
         parser.parse().then(result => {
           const possibleAlts = disserApp.getAltitudeList();
           possibleAlts.forEach(alt => {
-            disserApp.registerAirConditionsForAltitude(result.get(alt), alt);
+            disserApp.registerAirConditionsForAltitude(result.get(alt), alt, disableWind);
           });
           event.sender.send(RENDER_AIR_CONDITIONS, result);
         });

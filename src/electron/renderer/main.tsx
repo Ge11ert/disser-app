@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 
 import InitialConditions from './initial-conditions';
-import FileSelector from './file-selector';
+import AirConditionsLoader from './air-conditions-loader';
 import PathfinderController from './pathfinder-controller';
 import OptimalPaths from './optimal-paths';
 import AsideStepper from './aside-stepper';
@@ -72,7 +72,7 @@ class Main extends React.Component<{}, AppState> {
                 title="Параметры воздушного пространства"
                 blocked={!initialDataLoaded}
               >
-                <FileSelector
+                <AirConditionsLoader
                   blocked={!initialDataLoaded}
                   onFileLoaded={this.onAirConditionsLoad}
                 />
