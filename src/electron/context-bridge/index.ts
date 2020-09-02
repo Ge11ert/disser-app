@@ -14,8 +14,8 @@ import {
 import { ElectronWindowAPI } from '../../types/interfaces';
 
 const electronToWindowAPI: ElectronWindowAPI = {
-  loadAirConditions: () => {
-    ipcRenderer.send(LOAD_AIR_CONDITIONS);
+  loadAirConditions: (disableWind) => {
+    ipcRenderer.send(LOAD_AIR_CONDITIONS, disableWind);
   },
   listenToAirConditionsLoaded: (callback: (arg: any) => void) => {
     ipcRenderer.on(RENDER_AIR_CONDITIONS, (event, airConditions: any) => {
