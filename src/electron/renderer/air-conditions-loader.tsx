@@ -5,6 +5,8 @@ import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import CheckIcon from '@material-ui/icons/Check';
 import Grid from '@material-ui/core/Grid';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import Dialog from './dialog';
 import AirConditionsComponent from './air-conditions';
 
@@ -20,6 +22,7 @@ const AirConditionsLoader = (props: Props) => {
   const [loaded, setLoaded] = React.useState(false);
   const [airConditions, setAirConditions] = React.useState<Map<number, AirConditions>|null>(null);
   const [open, setOpen] = React.useState(false);
+  const [disabledWind, toggleWind] = React.useState(false);
 
   const onClick = () => {
     setProcessing(true);
@@ -29,7 +32,7 @@ const AirConditionsLoader = (props: Props) => {
       setAirConditions(result);
       props.onFileLoaded();
     });
-    window.electron.loadAirConditions();
+    window.electron.loadAirConditions(disabledWind);
   };
 
   const showAirDialog = () => {
@@ -38,7 +41,11 @@ const AirConditionsLoader = (props: Props) => {
 
   const closeAirDialog = () => {
     setOpen(false);
-  }
+  };
+
+  const onWindChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    toggleWind(event.target.checked);
+  };
 
   return (
     <Box>
@@ -51,14 +58,32 @@ const AirConditionsLoader = (props: Props) => {
           { processing ? (
             <CircularProgress size={34}/>
           ) : (
-            <Button
-              variant="outlined"
-              color="primary"
-              onClick={onClick}
-              disabled={props.blocked}
-            >
-              Загрузить
-            </Button>
+            <Grid container spacing={4} alignItems="center">
+              <Grid item>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  onClick={onClick}
+                  disabled={props.blocked}
+                >
+                  Загрузить
+                </Button>
+              </Grid>
+
+              <Grid item>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={disabledWind}
+                      onChange={onWindChange}
+                      color="primary"
+                      name="wind"
+                    />
+                  }
+                  label="Отключить ветер"
+                />
+              </Grid>
+            </Grid>
           )}
         </Box>
       )}
