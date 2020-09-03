@@ -337,6 +337,12 @@ export default class DisserApp implements DisserAppAPI {
         speedV: 0, // TODO: не передавать
       }
     );
+    const routeIsPossible = finder.checkIfRoutePossible();
+
+    if (!routeIsPossible) {
+      return [false];
+    }
+
     const { path, summary } = finder.findPathWithSummary(
       entryPoint.x, entryPoint.y,
       exitPoint.x, exitPoint.y,
