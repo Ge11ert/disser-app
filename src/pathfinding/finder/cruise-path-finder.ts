@@ -40,6 +40,10 @@ export default class CruisePathFinder extends AStarFinder {
     this.currentProfileRow = currentProfileRow;
   }
 
+  checkIfRoutePossible(): boolean {
+    return this.currentProfileRow.fuel > 0;
+  }
+
   getNeighborG(currentNode: GridNode, neighborNode: GridNode): number {
     const { distance: distanceToNeighbour } = currentNode.distanceTo(neighborNode); // miles
 

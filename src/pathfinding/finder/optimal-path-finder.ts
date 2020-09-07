@@ -14,11 +14,11 @@ const costFactor = {
   },
   time: {
     Cf: 1,
-    CI: 99,
+    CI: 999,
   },
   custom: {
     Cf: 1,
-    CI: 50,
+    CI: 500,
   },
 };
 
@@ -68,9 +68,9 @@ export default class OptimalPathFinder {
     let combinedOptimalPath: OptimalPath = emptyOptimalPath;
 
     const flightCostLog: {
-      fuel: [number, number, number][],
-      time: [number, number, number][],
-      combined: [number, number, number][],
+      fuel: number[][],
+      time: number[][],
+      combined: number[][],
     } = {
       fuel: [],
       time: [],
@@ -86,9 +86,9 @@ export default class OptimalPathFinder {
         const timeFlightCost = getFlightCost(fuelConsumption, timeSpent, costFactor.time);
         const combinedFlightCost = getFlightCost(fuelConsumption, timeSpent, costFactor.custom);
 
-        flightCostLog.fuel.push([speed, altitude, fuelFlightCost]);
-        flightCostLog.time.push([speed, altitude, timeFlightCost]);
-        flightCostLog.combined.push([speed, altitude, combinedFlightCost]);
+        flightCostLog.fuel.push([speed, altitude, fuelFlightCost, fuelConsumption, timeSpent, flightDistance]);
+        flightCostLog.time.push([speed, altitude, timeFlightCost, fuelConsumption, timeSpent, flightDistance]);
+        flightCostLog.combined.push([speed, altitude, combinedFlightCost, fuelConsumption, timeSpent, flightDistance]);
 
         if (fuelFlightCost < minimumFuelFlightCost) {
           minimumFuelFlightCost = fuelFlightCost;
@@ -201,7 +201,7 @@ function summarize(altSummary: AltitudeRun, fieldName: 'fuelBurnInKgs'|'timeInHo
   return altSummary.ascent[fieldName] + altSummary.cruise[fieldName] + altSummary.descent[fieldName];
 }
 
-function compareFn(a: [number, number, number], b: [number, number, number]) {
+function compareFn(a: number[], b: number[]) {
   if (a[0] === b[0]) {
     return a[1] < b[1] ? -1 : 1;
   }
