@@ -12,10 +12,12 @@ import { AirConditions as IAirConditions } from '../../types/interfaces';
 
 interface Props {
   airConditions: Map<number, IAirConditions>;
+
+  disableWind?: boolean;
 }
 
 const AirConditions = (props: Props) => {
-  const { airConditions } = props;
+  const { airConditions, disableWind } = props;
 
   return (
     <Box bgcolor="#f5f5f5">
@@ -42,7 +44,7 @@ const AirConditions = (props: Props) => {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <AirConditionsTable air={value}/>
+                <AirConditionsTable air={value} disableWind={disableWind}/>
               </AccordionDetails>
             </Accordion>
           );

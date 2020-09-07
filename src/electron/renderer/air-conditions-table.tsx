@@ -9,7 +9,8 @@ import type { AirConditions, AirConditionsCell } from '../../types/interfaces';
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 
 interface Props {
-  air: AirConditions,
+  air: AirConditions;
+  disableWind?: boolean;
 }
 
 class AirConditionsTable extends React.Component<Props, {}> {
@@ -67,7 +68,7 @@ class AirConditionsTable extends React.Component<Props, {}> {
           this.draw.rect(this.cellSize, this.cellSize)
             .move(x, y).fill('none').stroke(grey[600]);
 
-          if (cellValue !== 0) {
+          if (!(cellValue === 0 || this.props.disableWind)) {
             this.draw.circle(this.markSize)
               .move(x + 2, y + 2).fill({ color: getFillColor(cellValue), opacity: 0.9 });
           }
