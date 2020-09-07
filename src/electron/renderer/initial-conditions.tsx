@@ -34,7 +34,7 @@ export default class InitialConditions extends React.Component<Props, State> {
     finalLat: '53.390321',
     finalLong: '58.757723',
     departureTime: format(startOfMinute(new Date()), 'HH:mm:ss'),
-    customCostIndex: '50',
+    customCostIndex: '500',
     formValid: true,
   };
 
@@ -267,8 +267,8 @@ export default class InitialConditions extends React.Component<Props, State> {
               onChange={this.onCustomCostIndexChange}
               variant="outlined"
               fullWidth
-              placeholder="00"
-              mask={[/\d/, /\d/]}
+              placeholder="000"
+              mask={[/\d/, /\d/, /\d/]}
             />
           </Grid>
         </Grid>
