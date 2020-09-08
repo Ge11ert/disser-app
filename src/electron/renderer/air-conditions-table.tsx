@@ -3,6 +3,8 @@ import { SVG, Svg, Shape } from '@svgdotjs/svg.js';
 import '@svgdotjs/svg.panzoom.js';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import { green, blue, red, grey, deepPurple } from '@material-ui/core/colors';
 
 import type { AirConditions, AirConditionsCell } from '../../types/interfaces';
@@ -14,7 +16,14 @@ interface Props {
   path?: number[][],
 }
 
-class AirConditionsTable extends React.Component<Props, {}> {
+type State = {
+  showWind: boolean,
+  showBlockedAreas: boolean,
+};
+
+class AirConditionsTable extends React.Component<Props, State> {
+  state: State;
+
   container = React.createRef<HTMLDivElement>();
 
   draw: Svg = SVG();
@@ -53,6 +62,11 @@ class AirConditionsTable extends React.Component<Props, {}> {
     this.height = height;
     this.conWidth = width + 1;
     this.conHeight = height + 1;
+
+    this.state = {
+      showWind: !props.disableWind,
+      showBlockedAreas: true,
+    };
   }
 
   componentDidMount() {
@@ -127,20 +141,71 @@ class AirConditionsTable extends React.Component<Props, {}> {
     this.draw.zoom(this.defaultZoom).viewbox(`0 0 ${this.conWidth} ${this.conHeight}`);
   };
 
+  toggleWind = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ showWind: event.target.checked }, () => {
+      if (this.state.showWind) {
+        this.windCells.forEach(cell => (!cell.visible() ? cell.show() : false));
+      } else {
+        this.windCells.forEach(cell => (cell.visible() ? cell.hide() : false));
+      }
+    });
+  };
+
+  toggleBlockedAreas = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ showBlockedAreas: event.target.checked }, () => {
+      if (this.state.showBlockedAreas) {
+        this.blockCells.forEach(cell => (!cell.visible() ? cell.show() : false));
+      } else {
+        this.blockCells.forEach(cell => (cell.visible() ? cell.hide() : false));
+      }
+    });
+  };
+
   render() {
     return (
       <Box>
-        <ButtonGroup color="primary" variant="outlined" size="small">
-          <Button onClick={this.zoomIn}>
-            Приблизить
-          </Button>
-          <Button onClick={this.zoomOut}>
-            Отдалить
-          </Button>
-          <Button onClick={this.resetZoom}>
-            Сбросить
-          </Button>
-        </ButtonGroup>
+        <Box display="flex">
+          <ButtonGroup color="primary" variant="outlined" size="small">
+            <Button onClick={this.zoomIn}>
+              Приблизить
+            </Button>
+            <Button onClick={this.zoomOut}>
+              Отдалить
+            </Button>
+            <Button onClick={this.resetZoom}>
+              Сбросить
+            </Button>
+          </ButtonGroup>
+
+          <Box ml={4}>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={this.state.showWind}
+                  onChange={this.toggleWind}
+                  color="primary"
+                  name="wind"
+                  disabled={this.props.disableWind}
+                />
+              }
+              label="Показывать ветер"
+            />
+          </Box>
+
+          <Box ml={4}>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  checked={this.state.showBlockedAreas}
+                  onChange={this.toggleBlockedAreas}
+                  color="primary"
+                  name="blocked-areas"
+                />
+              }
+              label="Показывать запретные зоны"
+            />
+          </Box>
+        </Box>
 
         <Box mt={2}>
           <div ref={this.container}/>
