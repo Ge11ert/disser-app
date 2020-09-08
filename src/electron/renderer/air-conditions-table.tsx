@@ -1,5 +1,5 @@
 import React from 'react';
-import { SVG, Svg } from '@svgdotjs/svg.js';
+import { SVG, Svg, Shape } from '@svgdotjs/svg.js';
 import '@svgdotjs/svg.panzoom.js';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
@@ -37,6 +37,10 @@ class AirConditionsTable extends React.Component<Props, {}> {
 
   scaleFactor = 1.5;
 
+  windCells: Shape[] = [];
+
+  blockCells: Shape[] = [];
+
   constructor(props: Props) {
     super(props);
 
@@ -52,8 +56,11 @@ class AirConditionsTable extends React.Component<Props, {}> {
   }
 
   componentDidMount() {
-    const { path } = this.props;
+    this.attachGrid();
+    this.drawGrid();
+  }
 
+  attachGrid = () => {
     if (this.container.current) {
       this.draw
         .addTo(this.container.current)
@@ -62,33 +69,47 @@ class AirConditionsTable extends React.Component<Props, {}> {
         .panZoom({
           wheelZoom: false,
         });
-
-      this.props.air.forEach((row, rowIndex) => {
-        row.forEach((cellValue, cellIndex) => {
-          const x = cellIndex * this.cellSize + 0.5;
-          const y = rowIndex * this.cellSize + 0.5;
-
-          this.draw.rect(this.cellSize, this.cellSize)
-            .move(x, y).fill('none').stroke(grey[600]);
-
-          if (!(cellValue === 0 || this.props.disableWind)) {
-            this.draw.circle(this.markSize)
-              .move(x + 2, y + 2).fill({ color: getFillColor(cellValue), opacity: 0.9 });
-          }
-        });
-      });
-
-      if (path !== undefined) {
-        path.forEach(cell => {
-          const [cx, cy] = cell;
-          const x = cx * this.cellSize + 0.5;
-          const y = cy * this.cellSize + 0.5;
-          this.draw.circle(this.markSize)
-            .move(x + 2, y + 2).fill({ color: deepPurple[500] });
-        })
-      }
     }
-  }
+  };
+
+  drawGrid = () => {
+    const { path, disableWind } = this.props;
+
+    this.draw.clear();
+
+    this.props.air.forEach((row, rowIndex) => {
+      row.forEach((cellValue, cellIndex) => {
+        const x = cellIndex * this.cellSize + 0.5;
+        const y = rowIndex * this.cellSize + 0.5;
+        const cellType = getCellType(cellValue);
+
+        this.draw.rect(this.cellSize, this.cellSize)
+          .move(x, y).fill('none').stroke(grey[600]);
+
+        if (cellType === 'wind' && !disableWind && cellValue !== 0) {
+          const label = this.draw.circle(this.markSize)
+            .move(x + 2, y + 2).fill({ color: getFillColor(cellValue), opacity: 0.9 });
+          this.windCells.push(label);
+        }
+
+        if (cellType === 'block') {
+          const label = this.draw.circle(this.markSize)
+            .move(x + 2, y + 2).fill({ color: getFillColor(cellValue), opacity: 0.9 });
+          this.blockCells.push(label);
+        }
+      });
+    });
+
+    if (path !== undefined) {
+      path.forEach(cell => {
+        const [cx, cy] = cell;
+        const x = cx * this.cellSize + 0.5;
+        const y = cy * this.cellSize + 0.5;
+        this.draw.circle(this.markSize)
+          .move(x + 2, y + 2).fill({ color: deepPurple[500] });
+      })
+    }
+  };
 
   zoomIn = () => {
     const newZoom = this.currentZoom * this.scaleFactor;
