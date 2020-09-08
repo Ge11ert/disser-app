@@ -13,16 +13,18 @@ import FlightTakeoff from '@material-ui/icons/FlightTakeoff';
 import Flight from '@material-ui/icons/Flight';
 import FlightLand from '@material-ui/icons/FlightLand';
 import Divider from '@material-ui/core/Divider';
+import AirConditionsTable from './air-conditions-table';
 import { formatTime } from './utils';
 
-import { TotalRun, AltitudeRun } from '../../types/interfaces';
+import { TotalRun, AltitudeRun, AirConditions } from '../../types/interfaces';
 
 interface Props {
   totalRun: TotalRun;
+  air: Map<number, AirConditions>|null,
 }
 
 const CalculatedRoutes = (props: Props) => {
-  const { totalRun } = props;
+  const { totalRun, air } = props;
 
   return (
     <Box bgcolor="#f5f5f5">
@@ -71,43 +73,54 @@ const CalculatedRoutes = (props: Props) => {
                         </Typography>
                       </AccordionSummary>
                       <AccordionDetails>
-                        <List>
-                          <ListItem alignItems="flex-start">
-                            <ListItemIcon>
-                              <FlightTakeoff />
-                            </ListItemIcon>
-                            <ListItemText disableTypography>
-                              <Typography variant="subtitle2">
-                                Набор
-                              </Typography>
-                              { getDetails(route, 'ascent')}
-                            </ListItemText>
-                          </ListItem>
+                        <Box>
+                          <List>
+                            <ListItem alignItems="flex-start">
+                              <ListItemIcon>
+                                <FlightTakeoff />
+                              </ListItemIcon>
+                              <ListItemText disableTypography>
+                                <Typography variant="subtitle2">
+                                  Набор
+                                </Typography>
+                                { getDetails(route, 'ascent')}
+                              </ListItemText>
+                            </ListItem>
 
-                          <ListItem alignItems="flex-start">
-                            <ListItemIcon>
-                              <Flight />
-                            </ListItemIcon>
-                            <ListItemText disableTypography>
-                              <Typography variant="subtitle2">
-                                Крейсер
-                              </Typography>
-                              { getDetails(route, 'cruise')}
-                            </ListItemText>
-                          </ListItem>
+                            <ListItem alignItems="flex-start">
+                              <ListItemIcon>
+                                <Flight />
+                              </ListItemIcon>
+                              <ListItemText disableTypography>
+                                <Typography variant="subtitle2">
+                                  Крейсер
+                                </Typography>
+                                { getDetails(route, 'cruise')}
+                              </ListItemText>
+                            </ListItem>
 
-                          <ListItem alignItems="flex-start">
-                            <ListItemIcon>
-                              <FlightLand />
-                            </ListItemIcon>
-                            <ListItemText disableTypography>
-                              <Typography variant="subtitle2">
-                                Снижение
-                              </Typography>
-                              { getDetails(route, 'descent')}
-                            </ListItemText>
-                          </ListItem>
-                        </List>
+                            <ListItem alignItems="flex-start">
+                              <ListItemIcon>
+                                <FlightLand />
+                              </ListItemIcon>
+                              <ListItemText disableTypography>
+                                <Typography variant="subtitle2">
+                                  Снижение
+                                </Typography>
+                                { getDetails(route, 'descent')}
+                              </ListItemText>
+                            </ListItem>
+                          </List>
+
+                          { air !== null && air.has(alt) && (
+                            <Box mt={4}>
+                              <AirConditionsTable
+                                air={air.get(alt)!}
+                                path={route.cruise.path}
+                              />
+                            </Box>
+                          )}
+                        </Box>
                       </AccordionDetails>
                     </Accordion>
                   )
