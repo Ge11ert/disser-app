@@ -14,7 +14,7 @@ import { AirConditions } from '../../types/interfaces';
 
 interface Props {
   blocked?: boolean,
-  onFileLoaded(): void,
+  onFileLoaded(airConditions: Map<number, AirConditions>): void,
 }
 
 const AirConditionsLoader = (props: Props) => {
@@ -30,7 +30,7 @@ const AirConditionsLoader = (props: Props) => {
       setProcessing(false);
       setLoaded(true);
       setAirConditions(result);
-      props.onFileLoaded();
+      props.onFileLoaded(result);
     });
     window.electron.loadAirConditions(disabledWind);
   };

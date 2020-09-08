@@ -11,10 +11,13 @@ import OptimalPaths from './optimal-paths';
 import AsideStepper from './aside-stepper';
 import ContentSection from './content-section';
 
+import { AirConditions } from '../../types/interfaces';
+
 type AppState = {
   initialDataLoaded: boolean,
   airConditionsLoaded: boolean,
   routesCalculated: boolean,
+  airConditions: Map<number, AirConditions>|null,
 };
 
 class Main extends React.Component<{}, AppState> {
@@ -22,6 +25,7 @@ class Main extends React.Component<{}, AppState> {
     initialDataLoaded: false,
     airConditionsLoaded: false,
     routesCalculated: false,
+    airConditions: null,
   };
 
   onInitialDataLoad = () => {
@@ -30,9 +34,10 @@ class Main extends React.Component<{}, AppState> {
     });
   };
 
-  onAirConditionsLoad = () => {
+  onAirConditionsLoad = (airConditions: Map<number, AirConditions>) => {
     this.setState({
       airConditionsLoaded: true,
+      airConditions,
     });
   }
 
