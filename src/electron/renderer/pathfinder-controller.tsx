@@ -9,11 +9,12 @@ import Dialog from './dialog';
 import CalculatedRoutes from './calculated-routes';
 import ArrivalTimeField from './arrival-time-field';
 
-import { TotalRun } from '../../types/interfaces';
+import { AirConditions, TotalRun } from '../../types/interfaces';
 
 interface Props {
   blocked?: boolean,
   onRoutesCalculated(): void,
+  air: Map<number, AirConditions>|null,
 }
 
 const PathfinderController = (props: Props) => {
@@ -99,7 +100,7 @@ const PathfinderController = (props: Props) => {
         title="Рассчитанные маршруты"
       >
         { flightRoutes && (
-          <CalculatedRoutes totalRun={flightRoutes}/>
+          <CalculatedRoutes totalRun={flightRoutes} air={props.air}/>
         )}
       </Dialog>
     </Box>

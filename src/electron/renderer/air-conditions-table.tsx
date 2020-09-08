@@ -3,7 +3,7 @@ import { SVG, Svg } from '@svgdotjs/svg.js';
 import '@svgdotjs/svg.panzoom.js';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
-import { green, blue, red, grey } from '@material-ui/core/colors';
+import { green, blue, red, grey, deepPurple } from '@material-ui/core/colors';
 
 import type { AirConditions, AirConditionsCell } from '../../types/interfaces';
 import ButtonGroup from "@material-ui/core/ButtonGroup";
@@ -11,6 +11,7 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 interface Props {
   air: AirConditions;
   disableWind?: boolean;
+  path?: number[][],
 }
 
 class AirConditionsTable extends React.Component<Props, {}> {
@@ -51,6 +52,8 @@ class AirConditionsTable extends React.Component<Props, {}> {
   }
 
   componentDidMount() {
+    const { path } = this.props;
+
     if (this.container.current) {
       this.draw
         .addTo(this.container.current)
@@ -74,6 +77,16 @@ class AirConditionsTable extends React.Component<Props, {}> {
           }
         });
       });
+
+      if (path !== undefined) {
+        path.forEach(cell => {
+          const [cx, cy] = cell;
+          const x = cx * this.cellSize + 0.5;
+          const y = cy * this.cellSize + 0.5;
+          this.draw.circle(this.markSize)
+            .move(x + 2, y + 2).fill({ color: deepPurple[500] });
+        })
+      }
     }
   }
 

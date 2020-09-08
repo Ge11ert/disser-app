@@ -92,6 +92,7 @@ class Main extends React.Component<{}, AppState> {
                 <PathfinderController
                   blocked={!initialDataLoaded || !airConditionsLoaded}
                   onRoutesCalculated={this.onRoutesCalculated}
+                  air={this.state.airConditions}
                 />
               </ContentSection>
             </Box>
