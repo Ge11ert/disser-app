@@ -7,6 +7,7 @@ import CheckIcon from '@material-ui/icons/Check';
 import Grid from '@material-ui/core/Grid';
 import Dialog from './dialog';
 import CalculatedRoutes from './calculated-routes';
+import CalculatedFlightCost from './calculated-flight-cost';
 import ArrivalTimeField from './arrival-time-field';
 
 import { AirConditions, TotalRun } from '../../types/interfaces';
@@ -21,25 +22,37 @@ const PathfinderController = (props: Props) => {
   const [processing, setProcessing] = React.useState(false);
   const [loaded, setLoaded] = React.useState(false);
   const [flightRoutes, setFlightRoutes] = React.useState<TotalRun|null>(null);
-  const [open, setOpen] = React.useState(false);
+  const [flightCostRoutes, setFlightCostRoutes] = React.useState<Record<string, number[][]>|null>(null);
+  const [routesDialogOpen, setRoutesDialogOpen] = React.useState(false);
+  const [costDialogOpen, setCostDialogOpen] = React.useState(false);
 
   const onClick = () => {
     setProcessing(true);
-    window.electron.listenToFlightRoutesCalculated((result: TotalRun) => {
+    window.electron.listenToFlightRoutesCalculated((result: { totalRun: TotalRun, flightCost: Record<string, number[][]>}) => {
+      const { totalRun, flightCost } = result;
       setProcessing(false);
       setLoaded(true);
-      setFlightRoutes(result);
+      setFlightRoutes(totalRun);
+      setFlightCostRoutes(flightCost);
       props.onRoutesCalculated();
     });
     window.electron.findPath();
   };
 
   const showRoutesDialog = () => {
-    setOpen(true);
+    setRoutesDialogOpen(true);
   };
 
   const closeRoutesDialog = () => {
-    setOpen(false);
+    setRoutesDialogOpen(false);
+  };
+
+  const showCostDialog = () => {
+    setCostDialogOpen(true);
+  };
+
+  const closeCostDialog = () => {
+    setCostDialogOpen(false);
   };
 
   return (
@@ -70,20 +83,30 @@ const PathfinderController = (props: Props) => {
       { loaded && (
         <Box my={2} color="success.main">
           <Grid container spacing={1}>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <Typography variant="body1">
                 <CheckIcon color="inherit" fontSize="small"/>
                 Оптимальные маршруты найдены
               </Typography>
             </Grid>
 
-            <Grid item xs={6}>
+            <Grid item xs={4} style={{ textAlign: 'center' }}>
               <Button
                 variant="outlined"
                 size="small"
                 onClick={showRoutesDialog}
               >
-                Просмотреть все маршруты
+                Все маршруты
+              </Button>
+            </Grid>
+
+            <Grid item xs={4}>
+              <Button
+                variant="outlined"
+                size="small"
+                onClick={showCostDialog}
+              >
+                Расчёт Flight Cost
               </Button>
             </Grid>
           </Grid>
@@ -95,12 +118,22 @@ const PathfinderController = (props: Props) => {
       </Box>
 
       <Dialog
-        isOpen={open}
+        isOpen={routesDialogOpen}
         onClose={closeRoutesDialog}
         title="Рассчитанные маршруты"
       >
         { flightRoutes && (
           <CalculatedRoutes totalRun={flightRoutes} air={props.air}/>
+        )}
+      </Dialog>
+
+      <Dialog
+        isOpen={costDialogOpen}
+        onClose={closeCostDialog}
+        title="Рассчитанный Flight Cost"
+      >
+        { flightCostRoutes && (
+          <CalculatedFlightCost routesSummary={flightCostRoutes}/>
         )}
       </Dialog>
     </Box>
