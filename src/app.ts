@@ -132,10 +132,10 @@ export default class DisserApp implements DisserAppAPI {
       totalRun.set(speedM, speedRunSummary);
     });
 
-    const optimalPaths = this.findBasicOptimalPaths(totalRun);
+    const { optimal, full } = this.findBasicOptimalPaths(totalRun);
 
-    this.electronApp.renderTotalRun(totalRun);
-    this.electronApp.renderOptimalPaths(optimalPaths);
+    this.electronApp.renderTotalRun({ totalRun, flightCost: full });
+    this.electronApp.renderOptimalPaths(optimal);
 
     const possibleArrivalTime = this.optimalPathFinder.getPossibleArrivalTime(this.geo.departureDate);
     this.electronApp.requestArrivalTime(possibleArrivalTime);
@@ -406,15 +406,12 @@ export default class DisserApp implements DisserAppAPI {
     this.usedPathAngle = pathAngle;
   }
 
-  findBasicOptimalPaths(totalRun: TotalRun): { fuel: OptimalPath, time: OptimalPath, combined: OptimalPath } {
+  findBasicOptimalPaths(totalRun: TotalRun): {
+    optimal: { fuel: OptimalPath, time: OptimalPath, combined: OptimalPath },
+    full: { fuel: number[][], time: number[][], combined: number[][] }
+  } {
     this.optimalPathFinder.setCustomCostIndex(this.customCostIndex);
-    this.optimalPathFinder.findBasicOptimalPaths(totalRun);
-
-    return {
-      fuel: this.optimalPathFinder.fuelOptimalPath,
-      time: this.optimalPathFinder.timeOptimalPath,
-      combined: this.optimalPathFinder.combinedOptimalPath,
-    };
+    return this.optimalPathFinder.findBasicOptimalPaths(totalRun);
   }
 
   getNextEntryPoint(
