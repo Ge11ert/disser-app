@@ -59,7 +59,10 @@ export default class OptimalPathFinder {
     };
   }
 
-  findBasicOptimalPaths(totalRun: TotalRun): void {
+  findBasicOptimalPaths(totalRun: TotalRun): {
+    optimal: { fuel: OptimalPath, time: OptimalPath, combined: OptimalPath },
+    full: { fuel: number[][], time: number[][], combined: number[][] }
+  } {
     let minimumFuelFlightCost = Number.MAX_SAFE_INTEGER;
     let minimumTimeFlightCost = Number.MAX_SAFE_INTEGER;
     let minimumCombinedFlightCost = Number.MAX_SAFE_INTEGER;
@@ -147,6 +150,11 @@ export default class OptimalPathFinder {
     this.fuelOptimalPath = fuelOptimalPath;
     this.timeOptimalPath = timeOptimalPath;
     this.combinedOptimalPath = combinedOptimalPath;
+
+    return {
+      full: flightCostLog,
+      optimal: { fuel: fuelOptimalPath, time: timeOptimalPath, combined: combinedOptimalPath },
+    };
   }
 
   findRTAOptimalPath(departureDate: Date, arrivalDate: Date): void {
