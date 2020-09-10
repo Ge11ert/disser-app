@@ -176,7 +176,7 @@ export default class OptimalPathFinder {
 
     this.rtaOptimalPath = {
       ...this.fuelOptimalPath,
-      speed: requiredAirSpeed,
+      speed: requiredMach,
       time: availableTimeInHours,
     };
   }
