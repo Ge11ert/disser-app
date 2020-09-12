@@ -5,6 +5,7 @@ import OptimalPathFinder from './pathfinding/finder/optimal-path-finder';
 import Geo from './geo';
 import { cell } from './constants/grid';
 import { fromMilesToGridUnits } from './utils/converters';
+import { convertPathToGeodeticCoords } from './utils/geo/path-to-coords';
 import { getClimbProfileRowsBySpeed, getDescentProfileRowsBySpeed } from './flight-profiles';
 
 import type {
@@ -133,6 +134,25 @@ export default class DisserApp implements DisserAppAPI {
     });
 
     const { optimal, full } = this.findBasicOptimalPaths(totalRun);
+
+    const fuelCruiseCoords = convertPathToGeodeticCoords(
+      optimal.fuel.path,
+      optimal.fuel.altitude,
+      this.initialEntryPoint,
+      this.geo.startLBHCoords,
+    );
+    const timeCruiseCoords = convertPathToGeodeticCoords(
+      optimal.time.path,
+      optimal.time.altitude,
+      this.initialEntryPoint,
+      this.geo.startLBHCoords,
+    );
+    const combinedCruiseCoords = convertPathToGeodeticCoords(
+      optimal.combined.path,
+      optimal.combined.altitude,
+      this.initialEntryPoint,
+      this.geo.startLBHCoords,
+    );
 
     this.electronApp.renderTotalRun({ totalRun, flightCost: full });
     this.electronApp.renderOptimalPaths(optimal);
