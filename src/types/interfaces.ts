@@ -81,3 +81,5 @@ export type OptimalPath = {
   path: number[][],
   averageWind: number,
 }
+
+export type OptimalPathWithCoords = OptimalPath & { coords: { lat: number, long: number }[] };

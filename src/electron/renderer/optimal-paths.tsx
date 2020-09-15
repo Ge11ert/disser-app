@@ -3,12 +3,12 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { formatTime } from './utils';
 
-import { OptimalPath } from '../../types/interfaces';
+import { OptimalPath, OptimalPathWithCoords } from '../../types/interfaces';
 
 type OptimalPaths = {
-  fuel: OptimalPath,
-  time: OptimalPath,
-  combined: OptimalPath,
+  fuel: OptimalPathWithCoords,
+  time: OptimalPathWithCoords,
+  combined: OptimalPathWithCoords,
   rta: OptimalPath|null,
 };
 

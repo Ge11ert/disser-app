@@ -15,7 +15,7 @@ import type {
   AltitudeRun,
   SpeedRun,
   TotalRun,
-  OptimalPath,
+  OptimalPathWithCoords,
 } from './types/interfaces';
 
 interface DisserAppSettings {
@@ -134,25 +134,6 @@ export default class DisserApp implements DisserAppAPI {
     });
 
     const { optimal, full } = this.findBasicOptimalPaths(totalRun);
-
-    const fuelCruiseCoords = convertPathToGeodeticCoords(
-      optimal.fuel.path,
-      optimal.fuel.altitude,
-      this.initialEntryPoint,
-      this.geo.startLBHCoords,
-    );
-    const timeCruiseCoords = convertPathToGeodeticCoords(
-      optimal.time.path,
-      optimal.time.altitude,
-      this.initialEntryPoint,
-      this.geo.startLBHCoords,
-    );
-    const combinedCruiseCoords = convertPathToGeodeticCoords(
-      optimal.combined.path,
-      optimal.combined.altitude,
-      this.initialEntryPoint,
-      this.geo.startLBHCoords,
-    );
 
     this.electronApp.renderTotalRun({ totalRun, flightCost: full });
     this.electronApp.renderOptimalPaths(optimal);
@@ -427,12 +408,40 @@ export default class DisserApp implements DisserAppAPI {
   }
 
   findBasicOptimalPaths(totalRun: TotalRun): {
-    optimal: { fuel: OptimalPath, time: OptimalPath, combined: OptimalPath },
+    optimal: { fuel: OptimalPathWithCoords, time: OptimalPathWithCoords, combined: OptimalPathWithCoords },
     full: { fuel: number[][], time: number[][], combined: number[][] }
   } {
     this.optimalPathFinder.setCustomCostIndex(this.customCostIndex);
     this.optimalPathFinder.setStartAlt(this.geo.startAltInFeet);
-    return this.optimalPathFinder.findBasicOptimalPaths(totalRun);
+    const { optimal, full } =  this.optimalPathFinder.findBasicOptimalPaths(totalRun);
+
+    const fuelCruiseCoords = convertPathToGeodeticCoords(
+      optimal.fuel.path,
+      optimal.fuel.altitude,
+      this.initialEntryPoint,
+      this.geo.startLBHCoords,
+    );
+    const timeCruiseCoords = convertPathToGeodeticCoords(
+      optimal.time.path,
+      optimal.time.altitude,
+      this.initialEntryPoint,
+      this.geo.startLBHCoords,
+    );
+    const combinedCruiseCoords = convertPathToGeodeticCoords(
+      optimal.combined.path,
+      optimal.combined.altitude,
+      this.initialEntryPoint,
+      this.geo.startLBHCoords,
+    );
+
+    return {
+      full,
+      optimal: {
+        fuel: { ...optimal.fuel, coords: fuelCruiseCoords },
+        time: { ...optimal.time, coords: timeCruiseCoords },
+        combined: { ...optimal.combined, coords: combinedCruiseCoords },
+      },
+    };
   }
 
   getNextEntryPoint(
