@@ -2,7 +2,11 @@ import addSeconds from 'date-fns/addSeconds';
 import differenceInSeconds from 'date-fns/differenceInSeconds';
 import isBefore from 'date-fns/isBefore';
 import isAfter from 'date-fns/isAfter';
-import { getCruiseProfileRowsByAltitude } from '../../flight-profiles';
+import {
+  getCruiseProfileRowsByAltitude,
+  getClimbProfileRowBySpeedAndAlt,
+  getDescentProfileRowBySpeedAndAlt,
+} from '../../flight-profiles';
 import settings from '../../app.settings';
 
 import type { TotalRun, AltitudeRun, OptimalPath } from '../../types/interfaces';
@@ -39,7 +43,10 @@ export default class OptimalPathFinder {
   combinedOptimalPath: OptimalPath = emptyOptimalPath;
   rtaOptimalPath: OptimalPath|null = null;
 
+  fuelOptimalRun: AltitudeRun|null = null;
+
   costFactor = costFactor;
+  startAltInFeet = 0;
 
   static calculateTimeArrivalConstraints(fuelOptimalPath: OptimalPath): { min: number, max: number } {
     const profileRowForAltitude = getCruiseProfileRowsByAltitude(fuelOptimalPath.altitude);
@@ -107,6 +114,7 @@ export default class OptimalPathFinder {
               altSummary.ascent.averageWind + altSummary.cruise.averageWind + altSummary.descent.averageWind
             ) / 3,
           };
+          this.fuelOptimalRun = altSummary;
         }
 
         if (timeFlightCost < minimumTimeFlightCost) {
@@ -168,27 +176,84 @@ export default class OptimalPathFinder {
 
     const availableTimeInHours = this.getAvailableTime(departureDate, arrivalDate);
     const requiredGroundSpeed = this.fuelOptimalPath.distance / availableTimeInHours; // knots (nm per hour)
-    const requiredAirSpeed = requiredGroundSpeed + this.fuelOptimalPath.averageWind;
+    const requiredAirSpeed = requiredGroundSpeed - this.fuelOptimalPath.averageWind;
 
     const profileRowsForAltitude = getCruiseProfileRowsByAltitude(this.fuelOptimalPath.altitude);
     const speedOfSound = profileRowsForAltitude[0].speedOfSound;
-    const requiredMach = requiredAirSpeed / speedOfSound;
+    const requiredMach = parseFloat((requiredAirSpeed / speedOfSound).toPrecision(2));
+    const rtaFuel = this.calculateRTAFuel(
+      availableTimeInHours, this.fuelOptimalPath.altitude, requiredMach
+    ) || this.fuelOptimalPath.fuel;
 
     this.rtaOptimalPath = {
       ...this.fuelOptimalPath,
+      fuel: rtaFuel,
       speed: requiredMach,
       time: availableTimeInHours,
     };
+  }
+
+  calculateRTAFuel(
+    availableTimeInHours: number,
+    altitude: number,
+    requiredMach: number
+  ): number {
+    if (!this.fuelOptimalRun) {
+      return 0;
+    }
+    const ascDistance = this.fuelOptimalRun.ascent.distanceInMiles;
+    const cruiseDistance = this.fuelOptimalRun.cruise.distanceInMiles;
+    const descDistance = this.fuelOptimalRun.descent.distanceInMiles;
+    const flightDistance = ascDistance + cruiseDistance + descDistance;
+
+    const cruisePercent = cruiseDistance / flightDistance;
+    const cruiseTime = availableTimeInHours * cruisePercent;
+
+    const cruiseProfileRowsForAltitude = getCruiseProfileRowsByAltitude(altitude);
+    const cruiseProfileRow = cruiseProfileRowsForAltitude.find(row => (
+      row.speedM === this.fuelOptimalPath.speed
+    ));
+    if (!cruiseProfileRow) {
+      throw new Error(`No cruise profile for ${this.fuelOptimalPath.speed} M`);
+    }
+    const cruiseFuel = cruiseProfileRow.fuel * cruiseTime;
+
+    const climbProfile0 = getClimbProfileRowBySpeedAndAlt(requiredMach, this.startAltInFeet);
+    const climbProfile1 = getClimbProfileRowBySpeedAndAlt(requiredMach, altitude);
+
+    if (!climbProfile0 || !climbProfile1) {
+      throw new Error(`No climb profile for ${requiredMach} M`);
+    }
+
+    const climbFuel0 = climbProfile0.fuelFrom0;
+    const climbFuel1 = climbProfile1.fuelFrom0;
+    const climbFuel = Math.abs(climbFuel1 - climbFuel0);
+
+    const descentProfile0 = getDescentProfileRowBySpeedAndAlt(requiredMach, this.startAltInFeet);
+    const descentProfile1 = getDescentProfileRowBySpeedAndAlt(requiredMach, altitude);
+
+    if (!descentProfile0 || !descentProfile1) {
+      throw new Error(`No descent profile for ${requiredMach} M`);
+    }
+
+    const descentFuel0 = descentProfile0.fuelFrom0;
+    const descentFuel1 = descentProfile1.fuelFrom0;
+    const descentFuel = Math.abs(descentFuel1 - descentFuel0);
+
+    return (cruiseFuel + climbFuel + descentFuel);
   }
 
   setCustomCostIndex(costIndex: number): void {
     this.costFactor.custom.CI = costIndex;
   }
 
+  setStartAlt(alt: number): void {
+    this.startAltInFeet = alt;
+  }
+
   getAvailableTime(startDate: Date, endDate: Date): number {
     const diffInSeconds = Math.abs(differenceInSeconds(startDate, endDate));
-    const diffInHours = diffInSeconds / 3600;
-    return diffInHours;
+    return (diffInSeconds / 3600);
   }
 
   getPossibleArrivalTime(departureDate: Date): { min: Date, max: Date } {
