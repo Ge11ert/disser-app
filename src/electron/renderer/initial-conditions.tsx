@@ -34,7 +34,7 @@ export default class InitialConditions extends React.Component<Props, State> {
     finalLat: '53.390321',
     finalLong: '58.757723',
     departureTime: format(startOfMinute(new Date()), 'HH:mm:ss'),
-    customCostIndex: '500',
+    customCostIndex: '1500',
     formValid: true,
   };
 
@@ -258,7 +258,7 @@ export default class InitialConditions extends React.Component<Props, State> {
           </Grid>
 
           <Grid item xs={6}>
-            <MaskedTextField
+            <TextField
               type="text"
               id="custom-cost-index"
               name="custom-cost-index"
@@ -267,8 +267,7 @@ export default class InitialConditions extends React.Component<Props, State> {
               onChange={this.onCustomCostIndexChange}
               variant="outlined"
               fullWidth
-              placeholder="000"
-              mask={[/\d/, /\d/, /\d/]}
+              placeholder="1000"
             />
           </Grid>
         </Grid>

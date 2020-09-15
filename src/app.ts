@@ -431,6 +431,7 @@ export default class DisserApp implements DisserAppAPI {
     full: { fuel: number[][], time: number[][], combined: number[][] }
   } {
     this.optimalPathFinder.setCustomCostIndex(this.customCostIndex);
+    this.optimalPathFinder.setStartAlt(this.geo.startAltInFeet);
     return this.optimalPathFinder.findBasicOptimalPaths(totalRun);
   }
 
