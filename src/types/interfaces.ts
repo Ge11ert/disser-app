@@ -76,6 +76,11 @@ export type OptimalPath = {
   fuel: number,
   time: number,
   distance: number,
+  sections: {
+    climb: number,
+    cruise: number,
+    descent: number,
+  },
   speed: number,
   altitude: number,
   path: number[][],

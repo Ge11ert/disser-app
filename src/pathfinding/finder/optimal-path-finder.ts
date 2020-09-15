@@ -35,6 +35,7 @@ const emptyOptimalPath: OptimalPath = {
   altitude: 0,
   path: [],
   averageWind: 0,
+  sections: { climb: 0, cruise: 0, descent: 0 },
 };
 
 export default class OptimalPathFinder {
@@ -110,6 +111,11 @@ export default class OptimalPathFinder {
             speed,
             altitude,
             path: altSummary.cruise.path,
+            sections: {
+              climb: altSummary.ascent.distanceInMiles,
+              cruise: altSummary.cruise.distanceInMiles,
+              descent: altSummary.descent.distanceInMiles,
+            },
             averageWind: (
               altSummary.ascent.averageWind + altSummary.cruise.averageWind + altSummary.descent.averageWind
             ) / 3,
@@ -127,6 +133,11 @@ export default class OptimalPathFinder {
             speed,
             altitude,
             path: altSummary.cruise.path,
+            sections: {
+              climb: altSummary.ascent.distanceInMiles,
+              cruise: altSummary.cruise.distanceInMiles,
+              descent: altSummary.descent.distanceInMiles,
+            },
             averageWind: (
               altSummary.ascent.averageWind + altSummary.cruise.averageWind + altSummary.descent.averageWind
             ) / 3,
@@ -143,6 +154,11 @@ export default class OptimalPathFinder {
             speed,
             altitude,
             path: altSummary.cruise.path,
+            sections: {
+              climb: altSummary.ascent.distanceInMiles,
+              cruise: altSummary.cruise.distanceInMiles,
+              descent: altSummary.descent.distanceInMiles,
+            },
             averageWind: (
               altSummary.ascent.averageWind + altSummary.cruise.averageWind + altSummary.descent.averageWind
             ) / 3,
