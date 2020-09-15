@@ -1,19 +1,30 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Dialog from './dialog';
+import OptimalPathCharts from './optimal-path-charts';
 import { formatTime } from './utils';
 
-import { OptimalPath } from '../../types/interfaces';
+import { AirConditions, OptimalPath, OptimalPathWithCoords } from '../../types/interfaces';
 
 type OptimalPaths = {
-  fuel: OptimalPath,
-  time: OptimalPath,
-  combined: OptimalPath,
+  fuel: OptimalPathWithCoords,
+  time: OptimalPathWithCoords,
+  combined: OptimalPathWithCoords,
   rta: OptimalPath|null,
 };
 
-const OptimalPaths = () => {
+interface Props {
+  air: Map<number, AirConditions>|null;
+}
+
+const OptimalPaths = (props: Props) => {
   const [optimalPaths, setOptimalPaths] = React.useState<OptimalPaths|null>(null);
+  const [fuelDialogOpen, setFuelDialogOpen] = React.useState(false);
+  const [timeDialogOpen, setTimeDialogOpen] = React.useState(false);
+  const [combinedDialogOpen, setCombinedDialogOpen] = React.useState(false);
+
   if (window.electron) {
     window.electron.listenToOptimalPathsFound((result: OptimalPaths) => {
       setOptimalPaths(result);
@@ -27,6 +38,16 @@ const OptimalPaths = () => {
   const getTimeValue = getValueWithLabel(time);
   const getCombinedValue = getValueWithLabel(combined);
   const getRTAValue = rta ? getValueWithLabel(rta) : () => null;
+
+  const toggleFuelDialog = () => {
+    setFuelDialogOpen(!fuelDialogOpen);
+  };
+  const toggleTimeDialog = () => {
+    setTimeDialogOpen(!timeDialogOpen);
+  };
+  const toggleCombinedDialog = () => {
+    setCombinedDialogOpen(!combinedDialogOpen);
+  };
 
   return (
     <Box>
@@ -52,6 +73,16 @@ const OptimalPaths = () => {
             {getFuelValue('Средний ветер', 'averageWind')}
           </Typography>
         </Box>
+
+        <Box mt={2}>
+          <Button
+            variant="outlined"
+            size="small"
+            onClick={toggleFuelDialog}
+          >
+            Показать графики
+          </Button>
+        </Box>
       </Box>
 
       <Box mt={2}>
@@ -76,6 +107,16 @@ const OptimalPaths = () => {
             {getTimeValue('Средний ветер', 'averageWind')}
           </Typography>
         </Box>
+
+        <Box mt={2}>
+          <Button
+            variant="outlined"
+            size="small"
+            onClick={toggleTimeDialog}
+          >
+            Показать графики
+          </Button>
+        </Box>
       </Box>
 
       <Box mt={2}>
@@ -99,6 +140,16 @@ const OptimalPaths = () => {
             <br/>
             {getCombinedValue('Средний ветер', 'averageWind')}
           </Typography>
+        </Box>
+
+        <Box mt={2}>
+          <Button
+            variant="outlined"
+            size="small"
+            onClick={toggleCombinedDialog}
+          >
+            Показать графики
+          </Button>
         </Box>
       </Box>
 
@@ -131,6 +182,30 @@ const OptimalPaths = () => {
           )}
         </Box>
       </Box>
+
+      <Dialog
+        isOpen={fuelDialogOpen}
+        onClose={toggleFuelDialog}
+        title="Графики маршрута, оптимального по топливу"
+      >
+        <OptimalPathCharts optimalPath={fuel} air={props.air}/>
+      </Dialog>
+
+      <Dialog
+        isOpen={timeDialogOpen}
+        onClose={toggleTimeDialog}
+        title="Графики маршрута, оптимального по времени"
+      >
+        <OptimalPathCharts optimalPath={time} air={props.air}/>
+      </Dialog>
+
+      <Dialog
+        isOpen={combinedDialogOpen}
+        onClose={toggleCombinedDialog}
+        title="Графики маршрута, оптимального по смешанному критерию"
+      >
+        <OptimalPathCharts optimalPath={combined} air={props.air}/>
+      </Dialog>
     </Box>
   )
 };

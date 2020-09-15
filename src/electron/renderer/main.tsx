@@ -102,7 +102,7 @@ class Main extends React.Component<{}, AppState> {
                 title="Оптимальные маршруты"
                 blocked={!routesCalculated}
               >
-                <OptimalPaths/>
+                <OptimalPaths air={this.state.airConditions}/>
               </ContentSection>
             </Box>
           </Box>
