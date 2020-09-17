@@ -8,10 +8,10 @@ import {
 } from './event-names';
 import AirConditionsParser from '../../utils/parsers/air-conditions-parser';
 import XlsReader from '../../utils/readers/xls-reader';
-import { DisserAppAPI } from '../../types/interfaces';
+import { DisserAppAPI, AirConditions } from '../../types/interfaces';
 
 export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, browserWindow: BrowserWindow) {
-  ipcMain.on(LOAD_AIR_CONDITIONS, (event: IpcMainEvent, disableWind: boolean) => {
+  ipcMain.on(LOAD_AIR_CONDITIONS, (event: IpcMainEvent, disableWind: boolean, disableZones: boolean) => {
     dialog.showOpenDialog(browserWindow, {
       title: 'Open a file',
       defaultPath: electronApp.getPath('home'),
@@ -23,11 +23,13 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
         const reader = new XlsReader();
         const parser = new AirConditionsParser(result.filePaths[0], reader);
         parser.parse().then(result => {
+          const processedConditionsMap = (disableWind || disableZones) ? processAirConditions(result, disableWind, disableZones) : result;
+
           const possibleAlts = disserApp.getAltitudeList();
           possibleAlts.forEach(alt => {
-            disserApp.registerAirConditionsForAltitude(result.get(alt), alt, disableWind);
+            disserApp.registerAirConditionsForAltitude(processedConditionsMap.get(alt), alt, disableWind);
           });
-          event.sender.send(RENDER_AIR_CONDITIONS, result);
+          event.sender.send(RENDER_AIR_CONDITIONS, processedConditionsMap);
         });
       }
     });
@@ -56,4 +58,29 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
       console.log(e);
     }
   })
+}
+
+function processAirConditions(
+  initialMap: Map<number, AirConditions>, disableWind: boolean, disableZones: boolean
+): Map<number, AirConditions> {
+  const processed = new Map<number, AirConditions>();
+
+  initialMap.forEach((value, key) => {
+    processed.set(key, disableWindAndZones(value, disableWind, disableZones));
+  });
+  return processed;
+}
+
+function disableWindAndZones(conditions: AirConditions, disableWind: boolean, disableZones: boolean): AirConditions {
+  return conditions.map((row) => row.map(cell => {
+    const isNullCell = (
+      (disableZones && disableWind)
+      || (disableWind && typeof cell === 'number')
+      || (disableZones && typeof cell === 'string')
+    );
+
+    if (isNullCell) return 0;
+
+    return cell;
+  }));
 }

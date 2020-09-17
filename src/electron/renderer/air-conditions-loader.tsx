@@ -23,6 +23,7 @@ const AirConditionsLoader = (props: Props) => {
   const [airConditions, setAirConditions] = React.useState<Map<number, AirConditions>|null>(null);
   const [open, setOpen] = React.useState(false);
   const [disabledWind, toggleWind] = React.useState(false);
+  const [disabledZones, toggleZones] = React.useState(false);
 
   const onClick = () => {
     setProcessing(true);
@@ -32,7 +33,7 @@ const AirConditionsLoader = (props: Props) => {
       setAirConditions(result);
       props.onFileLoaded(result);
     });
-    window.electron.loadAirConditions(disabledWind);
+    window.electron.loadAirConditions(disabledWind, disabledZones);
   };
 
   const showAirDialog = () => {
@@ -45,6 +46,10 @@ const AirConditionsLoader = (props: Props) => {
 
   const onWindChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     toggleWind(event.target.checked);
+  };
+
+  const onZonesChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    toggleZones(event.target.checked);
   };
 
   return (
@@ -74,6 +79,7 @@ const AirConditionsLoader = (props: Props) => {
                 <FormControlLabel
                   control={
                     <Checkbox
+                      disabled={props.blocked}
                       checked={disabledWind}
                       onChange={onWindChange}
                       color="primary"
@@ -81,6 +87,21 @@ const AirConditionsLoader = (props: Props) => {
                     />
                   }
                   label="Отключить ветер"
+                />
+              </Grid>
+
+              <Grid item>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      disabled={props.blocked}
+                      checked={disabledZones}
+                      onChange={onZonesChange}
+                      color="primary"
+                      name="zones"
+                    />
+                  }
+                  label="Отключить запретные зоны"
                 />
               </Grid>
             </Grid>
