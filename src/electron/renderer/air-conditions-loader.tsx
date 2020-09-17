@@ -33,6 +33,10 @@ const AirConditionsLoader = (props: Props) => {
       setAirConditions(result);
       props.onFileLoaded(result);
     });
+    window.electron.listenToAirConditionsCancelled(() => {
+      setProcessing(false);
+      setLoaded(false);
+    });
     window.electron.loadAirConditions(disabledWind, disabledZones);
   };
 

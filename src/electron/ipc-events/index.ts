@@ -4,6 +4,7 @@ import {
   APPLY_INITIAL_CONDITIONS,
   LOAD_AIR_CONDITIONS,
   RENDER_AIR_CONDITIONS,
+  CANCEL_AIR_CONDITIONS,
   START_FINDER,
 } from './event-names';
 import AirConditionsParser from '../../utils/parsers/air-conditions-parser';
@@ -31,6 +32,8 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
           });
           event.sender.send(RENDER_AIR_CONDITIONS, processedConditionsMap);
         });
+      } else {
+        event.sender.send(CANCEL_AIR_CONDITIONS);
       }
     });
   });
