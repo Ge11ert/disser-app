@@ -42,6 +42,7 @@ export interface Reader<T> {
 export interface ElectronWindowAPI {
   loadAirConditions(disableWind: boolean, disableZones: boolean): void;
   listenToAirConditionsLoaded(callback: (arg: any) => void): void;
+  listenToAirConditionsCancelled(callback: () => void): void;
   listenToFlightRoutesCalculated(callback: (arg: any) => void): void;
   listenToOptimalPathsFound(callback: (arg: any) => void): void;
   listenToArrivalTimeRequest(callback: (arg: any) => void): void;
