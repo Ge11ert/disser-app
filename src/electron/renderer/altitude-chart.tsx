@@ -18,7 +18,7 @@ class AltitudeChart extends React.Component<Props, {}> {
       <Chart
         width={1200}
         height={600}
-        dataSet={{
+        dataSets={[{
           label: 'Зависимость высоты от дистанции',
           data: [
             {
@@ -42,7 +42,7 @@ class AltitudeChart extends React.Component<Props, {}> {
           fill: false,
           cubicInterpolationMode: 'monotone',
           borderColor: '#999'
-        }}
+        }]}
         xAxeOptions={{
           scaleLabel: {
             display: true,
