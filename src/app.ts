@@ -5,7 +5,7 @@ import OptimalPathFinder from './pathfinding/finder/optimal-path-finder';
 import Geo from './geo';
 import { cell } from './constants/grid';
 import { fromMilesToGridUnits } from './utils/converters';
-import { convertPathToGeodeticCoords } from './utils/geo/path-to-coords';
+import { convertPathToGeodeticCoords, convertZoneToCoords } from './utils/geo/path-to-coords';
 import { getClimbProfileRowsBySpeed, getDescentProfileRowsBySpeed } from './flight-profiles';
 
 import type {
@@ -421,8 +421,20 @@ export default class DisserApp implements DisserAppAPI {
       this.initialEntryPoint,
       this.geo.startLBHCoords,
     );
+    const fuelAltitudeForbiddenZone = convertZoneToCoords(
+      this.airConditionsPerAlt[optimal.fuel.altitude],
+      optimal.fuel.altitude,
+      this.initialEntryPoint,
+      this.geo.startLBHCoords,
+    );
     const timeCruiseCoords = convertPathToGeodeticCoords(
       optimal.time.path,
+      optimal.time.altitude,
+      this.initialEntryPoint,
+      this.geo.startLBHCoords,
+    );
+    const timeAltitudeForbiddenZone = convertZoneToCoords(
+      this.airConditionsPerAlt[optimal.time.altitude],
       optimal.time.altitude,
       this.initialEntryPoint,
       this.geo.startLBHCoords,
@@ -433,13 +445,19 @@ export default class DisserApp implements DisserAppAPI {
       this.initialEntryPoint,
       this.geo.startLBHCoords,
     );
+    const combinedAltitudeForbiddenZone = convertZoneToCoords(
+      this.airConditionsPerAlt[optimal.combined.altitude],
+      optimal.combined.altitude,
+      this.initialEntryPoint,
+      this.geo.startLBHCoords,
+    );
 
     return {
       full,
       optimal: {
-        fuel: { ...optimal.fuel, coords: fuelCruiseCoords },
-        time: { ...optimal.time, coords: timeCruiseCoords },
-        combined: { ...optimal.combined, coords: combinedCruiseCoords },
+        fuel: { ...optimal.fuel, coords: fuelCruiseCoords, zone: fuelAltitudeForbiddenZone },
+        time: { ...optimal.time, coords: timeCruiseCoords, zone: timeAltitudeForbiddenZone },
+        combined: { ...optimal.combined, coords: combinedCruiseCoords, zone: combinedAltitudeForbiddenZone },
       },
     };
   }
