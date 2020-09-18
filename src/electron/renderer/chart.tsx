@@ -9,7 +9,7 @@ const DEFAULT_HEIGHT = 800;
 interface Props {
   width?: number;
   height?: number;
-  dataSet: ChartDataSets,
+  dataSets: ChartDataSets[],
   xAxeOptions?: ChartXAxe,
   yAxeOptions?: ChartYAxe,
 }
@@ -44,7 +44,7 @@ class Chart extends React.Component<Props, {}> {
       const chart = new ChartJS(ctx, {
         type: 'scatter',
         data: {
-          datasets: [this.props.dataSet]
+          datasets: this.props.dataSets
         },
         options: {
           responsive: false,

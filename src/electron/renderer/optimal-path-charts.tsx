@@ -28,7 +28,7 @@ const OptimalPathCharts = (props: Props) => {
       <Divider/>
 
       <Box my={3}>
-        <CoordsChart coords={optimalPath.coords}/>
+        <CoordsChart coords={optimalPath.coords} forbiddenZone={optimalPath.zone}/>
       </Box>
 
       <Divider/>
