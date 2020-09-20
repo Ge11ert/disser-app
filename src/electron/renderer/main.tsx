@@ -18,18 +18,31 @@ type AppState = {
   airConditionsLoaded: boolean,
   routesCalculated: boolean,
   airConditions: Map<number, AirConditions>|null,
+  initialAltitude: number,
+  startGPSPoint: { lat: number, long: number },
+  endGPSPoint: { lat: number, long: number },
 };
 
 class Main extends React.Component<{}, AppState> {
-  state = {
+  state: AppState = {
     initialDataLoaded: false,
     airConditionsLoaded: false,
     routesCalculated: false,
     airConditions: null,
+    initialAltitude: 0,
+    startGPSPoint: { lat: 0, long: 0 },
+    endGPSPoint: { lat: 0, long: 0 },
   };
 
-  onInitialDataLoad = () => {
+  onInitialDataLoad = (
+    altitude: number,
+    startGPSPoint: { lat: number, long: number },
+    endGPSPoint: { lat: number, long: number },
+  ) => {
     this.setState({
+      initialAltitude: altitude,
+      startGPSPoint,
+      endGPSPoint,
       initialDataLoaded: true,
     });
   };
@@ -102,7 +115,12 @@ class Main extends React.Component<{}, AppState> {
                 title="Оптимальные маршруты"
                 blocked={!routesCalculated}
               >
-                <OptimalPaths air={this.state.airConditions}/>
+                <OptimalPaths
+                  air={this.state.airConditions}
+                  initialAltitude={this.state.initialAltitude}
+                  startGPSPoint={this.state.startGPSPoint}
+                  endGPSPoint={this.state.endGPSPoint}
+                />
               </ContentSection>
             </Box>
           </Box>

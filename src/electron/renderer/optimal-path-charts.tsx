@@ -10,16 +10,25 @@ import { AirConditions, OptimalPathWithCoords } from '../../types/interfaces';
 interface Props {
   optimalPath: OptimalPathWithCoords;
   air: Map<number, AirConditions>|null;
+  initialAltitude: number;
+  startGPSPoint: { lat: number, long: number };
+  endGPSPoint: { lat: number, long: number };
 }
 
 const OptimalPathCharts = (props: Props) => {
-  const { optimalPath, air } = props;
+  const {
+    optimalPath,
+    air,
+    initialAltitude,
+    startGPSPoint,
+    endGPSPoint,
+  } = props;
 
   return (
     <Box maxWidth={1600} p={5} mx="auto">
       <Box mb={3}>
         <AltitudeChart
-          startAltitude={30000}
+          startAltitude={initialAltitude}
           endAltitude={optimalPath.altitude}
           distance={optimalPath.sections}
         />
@@ -28,7 +37,12 @@ const OptimalPathCharts = (props: Props) => {
       <Divider/>
 
       <Box my={3}>
-        <CoordsChart coords={optimalPath.coords} forbiddenZone={optimalPath.zone}/>
+        <CoordsChart
+          coords={optimalPath.coords}
+          forbiddenZone={optimalPath.zone}
+          startGPSPoint={startGPSPoint}
+          endGPSPoint={endGPSPoint}
+        />
       </Box>
 
       <Divider/>

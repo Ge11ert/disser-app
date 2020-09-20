@@ -2,22 +2,46 @@ import React from 'react';
 import Chart from './chart';
 
 interface Props {
-  coords: { lat: number, long: number }[],
-  forbiddenZone?: { lat: number, long: number }[],
+  coords: { lat: number, long: number }[];
+  forbiddenZone?: { lat: number, long: number }[];
+  startGPSPoint: { lat: number, long: number };
+  endGPSPoint: { lat: number, long: number };
 }
 
 class CoordsChart extends React.Component<Props, {}> {
   render() {
-    const coordsDataSet = {
-      label: 'GPS-координаты',
-      data: this.props.coords.map(point => ({
-        x: parseFloat(point.lat.toFixed(4)),
-        y: parseFloat(point.long.toFixed(4)),
-      })),
-      showLine: true,
-      fill: false,
-      backgroundColor: 'darkblue',
-    };
+    const dataSets = [
+      {
+        label: 'GPS-координаты',
+        data: this.props.coords.map(point => ({
+          x: parseFloat(point.lat.toFixed(4)),
+          y: parseFloat(point.long.toFixed(4)),
+        })),
+        showLine: true,
+        fill: false,
+        backgroundColor: 'darkblue',
+      },
+      {
+        label: 'Начальная точка',
+        data: [{
+          x: this.props.startGPSPoint.lat,
+          y: this.props.startGPSPoint.long,
+        }],
+        showLine: true,
+        fill: false,
+        backgroundColor: 'green',
+      },
+      {
+        label: 'Конечная точка',
+        data: [{
+          x: this.props.endGPSPoint.lat,
+          y: this.props.endGPSPoint.long,
+        }],
+        showLine: true,
+        fill: false,
+        backgroundColor: 'green',
+      }
+    ];
 
     return (
       <Chart
@@ -34,8 +58,8 @@ class CoordsChart extends React.Component<Props, {}> {
             fill: false,
             backgroundColor: 'red',
           },
-          coordsDataSet,
-        ] : [coordsDataSet]}
+          ...dataSets,
+        ] : dataSets}
         xAxeOptions={{
           scaleLabel: {
             display: true,
