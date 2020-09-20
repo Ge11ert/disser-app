@@ -17,6 +17,9 @@ type OptimalPaths = {
 
 interface Props {
   air: Map<number, AirConditions>|null;
+  initialAltitude: number;
+  startGPSPoint: { lat: number, long: number };
+  endGPSPoint: { lat: number, long: number };
 }
 
 const OptimalPaths = (props: Props) => {
@@ -188,7 +191,13 @@ const OptimalPaths = (props: Props) => {
         onClose={toggleFuelDialog}
         title="Графики маршрута, оптимального по топливу"
       >
-        <OptimalPathCharts optimalPath={fuel} air={props.air}/>
+        <OptimalPathCharts
+          optimalPath={fuel}
+          air={props.air}
+          initialAltitude={props.initialAltitude}
+          startGPSPoint={props.startGPSPoint}
+          endGPSPoint={props.endGPSPoint}
+        />
       </Dialog>
 
       <Dialog
@@ -196,7 +205,13 @@ const OptimalPaths = (props: Props) => {
         onClose={toggleTimeDialog}
         title="Графики маршрута, оптимального по времени"
       >
-        <OptimalPathCharts optimalPath={time} air={props.air}/>
+        <OptimalPathCharts
+          optimalPath={time}
+          air={props.air}
+          initialAltitude={props.initialAltitude}
+          startGPSPoint={props.startGPSPoint}
+          endGPSPoint={props.endGPSPoint}
+        />
       </Dialog>
 
       <Dialog
@@ -204,7 +219,13 @@ const OptimalPaths = (props: Props) => {
         onClose={toggleCombinedDialog}
         title="Графики маршрута, оптимального по смешанному критерию"
       >
-        <OptimalPathCharts optimalPath={combined} air={props.air}/>
+        <OptimalPathCharts
+          optimalPath={combined}
+          air={props.air}
+          initialAltitude={props.initialAltitude}
+          startGPSPoint={props.startGPSPoint}
+          endGPSPoint={props.endGPSPoint}
+        />
       </Dialog>
     </Box>
   )

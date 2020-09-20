@@ -20,7 +20,11 @@ type State = {
 };
 
 interface Props {
-  onSubmit(): void,
+  onSubmit(
+    altitude: number,
+    startGPSPoint: { lat: number, long: number },
+    endGPSPoint: { lat: number, long: number },
+  ): void,
 }
 
 const coordsMask = [/\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/];
@@ -116,7 +120,16 @@ export default class InitialConditions extends React.Component<Props, State> {
     };
 
     window.electron.applyInitialConditions(initialConditions);
-    this.props.onSubmit();
+    const parsedAlt = parseInt(altitude.replace(/\s/g, ''), 10);
+    const startGPSPoint = {
+      lat: parseFloat(initLat),
+      long: parseFloat(initLong),
+    };
+    const endGPSPoint = {
+      lat: parseFloat(finalLat),
+      long: parseFloat(finalLong),
+    };
+    this.props.onSubmit(parsedAlt, startGPSPoint, endGPSPoint);
   };
 
   render() {
