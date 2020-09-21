@@ -21,10 +21,11 @@ import { TotalRun, AltitudeRun, AirConditions } from '../../types/interfaces';
 interface Props {
   totalRun: TotalRun;
   air: Map<number, AirConditions>|null,
+  initialPoints?: { entry: { x: number, y: number }, exit: { x: number, y: number }}
 }
 
 const CalculatedRoutes = (props: Props) => {
-  const { totalRun, air } = props;
+  const { totalRun, air, initialPoints } = props;
 
   return (
     <Box bgcolor="#f5f5f5">
@@ -117,6 +118,7 @@ const CalculatedRoutes = (props: Props) => {
                               <AirConditionsTable
                                 air={air.get(alt)!}
                                 path={route.cruise.path}
+                                initialPoints={initialPoints}
                               />
                             </Box>
                           )}

@@ -13,6 +13,7 @@ interface Props {
   initialAltitude: number;
   startGPSPoint: { lat: number, long: number };
   endGPSPoint: { lat: number, long: number };
+  initialPoints: { entry: { x: number, y: number }, exit: { x: number, y: number } };
 }
 
 const OptimalPathCharts = (props: Props) => {
@@ -22,6 +23,7 @@ const OptimalPathCharts = (props: Props) => {
     initialAltitude,
     startGPSPoint,
     endGPSPoint,
+    initialPoints,
   } = props;
 
   return (
@@ -52,6 +54,7 @@ const OptimalPathCharts = (props: Props) => {
           <AirConditionsTable
             air={air.get(optimalPath.altitude)!}
             path={optimalPath.path}
+            initialPoints={initialPoints}
           />
         )}
       </Box>

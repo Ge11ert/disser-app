@@ -135,6 +135,7 @@ export default class DisserApp implements DisserAppAPI {
 
     const { optimal, full } = this.findBasicOptimalPaths(totalRun);
 
+    this.electronApp.sendInitialPoints({ entry: this.initialEntryPoint, exit: this.initialExitPoint })
     this.electronApp.renderTotalRun({ totalRun, flightCost: full });
     this.electronApp.renderOptimalPaths(optimal);
 

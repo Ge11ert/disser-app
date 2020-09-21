@@ -20,6 +20,7 @@ interface Props {
   initialAltitude: number;
   startGPSPoint: { lat: number, long: number };
   endGPSPoint: { lat: number, long: number };
+  initialPoints: { entry: { x: number, y: number }, exit: { x: number, y: number } },
 }
 
 const OptimalPaths = (props: Props) => {
@@ -197,6 +198,7 @@ const OptimalPaths = (props: Props) => {
           initialAltitude={props.initialAltitude}
           startGPSPoint={props.startGPSPoint}
           endGPSPoint={props.endGPSPoint}
+          initialPoints={props.initialPoints}
         />
       </Dialog>
 
@@ -211,6 +213,7 @@ const OptimalPaths = (props: Props) => {
           initialAltitude={props.initialAltitude}
           startGPSPoint={props.startGPSPoint}
           endGPSPoint={props.endGPSPoint}
+          initialPoints={props.initialPoints}
         />
       </Dialog>
 
@@ -225,6 +228,7 @@ const OptimalPaths = (props: Props) => {
           initialAltitude={props.initialAltitude}
           startGPSPoint={props.startGPSPoint}
           endGPSPoint={props.endGPSPoint}
+          initialPoints={props.initialPoints}
         />
       </Dialog>
     </Box>

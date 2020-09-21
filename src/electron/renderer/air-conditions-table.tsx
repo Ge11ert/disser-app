@@ -14,6 +14,7 @@ interface Props {
   air: AirConditions;
   disableWind?: boolean;
   path?: number[][],
+  initialPoints?: { entry: { x: number, y: number }, exit: { x: number, y: number }}
 }
 
 type State = {
@@ -39,6 +40,8 @@ class AirConditionsTable extends React.Component<Props, State> {
   cellSize: number = 15;
 
   markSize: number = 12;
+
+  cellOffset = 0.5;
 
   defaultZoom = 1;
 
@@ -87,14 +90,14 @@ class AirConditionsTable extends React.Component<Props, State> {
   };
 
   drawGrid = () => {
-    const { path, disableWind } = this.props;
+    const { path, disableWind, initialPoints } = this.props;
 
     this.draw.clear();
 
     this.props.air.forEach((row, rowIndex) => {
       row.forEach((cellValue, cellIndex) => {
-        const x = cellIndex * this.cellSize + 0.5;
-        const y = rowIndex * this.cellSize + 0.5;
+        const x = cellIndex * this.cellSize + this.cellOffset;
+        const y = rowIndex * this.cellSize + this.cellOffset;
         const cellType = getCellType(cellValue);
 
         this.draw.rect(this.cellSize, this.cellSize)
@@ -117,11 +120,23 @@ class AirConditionsTable extends React.Component<Props, State> {
     if (path !== undefined) {
       path.forEach(cell => {
         const [cx, cy] = cell;
-        const x = cx * this.cellSize + 0.5;
-        const y = cy * this.cellSize + 0.5;
+        const x = cx * this.cellSize + this.cellOffset;
+        const y = cy * this.cellSize + this.cellOffset;
         this.draw.circle(this.markSize)
           .move(x + 2, y + 2).fill({ color: deepPurple[500] });
-      })
+      });
+    }
+
+    if (initialPoints !== undefined) {
+      const entryX = initialPoints.entry.x * this.cellSize + this.cellOffset;
+      const entryY = initialPoints.entry.y * this.cellSize + this.cellOffset;
+      const exitX = initialPoints.exit.x * this.cellSize + this.cellOffset;
+      const exitY = initialPoints.exit.y * this.cellSize + this.cellOffset;
+
+      this.draw.circle(this.markSize)
+        .move(entryX + 2, entryY + 2).fill({ color: deepPurple[500] });
+      this.draw.circle(this.markSize)
+        .move(exitX + 2, exitY + 2).fill({ color: deepPurple[500] });
     }
   };
 
