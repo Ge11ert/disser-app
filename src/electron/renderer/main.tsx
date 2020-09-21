@@ -21,6 +21,8 @@ type AppState = {
   initialAltitude: number,
   startGPSPoint: { lat: number, long: number },
   endGPSPoint: { lat: number, long: number },
+  entryPoint: { x: number, y: number },
+  exitPoint: { x: number, y: number },
 };
 
 class Main extends React.Component<{}, AppState> {
@@ -32,7 +34,18 @@ class Main extends React.Component<{}, AppState> {
     initialAltitude: 0,
     startGPSPoint: { lat: 0, long: 0 },
     endGPSPoint: { lat: 0, long: 0 },
+    entryPoint: { x: 0, y: 0 },
+    exitPoint: { x: 0, y: 0 },
   };
+
+  componentDidMount() {
+    window.electron.listenToInitialPoints((initialPoints: Record<string, { x: number, y: number }>) => {
+      this.setState({
+        entryPoint: initialPoints.entry,
+        exitPoint: initialPoints.exit,
+      });
+    });
+  }
 
   onInitialDataLoad = (
     altitude: number,
@@ -106,6 +119,7 @@ class Main extends React.Component<{}, AppState> {
                   blocked={!initialDataLoaded || !airConditionsLoaded}
                   onRoutesCalculated={this.onRoutesCalculated}
                   air={this.state.airConditions}
+                  initialPoints={{ entry: this.state.entryPoint, exit: this.state.exitPoint }}
                 />
               </ContentSection>
             </Box>
@@ -120,6 +134,7 @@ class Main extends React.Component<{}, AppState> {
                   initialAltitude={this.state.initialAltitude}
                   startGPSPoint={this.state.startGPSPoint}
                   endGPSPoint={this.state.endGPSPoint}
+                  initialPoints={{ entry: this.state.entryPoint, exit: this.state.exitPoint }}
                 />
               </ContentSection>
             </Box>

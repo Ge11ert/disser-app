@@ -16,6 +16,7 @@ interface Props {
   blocked?: boolean,
   onRoutesCalculated(): void,
   air: Map<number, AirConditions>|null,
+  initialPoints: { entry: { x: number, y: number }, exit: { x: number, y: number } },
 }
 
 const PathfinderController = (props: Props) => {
@@ -123,7 +124,11 @@ const PathfinderController = (props: Props) => {
         title="Рассчитанные маршруты"
       >
         { flightRoutes && (
-          <CalculatedRoutes totalRun={flightRoutes} air={props.air}/>
+          <CalculatedRoutes
+            totalRun={flightRoutes}
+            air={props.air}
+            initialPoints={props.initialPoints}
+          />
         )}
       </Dialog>
 

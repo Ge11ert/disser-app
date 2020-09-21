@@ -11,6 +11,7 @@ import {
   APPLY_INITIAL_CONDITIONS,
   REQUEST_ARRIVAL_TIME,
   APPLY_ARRIVAL_TIME,
+  SEND_INITIAL_POINTS,
 } from '../ipc-events/event-names';
 import { ElectronWindowAPI } from '../../types/interfaces';
 
@@ -49,7 +50,12 @@ const electronToWindowAPI: ElectronWindowAPI = {
   },
   applyArrivalTime(time: string) {
     ipcRenderer.send(APPLY_ARRIVAL_TIME, time);
-  }
+  },
+  listenToInitialPoints: (callback: (arg: any) => void) => {
+    ipcRenderer.on(SEND_INITIAL_POINTS, (event, initialPoints: any) => {
+      callback(initialPoints);
+    });
+  },
 };
 
 contextBridge.exposeInMainWorld('electron', electronToWindowAPI);

@@ -6,7 +6,12 @@ import path from 'path';
 import MainWindow from './main-window';
 import bindIpcEvents from '../ipc-events';
 import { DisserAppAPI } from '../../types/interfaces';
-import { RENDER_TOTAL_RUN, RENDER_OPTIMAL_PATHS, REQUEST_ARRIVAL_TIME } from '../ipc-events/event-names';
+import {
+  RENDER_TOTAL_RUN,
+  RENDER_OPTIMAL_PATHS,
+  REQUEST_ARRIVAL_TIME,
+  SEND_INITIAL_POINTS,
+} from '../ipc-events/event-names';
 
 const htmlFile = path.resolve(__dirname, '../renderer/index.html');
 const preloadScript = path.resolve(__dirname, '../context-bridge/index.js');
@@ -55,5 +60,9 @@ export default class ElectronApp {
 
   requestArrivalTime(data: any): void {
     this.sendToWindow(REQUEST_ARRIVAL_TIME, data);
+  }
+
+  sendInitialPoints(data: any): void {
+    this.sendToWindow(SEND_INITIAL_POINTS, data);
   }
 }
