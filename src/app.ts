@@ -126,6 +126,8 @@ export default class DisserApp implements DisserAppAPI {
       throw new Error('No air conditions loaded at all, please provide one');
     }
 
+    const startTimestamp = Date.now();
+
     const totalRun: TotalRun = new Map();
 
     this.possibleMachList.forEach(speedM => {
@@ -138,6 +140,10 @@ export default class DisserApp implements DisserAppAPI {
     this.electronApp.sendInitialPoints({ entry: this.initialEntryPoint, exit: this.initialExitPoint })
     this.electronApp.renderTotalRun({ totalRun, flightCost: full });
     this.electronApp.renderOptimalPaths(optimal);
+
+    const endTimestamp = Date.now();
+    const calculationTimeInMs = endTimestamp - startTimestamp;
+    this.electronApp.sendCalculationTime(calculationTimeInMs);
 
     const possibleArrivalTime = this.optimalPathFinder.getPossibleArrivalTime(this.geo.departureDate);
     this.electronApp.requestArrivalTime(possibleArrivalTime);

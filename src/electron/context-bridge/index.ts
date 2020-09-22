@@ -12,6 +12,7 @@ import {
   REQUEST_ARRIVAL_TIME,
   APPLY_ARRIVAL_TIME,
   SEND_INITIAL_POINTS,
+  SEND_CALCULATION_TIME,
 } from '../ipc-events/event-names';
 import { ElectronWindowAPI } from '../../types/interfaces';
 
@@ -54,6 +55,11 @@ const electronToWindowAPI: ElectronWindowAPI = {
   listenToInitialPoints: (callback: (arg: any) => void) => {
     ipcRenderer.on(SEND_INITIAL_POINTS, (event, initialPoints: any) => {
       callback(initialPoints);
+    });
+  },
+  listenToCalculationTime: (callback: (arg: any) => void) => {
+    ipcRenderer.on(SEND_CALCULATION_TIME, (event, calculationTime: any) => {
+      callback(calculationTime);
     });
   },
 };

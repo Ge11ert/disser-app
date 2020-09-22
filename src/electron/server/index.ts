@@ -11,6 +11,7 @@ import {
   RENDER_OPTIMAL_PATHS,
   REQUEST_ARRIVAL_TIME,
   SEND_INITIAL_POINTS,
+  SEND_CALCULATION_TIME,
 } from '../ipc-events/event-names';
 
 const htmlFile = path.resolve(__dirname, '../renderer/index.html');
@@ -64,5 +65,9 @@ export default class ElectronApp {
 
   sendInitialPoints(data: any): void {
     this.sendToWindow(SEND_INITIAL_POINTS, data);
+  }
+
+  sendCalculationTime(data: any): void {
+    this.sendToWindow(SEND_CALCULATION_TIME, data);
   }
 }
