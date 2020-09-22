@@ -47,6 +47,7 @@ export interface ElectronWindowAPI {
   listenToOptimalPathsFound(callback: (arg: any) => void): void;
   listenToArrivalTimeRequest(callback: (arg: any) => void): void;
   listenToInitialPoints(callback: (arg: any) => void): void;
+  listenToCalculationTime(callback: (arg: any) => void): void;
   findPath(): void;
   applyInitialConditions(conditions: Record<string, string>): void;
   applyArrivalTime(time: string): void;

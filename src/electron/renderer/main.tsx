@@ -21,6 +21,7 @@ type AppState = {
   endGPSPoint: { lat: number, long: number },
   entryPoint: { x: number, y: number },
   exitPoint: { x: number, y: number },
+  calculationTime: number|undefined,
 };
 
 class Main extends React.Component<{}, AppState> {
@@ -34,6 +35,7 @@ class Main extends React.Component<{}, AppState> {
     endGPSPoint: { lat: 0, long: 0 },
     entryPoint: { x: 0, y: 0 },
     exitPoint: { x: 0, y: 0 },
+    calculationTime: undefined,
   };
 
   componentDidMount() {
@@ -44,6 +46,10 @@ class Main extends React.Component<{}, AppState> {
         entryPoint: initialPoints.entry,
         exitPoint: initialPoints.exit,
       });
+    });
+
+    window.electron.listenToCalculationTime((calculationTime: number) => {
+      this.setState({ calculationTime });
     });
   }
 
@@ -78,6 +84,7 @@ class Main extends React.Component<{}, AppState> {
       initialDataLoaded,
       airConditionsLoaded,
       routesCalculated,
+      calculationTime,
     } = this.state;
 
     return (
@@ -86,7 +93,7 @@ class Main extends React.Component<{}, AppState> {
           Disser App
         </Typography>
 
-        <Box display="flex">
+        <Box>
           <Box component="main">
             <Box>
               <ContentSection
@@ -139,6 +146,18 @@ class Main extends React.Component<{}, AppState> {
               </ContentSection>
             </Box>
           </Box>
+
+          { calculationTime && (
+            <Box mt={7}>
+              <Typography variant="body1">
+                Время расчёта маршрутов:
+                {' '}
+                {(calculationTime / 1000).toFixed(4)}
+                {' '}
+                секунд
+              </Typography>
+            </Box>
+          )}
         </Box>
       </Container>
     )
