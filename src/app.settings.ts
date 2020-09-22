@@ -2,8 +2,8 @@ import { BrowserWindowConstructorOptions } from 'electron';
 
 const electronOptions: BrowserWindowConstructorOptions = {
   minWidth: 800,
-  width: 1200,
-  height: 900,
+  width: 1920,
+  height: 1080,
   minHeight: 600,
 };
 

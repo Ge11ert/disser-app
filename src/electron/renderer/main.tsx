@@ -2,13 +2,11 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 
 import InitialConditions from './initial-conditions';
 import AirConditionsLoader from './air-conditions-loader';
 import PathfinderController from './pathfinder-controller';
 import OptimalPaths from './optimal-paths';
-import AsideStepper from './aside-stepper';
 import ContentSection from './content-section';
 
 import { AirConditions } from '../../types/interfaces';
@@ -39,6 +37,8 @@ class Main extends React.Component<{}, AppState> {
   };
 
   componentDidMount() {
+    if (!window.electron) return;
+
     window.electron.listenToInitialPoints((initialPoints: Record<string, { x: number, y: number }>) => {
       this.setState({
         entryPoint: initialPoints.entry,
@@ -138,14 +138,6 @@ class Main extends React.Component<{}, AppState> {
                 />
               </ContentSection>
             </Box>
-          </Box>
-
-          <Box mr={3} ml={6}>
-            <Divider orientation="vertical"/>
-          </Box>
-
-          <Box component="aside">
-            <AsideStepper/>
           </Box>
         </Box>
       </Container>
