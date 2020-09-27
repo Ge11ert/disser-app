@@ -45,6 +45,7 @@ export interface ElectronWindowAPI {
   listenToAirConditionsCancelled(callback: () => void): void;
   listenToFlightRoutesCalculated(callback: (arg: any) => void): void;
   listenToOptimalPathsFound(callback: (arg: any) => void): void;
+  listenToRTAPathFound(callback: (arg: any) => void): void;
   listenToArrivalTimeRequest(callback: (arg: any) => void): void;
   listenToInitialPoints(callback: (arg: any) => void): void;
   listenToCalculationTime(callback: (arg: any) => void): void;

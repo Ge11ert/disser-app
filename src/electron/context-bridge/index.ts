@@ -8,6 +8,7 @@ import {
   RENDER_OPTIMAL_PATHS,
   START_FINDER,
   RENDER_TOTAL_RUN,
+  RENDER_RTA_PATH,
   APPLY_INITIAL_CONDITIONS,
   REQUEST_ARRIVAL_TIME,
   APPLY_ARRIVAL_TIME,
@@ -36,6 +37,11 @@ const electronToWindowAPI: ElectronWindowAPI = {
   listenToOptimalPathsFound: (callback: (arg: any) => void) => {
     ipcRenderer.on(RENDER_OPTIMAL_PATHS, (event, routes: any) => {
       callback(routes);
+    });
+  },
+  listenToRTAPathFound: (callback: (arg: any) => void) => {
+    ipcRenderer.on(RENDER_RTA_PATH, (event, rtaPath: any) => {
+      callback(rtaPath);
     });
   },
   listenToArrivalTimeRequest: (callback: (arg: any) => void) => {

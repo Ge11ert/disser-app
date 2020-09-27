@@ -15,7 +15,7 @@ import type {
   AltitudeRun,
   SpeedRun,
   TotalRun,
-  OptimalPathWithCoords,
+  OptimalPathWithCoords, OptimalPath,
 } from './types/interfaces';
 
 interface DisserAppSettings {
@@ -108,13 +108,7 @@ export default class DisserApp implements DisserAppAPI {
   applyArrivalTime(arrivalTime: string) {
     this.geo.applyArrivalDate(arrivalTime);
     this.optimalPathFinder.findRTAOptimalPath(this.geo.departureDate, this.geo.arrivalDate);
-    const optimalPaths = {
-      fuel: this.optimalPathFinder.fuelOptimalPath,
-      time: this.optimalPathFinder.timeOptimalPath,
-      combined: this.optimalPathFinder.combinedOptimalPath,
-      rta: this.optimalPathFinder.rtaOptimalPath,
-    };
-    this.electronApp.renderOptimalPaths(optimalPaths);
+    this.electronApp.renderRTAPath(this.optimalPathFinder.rtaOptimalPath);
   }
 
   startFinder() {
@@ -422,6 +416,17 @@ export default class DisserApp implements DisserAppAPI {
     this.optimalPathFinder.setStartAlt(this.geo.startAltInFeet);
     const { optimal, full } =  this.optimalPathFinder.findBasicOptimalPaths(totalRun);
 
+    const optimalWithCoords = this.injectOptimalPathCoords(optimal);
+
+    return {
+      full,
+      optimal: optimalWithCoords,
+    };
+  }
+
+  injectOptimalPathCoords(
+    optimal: { fuel: OptimalPath, time: OptimalPath, combined: OptimalPath }
+  ): { fuel: OptimalPathWithCoords, time: OptimalPathWithCoords, combined: OptimalPathWithCoords } {
     const fuelCruiseCoords = convertPathToGeodeticCoords(
       optimal.fuel.path,
       optimal.fuel.altitude,
@@ -458,14 +463,10 @@ export default class DisserApp implements DisserAppAPI {
       this.initialEntryPoint,
       this.geo.startLBHCoords,
     );
-
     return {
-      full,
-      optimal: {
-        fuel: { ...optimal.fuel, coords: fuelCruiseCoords, zone: fuelAltitudeForbiddenZone },
-        time: { ...optimal.time, coords: timeCruiseCoords, zone: timeAltitudeForbiddenZone },
-        combined: { ...optimal.combined, coords: combinedCruiseCoords, zone: combinedAltitudeForbiddenZone },
-      },
+      fuel: { ...optimal.fuel, coords: fuelCruiseCoords, zone: fuelAltitudeForbiddenZone },
+      time: { ...optimal.time, coords: timeCruiseCoords, zone: timeAltitudeForbiddenZone },
+      combined: { ...optimal.combined, coords: combinedCruiseCoords, zone: combinedAltitudeForbiddenZone },
     };
   }
 
