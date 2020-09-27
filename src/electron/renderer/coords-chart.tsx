@@ -8,14 +8,25 @@ interface Props {
   endGPSPoint: { lat: number, long: number };
 }
 
+const Axes = {
+  X: {
+    type: 'lat' as const,
+    label: 'Широта',
+  },
+  Y: {
+    type: 'long' as const,
+    label: 'Долгота',
+  },
+};
+
 class CoordsChart extends React.Component<Props, {}> {
   render() {
     const dataSets = [
       {
         label: 'GPS-координаты',
         data: this.props.coords.map(point => ({
-          x: parseFloat(point.lat.toFixed(4)),
-          y: parseFloat(point.long.toFixed(4)),
+          x: parseFloat(point[Axes.X.type].toFixed(4)),
+          y: parseFloat(point[Axes.Y.type].toFixed(4)),
         })),
         showLine: true,
         fill: false,
@@ -24,8 +35,8 @@ class CoordsChart extends React.Component<Props, {}> {
       {
         label: 'Начальная точка',
         data: [{
-          x: this.props.startGPSPoint.lat,
-          y: this.props.startGPSPoint.long,
+          x: this.props.startGPSPoint[Axes.X.type],
+          y: this.props.startGPSPoint[Axes.Y.type],
         }],
         showLine: true,
         fill: false,
@@ -34,8 +45,8 @@ class CoordsChart extends React.Component<Props, {}> {
       {
         label: 'Конечная точка',
         data: [{
-          x: this.props.endGPSPoint.lat,
-          y: this.props.endGPSPoint.long,
+          x: this.props.endGPSPoint[Axes.X.type],
+          y: this.props.endGPSPoint[Axes.Y.type],
         }],
         showLine: true,
         fill: false,
@@ -51,8 +62,8 @@ class CoordsChart extends React.Component<Props, {}> {
           {
             label: 'Запретная зона',
             data: this.props.forbiddenZone.map(point => ({
-              x: parseFloat(point.lat.toFixed(4)),
-              y: parseFloat(point.long.toFixed(4)),
+              x: parseFloat(point[Axes.X.type].toFixed(4)),
+              y: parseFloat(point[Axes.Y.type].toFixed(4)),
             })),
             showLine: false,
             fill: false,
@@ -63,7 +74,7 @@ class CoordsChart extends React.Component<Props, {}> {
         xAxeOptions={{
           scaleLabel: {
             display: true,
-            labelString: 'Долгота',
+            labelString: Axes.X.label,
             fontColor: '#333',
             fontSize: 15,
             lineHeight: '24px',
@@ -75,7 +86,7 @@ class CoordsChart extends React.Component<Props, {}> {
         yAxeOptions={{
           scaleLabel: {
             display: true,
-            labelString: 'Широта',
+            labelString: Axes.Y.label,
             fontColor: '#333',
             fontSize: 15,
             lineHeight: '24px',
