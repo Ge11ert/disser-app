@@ -33,6 +33,14 @@ const OptimalPaths = (props: Props) => {
     window.electron.listenToOptimalPathsFound((result: OptimalPaths) => {
       setOptimalPaths(result);
     });
+    window.electron.listenToRTAPathFound((rtaPath: OptimalPath) => {
+      if (optimalPaths !== null) {
+        setOptimalPaths({
+          ...optimalPaths,
+          rta: rtaPath,
+        });
+      }
+    });
   }
 
   if (!optimalPaths) return null;

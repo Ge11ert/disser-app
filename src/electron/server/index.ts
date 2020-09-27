@@ -9,6 +9,7 @@ import { DisserAppAPI } from '../../types/interfaces';
 import {
   RENDER_TOTAL_RUN,
   RENDER_OPTIMAL_PATHS,
+  RENDER_RTA_PATH,
   REQUEST_ARRIVAL_TIME,
   SEND_INITIAL_POINTS,
   SEND_CALCULATION_TIME,
@@ -57,6 +58,10 @@ export default class ElectronApp {
 
   renderOptimalPaths(data: any): void {
     this.sendToWindow(RENDER_OPTIMAL_PATHS, data);
+  }
+
+  renderRTAPath(data: any): void {
+    this.sendToWindow(RENDER_RTA_PATH, data);
   }
 
   requestArrivalTime(data: any): void {

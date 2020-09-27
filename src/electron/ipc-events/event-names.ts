@@ -3,6 +3,7 @@ export const RENDER_AIR_CONDITIONS = 'RENDER_AIR_CONDITIONS' as const;
 export const CANCEL_AIR_CONDITIONS = 'CANCEL__AIR_CONDITIONS' as const;
 export const RENDER_TOTAL_RUN = 'RENDER_TOTAL_RUN' as const;
 export const RENDER_OPTIMAL_PATHS = 'RENDER_OPTIMAL_PATHS' as const;
+export const RENDER_RTA_PATH = 'RENDER_RTA_PATH' as const;
 export const START_FINDER = 'START_FINDER' as const;
 export const APPLY_INITIAL_CONDITIONS = 'APPLY_INITIAL_CONDITIONS' as const;
 export const APPLY_ARRIVAL_TIME = 'APPLY_ARRIVAL_TIME' as const;
