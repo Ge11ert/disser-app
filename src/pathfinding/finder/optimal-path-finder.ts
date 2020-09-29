@@ -18,11 +18,11 @@ const costFactor = {
   },
   time: {
     Cf: 1,
-    CI: 3000,
+    CI: 9999,
   },
   custom: {
     Cf: 1,
-    CI: 1500,
+    CI: 5000,
   },
 };
 

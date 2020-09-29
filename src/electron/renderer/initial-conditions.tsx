@@ -38,7 +38,7 @@ export default class InitialConditions extends React.Component<Props, State> {
     finalLat: '53.390321',
     finalLong: '58.757723',
     departureTime: format(startOfMinute(new Date()), 'HH:mm:ss'),
-    customCostIndex: '1500',
+    customCostIndex: '5000',
     formValid: true,
   };
 
