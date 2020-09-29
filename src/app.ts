@@ -382,7 +382,7 @@ export default class DisserApp implements DisserAppAPI {
 
   createInitialEntryPoint(): void {
     this.initialEntryPoint.x = 0;
-    this.initialEntryPoint.y = Math.ceil(this.airConditionsGridSize.height / 2) - 1;
+    this.initialEntryPoint.y = 0;
   }
 
   createInitialExitPoint(): void {
