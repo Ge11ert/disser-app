@@ -432,36 +432,42 @@ export default class DisserApp implements DisserAppAPI {
       optimal.fuel.altitude,
       this.initialEntryPoint,
       this.geo.startLBHCoords,
+      this.geo.finalLBHCoords,
     );
     const fuelAltitudeForbiddenZone = convertZoneToCoords(
       this.airConditionsPerAlt[optimal.fuel.altitude],
       optimal.fuel.altitude,
       this.initialEntryPoint,
       this.geo.startLBHCoords,
+      this.geo.finalLBHCoords,
     );
     const timeCruiseCoords = convertPathToGeodeticCoords(
       optimal.time.path,
       optimal.time.altitude,
       this.initialEntryPoint,
       this.geo.startLBHCoords,
+      this.geo.finalLBHCoords,
     );
     const timeAltitudeForbiddenZone = convertZoneToCoords(
       this.airConditionsPerAlt[optimal.time.altitude],
       optimal.time.altitude,
       this.initialEntryPoint,
       this.geo.startLBHCoords,
+      this.geo.finalLBHCoords,
     );
     const combinedCruiseCoords = convertPathToGeodeticCoords(
       optimal.combined.path,
       optimal.combined.altitude,
       this.initialEntryPoint,
       this.geo.startLBHCoords,
+      this.geo.finalLBHCoords,
     );
     const combinedAltitudeForbiddenZone = convertZoneToCoords(
       this.airConditionsPerAlt[optimal.combined.altitude],
       optimal.combined.altitude,
       this.initialEntryPoint,
       this.geo.startLBHCoords,
+      this.geo.finalLBHCoords,
     );
     return {
       fuel: { ...optimal.fuel, coords: fuelCruiseCoords, zone: fuelAltitudeForbiddenZone },
