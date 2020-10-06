@@ -9,11 +9,11 @@ interface Props {
 }
 
 const Axes = {
-  X: {
+  Y: {
     type: 'lat' as const,
     label: 'Широта',
   },
-  Y: {
+  X: {
     type: 'long' as const,
     label: 'Долгота',
   },
