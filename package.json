@@ -1,6 +1,6 @@
 {
   "name": "disser-app",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Делаем как можем, а потом понимаем, что не смогли.",
   "scripts": {
     "prebuild": "rm -rf build",
