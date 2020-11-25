@@ -9,7 +9,7 @@ import {
 } from '../../flight-profiles';
 import settings from '../../app.settings';
 
-import type { TotalRun, AltitudeRun, OptimalPath } from '../../types/interfaces';
+import type { TotalRun, AltitudeRun, OptimalPath, RtaOptimalPath } from '../../types/interfaces';
 
 const costFactor = {
   fuel: {
@@ -38,11 +38,13 @@ const emptyOptimalPath: OptimalPath = {
   sections: { climb: 0, cruise: 0, descent: 0 },
 };
 
+const MAX_RTA_DEVIATION_IN_SECONDS = 60;
+
 export default class OptimalPathFinder {
   fuelOptimalPath: OptimalPath = emptyOptimalPath;
   timeOptimalPath: OptimalPath = emptyOptimalPath;
   combinedOptimalPath: OptimalPath = emptyOptimalPath;
-  rtaOptimalPath: OptimalPath|null = null;
+  rtaOptimalPath: RtaOptimalPath|null = null;
 
   fuelOptimalRun: AltitudeRun|null = null;
 
@@ -181,7 +183,7 @@ export default class OptimalPathFinder {
     };
   }
 
-  findRTAOptimalPath(departureDate: Date, arrivalDate: Date): void {
+  findRTAOptimalPath(departureDate: Date, arrivalDate: Date, totalRun: TotalRun): void {
     const possibleArrivalTime = this.getPossibleArrivalTime(departureDate);
 
     if (isBefore(arrivalDate, possibleArrivalTime.min) || isAfter(arrivalDate, possibleArrivalTime.max)) {
@@ -190,23 +192,56 @@ export default class OptimalPathFinder {
       return;
     }
 
-    const availableTimeInHours = this.getAvailableTime(departureDate, arrivalDate);
-    const requiredGroundSpeed = this.fuelOptimalPath.distance / availableTimeInHours; // knots (nm per hour)
-    const requiredAirSpeed = requiredGroundSpeed - this.fuelOptimalPath.averageWind;
+    const availableTimeInSeconds = this.getAvailableTimeInSeconds(departureDate, arrivalDate);
+    const applicablePaths = [];
+    let minimumFlightCost = Number.MAX_SAFE_INTEGER;
+    let rtaOptimalPath: OptimalPath = emptyOptimalPath;
 
-    const profileRowsForAltitude = getCruiseProfileRowsByAltitude(this.fuelOptimalPath.altitude);
-    const speedOfSound = profileRowsForAltitude[0].speedOfSound;
-    const requiredMach = parseFloat((requiredAirSpeed / speedOfSound).toPrecision(2));
-    const rtaFuel = this.calculateRTAFuel(
-      availableTimeInHours, this.fuelOptimalPath.altitude, requiredMach
-    ) || this.fuelOptimalPath.fuel;
+    for (const [speed, speedSummary] of totalRun) {
+      for (const [altitude, altSummary] of speedSummary) {
+        const timeSpent = summarize(altSummary, 'timeInHours');
+        const timeSpentInSeconds = timeSpent * 3600;
+        const flightDistance = summarize(altSummary, 'distanceInMiles');
+        const fuelConsumption = summarize(altSummary, 'fuelBurnInKgs');
+        const flightCost = getFlightCost(fuelConsumption, timeSpent, costFactor.fuel);
+        const isApplicable = Math.abs(timeSpentInSeconds - availableTimeInSeconds) <= MAX_RTA_DEVIATION_IN_SECONDS;
 
-    this.rtaOptimalPath = {
-      ...this.fuelOptimalPath,
-      fuel: rtaFuel,
-      speed: requiredMach,
-      time: availableTimeInHours,
-    };
+        if (isApplicable) {
+          const path = {
+            flightCost: flightCost,
+            fuel: fuelConsumption,
+            time: timeSpent,
+            distance: flightDistance,
+            speed,
+            altitude,
+            path: altSummary.cruise.path,
+            sections: {
+              climb: altSummary.ascent.distanceInMiles,
+              cruise: altSummary.cruise.distanceInMiles,
+              descent: altSummary.descent.distanceInMiles,
+            },
+            averageWind: (
+              altSummary.ascent.averageWind + altSummary.cruise.averageWind + altSummary.descent.averageWind
+            ) / 3,
+          };
+          applicablePaths.push(path);
+
+          if (flightCost < minimumFlightCost) {
+            minimumFlightCost = flightCost;
+            rtaOptimalPath = path;
+          }
+        }
+      }
+    }
+
+    console.log(`Всего возможных путей с минимумом задержки прибытия: ${applicablePaths.length}`);
+
+    if (minimumFlightCost < Number.MAX_SAFE_INTEGER && rtaOptimalPath.flightCost !== 0) {
+      this.rtaOptimalPath = {
+        ...rtaOptimalPath,
+        possibleAlternatives: applicablePaths,
+      };
+    }
   }
 
   calculateRTAFuel(
@@ -267,9 +302,9 @@ export default class OptimalPathFinder {
     this.startAltInFeet = alt;
   }
 
-  getAvailableTime(startDate: Date, endDate: Date): number {
+  getAvailableTimeInSeconds(startDate: Date, endDate: Date): number {
     const diffInSeconds = Math.abs(differenceInSeconds(startDate, endDate));
-    return (diffInSeconds / 3600);
+    return diffInSeconds;
   }
 
   getPossibleArrivalTime(departureDate: Date): { min: Date, max: Date } {
