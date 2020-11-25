@@ -47,6 +47,8 @@ export default class DisserApp implements DisserAppAPI {
   private readonly possibleAltitudeList: number[] = [];
   private readonly possibleMachList: number[] = [];
 
+  private totalRun: TotalRun = new Map();
+
   private static createAltitudeList(env: DisserAppSettings['environment']) {
     const { minH, maxH, altitudeIncrement } = env;
     return createMinMaxList(minH, maxH, altitudeIncrement);
@@ -107,7 +109,7 @@ export default class DisserApp implements DisserAppAPI {
 
   applyArrivalTime(arrivalTime: string) {
     this.geo.applyArrivalDate(arrivalTime);
-    this.optimalPathFinder.findRTAOptimalPath(this.geo.departureDate, this.geo.arrivalDate);
+    this.optimalPathFinder.findRTAOptimalPath(this.geo.departureDate, this.geo.arrivalDate, this.totalRun);
     this.electronApp.renderRTAPath(this.optimalPathFinder.rtaOptimalPath);
   }
 
@@ -122,17 +124,15 @@ export default class DisserApp implements DisserAppAPI {
 
     const startTimestamp = Date.now();
 
-    const totalRun: TotalRun = new Map();
-
     this.possibleMachList.forEach(speedM => {
       const speedRunSummary = this.performSpeedCycleStep(speedM);
-      totalRun.set(speedM, speedRunSummary);
+      this.totalRun.set(speedM, speedRunSummary);
     });
 
-    const { optimal, full } = this.findBasicOptimalPaths(totalRun);
+    const { optimal, full } = this.findBasicOptimalPaths(this.totalRun);
 
     this.electronApp.sendInitialPoints({ entry: this.initialEntryPoint, exit: this.initialExitPoint })
-    this.electronApp.renderTotalRun({ totalRun, flightCost: full });
+    this.electronApp.renderTotalRun({ totalRun: this.totalRun, flightCost: full });
     this.electronApp.renderOptimalPaths(optimal);
 
     const endTimestamp = Date.now();

@@ -2,17 +2,22 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Divider from '@material-ui/core/Divider';
 import Dialog from './dialog';
 import OptimalPathCharts from './optimal-path-charts';
 import { formatTime } from './utils';
 
-import { AirConditions, OptimalPath, OptimalPathWithCoords } from '../../types/interfaces';
+import { AirConditions, OptimalPath, OptimalPathWithCoords, RtaOptimalPath } from '../../types/interfaces';
 
 type OptimalPaths = {
   fuel: OptimalPathWithCoords,
   time: OptimalPathWithCoords,
   combined: OptimalPathWithCoords,
-  rta: OptimalPath|null,
+  rta: RtaOptimalPath|null,
 };
 
 interface Props {
@@ -33,7 +38,7 @@ const OptimalPaths = (props: Props) => {
     window.electron.listenToOptimalPathsFound((result: OptimalPaths) => {
       setOptimalPaths(result);
     });
-    window.electron.listenToRTAPathFound((rtaPath: OptimalPath) => {
+    window.electron.listenToRTAPathFound((rtaPath: RtaOptimalPath) => {
       if (optimalPaths !== null) {
         setOptimalPaths({
           ...optimalPaths,
@@ -172,21 +177,71 @@ const OptimalPaths = (props: Props) => {
 
         <Box mt={2}>
           { !!rta ? (
-            <Typography variant="body1">
-              {getRTAValue('Стоимость полёта', 'flightCost')}
-              <br/>
-              {getRTAValue('Высота', 'altitude')}
-              <br/>
-              {getRTAValue('Скорость', 'speed')}
-              <br/>
-              {getRTAValue('Дистанция', 'distance')}
-              <br/>
-              {getRTAValue('Затраты топлива', 'fuel')}
-              <br/>
-              {getRTAValue('Затраты времени', 'time', formatTime)}
-              <br/>
-              {getRTAValue('Средний ветер', 'averageWind')}
-            </Typography>
+            <Box>
+              <Box mb={1}>
+                <Typography variant="body1">
+                  {getRTAValue('Стоимость полёта', 'flightCost')}
+                  <br/>
+                  {getRTAValue('Высота', 'altitude')}
+                  <br/>
+                  {getRTAValue('Скорость', 'speed')}
+                  <br/>
+                  {getRTAValue('Дистанция', 'distance')}
+                  <br/>
+                  {getRTAValue('Затраты топлива', 'fuel')}
+                  <br/>
+                  {getRTAValue('Затраты времени', 'time', formatTime)}
+                  <br/>
+                  {getRTAValue('Средний ветер', 'averageWind')}
+                </Typography>
+              </Box>
+
+              <Typography variant="body1">
+                Всего вариантов маршрутов:
+                {' '}
+                {rta.possibleAlternatives.length}
+              </Typography>
+
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  id="possible-rta-paths"
+                >
+                  <Typography variant="body1">
+                    Посмотреть другие
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Box>
+                    {rta.possibleAlternatives.map(path => {
+                      const getPathValue = getValueWithLabel(path);
+                      return (
+                        <React.Fragment key={path.flightCost}>
+                          <Box my={2}>
+                            <Typography variant="body1" >
+                              {getPathValue('Стоимость полёта', 'flightCost')}
+                              <br/>
+                              {getPathValue('Высота', 'altitude')}
+                              <br/>
+                              {getPathValue('Скорость', 'speed')}
+                              <br/>
+                              {getPathValue('Дистанция', 'distance')}
+                              <br/>
+                              {getPathValue('Затраты топлива', 'fuel')}
+                              <br/>
+                              {getPathValue('Затраты времени', 'time', formatTime)}
+                              <br/>
+                              {getPathValue('Средний ветер', 'averageWind')}
+                            </Typography>
+                          </Box>
+                          <Divider/>
+                        </React.Fragment>
+                      )
+                    })}
+                  </Box>
+                </AccordionDetails>
+              </Accordion>
+            </Box>
           ) : (
             <Typography variant="body1">
               Для выбранного времени прибытия маршрута не существует или не введено время прибытия.
