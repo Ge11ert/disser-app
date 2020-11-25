@@ -50,11 +50,13 @@ class Chart extends React.Component<Props, {}> {
           responsive: false,
           scales: {
             xAxes: [{
+              id: 'x-axis',
               type: 'linear',
               position: 'bottom',
               ...this.props.xAxeOptions,
             }],
             yAxes: [{
+              id: 'y-axis',
               type: 'linear',
               position: 'left',
               ...this.props.yAxeOptions,
@@ -64,6 +66,28 @@ class Chart extends React.Component<Props, {}> {
       });
 
       this.chart = chart;
+    }
+  }
+
+  componentDidUpdate(prevProps: Readonly<Props>) {
+    if (!this.chart) return;
+
+    if (this.props.xAxeOptions !== prevProps.xAxeOptions || this.props.yAxeOptions !== prevProps.yAxeOptions) {
+      this.chart.options.scales = {
+        xAxes: [{
+          id: 'x-axis',
+          type: 'linear',
+          position: 'bottom',
+          ...this.props.xAxeOptions,
+        }],
+        yAxes: [{
+          id: 'y-axis',
+          type: 'linear',
+          position: 'left',
+          ...this.props.yAxeOptions,
+        }],
+      };
+      this.chart.update({ duration: 0 });
     }
   }
 
