@@ -1,8 +1,7 @@
 import format from 'date-fns/format';
 import parseISO from 'date-fns/parseISO';
-import { WGS84Params } from '../constants/geo';
 import { cell } from '../constants/grid';
-import fromGeodeticToECEF from '../utils/geo/from-geodetic-to-ecef';
+import { wgs84ToGK } from '../utils/geo/gauss-kruger';
 import { fromFeetToMeters, fromMetersToMiles } from '../utils/converters';
 
 export default class Geo {
@@ -23,16 +22,14 @@ export default class Geo {
     alt: 0,
   };
 
-  public startXYZCoords = {
+  public startXYCoords = {
     x: 0,
     y: 0,
-    z: 0
   };
 
-  public finalXYZCoords = {
+  public finalXYCoords = {
     x: 0,
     y: 0,
-    z: 0
   };
 
   public distanceInMeters = {
@@ -85,10 +82,10 @@ export default class Geo {
   }
 
   findDistanceBetweenStartAndEndPoints() {
-    this.convertStartAndFinalToECEF();
+    this.convertStartAndFinalToGaussKruger();
 
-    const distanceInMetersX = Math.abs(this.startXYZCoords.x - this.finalXYZCoords.x);
-    const distanceInMetersY = Math.abs(this.startXYZCoords.y - this.finalXYZCoords.y);
+    const distanceInMetersX = Math.abs(this.startXYCoords.x - this.finalXYCoords.x);
+    const distanceInMetersY = Math.abs(this.startXYCoords.y - this.finalXYCoords.y);
 
     const distanceInMilesX = fromMetersToMiles(distanceInMetersX);
     const distanceInMilesY = fromMetersToMiles(distanceInMetersY);
@@ -121,21 +118,19 @@ export default class Geo {
     this.distanceInGridCells.y = maxCellsY;
   }
 
-  convertStartAndFinalToECEF() {
-    const { startLBHCoords, finalLBHCoords, startAltInMeters } = this;
-    const [startX, startY, startZ] = fromGeodeticToECEF(startLBHCoords.lat, startLBHCoords.long, startAltInMeters, WGS84Params);
-    const [finalX, finalY, finalZ] = fromGeodeticToECEF(finalLBHCoords.lat, finalLBHCoords.long, startAltInMeters, WGS84Params);
+  convertStartAndFinalToGaussKruger() {
+    const { startLBHCoords, finalLBHCoords } = this;
+    const startGaussCoords = wgs84ToGK({ longitude: startLBHCoords.long, latitude: startLBHCoords.lat });
+    const finalGaussCoords = wgs84ToGK({ longitude: finalLBHCoords.long, latitude: finalLBHCoords.lat });
 
-    this.startXYZCoords = {
-      x: startX,
-      y: startY,
-      z: startZ,
+    this.startXYCoords = {
+      x: startGaussCoords.x,
+      y: startGaussCoords.y,
     };
 
-    this.finalXYZCoords = {
-      x: finalX,
-      y: finalY,
-      z: finalZ,
+    this.finalXYCoords = {
+      x: finalGaussCoords.x,
+      y: finalGaussCoords.y,
     };
   }
 
