@@ -299,7 +299,7 @@ export default class DisserApp implements DisserAppAPI {
       exitPoint = nextExitPoint;
     }
 
-    if (entryPoint.x >= exitPoint.x || entryPoint.y >= exitPoint.y) {
+    if (entryPoint.x >= exitPoint.x && entryPoint.y >= exitPoint.y) {
       // так долго взлетали, что попали сразу на выход, и на крейсере лететь некуда
       return [
         false,
@@ -386,7 +386,7 @@ export default class DisserApp implements DisserAppAPI {
   }
 
   createInitialExitPoint(): void {
-    if (this.geo.distanceInGridCells.x === 0) {
+    if (this.geo.distanceInGridCells.x === 0 && this.geo.distanceInGridCells.y === 0) {
       return;
     }
 

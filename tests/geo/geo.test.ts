@@ -1,5 +1,6 @@
 import fromGeodeticToECEF from '../../src/utils/geo/from-geodetic-to-ecef';
 import fromECEFToGeodetic from '../../src/utils/geo/from-ecef-to-geodetic';
+import { gkToWGS84, wgs84ToGK } from '../../src/utils/geo/gauss-kruger';
 import { WGS84Params } from '../../src/constants/geo';
 
 describe('Convert geodetic to ECEF', () => {
@@ -48,6 +49,46 @@ describe('Convert ECEF to geodetic', () => {
 
     const coords = fromECEFToGeodetic(X, Y, Z, WGS84Params);
     expectCoords(coords).toBe(['55.752', '37.616', '399.371']);
+  });
+});
+
+describe('Convert geodetic to Gauss-Kruger projection', () => {
+  it('should convert lat, long to x, y (Moscow, zone 7)', () => {
+    const lat = 55.752;
+    const long = 37.618;
+
+    const coords = wgs84ToGK({ longitude: long, latitude: lat });
+    expect(Math.trunc(coords.x)).toBe(6181915);
+    expect(Math.trunc(coords.y)).toBe(7413339);
+  });
+
+  it('should convert lat, long to x, y (Yekaterinburg, zone 12)', () => {
+    const lat = 56.852;
+    const long = 60.612;
+
+    const coords = wgs84ToGK({ longitude: long, latitude: lat });
+    expect(Math.trunc(coords.x)).toBe(6306039);
+    expect(Math.trunc(coords.y)).toBe(11354396);
+  });
+});
+
+describe('Convert Gauss-Kruger projection to geodetic', () => {
+  it('should convert x, y to lat, long (Moscow, zone 7)', () => {
+    const x = 6181915.97257774;
+    const y = 7413339.640804862;
+
+    const coords = gkToWGS84({ x, y });
+    expect(coords.latitude.toFixed(3)).toBe('55.752');
+    expect(coords.longitude.toFixed(3)).toBe('37.618');
+  });
+
+  it('should convert x, y to lat, long (Yekaterinburg, zone 12)', () => {
+    const x = 6306039.9712243425;
+    const y = 11354396.721657403;
+
+    const coords = gkToWGS84({ x, y });
+    expect(coords.latitude.toFixed(3)).toBe('56.852');
+    expect(coords.longitude.toFixed(3)).toBe('60.612');
   });
 });
 
