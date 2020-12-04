@@ -43,7 +43,7 @@ const emptyOptimalPath: OptimalPath = {
   sections: { climb: 0, cruise: 0, descent: 0 },
 };
 
-const MAX_RTA_DEVIATION_IN_SECONDS = 60;
+const MAX_RTA_DEVIATION_IN_SECONDS = 30;
 
 export default class OptimalPathFinder {
   fuelOptimalPath: OptimalPath = emptyOptimalPath;
