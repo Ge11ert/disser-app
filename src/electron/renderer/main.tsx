@@ -8,6 +8,7 @@ import AirConditionsLoader from './air-conditions-loader';
 import PathfinderController from './pathfinder-controller';
 import OptimalPaths from './optimal-paths';
 import ContentSection from './content-section';
+import { serviceTitle } from '../../constants/service-title';
 
 import { AirConditions } from '../../types/interfaces';
 
@@ -90,7 +91,7 @@ class Main extends React.Component<{}, AppState> {
     return (
       <Container className="page" maxWidth="lg">
         <Typography variant="h2" component="h1" gutterBottom>
-          Disser App
+          {serviceTitle}
         </Typography>
 
         <Box>
