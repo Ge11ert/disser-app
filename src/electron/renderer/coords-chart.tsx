@@ -151,13 +151,14 @@ class CoordsChart extends React.Component<Props, State> {
               display: true,
               labelString: Axes.X.label,
               fontColor: '#333',
-              fontSize: 15,
-              lineHeight: '24px',
+              fontSize: Chart.baseFontSize,
+              lineHeight: Chart.baseLineHeight,
             },
             ticks: {
               fontColor: '#333',
               min: xAxeSettings.min,
               max: xAxeSettings.max,
+              fontSize: Chart.baseFontSize,
             }
           }}
           yAxeOptions={{
@@ -165,13 +166,14 @@ class CoordsChart extends React.Component<Props, State> {
               display: true,
               labelString: Axes.Y.label,
               fontColor: '#333',
-              fontSize: 15,
-              lineHeight: '24px',
+              fontSize: Chart.baseFontSize,
+              lineHeight: Chart.baseLineHeight,
             },
             ticks: {
               fontColor: '#333',
               min: yAxeSettings.min,
               max: yAxeSettings.max,
+              fontSize: Chart.baseFontSize,
             }
           }}
         />

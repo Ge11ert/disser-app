@@ -48,11 +48,12 @@ class AltitudeChart extends React.Component<Props, {}> {
             display: true,
             labelString: 'Дистанция, nm',
             fontColor: '#333',
-            fontSize: 15,
-            lineHeight: '24px',
+            fontSize: Chart.baseFontSize,
+            lineHeight: Chart.baseLineHeight,
           },
           ticks: {
             fontColor: '#333',
+            fontSize: Chart.baseFontSize,
           }
         }}
         yAxeOptions={{
@@ -60,13 +61,14 @@ class AltitudeChart extends React.Component<Props, {}> {
             display: true,
             labelString: 'Высота, ft',
             fontColor: '#333',
-            fontSize: 15,
-            lineHeight: '24px',
+            fontSize: Chart.baseFontSize,
+            lineHeight: Chart.baseLineHeight,
           },
           ticks: {
             min: startAltitude - 2000,
             max: endAltitude + 2000,
             fontColor: '#333',
+            fontSize: Chart.baseFontSize,
           }
         }}
       />
