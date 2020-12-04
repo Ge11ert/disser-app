@@ -11,9 +11,13 @@ interface Props {
   };
 }
 
+const HEIGHT_MARGIN = 2000;
+
 class AltitudeChart extends React.Component<Props, {}> {
   render() {
     const { startAltitude, endAltitude, distance } = this.props;
+    const minHeight = Math.min(startAltitude, endAltitude) - HEIGHT_MARGIN;
+    const maxHeight = Math.max(startAltitude, endAltitude) + HEIGHT_MARGIN;
     return (
       <Chart
         width={1200}
@@ -65,8 +69,8 @@ class AltitudeChart extends React.Component<Props, {}> {
             lineHeight: Chart.baseLineHeight,
           },
           ticks: {
-            min: startAltitude - 2000,
-            max: endAltitude + 2000,
+            min: minHeight,
+            max: maxHeight,
             fontColor: '#333',
             fontSize: Chart.baseFontSize,
           }
