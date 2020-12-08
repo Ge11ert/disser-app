@@ -301,7 +301,12 @@ const OptimalPaths = (props: Props) => {
 export default OptimalPaths;
 
 function getValueWithLabel(pathInfo: OptimalPath) {
-  return function (label: string, fieldName: keyof OptimalPath, formatter?: Function) {
-    return `${label}: ${formatter ? formatter(pathInfo[fieldName]) : pathInfo[fieldName]}`;
+  return function (label: string, fieldName: Exclude<keyof OptimalPath, 'sections' | 'path'>, formatter?: Function) {
+    const value = pathInfo[fieldName];
+    if (formatter) {
+      return `${label}: ${formatter(value)}`;
+    }
+    const isInteger = Number.isInteger(value);
+    return `${label}: ${isInteger ? value : value.toFixed(2)}`
   }
 }

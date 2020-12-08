@@ -20,6 +20,9 @@ class Chart extends React.Component<Props, {}> {
     yAxeOptions: {},
   };
 
+  static baseFontSize = 20;
+  static baseLineHeight = '28px';
+
   canvas = React.createRef<HTMLCanvasElement>();
 
   width: number;
