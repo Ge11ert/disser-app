@@ -1,12 +1,13 @@
 {
   "name": "disser-app",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Утилита для нахождения оптимального четырехмерного маршрута в условиях заданного воздушного пространства",
   "scripts": {
     "prebuild": "rm -rf build",
     "build:electron": "tsc",
     "build:electron-production": "tsc -p ./tsconfig.prod.json",
     "postbuild": "npm run cp-assets",
+    "postbuild-production": "npm run cp-assets",
     "cp-assets": "mkdir build/assets && cp src/assets/* build/assets",
     "watch": "tsc -w",
     "lint": "echo \"Error: no linter specified\" && exit 1",
