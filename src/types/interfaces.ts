@@ -95,4 +95,6 @@ export type RtaOptimalPath = OptimalPath & {
   possibleAlternatives: OptimalPath[],
 };
 
+export type RtaOptimalPathWithCoords = RtaOptimalPath & { coords: { lat: number, long: number }[], zone?: { lat: number, long: number }[] };
+
 export type OptimalPathWithCoords = OptimalPath & { coords: { lat: number, long: number }[], zone?: { lat: number, long: number }[] };

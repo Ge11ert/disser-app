@@ -11,13 +11,13 @@ import Dialog from './dialog';
 import OptimalPathCharts from './optimal-path-charts';
 import { formatTime } from './utils';
 
-import { AirConditions, OptimalPath, OptimalPathWithCoords, RtaOptimalPath } from '../../types/interfaces';
+import { AirConditions, OptimalPath, OptimalPathWithCoords, RtaOptimalPathWithCoords } from '../../types/interfaces';
 
 type OptimalPaths = {
   fuel: OptimalPathWithCoords,
   time: OptimalPathWithCoords,
   combined: OptimalPathWithCoords,
-  rta: RtaOptimalPath|null,
+  rta: RtaOptimalPathWithCoords|null,
 };
 
 interface Props {
@@ -33,12 +33,13 @@ const OptimalPaths = (props: Props) => {
   const [fuelDialogOpen, setFuelDialogOpen] = React.useState(false);
   const [timeDialogOpen, setTimeDialogOpen] = React.useState(false);
   const [combinedDialogOpen, setCombinedDialogOpen] = React.useState(false);
+  const [rtaDialogOpen, setRtaDialogOpen] = React.useState(false);
 
   if (window.electron) {
     window.electron.listenToOptimalPathsFound((result: OptimalPaths) => {
       setOptimalPaths(result);
     });
-    window.electron.listenToRTAPathFound((rtaPath: RtaOptimalPath) => {
+    window.electron.listenToRTAPathFound((rtaPath: RtaOptimalPathWithCoords) => {
       if (optimalPaths !== null) {
         setOptimalPaths({
           ...optimalPaths,
@@ -50,7 +51,7 @@ const OptimalPaths = (props: Props) => {
 
   if (!optimalPaths) return null;
 
-  const { fuel, time, combined, rta } = optimalPaths;
+  const { fuel, time, combined, rta = null } = optimalPaths;
   const getFuelValue = getValueWithLabel(fuel);
   const getTimeValue = getValueWithLabel(time);
   const getCombinedValue = getValueWithLabel(combined);
@@ -64,6 +65,9 @@ const OptimalPaths = (props: Props) => {
   };
   const toggleCombinedDialog = () => {
     setCombinedDialogOpen(!combinedDialogOpen);
+  };
+  const toggleRtaDialog = () => {
+    setRtaDialogOpen(!rtaDialogOpen);
   };
 
   return (
@@ -176,7 +180,7 @@ const OptimalPaths = (props: Props) => {
         </Typography>
 
         <Box mt={2}>
-          { !!rta ? (
+          { rta !== null ? (
             <Box>
               <Box mb={1}>
                 <Typography variant="body1">
@@ -248,6 +252,18 @@ const OptimalPaths = (props: Props) => {
             </Typography>
           )}
         </Box>
+
+        { rta !== null && (
+          <Box mt={2}>
+            <Button
+              variant="outlined"
+              size="small"
+              onClick={toggleRtaDialog}
+            >
+              Показать графики
+            </Button>
+          </Box>
+        )}
       </Box>
 
       <Dialog
@@ -294,6 +310,23 @@ const OptimalPaths = (props: Props) => {
           initialPoints={props.initialPoints}
         />
       </Dialog>
+
+      { rta !== null && (
+        <Dialog
+          isOpen={rtaDialogOpen}
+          onClose={toggleRtaDialog}
+          title="Графики маршрута, оптимального по критерию минимума задержки прибытия"
+        >
+          <OptimalPathCharts
+            optimalPath={rta}
+            air={props.air}
+            initialAltitude={props.initialAltitude}
+            startGPSPoint={props.startGPSPoint}
+            endGPSPoint={props.endGPSPoint}
+            initialPoints={props.initialPoints}
+          />
+        </Dialog>
+      )}
     </Box>
   )
 };
