@@ -16,6 +16,7 @@ import type {
   SpeedRun,
   TotalRun,
   OptimalPathWithCoords, OptimalPath,
+  RtaOptimalPathWithCoords,
 } from './types/interfaces';
 
 interface DisserAppSettings {
@@ -110,7 +111,30 @@ export default class DisserApp implements DisserAppAPI {
   applyArrivalTime(arrivalTime: string) {
     this.geo.applyArrivalDate(arrivalTime);
     this.optimalPathFinder.findRTAOptimalPath(this.geo.departureDate, this.geo.arrivalDate, this.totalRun);
-    this.electronApp.renderRTAPath(this.optimalPathFinder.rtaOptimalPath);
+    const rtaPath = this.optimalPathFinder.rtaOptimalPath;
+    if (rtaPath === null) {
+      return;
+    }
+    const rtaPathCoords = convertPathToGeodeticCoords(
+      rtaPath.path,
+      rtaPath.altitude,
+      this.initialEntryPoint,
+      this.geo.startLBHCoords,
+      this.geo.finalLBHCoords,
+    );
+    const rtaForbiddenZone = convertZoneToCoords(
+      this.airConditionsPerAlt[rtaPath.altitude],
+      rtaPath.altitude,
+      this.initialEntryPoint,
+      this.geo.startLBHCoords,
+      this.geo.finalLBHCoords,
+    );
+    const rtaOptimalPathWithCoords: RtaOptimalPathWithCoords = {
+      ...rtaPath,
+      coords: rtaPathCoords,
+      zone: rtaForbiddenZone,
+    };
+    this.electronApp.renderRTAPath(rtaOptimalPathWithCoords);
   }
 
   startFinder() {
