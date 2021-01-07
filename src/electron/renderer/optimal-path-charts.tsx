@@ -7,8 +7,15 @@ import AirConditionsTable from './air-conditions-table';
 
 import { AirConditions, OptimalPathWithCoords } from '../../types/interfaces';
 
+type OptimalPathsSet = {
+  fuel?: OptimalPathWithCoords,
+  time?: OptimalPathWithCoords,
+  combined?: OptimalPathWithCoords,
+  rta?: OptimalPathWithCoords|null,
+};
+
 interface Props {
-  optimalPath: OptimalPathWithCoords;
+  optimalPaths: OptimalPathsSet,
   air: Map<number, AirConditions>|null;
   initialAltitude: number;
   startGPSPoint: { lat: number, long: number };
@@ -18,7 +25,7 @@ interface Props {
 
 const OptimalPathCharts = (props: Props) => {
   const {
-    optimalPath,
+    optimalPaths,
     air,
     initialAltitude,
     startGPSPoint,
@@ -26,13 +33,49 @@ const OptimalPathCharts = (props: Props) => {
     initialPoints,
   } = props;
 
+  const altitudeDataSets: {[K in keyof OptimalPathsSet]: {
+    startAltitude: number,
+    endAltitude: number,
+    distance: {
+      climb: number,
+      cruise: number,
+      descent: number,
+    },
+  }} = {};
+
+  const coordsDataSets: {[K in keyof OptimalPathsSet]: {
+    coords: { lat: number, long: number }[];
+    forbiddenZone?: { lat: number, long: number }[];
+  }} = {};
+
+  const pathGridDataSets: {[K in keyof OptimalPathsSet]: {
+    path: number[][],
+  }} = {};
+
+  const firstPathAltitude = (Object.values(optimalPaths)[0] as OptimalPathWithCoords).altitude;
+
+  (Object.keys(optimalPaths) as (keyof OptimalPathsSet)[]).forEach((pathType: keyof OptimalPathsSet) => {
+    const path = optimalPaths[pathType];
+    if (!path) return;
+    altitudeDataSets[pathType] = {
+      startAltitude: initialAltitude,
+      endAltitude: path.altitude,
+      distance: path.sections,
+    };
+    coordsDataSets[pathType] = {
+      coords: path.coords,
+      forbiddenZone: path.zone,
+    };
+    pathGridDataSets[pathType] = {
+      path: path.path,
+    };
+  });
+
   return (
     <Box maxWidth={1600} p={5} mx="auto">
       <Box mb={3}>
         <AltitudeChart
-          startAltitude={initialAltitude}
-          endAltitude={optimalPath.altitude}
-          distance={optimalPath.sections}
+          dataSets={altitudeDataSets as Required<typeof altitudeDataSets>}
         />
       </Box>
 
@@ -40,8 +83,7 @@ const OptimalPathCharts = (props: Props) => {
 
       <Box my={3}>
         <CoordsChart
-          coords={optimalPath.coords}
-          forbiddenZone={optimalPath.zone}
+          dataSets={coordsDataSets as Required<typeof coordsDataSets>}
           startGPSPoint={startGPSPoint}
           endGPSPoint={endGPSPoint}
         />
@@ -50,10 +92,10 @@ const OptimalPathCharts = (props: Props) => {
       <Divider/>
 
       <Box mt={3}>
-        { air !== null && air.has(optimalPath.altitude) && (
+        { air !== null && air.has(firstPathAltitude) && (
           <AirConditionsTable
-            air={air.get(optimalPath.altitude)!}
-            path={optimalPath.path}
+            air={air.get(firstPathAltitude)!}
+            dataSets={(pathGridDataSets as Required<typeof pathGridDataSets>)}
             initialPoints={initialPoints}
           />
         )}
