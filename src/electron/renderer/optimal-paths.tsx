@@ -34,6 +34,7 @@ const OptimalPaths = (props: Props) => {
   const [timeDialogOpen, setTimeDialogOpen] = React.useState(false);
   const [combinedDialogOpen, setCombinedDialogOpen] = React.useState(false);
   const [rtaDialogOpen, setRtaDialogOpen] = React.useState(false);
+  const [allChartsDialogOpen, setChartsDialogOpen] = React.useState(false);
 
   if (window.electron) {
     window.electron.listenToOptimalPathsFound((result: OptimalPaths) => {
@@ -69,10 +70,23 @@ const OptimalPaths = (props: Props) => {
   const toggleRtaDialog = () => {
     setRtaDialogOpen(!rtaDialogOpen);
   };
+  const toggleAllChartsDialog = () => {
+    setChartsDialogOpen(!allChartsDialogOpen);
+  };
 
   return (
     <Box>
       <Box>
+        <Button
+          variant="outlined"
+          size="small"
+          onClick={toggleAllChartsDialog}
+        >
+          Показать все графики
+        </Button>
+      </Box>
+
+      <Box mt={2}>
         <Typography variant="h5">
           1. Оптимальный по критерию минимума расхода топлива
         </Typography>
@@ -272,7 +286,7 @@ const OptimalPaths = (props: Props) => {
         title="Графики маршрута, оптимального по топливу"
       >
         <OptimalPathCharts
-          optimalPath={fuel}
+          optimalPaths={{ fuel }}
           air={props.air}
           initialAltitude={props.initialAltitude}
           startGPSPoint={props.startGPSPoint}
@@ -287,7 +301,7 @@ const OptimalPaths = (props: Props) => {
         title="Графики маршрута, оптимального по времени"
       >
         <OptimalPathCharts
-          optimalPath={time}
+          optimalPaths={{ time }}
           air={props.air}
           initialAltitude={props.initialAltitude}
           startGPSPoint={props.startGPSPoint}
@@ -302,7 +316,7 @@ const OptimalPaths = (props: Props) => {
         title="Графики маршрута, оптимального по смешанному критерию"
       >
         <OptimalPathCharts
-          optimalPath={combined}
+          optimalPaths={{ combined }}
           air={props.air}
           initialAltitude={props.initialAltitude}
           startGPSPoint={props.startGPSPoint}
@@ -318,7 +332,7 @@ const OptimalPaths = (props: Props) => {
           title="Графики маршрута, оптимального по критерию минимума задержки прибытия"
         >
           <OptimalPathCharts
-            optimalPath={rta}
+            optimalPaths={{ rta }}
             air={props.air}
             initialAltitude={props.initialAltitude}
             startGPSPoint={props.startGPSPoint}
@@ -327,6 +341,21 @@ const OptimalPaths = (props: Props) => {
           />
         </Dialog>
       )}
+
+      <Dialog
+        isOpen={allChartsDialogOpen}
+        onClose={toggleAllChartsDialog}
+        title="Графики всех маршрутов"
+      >
+        <OptimalPathCharts
+          optimalPaths={optimalPaths}
+          air={props.air}
+          initialAltitude={props.initialAltitude}
+          startGPSPoint={props.startGPSPoint}
+          endGPSPoint={props.endGPSPoint}
+          initialPoints={props.initialPoints}
+        />
+      </Dialog>
     </Box>
   )
 };
