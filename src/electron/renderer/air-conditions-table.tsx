@@ -13,13 +13,38 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 interface Props {
   air: AirConditions;
   disableWind?: boolean;
-  path?: number[][],
+  dataSets: Record<'fuel'|'time'|'combined'|'rta', {
+    path: number[][],
+  }>;
   initialPoints?: { entry: { x: number, y: number }, exit: { x: number, y: number }}
 }
 
 type State = {
   showWind: boolean,
   showBlockedAreas: boolean,
+};
+
+const colors: { [type: string]: { primary: string, dark: string } } = {
+  fuel: {
+    primary: '#1976d2',
+    dark: '#004ba0',
+  },
+  time: {
+    primary: '#43a047',
+    dark: '#00701a',
+  },
+  combined: {
+    primary: '#f4511e',
+    dark: '#b91400',
+  },
+  rta: {
+    primary: '#fbc02d',
+    dark: '#c49000',
+  },
+  defaultColor: {
+    primary: '#999',
+    dark: 'darkblue',
+  },
 };
 
 class AirConditionsTable extends React.Component<Props, State> {
@@ -90,7 +115,9 @@ class AirConditionsTable extends React.Component<Props, State> {
   };
 
   drawGrid = () => {
-    const { path, disableWind, initialPoints } = this.props;
+    const { dataSets, disableWind, initialPoints } = this.props;
+
+    const showAirConditions = Object.keys(dataSets).length === 1;
 
     this.draw.clear();
 
@@ -103,13 +130,13 @@ class AirConditionsTable extends React.Component<Props, State> {
         this.draw.rect(this.cellSize, this.cellSize)
           .move(x, y).fill('none').stroke(grey[600]);
 
-        if (cellType === 'wind' && !disableWind && cellValue !== 0) {
+        if (showAirConditions && cellType === 'wind' && !disableWind && cellValue !== 0) {
           const label = this.draw.circle(this.markSize)
             .move(x + 2, y + 2).fill({ color: getFillColor(cellValue), opacity: 0.9 });
           this.windCells.push(label);
         }
 
-        if (cellType === 'block') {
+        if (showAirConditions && cellType === 'block') {
           const label = this.draw.circle(this.markSize)
             .move(x + 2, y + 2).fill({ color: getFillColor(cellValue), opacity: 0.9 });
           this.blockCells.push(label);
@@ -117,15 +144,17 @@ class AirConditionsTable extends React.Component<Props, State> {
       });
     });
 
-    if (path !== undefined) {
+    Object.entries(dataSets).forEach(([key, value]) => {
+      const { path } = value;
+      const pathColor = colors[key].primary;
       path.forEach(cell => {
         const [cx, cy] = cell;
         const x = cx * this.cellSize + this.cellOffset;
         const y = cy * this.cellSize + this.cellOffset;
         this.draw.circle(this.markSize)
-          .move(x + 2, y + 2).fill({ color: deepPurple[500] });
+          .move(x + 2, y + 2).fill({ color: pathColor });
       });
-    }
+    });
 
     if (initialPoints !== undefined) {
       const entryX = initialPoints.entry.x * this.cellSize + this.cellOffset;
