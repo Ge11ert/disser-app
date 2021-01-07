@@ -6,11 +6,15 @@ import FormControl from '@material-ui/core/FormControl';
 import Grid from '@material-ui/core/Grid';
 import Chart from './chart';
 
+type CoordsSet = { lat: number, long: number }[];
+
 interface Props {
-  coords: { lat: number, long: number }[];
-  forbiddenZone?: { lat: number, long: number }[];
   startGPSPoint: { lat: number, long: number };
   endGPSPoint: { lat: number, long: number };
+  dataSets: Record<'fuel'|'time'|'combined'|'rta', {
+    coords: CoordsSet;
+    forbiddenZone?: CoordsSet;
+  }>;
 }
 
 type AxeSettings = {
@@ -43,6 +47,37 @@ const defaultState: State = {
     min: undefined,
     max: undefined,
   },
+};
+
+const colors: { [type: string]: { primary: string, dark: string } } = {
+  fuel: {
+    primary: '#1976d2',
+    dark: '#004ba0',
+  },
+  time: {
+    primary: '#43a047',
+    dark: '#00701a',
+  },
+  combined: {
+    primary: '#f4511e',
+    dark: '#b91400',
+  },
+  rta: {
+    primary: '#fbc02d',
+    dark: '#c49000',
+  },
+  defaultColor: {
+    primary: '#999',
+    dark: 'darkblue',
+  },
+};
+
+const labels: Record<string, string> = {
+  fuel: 'Минимум топлива',
+  time: 'Минимум времени',
+  combined: 'Смешанный критерий',
+  rta: 'Минимум задержки прибытия',
+  defaultLabel: 'GPS-координаты',
 };
 
 class CoordsChart extends React.Component<Props, State> {
@@ -90,39 +125,65 @@ class CoordsChart extends React.Component<Props, State> {
 
   resetAxesOptions = () => {
     this.setState(defaultState);
-  }
+  };
 
   render() {
-    const dataSets = [
-      {
-        label: 'GPS-координаты',
-        data: this.props.coords.map(point => ({
+    const coordsDataSets = this.props.dataSets;
+
+    const pathsWithForbiddenZone = Object.values(coordsDataSets).filter(path => !!path.forbiddenZone);
+    const forbiddenZone = pathsWithForbiddenZone.length === 1
+      ? ({
+        label: 'Запретная зона',
+        data: (pathsWithForbiddenZone[0].forbiddenZone as CoordsSet).map(point => ({
           x: parseFloat(point[Axes.X.type].toFixed(4)),
           y: parseFloat(point[Axes.Y.type].toFixed(4)),
         })),
-        showLine: true,
+        showLine: false,
         fill: false,
-        backgroundColor: 'darkblue',
-      },
+        backgroundColor: 'red',
+        borderColor: 'red',
+      }) : undefined;
+
+    const dataSets = [
+      ...(Object.entries(coordsDataSets).map(([key, value]) => {
+        const useDifferentAppearance = Object.keys(coordsDataSets).length > 1;
+        const chartColor = useDifferentAppearance ? (colors[key] || colors.defaultColor) : colors.defaultColor;
+        const coords = value.coords;
+
+        return ({
+          label: useDifferentAppearance ? labels[key] : labels.defaultLabel,
+          data: coords.map(point => ({
+            x: parseFloat(point[Axes.X.type].toFixed(4)),
+            y: parseFloat(point[Axes.Y.type].toFixed(4)),
+          })),
+          showLine: true,
+          fill: false,
+          borderColor: chartColor.primary,
+          backgroundColor: chartColor.dark,
+        })
+      })),
+      ...(forbiddenZone ? [forbiddenZone] : []),
       {
-        label: 'Начальная точка',
+        label: 'skip',
         data: [{
           x: this.props.startGPSPoint[Axes.X.type],
           y: this.props.startGPSPoint[Axes.Y.type],
         }],
         showLine: true,
         fill: false,
-        backgroundColor: 'green',
+        backgroundColor: 'black',
+        borderColor: 'black',
       },
       {
-        label: 'Конечная точка',
+        label: 'skip',
         data: [{
           x: this.props.endGPSPoint[Axes.X.type],
           y: this.props.endGPSPoint[Axes.Y.type],
         }],
         showLine: true,
         fill: false,
-        backgroundColor: 'green',
+        backgroundColor: 'black',
+        borderColor: 'black',
       }
     ];
 
@@ -133,19 +194,7 @@ class CoordsChart extends React.Component<Props, State> {
         <Chart
           width={1200}
           height={1200}
-          dataSets={this.props.forbiddenZone ? [
-            {
-              label: 'Запретная зона',
-              data: this.props.forbiddenZone.map(point => ({
-                x: parseFloat(point[Axes.X.type].toFixed(4)),
-                y: parseFloat(point[Axes.Y.type].toFixed(4)),
-              })),
-              showLine: false,
-              fill: false,
-              backgroundColor: 'red',
-            },
-            ...dataSets,
-          ] : dataSets}
+          dataSets={dataSets}
           xAxeOptions={{
             scaleLabel: {
               display: true,

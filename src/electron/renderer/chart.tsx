@@ -64,6 +64,13 @@ class Chart extends React.Component<Props, {}> {
               position: 'left',
               ...this.props.yAxeOptions,
             }]
+          },
+          legend: {
+            labels: {
+              filter: (legendItem) => {
+                return (legendItem.text !== 'skip');
+              },
+            }
           }
         }
       });
