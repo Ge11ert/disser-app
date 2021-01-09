@@ -108,6 +108,9 @@ class AirConditionsTable extends React.Component<Props, State> {
         .addTo(this.container.current)
         .size(this.conWidth, this.conHeight)
         .viewbox(`0 0 ${this.conWidth} ${this.conHeight}`)
+        .transform({
+          rotate: -90,
+        })
         .panZoom({
           wheelZoom: false,
         });
