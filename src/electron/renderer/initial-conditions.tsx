@@ -14,6 +14,8 @@ type State = {
   initLong: string,
   finalLat: string,
   finalLong: string,
+  initXCell: string,
+  initYCell: string,
   departureTime: string,
   customCostIndex: string,
   formValid: boolean,
@@ -31,12 +33,14 @@ const coordsMask = [/\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/];
 const coordsPlaceholder = '00.000000';
 
 export default class InitialConditions extends React.Component<Props, State> {
-  state = {
+  state: State = {
     altitude: '30 000',
     initLat: '37.6155600',
     initLong: '55.752200',
     finalLat: '53.390321',
     finalLong: '58.757723',
+    initXCell: '50',
+    initYCell: '0',
     departureTime: format(startOfMinute(new Date()), 'HH:mm:ss'),
     customCostIndex: '5000',
     formValid: true,
@@ -76,13 +80,25 @@ export default class InitialConditions extends React.Component<Props, State> {
     this.setState({
       departureTime: event.target.value,
     }, this.validateForm);
-  }
+  };
 
   onCustomCostIndexChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({
       customCostIndex: event.target.value,
     }, this.validateForm);
-  }
+  };
+
+  onInitXCellChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      initXCell: event.target.value,
+    }, this.validateForm);
+  };
+
+  onInitYCellChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      initYCell: event.target.value,
+    }, this.validateForm);
+  };
 
   validateForm = () => {
     const currentValidity = Object.values(this.state).filter(v => (typeof v === 'string')).every(Boolean);
@@ -107,6 +123,8 @@ export default class InitialConditions extends React.Component<Props, State> {
       finalLong,
       departureTime,
       customCostIndex,
+      initXCell,
+      initYCell,
     } = this.state;
 
     const initialConditions = {
@@ -117,6 +135,8 @@ export default class InitialConditions extends React.Component<Props, State> {
       'final-longitude': finalLong,
       'departure-time': departureTime,
       'cost-index': customCostIndex,
+      'initial-x': initXCell,
+      'initial-y': initYCell,
     };
 
     window.electron.applyInitialConditions(initialConditions);
@@ -281,6 +301,34 @@ export default class InitialConditions extends React.Component<Props, State> {
               variant="outlined"
               fullWidth
               placeholder="1000"
+            />
+          </Grid>
+
+          <Grid item xs={6}>
+            <TextField
+              type="text"
+              id="start-bias-x"
+              name="start-bias-x"
+              label="Начальное смещение на сетке по X"
+              value={this.state.initXCell}
+              onChange={this.onInitXCellChange}
+              variant="outlined"
+              fullWidth
+              placeholder="50"
+            />
+          </Grid>
+
+          <Grid item xs={6}>
+            <TextField
+              type="text"
+              id="start-bias-y"
+              name="start-bias-y"
+              label="Начальное смещение на сетке по Y"
+              value={this.state.initYCell}
+              onChange={this.onInitYCellChange}
+              variant="outlined"
+              fullWidth
+              placeholder="0"
             />
           </Grid>
         </Grid>
