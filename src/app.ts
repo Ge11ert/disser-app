@@ -102,7 +102,7 @@ export default class DisserApp implements DisserAppAPI {
     this.geo.findDistanceBetweenStartAndEndPoints();
     this.geo.findDistanceInGridCells();
 
-    this.createInitialEntryPoint();
+    this.createInitialEntryPoint(geoConditions);
     this.createInitialExitPoint();
 
     this.customCostIndex = parseInt(geoConditions['cost-index'], 10);
@@ -404,9 +404,20 @@ export default class DisserApp implements DisserAppAPI {
     return [true, altitudeRun];
   }
 
-  createInitialEntryPoint(): void {
-    this.initialEntryPoint.x = 0;
-    this.initialEntryPoint.y = 0;
+  createInitialEntryPoint(geoConditions?: Record<string, string>): void {
+    const defaultEntryX = 0;
+    const defaultEntryY = 0;
+    if (geoConditions) {
+      this.initialEntryPoint.x = geoConditions['initial-x'] !== undefined
+        ? parseInt(geoConditions['initial-x'])
+        : defaultEntryX;
+      this.initialEntryPoint.y = geoConditions['initial-y'] !== undefined
+        ? parseInt(geoConditions['initial-y'])
+        : defaultEntryY;
+      return;
+    }
+    this.initialEntryPoint.x = this.initialEntryPoint.x || defaultEntryX;
+    this.initialEntryPoint.y = this.initialEntryPoint.y || defaultEntryY;
   }
 
   createInitialExitPoint(): void {
