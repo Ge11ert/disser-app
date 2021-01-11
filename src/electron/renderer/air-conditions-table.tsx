@@ -120,7 +120,7 @@ class AirConditionsTable extends React.Component<Props, State> {
   drawGrid = () => {
     const { dataSets, disableWind, initialPoints } = this.props;
 
-    const showAirConditions = Object.keys(dataSets).length === 1;
+    const showAirConditions = Object.keys(dataSets).length <= 1;
 
     this.draw.clear();
 
