@@ -13,7 +13,7 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 interface Props {
   air: AirConditions;
   disableWind?: boolean;
-  dataSets: Record<'fuel'|'time'|'combined'|'rta', {
+  dataSets: Record<string, {
     path: number[][],
   }>;
   initialPoints?: { entry: { x: number, y: number }, exit: { x: number, y: number }}
@@ -149,7 +149,7 @@ class AirConditionsTable extends React.Component<Props, State> {
 
     Object.entries(dataSets).forEach(([key, value]) => {
       const { path } = value;
-      const pathColor = colors[key].primary;
+      const pathColor = colors[key] !== undefined ? colors[key].primary : colors.defaultColor.primary;
       path.forEach(cell => {
         const [cx, cy] = cell;
         const x = cx * this.cellSize + this.cellOffset;
