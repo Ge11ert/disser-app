@@ -44,7 +44,7 @@ const AirConditions = (props: Props) => {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <AirConditionsTable air={value} disableWind={disableWind}/>
+                <AirConditionsTable air={value} disableWind={disableWind} dataSets={{}}/>
               </AccordionDetails>
             </Accordion>
           );

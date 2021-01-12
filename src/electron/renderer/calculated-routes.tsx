@@ -117,7 +117,7 @@ const CalculatedRoutes = (props: Props) => {
                             <Box mt={4}>
                               <AirConditionsTable
                                 air={air.get(alt)!}
-                                path={route.cruise.path}
+                                dataSets={{ cruise: { path: route.cruise.path } }}
                                 initialPoints={initialPoints}
                               />
                             </Box>

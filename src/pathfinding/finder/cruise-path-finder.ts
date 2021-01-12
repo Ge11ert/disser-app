@@ -44,15 +44,44 @@ export default class CruisePathFinder extends AStarFinder {
     return this.currentProfileRow.fuel > 0;
   }
 
+  setNeighborProps(ng: number, currentNode: GridNode, neighborNode: GridNode, endNode: GridNode) {
+    super.setNeighborProps(ng, currentNode, neighborNode, endNode);
+
+    const { distance, fuel, time } = this.getTranslationParameters(currentNode, neighborNode, true);
+
+    neighborNode.distanceFromNeighbourInMiles = distance;
+    neighborNode.fuelBurnFromNeighbourInKgs = fuel;
+    neighborNode.timeFromNeighbourInHours = time;
+    neighborNode.windAtNode = this.getWind(neighborNode);
+
+    currentNode.windAtNode = this.getWind(currentNode);
+  }
+
   getNeighborG(currentNode: GridNode, neighborNode: GridNode): number {
-    const { distance: distanceToNeighbour } = currentNode.distanceTo(neighborNode); // miles
+    const { fuel, time } = this.getTranslationParameters(currentNode, neighborNode, true);
+
+    return this.getFlightCost(fuel, time);
+  }
+
+  getNeighborH(neighborNode: GridNode, endNode: GridNode): number {
+    const { fuel, time } = this.getTranslationParameters(neighborNode, endNode, false);
+
+    return this.getFlightCost(fuel, time);
+  }
+
+  getTranslationParameters(
+    sourceNode: GridNode,
+    goalNode: GridNode,
+    accountWind: boolean,
+  ): { distance: number, fuel: number, time: number} {
+    const { distance: distanceToNeighbour } = sourceNode.distanceTo(goalNode); // miles
 
     // переводим дистанцию в метры
     const distanceInMeters = fromMilesToMeters(distanceToNeighbour);
 
-    // Получаем скорость относительно земли (с учётом ветра)
+    // Если нужно учесть ветер, получаем скорость относительно земли (с учётом ветра)
     const speedV = this.cruiseOptions.speedV;
-    const groundSpeed = this.getGroundSpeedV(speedV, neighborNode); // knots;
+    const groundSpeed = accountWind ? this.getGroundSpeedV(speedV, goalNode) : speedV; // knots;
     const groundSpeedInMetersPerSecond = fromKnotsToMetersPerSecond(groundSpeed);
 
     // получаем время пролёта полученной дистанции в секундах и часах
@@ -63,36 +92,7 @@ export default class CruisePathFinder extends AStarFinder {
     const fuelBurnHourly = this.currentProfileRow.fuel;
     const actualFuelBurn = fuelBurnHourly * flightTimeInHours; // kg
 
-    // считаем FlightCost по затраченному топливу и времени
-    const flightCostToNeighbour = this.getFlightCost(actualFuelBurn, flightTimeInHours);
-
-    neighborNode.distanceFromNeighbourInMiles = distanceToNeighbour;
-    neighborNode.fuelBurnFromNeighbourInKgs = actualFuelBurn;
-    neighborNode.timeFromNeighbourInHours = flightTimeInHours;
-    neighborNode.windAtNode = this.getWind(neighborNode);
-
-    currentNode.windAtNode = this.getWind(currentNode);
-
-    return flightCostToNeighbour;
-  }
-
-  getNeighborH(neighborNode: GridNode, endNode: GridNode): number {
-    const { distance: distanceToEnd } = neighborNode.distanceTo(endNode);
-    const distanceToEndInMeters = fromMilesToMeters(distanceToEnd);
-
-    // берём текущую скорость в узлах (ветер не считаем) и переводим в м/с
-    const speedV = this.cruiseOptions.speedV;
-    const speedInMetersPerSecond = fromKnotsToMetersPerSecond(speedV);
-
-    // получаем время пролёта полученной дистанции в секундах и часах
-    const flightTimeInSeconds = distanceToEndInMeters / speedInMetersPerSecond;
-    const flightTimeInHours = flightTimeInSeconds / 3600;
-
-    const fuelBurnHourly = this.currentProfileRow.fuel;
-    const actualFuelBurn = fuelBurnHourly * flightTimeInHours; // kg
-
-    // считаем FlightCost по затраченному топливу и времени
-    return this.getFlightCost(actualFuelBurn, flightTimeInHours);
+    return { distance: distanceToNeighbour, fuel: actualFuelBurn, time: flightTimeInHours };
   }
 
   findPathWithSummary(...args: any[]): { path: number[][], summary: Record<string, number>} {

@@ -146,6 +146,10 @@ export default class DisserApp implements DisserAppAPI {
       throw new Error('No air conditions loaded at all, please provide one');
     }
 
+    if (this.totalRun.size !== 0) {
+      this.totalRun = new Map<number, SpeedRun>();
+    }
+
     const startTimestamp = Date.now();
 
     this.possibleMachList.forEach(speedM => {
