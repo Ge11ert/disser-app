@@ -24,27 +24,12 @@ type State = {
   showBlockedAreas: boolean,
 };
 
-const colors: { [type: string]: { primary: string, dark: string } } = {
-  fuel: {
-    primary: '#1976d2',
-    dark: '#004ba0',
-  },
-  time: {
-    primary: '#43a047',
-    dark: '#00701a',
-  },
-  combined: {
-    primary: '#f4511e',
-    dark: '#b91400',
-  },
-  rta: {
-    primary: '#fbc02d',
-    dark: '#c49000',
-  },
-  defaultColor: {
-    primary: '#999',
-    dark: 'darkblue',
-  },
+const colors: Record<string, string> = {
+  fuel: '#1976d2',
+  time: '#43a047',
+  combined: '#f4511e',
+  rta: '#fbc02d',
+  defaultColor: '#673ab7',
 };
 
 class AirConditionsTable extends React.Component<Props, State> {
@@ -149,7 +134,7 @@ class AirConditionsTable extends React.Component<Props, State> {
 
     Object.entries(dataSets).forEach(([key, value]) => {
       const { path } = value;
-      const pathColor = colors[key] !== undefined ? colors[key].primary : colors.defaultColor.primary;
+      const pathColor = colors[key] !== undefined ? colors[key] : colors.defaultColor;
       path.forEach(cell => {
         const [cx, cy] = cell;
         const x = cx * this.cellSize + this.cellOffset;
