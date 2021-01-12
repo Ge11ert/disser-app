@@ -82,10 +82,7 @@ export default class AStarFinder {
         // check if the neighbor has not been inspected yet, or
         // can be reached with smaller cost from the current node
         if (!neighbor.opened || ng < neighbor.g) {
-          neighbor.g = ng;
-          neighbor.h = neighbor.h || this.getNeighborH(neighbor, endNode);
-          neighbor.f = neighbor.g + neighbor.h;
-          neighbor.parent = currentNode;
+          this.setNeighborProps(ng, currentNode, neighbor, endNode);
 
           if (!neighbor.opened) {
             openList.push(neighbor);
@@ -112,6 +109,13 @@ export default class AStarFinder {
   getNeighborH(neighborNode: GridNode, endNode: GridNode): number {
     const fromNeighborToEnd = neighborNode.distanceTo(endNode);
     return this.heuristic(fromNeighborToEnd.dx, fromNeighborToEnd.dy);
+  }
+
+  setNeighborProps(ng: number, currentNode: GridNode, neighborNode: GridNode, endNode: GridNode): void {
+    neighborNode.g = ng;
+    neighborNode.h = neighborNode.h || this.getNeighborH(neighborNode, endNode);
+    neighborNode.f = neighborNode.g + neighborNode.h;
+    neighborNode.parent = currentNode;
   }
 }
 
