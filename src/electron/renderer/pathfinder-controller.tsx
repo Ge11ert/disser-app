@@ -40,6 +40,12 @@ const PathfinderController = (props: Props) => {
     window.electron.findPath();
   };
 
+  const onReset = () => {
+    setLoaded(false);
+    setFlightRoutes(null);
+    setFlightCostRoutes(null);
+  };
+
   const showRoutesDialog = () => {
     setRoutesDialogOpen(true);
   };
@@ -84,14 +90,24 @@ const PathfinderController = (props: Props) => {
       { loaded && (
         <Box my={2} color="success.main">
           <Grid container spacing={1}>
-            <Grid item xs={4}>
+            <Grid item xs={6}>
               <Typography variant="body1">
                 <CheckIcon color="inherit" fontSize="small"/>
                 Оптимальные маршруты найдены
               </Typography>
             </Grid>
 
-            <Grid item xs={4} style={{ textAlign: 'center' }}>
+            <Grid item xs={2}>
+              <Button
+                variant="outlined"
+                size="small"
+                onClick={onReset}
+              >
+                Сбросить
+              </Button>
+            </Grid>
+
+            <Grid item xs={2}>
               <Button
                 variant="outlined"
                 size="small"
@@ -101,7 +117,7 @@ const PathfinderController = (props: Props) => {
               </Button>
             </Grid>
 
-            <Grid item xs={4}>
+            <Grid item xs={2}>
               <Button
                 variant="outlined"
                 size="small"
