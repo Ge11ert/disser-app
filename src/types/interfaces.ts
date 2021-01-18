@@ -29,8 +29,16 @@ export type ClimbDescentProfile = {
   time: number,
 }[];
 
+export enum StatusCode {
+  OK = 'OK',
+  NOT_EXCEL = 'NOT_EXCEL',
+  EMPTY_REQUEST = 'EMPTY_REQUEST',
+  NOT_FOUND = 'NOT_FOUND',
+  INTERNAL_ERROR = 'INTERNAL_ERROR',
+}
+
 export type readResult<T> = {
-  status: string,
+  status: StatusCode,
   result: T,
 };
 

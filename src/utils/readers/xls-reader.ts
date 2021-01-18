@@ -1,13 +1,6 @@
 import readXlsxFile, { ParsedResult, SheetParsingOptions } from 'read-excel-file/node'
 import path from 'path';
-
-export enum StatusCode {
-  OK = 'OK',
-  NOT_EXCEL = 'NOT_EXCEL',
-  EMPTY_REQUEST = 'EMPTY_REQUEST',
-  NOT_FOUND = 'NOT_FOUND',
-  INTERNAL_ERROR = 'INTERNAL_ERROR',
-}
+import { StatusCode } from '../../types/interfaces';
 
 const permittedExtensions = ['.xlsx', '.xls'];
 

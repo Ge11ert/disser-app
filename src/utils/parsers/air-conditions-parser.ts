@@ -1,4 +1,10 @@
-import { Reader, readResult, AirConditions } from '../../types/interfaces';
+import { AirConditions, Reader, readResult, StatusCode } from '../../types/interfaces';
+
+class ParseError extends Error {
+  constructor(public status?: string) {
+    super();
+  }
+}
 
 export default class AirConditionsParser {
   constructor(
@@ -8,8 +14,12 @@ export default class AirConditionsParser {
 
   async parse(): Promise<Map<number, AirConditions>> {
     try {
-      const { result: sheetsList } = await this.reader.getSheetsList(this.pathToFile);
+      const { result: sheetsList, status } = await this.reader.getSheetsList(this.pathToFile);
       const sheetReadPromises: Promise<readResult<AirConditions>>[] = [];
+
+      if (status !== StatusCode.OK) {
+        throw new ParseError(status);
+      }
 
       sheetsList.forEach((sheet) => {
         sheetReadPromises.push(this.reader.read(this.pathToFile, { sheet: sheet.name }));
@@ -17,6 +27,12 @@ export default class AirConditionsParser {
 
       const airConditionsForAllAltitudes = await Promise.all(sheetReadPromises);
       const airConditionsMap = new Map<number, AirConditions>();
+
+      const notOkResult = airConditionsForAllAltitudes.find(parseResult => parseResult.status !== StatusCode.OK);
+
+      if (notOkResult) {
+        throw new ParseError(notOkResult.status);
+      }
 
       airConditionsForAllAltitudes.forEach((parseResult, index) => {
         const altValue = parseInt(sheetsList[index].name, 10);
@@ -26,11 +42,10 @@ export default class AirConditionsParser {
       return airConditionsMap;
     } catch (error) {
       console.log(`
-        Error during air conditions parsing,
-          code: ${error.status}
-          path: ${this.pathToFile}
-      `);
-      return error.result;
+Error during air conditions parsing,
+  code: ${error.status}
+  path: ${this.pathToFile}`);
+      return new Map<number, AirConditions>();
     }
   }
 }
