@@ -25,6 +25,8 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
         return;
       }
 
+      disserApp.clearRegisteredAirConditions();
+
       const reader = new FastXlsReader();
       const parser = new AirConditionsParser(result.filePaths[0], reader);
       try {

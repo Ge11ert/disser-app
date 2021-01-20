@@ -74,6 +74,8 @@ export interface DisserAppAPI {
   getAltitudeList(): number[];
 
   registerAirConditionsForAltitude(conditions: AirConditions|undefined, alt: number, disableWind: boolean): void;
+
+  clearRegisteredAirConditions(): void;
 }
 
 type RunInfo = { distanceInMiles: number, fuelBurnInKgs: number, timeInHours: number, averageWind: number };
