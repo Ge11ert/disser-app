@@ -8,7 +8,7 @@ import {
   START_FINDER,
 } from './event-names';
 import AirConditionsParser from '../../utils/parsers/air-conditions-parser';
-import XlsReader from '../../utils/readers/xls-reader';
+import FastXlsReader from '../../utils/readers/fast-xls-reader';
 import { DisserAppAPI, AirConditions } from '../../types/interfaces';
 
 export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, browserWindow: BrowserWindow) {
@@ -25,7 +25,7 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
         return;
       }
 
-      const reader = new XlsReader();
+      const reader = new FastXlsReader();
       const parser = new AirConditionsParser(result.filePaths[0], reader);
       try {
         const result = await parser.parse();

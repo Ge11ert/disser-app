@@ -36,7 +36,7 @@ export default class AirConditionsParser {
 
       airConditionsForAllAltitudes.forEach((parseResult, index) => {
         const altValue = parseInt(sheetsList[index].name, 10);
-        airConditionsMap.set(altValue, parseResult.result);
+        airConditionsMap.set(altValue, parseResult.result.filter(row => row.length > 0));
       });
 
       return airConditionsMap;

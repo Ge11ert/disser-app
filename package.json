@@ -14,7 +14,7 @@
     "build": "npm run build:electron && npm run build:react",
     "build-production": "npm run build:electron-production && npm run build:react-production",
     "start": "npm run build && electron --inspect=5858 ./build/index.js",
-    "pretest": "npm run build",
+    "pretest": "npm run build:electron",
     "test": "jest",
     "dist": "electron-builder",
     "dist-linux": "electron-builder --linux AppImage",
