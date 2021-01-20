@@ -8,7 +8,7 @@ import {
   START_FINDER,
 } from './event-names';
 import AirConditionsParser from '../../utils/parsers/air-conditions-parser';
-import XlsReader from '../../utils/readers/xls-reader';
+import FastXlsReader from '../../utils/readers/fast-xls-reader';
 import { DisserAppAPI, AirConditions } from '../../types/interfaces';
 
 export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, browserWindow: BrowserWindow) {
@@ -19,20 +19,26 @@ export default function bindEvents(electronApp: App, disserApp: DisserAppAPI, br
       properties: [
         'openFile',
       ],
-    }).then((result: OpenDialogReturnValue) => {
-      if (!result.canceled) {
-        const reader = new XlsReader();
-        const parser = new AirConditionsParser(result.filePaths[0], reader);
-        parser.parse().then(result => {
-          const processedConditionsMap = (disableWind || disableZones) ? processAirConditions(result, disableWind, disableZones) : result;
+    }).then(async (result: OpenDialogReturnValue) => {
+      if (result.canceled) {
+        event.sender.send(CANCEL_AIR_CONDITIONS);
+        return;
+      }
 
-          const possibleAlts = disserApp.getAltitudeList();
-          possibleAlts.forEach(alt => {
-            disserApp.registerAirConditionsForAltitude(processedConditionsMap.get(alt), alt, disableWind);
-          });
-          event.sender.send(RENDER_AIR_CONDITIONS, processedConditionsMap);
+      disserApp.clearRegisteredAirConditions();
+
+      const reader = new FastXlsReader();
+      const parser = new AirConditionsParser(result.filePaths[0], reader);
+      try {
+        const result = await parser.parse();
+        const processedConditionsMap = (disableWind || disableZones) ? processAirConditions(result, disableWind, disableZones) : result;
+
+        const possibleAlts = disserApp.getAltitudeList();
+        possibleAlts.forEach(alt => {
+          disserApp.registerAirConditionsForAltitude(processedConditionsMap.get(alt), alt, disableWind);
         });
-      } else {
+        event.sender.send(RENDER_AIR_CONDITIONS, processedConditionsMap);
+      } catch (error) {
         event.sender.send(CANCEL_AIR_CONDITIONS);
       }
     });

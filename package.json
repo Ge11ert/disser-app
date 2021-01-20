@@ -14,7 +14,7 @@
     "build": "npm run build:electron && npm run build:react",
     "build-production": "npm run build:electron-production && npm run build:react-production",
     "start": "npm run build && electron --inspect=5858 ./build/index.js",
-    "pretest": "npm run build",
+    "pretest": "npm run build:electron",
     "test": "jest",
     "dist": "electron-builder",
     "dist-linux": "electron-builder --linux AppImage",
@@ -53,9 +53,10 @@
     "react-dom": "16.13.1",
     "react-router-dom": "5.2.0",
     "react-text-mask": "5.4.3",
-    "read-excel-file": "4.0.6",
+    "read-excel-file": "4.1.0",
     "regenerator-runtime": "0.13.7",
-    "typescript": "3.9.3"
+    "typescript": "3.9.3",
+    "xlsx": "0.16.9"
   },
   "devDependencies": {
     "@babel/core": "7.11.1",
@@ -82,7 +83,7 @@
     "ts-node": "8.10.2",
     "webpack": "4.44.1",
     "webpack-cli": "3.3.12",
-    "webpack-dev-server": "3.11.0"
+    "webpack-dev-server": "3.11.2"
   },
   "build": {
     "files": [
@@ -102,7 +103,8 @@
     "testEnvironment": "node",
     "roots": [
       "tests/pathfinding",
-      "tests/geo"
+      "tests/geo",
+      "tests/air-parser"
     ]
   }
 }

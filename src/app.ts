@@ -70,6 +70,11 @@ export default class DisserApp implements DisserAppAPI {
     this.electronApp.start();
   }
 
+  clearRegisteredAirConditions() {
+    this.airConditionsPerAlt = {};
+    this.airConditionsGridSize = { width: 0, height: 0 };
+  }
+
   registerAirConditionsForAltitude(conditions: AirConditions|undefined, altitude: number) {
     if (!Array.isArray(conditions) || conditions.length === 0) {
       throw new Error(`Air conditions matrix for altitude ${altitude} is empty`);
