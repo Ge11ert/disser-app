@@ -11,6 +11,7 @@ import { getClimbProfileRowsBySpeed, getDescentProfileRowsBySpeed } from './flig
 import type {
   DisserAppAPI,
   AirConditions,
+  AirConditionsCell,
   ClimbDescentProfile,
   AltitudeRun,
   SpeedRun,
@@ -291,6 +292,7 @@ export default class DisserApp implements DisserAppAPI {
         entryPoint,
         nextEntryPoint,
         prevAltAirConditions,
+        airConditions,
       );
 
       if (forbiddenAreasDuringClimb) {
@@ -323,6 +325,7 @@ export default class DisserApp implements DisserAppAPI {
         nextExitPoint,
         exitPoint,
         airConditions,
+        prevAltAirConditions,
       );
 
       if (forbiddenAreasDuringDescent) {
@@ -383,6 +386,11 @@ export default class DisserApp implements DisserAppAPI {
       exitPoint.x, exitPoint.y,
       finderGrid,
     );
+
+    if (path.length === 0) {
+      return [false];
+    }
+
     const altitudeRun: AltitudeRun = {
       ascent: {
         distanceInMiles: ascentSpecifications.distanceInMiles,
@@ -745,14 +753,21 @@ function extractDescentSpecifications(
 function checkPrevAltitudeForbiddenAreas(
   startPoint: { x: number, y: number },
   endPoint: { x: number, y: number },
-  currentAirConditions: AirConditions,
+  airConditionsForStartPoint: AirConditions,
+  airConditionsForEndPoint: AirConditions,
 ): boolean {
   let hasForbiddenCell = false;
+  const isForbiddenCell = (point: AirConditionsCell) => (typeof point === 'string' && point.toLowerCase() === 'x');
+  const conditionAtEndPoint = airConditionsForEndPoint[endPoint.y][endPoint.x];
+
+  if (isForbiddenCell(conditionAtEndPoint)) {
+    return false;
+  }
 
   for (let y = startPoint.y; y < endPoint.y; y++) {
     for (let x = startPoint.x; x < endPoint.x; x++) {
-      const conditionAtPoint = currentAirConditions[y][x];
-      if (typeof conditionAtPoint === 'string' && conditionAtPoint.toLowerCase() === 'x') {
+      const conditionAtPoint = airConditionsForStartPoint[y][x];
+      if (isForbiddenCell(conditionAtPoint)) {
         hasForbiddenCell = true;
         return true;
       }
