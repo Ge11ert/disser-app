@@ -123,9 +123,11 @@ export default class OptimalPathFinder {
               cruise: altSummary.cruise.distanceInMiles,
               descent: altSummary.descent.distanceInMiles,
             },
-            averageWind: (
-              altSummary.ascent.averageWind + altSummary.cruise.averageWind + altSummary.descent.averageWind
-            ) / 3,
+            averageWind: getAverage([
+              altSummary.ascent.averageWind,
+              altSummary.cruise.averageWind,
+              altSummary.descent.averageWind
+            ].filter(wind => (wind >= 1))),
           };
           this.fuelOptimalRun = altSummary;
         }
@@ -145,9 +147,11 @@ export default class OptimalPathFinder {
               cruise: altSummary.cruise.distanceInMiles,
               descent: altSummary.descent.distanceInMiles,
             },
-            averageWind: (
-              altSummary.ascent.averageWind + altSummary.cruise.averageWind + altSummary.descent.averageWind
-            ) / 3,
+            averageWind: getAverage([
+              altSummary.ascent.averageWind,
+              altSummary.cruise.averageWind,
+              altSummary.descent.averageWind
+            ].filter(wind => (wind >= 1))),
           }
         }
 
@@ -166,9 +170,11 @@ export default class OptimalPathFinder {
               cruise: altSummary.cruise.distanceInMiles,
               descent: altSummary.descent.distanceInMiles,
             },
-            averageWind: (
-              altSummary.ascent.averageWind + altSummary.cruise.averageWind + altSummary.descent.averageWind
-            ) / 3,
+            averageWind: getAverage([
+              altSummary.ascent.averageWind,
+              altSummary.cruise.averageWind,
+              altSummary.descent.averageWind
+            ].filter(wind => (wind >= 1))),
           }
         }
       }
@@ -341,4 +347,10 @@ function compareFn(a: number[], b: number[]) {
 
 function compareByTime(a: number[], b: number[]) {
   return a[4] - b[4];
+}
+
+function getAverage(arr: number[]): number {
+  if (arr.length === 0) return 0;
+  const sum = arr.reduce((acc, item) => (acc + item), 0);
+  return sum / arr.length;
 }
